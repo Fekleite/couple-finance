@@ -40,7 +40,25 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **Simplicity & UX**: Frequent workflows use minimal steps, provide immediate
+  feedback, and define friendly empty/loading/error states.
+- **Financial Transparency**: Individual vs shared data, responsible person,
+  totals, balances, and important financial changes are unambiguous and
+  traceable where applicable.
+- **Mobile-First**: Essential MVP functionality works on mobile with touch-safe
+  controls and no desktop-only dependency.
+- **Accessibility**: Essential interactions support keyboard use, visible focus,
+  clear labels/errors, sufficient contrast, and screen-reader semantics.
+- **Security & Privacy**: Authentication, authorization, Supabase RLS/data
+  isolation, and privacy impacts are addressed before implementation.
+- **Technical Quality**: TypeScript strict mode, modular components, reusable
+  hooks/services, low coupling, high cohesion, and naming conventions are
+  reflected in the design.
+- **Performance & Financial Data Clarity**: Lists, charts, dashboards, currency,
+  dates, categories, and totals remain consistent, legible, and performant.
+
+If any gate is not satisfied, document the violation in Complexity Tracking with
+the risk, rejected simpler alternative, and mitigation before proceeding.
 
 ## Project Structure
 

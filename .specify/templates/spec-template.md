@@ -77,6 +77,9 @@
 
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
+- What happens when shared and individual financial data appear together?
+- What happens when a user without authorization attempts to access shared data?
+- What happens on small mobile screens, slow networks, or empty financial states?
 
 ## Requirements *(mandatory)*
 
@@ -92,16 +95,27 @@
 - **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-006**: System MUST clearly identify whether financial information is individual or shared.
+- **FR-007**: System MUST preserve authorization and privacy boundaries for all financial data.
+- **FR-008**: System MUST provide mobile-friendly and accessible behavior for essential user journeys.
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-009**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
+- **FR-010**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
+
+### Constitution Alignment *(mandatory)*
+
+- **Simplicity & UX**: [How this feature keeps frequent flows short and understandable]
+- **Financial Transparency**: [How the feature distinguishes individual/shared data and responsibility]
+- **Mobile & Accessibility**: [How essential interactions work on mobile, keyboard, and assistive tech]
+- **Security & Privacy**: [Authorization, privacy, and data isolation requirements]
+- **Performance & Data Clarity**: [Expected behavior for lists, charts, totals, currency, dates, and loading]
 
 ## Success Criteria *(mandatory)*
 
