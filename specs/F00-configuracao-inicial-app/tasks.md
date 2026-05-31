@@ -30,15 +30,15 @@ implementation and testing of each story.
 
 **Purpose**: Initialize the React, Vite, TypeScript, TailwindCSS, Shadcn/ui, and quality-tooling foundation.
 
-- [ ] T001 Initialize npm package metadata and scripts for dev, build, lint, format:check, typecheck, prepare in package.json
-- [ ] T002 Create Vite React TypeScript entry files in index.html, src/main.tsx, and src/app/App.tsx
-- [ ] T003 [P] Configure strict TypeScript project settings in tsconfig.json and tsconfig.node.json
-- [ ] T004 [P] Configure Vite React build and path aliases in vite.config.ts
-- [ ] T005 [P] Configure TailwindCSS and PostCSS in tailwind.config.ts and postcss.config.js
-- [ ] T006 [P] Configure global app styles, focus states, and Tailwind layers in src/styles/globals.css
-- [ ] T007 [P] Configure ESLint, Prettier, Husky, and lint-staged in eslint.config.js, prettier.config.js, .husky/pre-commit, and package.json
-- [ ] T008 [P] Configure Shadcn/ui defaults and utility path aliases in components.json and src/lib/utils.ts
-- [ ] T009 [P] Create planned source folders in src/app/, src/pages/, src/components/layout/, src/components/feedback/, src/components/ui/, src/lib/, and src/styles/
+- [X] T001 Initialize npm package metadata and scripts for dev, build, lint, format:check, typecheck, prepare in package.json
+- [X] T002 Create Vite React TypeScript entry files in index.html, src/main.tsx, and src/app/app.tsx
+- [X] T003 [P] Configure strict TypeScript project settings in tsconfig.json and tsconfig.node.json
+- [X] T004 [P] Configure Vite React build and path aliases in vite.config.ts
+- [X] T005 [P] Configure TailwindCSS through the Vite plugin without PostCSS in vite.config.ts and src/styles/globals.css
+- [X] T006 [P] Configure global app styles, focus states, and Tailwind layers in src/styles/globals.css
+- [X] T007 [P] Configure ESLint, Prettier, Husky, and lint-staged in eslint.config.js, prettier.config.js, .husky/pre-commit, and package.json
+- [X] T008 [P] Configure Shadcn/ui defaults and utility path aliases in components.json and src/lib/utils.ts
+- [X] T009 [P] Create planned source folders in src/app/, src/pages/, src/components/layout/, src/components/feedback/, src/components/ui/, src/lib/, and src/styles/
 
 ---
 
@@ -48,13 +48,13 @@ implementation and testing of each story.
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T010 Install runtime and development dependencies declared in package.json
-- [ ] T011 Implement React Router bootstrap with public route group, future protected route placeholder metadata, and not-found catch-all in src/app/router.tsx
-- [ ] T012 Implement application shell rendering the router provider in src/app/App.tsx
-- [ ] T013 [P] Add reusable Button component or Shadcn/ui button setup in src/components/ui/button.tsx
-- [ ] T014 [P] Add shared route and future-area metadata constants in src/app/routes.ts
-- [ ] T015 [P] Add accessibility-friendly document title helper in src/lib/page-title.ts
-- [ ] T016 Verify base application startup and document command expectations in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T010 Install runtime and development dependencies declared in package.json
+- [X] T011 Implement React Router bootstrap with public route group, future protected route placeholder metadata, and not-found catch-all in src/app/router.tsx
+- [X] T012 Implement application shell rendering the router provider in src/app/app.tsx
+- [X] T013 [P] Add reusable Button component or Shadcn/ui button setup in src/components/ui/button.tsx
+- [X] T014 [P] Add shared route and future-area metadata constants in src/app/routes.ts
+- [X] T015 [P] Add accessibility-friendly document title helper in src/lib/page-title.ts
+- [X] T016 Verify base application startup and document command expectations in specs/F00-configuracao-inicial-app/quickstart.md
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -68,16 +68,16 @@ implementation and testing of each story.
 
 ### Validation for User Story 1
 
-- [ ] T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/F00-configuracao-inicial-app/quickstart.md
-- [ ] T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/F00-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Implement public base layout with header, main landmark, and responsive content container in src/components/layout/AppLayout.tsx
-- [ ] T020 [P] [US1] Implement public navigation brand treatment and current-route affordance in src/components/layout/PublicNavigation.tsx
-- [ ] T021 [US1] Implement home page hero, purpose sections, and honest future-scope messaging in src/pages/HomePage.tsx
-- [ ] T022 [US1] Wire `/` route to HomePage inside AppLayout in src/app/router.tsx
-- [ ] T023 [US1] Validate home page against routes contract and remove any premature feature claims in src/pages/HomePage.tsx
+- [X] T019 [P] [US1] Implement public base layout with header, main landmark, and responsive content container in src/components/layout/app-layout.tsx
+- [X] T020 [P] [US1] Implement public navigation brand treatment and current-route affordance in src/components/layout/public-navigation.tsx
+- [X] T021 [US1] Implement home page hero, purpose sections, and honest future-scope messaging in src/pages/home-page.tsx
+- [X] T022 [US1] Wire `/` route to home-page inside app-layout in src/app/router.tsx
+- [X] T023 [US1] Validate home page against routes contract and remove any premature feature claims in src/pages/home-page.tsx
 
 **Checkpoint**: User Story 1 should be fully functional and testable independently.
 
@@ -91,16 +91,16 @@ implementation and testing of each story.
 
 ### Validation for User Story 2
 
-- [ ] T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [ ] T025 [P] [US2] Add future protected area copy review checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T025 [P] [US2] Add future protected area copy review checklist in specs/F00-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Implement planned-area indicator component for future authenticated sections in src/components/layout/FutureAreaIndicator.tsx
-- [ ] T027 [US2] Integrate public links and planned-area indicator into navigation without functional protected routes in src/components/layout/PublicNavigation.tsx
-- [ ] T028 [P] [US2] Implement accessible not-found page with return action to `/` in src/pages/NotFoundPage.tsx
-- [ ] T029 [US2] Wire catch-all route to NotFoundPage in src/app/router.tsx
-- [ ] T030 [US2] Validate route behavior against contracts/routes.md and update navigation copy in src/components/layout/PublicNavigation.tsx
+- [X] T026 [P] [US2] Implement planned-area indicator component for future authenticated sections in src/components/layout/future-area-indicator.tsx
+- [X] T027 [US2] Integrate public links and planned-area indicator into navigation without functional protected routes in src/components/layout/public-navigation.tsx
+- [X] T028 [P] [US2] Implement accessible not-found page with return action to `/` in src/pages/not-found-page.tsx
+- [X] T029 [US2] Wire catch-all route to not-found-page in src/app/router.tsx
+- [X] T030 [US2] Validate route behavior against contracts/routes.md and update navigation copy in src/components/layout/public-navigation.tsx
 
 **Checkpoint**: User Stories 1 and 2 should both work independently.
 
@@ -114,16 +114,16 @@ implementation and testing of each story.
 
 ### Validation for User Story 3
 
-- [ ] T031 [P] [US3] Add manual feedback-state identification checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [ ] T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T031 [P] [US3] Add manual feedback-state identification checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/F00-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 3
 
-- [ ] T033 [P] [US3] Implement reusable loading state with accessible text in src/components/feedback/LoadingState.tsx
-- [ ] T034 [P] [US3] Implement reusable empty state with optional action in src/components/feedback/EmptyState.tsx
-- [ ] T035 [P] [US3] Implement reusable error state with recovery action support in src/components/feedback/ErrorState.tsx
-- [ ] T036 [US3] Add feedback-state preview section using loading, empty, and error components in src/pages/HomePage.tsx
-- [ ] T037 [US3] Validate feedback states against contracts/ui-states.md and adjust component props in src/components/feedback/LoadingState.tsx, src/components/feedback/EmptyState.tsx, and src/components/feedback/ErrorState.tsx
+- [X] T033 [P] [US3] Implement reusable loading state with accessible text in src/components/feedback/loading-state.tsx
+- [X] T034 [P] [US3] Implement reusable empty state with optional action in src/components/feedback/empty-state.tsx
+- [X] T035 [P] [US3] Implement reusable error state with recovery action support in src/components/feedback/error-state.tsx
+- [X] T036 [US3] Add feedback-state preview section using loading, empty, and error components in src/pages/home-page.tsx
+- [X] T037 [US3] Validate feedback states against contracts/ui-states.md and adjust component props in src/components/feedback/loading-state.tsx, src/components/feedback/empty-state.tsx, and src/components/feedback/error-state.tsx
 
 **Checkpoint**: User Stories 1, 2, and 3 should work independently.
 
@@ -137,15 +137,15 @@ implementation and testing of each story.
 
 ### Validation for User Story 4
 
-- [ ] T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [ ] T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/F00-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 4
 
-- [ ] T040 [US4] Audit and adjust responsive layout constraints for home, navigation, feedback states, and not-found page in src/styles/globals.css
-- [ ] T041 [US4] Audit and adjust semantic landmarks and heading order in src/components/layout/AppLayout.tsx, src/pages/HomePage.tsx, and src/pages/NotFoundPage.tsx
-- [ ] T042 [US4] Audit and adjust accessible names and focus-visible behavior for links and buttons in src/components/layout/PublicNavigation.tsx, src/components/ui/button.tsx, and src/pages/NotFoundPage.tsx
-- [ ] T043 [US4] Validate text scaling and essential-content readability in src/pages/HomePage.tsx and src/components/feedback/EmptyState.tsx
+- [X] T040 [US4] Audit and adjust responsive layout constraints for home, navigation, feedback states, and not-found page in src/styles/globals.css
+- [X] T041 [US4] Audit and adjust semantic landmarks and heading order in src/components/layout/app-layout.tsx, src/pages/home-page.tsx, and src/pages/not-found-page.tsx
+- [X] T042 [US4] Audit and adjust accessible names and focus-visible behavior for links and buttons in src/components/layout/public-navigation.tsx, src/components/ui/button.tsx, and src/pages/not-found-page.tsx
+- [X] T043 [US4] Validate text scaling and essential-content readability in src/pages/home-page.tsx and src/components/feedback/empty-state.tsx
 
 **Checkpoint**: All user stories should now be independently functional and accessible for the F00 scope.
 
@@ -155,13 +155,13 @@ implementation and testing of each story.
 
 **Purpose**: Final quality checks and documentation alignment across the feature.
 
-- [ ] T044 [P] Run lint validation and resolve issues in package.json and src/
-- [ ] T045 [P] Run format check and resolve formatting issues in prettier.config.js and src/
-- [ ] T046 [P] Run TypeScript typecheck and resolve strict-mode issues in tsconfig.json and src/
-- [ ] T047 Run production build and resolve Vite build issues in vite.config.ts and src/
-- [ ] T048 [P] Review all user-facing Portuguese copy for clarity, warmth, and no premature financial feature claims in src/pages/HomePage.tsx, src/pages/NotFoundPage.tsx, and src/components/feedback/
-- [ ] T049 [P] Update implementation notes and final validation results in specs/F00-configuracao-inicial-app/quickstart.md
-- [ ] T050 Confirm generated tasks remain aligned with plan, spec, contracts, and data model in specs/F00-configuracao-inicial-app/tasks.md
+- [X] T044 [P] Run lint validation and resolve issues in package.json and src/
+- [X] T045 [P] Run format check and resolve formatting issues in prettier.config.js and src/
+- [X] T046 [P] Run TypeScript typecheck and resolve strict-mode issues in tsconfig.json and src/
+- [X] T047 Run production build and resolve Vite build issues in vite.config.ts and src/
+- [X] T048 [P] Review all user-facing Portuguese copy for clarity, warmth, and no premature financial feature claims in src/pages/home-page.tsx, src/pages/not-found-page.tsx, and src/components/feedback/
+- [X] T049 [P] Update implementation notes and final validation results in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T050 Confirm generated tasks remain aligned with plan, spec, contracts, and data model in specs/F00-configuracao-inicial-app/tasks.md
 
 ---
 
@@ -192,7 +192,7 @@ implementation and testing of each story.
 - Setup tasks T003-T009 can run in parallel after T001-T002 are understood.
 - Foundational tasks T013-T015 can run in parallel after dependency installation.
 - US1 validation tasks T017-T018 can run in parallel with layout/navigation component work T019-T020.
-- US2 validation tasks T024-T025 can run in parallel with NotFoundPage work T028.
+- US2 validation tasks T024-T025 can run in parallel with not-found-page work T028.
 - US3 component tasks T033-T035 can run in parallel because each component is isolated.
 - US4 validation tasks T038-T039 can run in parallel before the final accessibility and responsive audits.
 - Polish tasks T044-T046 and T048-T049 can run in parallel before the final build task T047 and alignment task T050.
@@ -204,8 +204,8 @@ implementation and testing of each story.
 ```bash
 Task: "T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/F00-configuracao-inicial-app/quickstart.md"
 Task: "T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T019 [P] [US1] Implement public base layout with header, main landmark, and responsive content container in src/components/layout/AppLayout.tsx"
-Task: "T020 [P] [US1] Implement public navigation brand treatment and current-route affordance in src/components/layout/PublicNavigation.tsx"
+Task: "T019 [P] [US1] Implement public base layout with header, main landmark, and responsive content container in src/components/layout/app-layout.tsx"
+Task: "T020 [P] [US1] Implement public navigation brand treatment and current-route affordance in src/components/layout/public-navigation.tsx"
 ```
 
 ## Parallel Example: User Story 2
@@ -213,8 +213,8 @@ Task: "T020 [P] [US1] Implement public navigation brand treatment and current-ro
 ```bash
 Task: "T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/F00-configuracao-inicial-app/quickstart.md"
 Task: "T025 [P] [US2] Add future protected area copy review checklist in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T026 [P] [US2] Implement planned-area indicator component for future authenticated sections in src/components/layout/FutureAreaIndicator.tsx"
-Task: "T028 [P] [US2] Implement accessible not-found page with return action to `/` in src/pages/NotFoundPage.tsx"
+Task: "T026 [P] [US2] Implement planned-area indicator component for future authenticated sections in src/components/layout/future-area-indicator.tsx"
+Task: "T028 [P] [US2] Implement accessible not-found page with return action to `/` in src/pages/not-found-page.tsx"
 ```
 
 ## Parallel Example: User Story 3
@@ -222,9 +222,9 @@ Task: "T028 [P] [US2] Implement accessible not-found page with return action to 
 ```bash
 Task: "T031 [P] [US3] Add manual feedback-state identification checklist in specs/F00-configuracao-inicial-app/quickstart.md"
 Task: "T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T033 [P] [US3] Implement reusable loading state with accessible text in src/components/feedback/LoadingState.tsx"
-Task: "T034 [P] [US3] Implement reusable empty state with optional action in src/components/feedback/EmptyState.tsx"
-Task: "T035 [P] [US3] Implement reusable error state with recovery action support in src/components/feedback/ErrorState.tsx"
+Task: "T033 [P] [US3] Implement reusable loading state with accessible text in src/components/feedback/loading-state.tsx"
+Task: "T034 [P] [US3] Implement reusable empty state with optional action in src/components/feedback/empty-state.tsx"
+Task: "T035 [P] [US3] Implement reusable error state with recovery action support in src/components/feedback/error-state.tsx"
 ```
 
 ## Parallel Example: User Story 4

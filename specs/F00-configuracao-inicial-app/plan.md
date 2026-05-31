@@ -94,30 +94,28 @@ specs/F00-configuracao-inicial-app/
 ├── tsconfig.json
 ├── tsconfig.node.json
 ├── vite.config.ts
-├── tailwind.config.ts
-├── postcss.config.js
 ├── components.json
 ├── eslint.config.js
 ├── prettier.config.js
 ├── src/
 │   ├── app/
-│   │   ├── App.tsx
+│   │   ├── app.tsx
 │   │   └── router.tsx
 │   ├── components/
 │   │   ├── feedback/
-│   │   │   ├── EmptyState.tsx
-│   │   │   ├── ErrorState.tsx
-│   │   │   └── LoadingState.tsx
+│   │   │   ├── empty-state.tsx
+│   │   │   ├── error-state.tsx
+│   │   │   └── loading-state.tsx
 │   │   ├── layout/
-│   │   │   ├── AppLayout.tsx
-│   │   │   └── PublicNavigation.tsx
+│   │   │   ├── app-layout.tsx
+│   │   │   └── public-navigation.tsx
 │   │   └── ui/
 │   │       └── ...
 │   ├── lib/
 │   │   └── utils.ts
 │   ├── pages/
-│   │   ├── HomePage.tsx
-│   │   └── NotFoundPage.tsx
+│   │   ├── home-page.tsx
+│   │   └── not-found-page.tsx
 │   ├── styles/
 │   │   └── globals.css
 │   └── main.tsx
