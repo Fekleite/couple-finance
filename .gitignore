@@ -1,2 +1,19 @@
 # Docs
 docs/prompts
+
+# Node.js / frontend build
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.env*
+*.tsbuildinfo
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
