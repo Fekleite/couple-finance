@@ -1,6 +1,6 @@
 # Tasks: F00 - Configuracao inicial do app
 
-**Input**: Design documents from `/specs/F00-configuracao-inicial-app/`
+**Input**: Design documents from `/specs/000-configuracao-inicial-app/`
 
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/
 
@@ -22,7 +22,7 @@ implementation and testing of each story.
 
 - Single frontend SPA at repository root
 - Source code in `src/`
-- Validation notes in `specs/F00-configuracao-inicial-app/quickstart.md`
+- Validation notes in `specs/000-configuracao-inicial-app/quickstart.md`
 
 ---
 
@@ -54,7 +54,7 @@ implementation and testing of each story.
 - [X] T013 [P] Add reusable Button component or Shadcn/ui button setup in src/components/ui/button.tsx
 - [X] T014 [P] Add shared route and future-area metadata constants in src/app/routes.ts
 - [X] T015 [P] Add accessibility-friendly document title helper in src/lib/page-title.ts
-- [X] T016 Verify base application startup and document command expectations in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T016 Verify base application startup and document command expectations in specs/000-configuracao-inicial-app/quickstart.md
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -68,8 +68,8 @@ implementation and testing of each story.
 
 ### Validation for User Story 1
 
-- [X] T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/F00-configuracao-inicial-app/quickstart.md
-- [X] T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/000-configuracao-inicial-app/quickstart.md
+- [X] T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/000-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 1
 
@@ -91,8 +91,8 @@ implementation and testing of each story.
 
 ### Validation for User Story 2
 
-- [X] T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [X] T025 [P] [US2] Add future protected area copy review checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/000-configuracao-inicial-app/quickstart.md
+- [X] T025 [P] [US2] Add future protected area copy review checklist in specs/000-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 2
 
@@ -114,8 +114,8 @@ implementation and testing of each story.
 
 ### Validation for User Story 3
 
-- [X] T031 [P] [US3] Add manual feedback-state identification checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [X] T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T031 [P] [US3] Add manual feedback-state identification checklist in specs/000-configuracao-inicial-app/quickstart.md
+- [X] T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/000-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 3
 
@@ -137,8 +137,8 @@ implementation and testing of each story.
 
 ### Validation for User Story 4
 
-- [X] T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/F00-configuracao-inicial-app/quickstart.md
-- [X] T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/F00-configuracao-inicial-app/quickstart.md
+- [X] T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/000-configuracao-inicial-app/quickstart.md
+- [X] T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/000-configuracao-inicial-app/quickstart.md
 
 ### Implementation for User Story 4
 
@@ -160,8 +160,8 @@ implementation and testing of each story.
 - [X] T046 [P] Run TypeScript typecheck and resolve strict-mode issues in tsconfig.json and src/
 - [X] T047 Run production build and resolve Vite build issues in vite.config.ts and src/
 - [X] T048 [P] Review all user-facing Portuguese copy for clarity, warmth, and no premature financial feature claims in src/pages/home-page.tsx, src/pages/not-found-page.tsx, and src/components/feedback/
-- [X] T049 [P] Update implementation notes and final validation results in specs/F00-configuracao-inicial-app/quickstart.md
-- [X] T050 Confirm generated tasks remain aligned with plan, spec, contracts, and data model in specs/F00-configuracao-inicial-app/tasks.md
+- [X] T049 [P] Update implementation notes and final validation results in specs/000-configuracao-inicial-app/quickstart.md
+- [X] T050 Confirm generated tasks remain aligned with plan, spec, contracts, and data model in specs/000-configuracao-inicial-app/tasks.md
 
 ---
 
@@ -202,8 +202,8 @@ implementation and testing of each story.
 ## Parallel Example: User Story 1
 
 ```bash
-Task: "T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/F00-configuracao-inicial-app/quickstart.md"
+Task: "T017 [P] [US1] Add manual home-page acceptance checklist for product purpose and out-of-scope claims in specs/000-configuracao-inicial-app/quickstart.md"
+Task: "T018 [P] [US1] Add home-page copy review checklist for welcoming Portuguese language in specs/000-configuracao-inicial-app/quickstart.md"
 Task: "T019 [P] [US1] Implement public base layout with header, main landmark, and responsive content container in src/components/layout/app-layout.tsx"
 Task: "T020 [P] [US1] Implement public navigation brand treatment and current-route affordance in src/components/layout/public-navigation.tsx"
 ```
@@ -211,8 +211,8 @@ Task: "T020 [P] [US1] Implement public navigation brand treatment and current-ro
 ## Parallel Example: User Story 2
 
 ```bash
-Task: "T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T025 [P] [US2] Add future protected area copy review checklist in specs/F00-configuracao-inicial-app/quickstart.md"
+Task: "T024 [P] [US2] Add manual route navigation and invalid-route recovery checklist in specs/000-configuracao-inicial-app/quickstart.md"
+Task: "T025 [P] [US2] Add future protected area copy review checklist in specs/000-configuracao-inicial-app/quickstart.md"
 Task: "T026 [P] [US2] Implement planned-area indicator component for future authenticated sections in src/components/layout/future-area-indicator.tsx"
 Task: "T028 [P] [US2] Implement accessible not-found page with return action to `/` in src/pages/not-found-page.tsx"
 ```
@@ -220,8 +220,8 @@ Task: "T028 [P] [US2] Implement accessible not-found page with return action to 
 ## Parallel Example: User Story 3
 
 ```bash
-Task: "T031 [P] [US3] Add manual feedback-state identification checklist in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/F00-configuracao-inicial-app/quickstart.md"
+Task: "T031 [P] [US3] Add manual feedback-state identification checklist in specs/000-configuracao-inicial-app/quickstart.md"
+Task: "T032 [P] [US3] Add feedback-state accessibility and no-financial-data checklist in specs/000-configuracao-inicial-app/quickstart.md"
 Task: "T033 [P] [US3] Implement reusable loading state with accessible text in src/components/feedback/loading-state.tsx"
 Task: "T034 [P] [US3] Implement reusable empty state with optional action in src/components/feedback/empty-state.tsx"
 Task: "T035 [P] [US3] Implement reusable error state with recovery action support in src/components/feedback/error-state.tsx"
@@ -230,8 +230,8 @@ Task: "T035 [P] [US3] Implement reusable error state with recovery action suppor
 ## Parallel Example: User Story 4
 
 ```bash
-Task: "T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/F00-configuracao-inicial-app/quickstart.md"
-Task: "T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/F00-configuracao-inicial-app/quickstart.md"
+Task: "T038 [P] [US4] Add mobile, tablet, and desktop viewport checklist in specs/000-configuracao-inicial-app/quickstart.md"
+Task: "T039 [P] [US4] Add keyboard, focus-visible, accessible-name, and semantic-region checklist in specs/000-configuracao-inicial-app/quickstart.md"
 ```
 
 ---
