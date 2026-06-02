@@ -1,9 +1,11 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { PUBLIC_ROUTES } from "@/app/routes";
 import { EmptyState } from "@/components/feedback/empty-state";
 import { ErrorState } from "@/components/feedback/error-state";
 import { LoadingState } from "@/components/feedback/loading-state";
+import { Button } from "@/components/ui/button";
 import { setPageTitle } from "@/lib/page-title";
 
 const PRINCIPLES = [
@@ -30,7 +32,9 @@ export function HomePage() {
     <>
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="max-w-3xl">
-          <p className="section-eyebrow">Organizacao financeira para casais</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Organizacao financeira para casais
+          </p>
           <h1 className="mt-4 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
             Couple Finance
           </h1>
@@ -38,20 +42,27 @@ export function HomePage() {
             Uma base simples, acolhedora e transparente para casais organizarem a vida financeira
             juntos, com clareza sobre o que existe hoje e cuidado com o que vira depois.
           </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg">
+              <Link to={PUBLIC_ROUTES.signUp.path}>Criar conta privada</Link>
+            </Button>
+            <Button asChild variant="secondary" size="lg">
+              <Link to={PUBLIC_ROUTES.login.path}>Entrar</Link>
+            </Button>
+          </div>
         </div>
 
         <aside className="rounded-lg border border-border bg-muted p-5" aria-label="Escopo atual">
-          <h2 className="text-xl font-semibold">O que esta disponivel nesta fundacao</h2>
+          <h2 className="text-xl font-semibold">O que esta disponivel agora</h2>
           <p className="mt-3 leading-7 text-muted-foreground">
-            A F00 entrega a primeira tela publica, navegacao base, pagina de rota nao encontrada e
-            componentes reutilizaveis de feedback. Autenticacao, transacoes, dashboard, metas,
-            graficos e persistencia ainda nao estao ativos.
+            A F01 ativa cadastro, entrada, recuperacao de senha e protecao real do espaco privado.
+            Transacoes, dashboard, metas, graficos e dados compartilhados seguem fora desta etapa.
           </p>
         </aside>
       </section>
 
       <section aria-labelledby="principios-title">
-        <p className="section-eyebrow">Tom do produto</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary">Tom do produto</p>
         <h2 id="principios-title" className="mt-2 text-2xl font-bold">
           Clareza, privacidade e simplicidade
         </h2>
@@ -69,7 +80,9 @@ export function HomePage() {
       </section>
 
       <section aria-labelledby="feedback-title">
-        <p className="section-eyebrow">Estados basicos</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          Estados basicos
+        </p>
         <h2 id="feedback-title" className="mt-2 text-2xl font-bold">
           Feedback preparado para telas futuras
         </h2>

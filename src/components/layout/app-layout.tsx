@@ -10,7 +10,10 @@ export function AppLayout() {
           <PublicNavigation />
         </div>
       </header>
-      <main id="conteudo-principal" className="page-shell">
+      <main
+        id="conteudo-principal"
+        className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 py-8 sm:px-6 lg:px-8"
+      >
         <Outlet />
       </main>
     </div>
