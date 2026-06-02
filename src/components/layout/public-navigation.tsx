@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { FUTURE_PROTECTED_AREAS, PUBLIC_ROUTES } from "@/app/routes";
+import { FUTURE_PROTECTED_AREAS, PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
 import { FutureAreaIndicator } from "@/components/layout/future-area-indicator";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +30,34 @@ export function PublicNavigation() {
           }
         >
           Inicio
+        </NavLink>
+        <NavLink
+          to={PUBLIC_ROUTES.signUp.path}
+          className={({ isActive }) =>
+            cn(
+              "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              isActive && "bg-muted text-foreground"
+            )
+          }
+        >
+          Criar conta
+        </NavLink>
+        <NavLink
+          to={PUBLIC_ROUTES.login.path}
+          className={({ isActive }) =>
+            cn(
+              "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              isActive && "bg-muted text-foreground"
+            )
+          }
+        >
+          Entrar
+        </NavLink>
+        <NavLink
+          to={PRIVATE_ROUTES.app.path}
+          className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+        >
+          Espaco privado
         </NavLink>
         {FUTURE_PROTECTED_AREAS.map((area) => (
           <FutureAreaIndicator

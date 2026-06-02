@@ -1,8 +1,8 @@
 # Implementation Plan: F00 - Configuracao inicial do app
 
-**Branch**: `F00-configuracao-inicial-app` | **Date**: 2026-05-31 | **Spec**: [spec.md](./spec.md)
+**Branch**: `000-configuracao-inicial-app` | **Date**: 2026-05-31 | **Spec**: [spec.md](./spec.md)
 
-**Input**: Feature specification from `/specs/F00-configuracao-inicial-app/spec.md`
+**Input**: Feature specification from `/specs/000-configuracao-inicial-app/spec.md`
 
 ## Summary
 
@@ -74,7 +74,7 @@ features financeiras posteriores.
 ### Documentation (this feature)
 
 ```text
-specs/F00-configuracao-inicial-app/
+specs/000-configuracao-inicial-app/
 ├── plan.md
 ├── research.md
 ├── data-model.md

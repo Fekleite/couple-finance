@@ -41,6 +41,8 @@ As features abaixo foram avaliadas com base nos princípios da constitution:
 - **Dependências**: F00, Supabase Auth, rotas públicas/privadas e estado de sessão.
 - **Esforço**: Médio.
 - **Prioridade sugerida**: primeira feature de produto.
+- **Status atual**: implementada na branch `001-user-auth-session`, incluindo
+  rotas `/login`, `/sign-up`, `/forgot-password`, `/reset-password` e `/app`.
 
 ### F02 - Convite e vínculo do casal
 
@@ -174,7 +176,6 @@ O fluxo recomendado para reduzir risco é:
 - Dashboard.
 - Metas.
 - Login social.
-- Recuperação de senha, caso seja necessário reduzir ainda mais o primeiro incremento.
 
 ## Justificativa objetiva
 

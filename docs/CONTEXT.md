@@ -105,6 +105,14 @@ Permitir que casais:
 
 # 1. Autenticação
 
+## Status atual
+
+Implementada na F01 com Supabase Auth, e-mail/senha, cadastro, login, logout,
+recuperação e redefinição de senha, sessão persistente e proteção da rota
+privada inicial `/app`. A F01 não cria tabelas financeiras, orçamento
+compartilhado, convite de casal, dashboard, metas, transações, migrations ou
+políticas RLS.
+
 ## Funcionalidades
 
 - Cadastro
@@ -283,10 +291,8 @@ src/
 ├── app/
 ├── components/
 │   ├── ui/
-│   ├── forms/
-│   ├── charts/
-│   ├── layouts/
-│   └── shared/
+│   ├── feedback/
+│   └── layout/
 ├── features/
 │   ├── auth/
 │   ├── dashboard/
@@ -294,11 +300,9 @@ src/
 │   ├── goals/
 │   └── settings/
 ├── hooks/
-├── services/
 ├── lib/
 ├── store/
 ├── types/
-├── routes/
 └── styles/
 ```
 

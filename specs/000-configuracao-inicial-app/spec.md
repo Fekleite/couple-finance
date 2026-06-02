@@ -1,6 +1,6 @@
 # Feature Specification: F00 - Configuracao inicial do app
 
-**Feature Branch**: `F00-configuracao-inicial-app`
+**Feature Branch**: `000-configuracao-inicial-app`
 
 **Created**: 2026-05-31
 
