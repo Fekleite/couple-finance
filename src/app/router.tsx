@@ -7,6 +7,7 @@ import { ProtectedRoute } from "@/features/auth/protected-route";
 import { PublicAuthRoute } from "@/features/auth/public-auth-route";
 import { ForgotPasswordPage } from "@/pages/forgot-password-page";
 import { HomePage } from "@/pages/home-page";
+import { InvitationPage } from "@/pages/invitation-page";
 import { LoginPage } from "@/pages/login-page";
 import { NotFoundPage } from "@/pages/not-found-page";
 import { PrivateHomePage } from "@/pages/private-home-page";
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
               {
                 path: PRIVATE_ROUTES.app.path,
                 element: <PrivateHomePage />
+              },
+              {
+                path: PRIVATE_ROUTES.invitation.path,
+                element: <InvitationPage />
               }
             ]
           }
