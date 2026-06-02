@@ -112,28 +112,38 @@ specs/001-user-auth-session/
 │   │   ├── routes.ts
 │   │   └── routes.test.ts
 │   ├── components/
-│   │   ├── auth/
-│   │   │   ├── auth-card.tsx
-│   │   │   ├── auth-form-message.tsx
-│   │   │   ├── password-field.tsx
-│   │   │   └── submit-button.tsx
 │   │   ├── feedback/
 │   │   │   ├── empty-state.tsx
 │   │   │   ├── error-state.tsx
 │   │   │   └── loading-state.tsx
 │   │   ├── layout/
 │   │   │   ├── app-layout.tsx
+│   │   │   ├── authenticated-layout.test.tsx
 │   │   │   ├── authenticated-layout.tsx
+│   │   │   ├── future-area-indicator.tsx
 │   │   │   └── public-navigation.tsx
 │   │   └── ui/
-│   │       └── ...
+│   │       ├── alert.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── field.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       └── separator.tsx
 │   ├── features/
 │   │   └── auth/
+│   │       ├── auth-context-value.ts
+│   │       ├── auth-context.test.tsx
 │   │       ├── auth-context.tsx
+│   │       ├── auth-messages.ts
+│   │       ├── auth-schemas.test.ts
 │   │       ├── auth-service.ts
+│   │       ├── auth-service.test.ts
 │   │       ├── auth-schemas.ts
 │   │       ├── auth-types.ts
+│   │       ├── protected-route.test.tsx
 │   │       ├── protected-route.tsx
+│   │       ├── public-auth-route.test.tsx
 │   │       ├── public-auth-route.tsx
 │   │       └── use-auth.ts
 │   ├── lib/
@@ -141,16 +151,21 @@ specs/001-user-auth-session/
 │   │   ├── supabase.ts
 │   │   └── utils.ts
 │   ├── pages/
+│   │   ├── forgot-password-page.test.tsx
 │   │   ├── forgot-password-page.tsx
 │   │   ├── home-page.tsx
+│   │   ├── login-page.test.tsx
 │   │   ├── login-page.tsx
 │   │   ├── not-found-page.tsx
 │   │   ├── private-home-page.tsx
+│   │   ├── reset-password-page.test.tsx
 │   │   ├── reset-password-page.tsx
+│   │   ├── sign-up-page.test.tsx
 │   │   └── sign-up-page.tsx
 │   ├── styles/
 │   │   └── globals.css
 │   └── test/
+│       ├── auth-test-utils.tsx
 │       └── setup.ts
 └── specs/
     └── 001-user-auth-session/
@@ -158,9 +173,10 @@ specs/001-user-auth-session/
 
 **Structure Decision**: Manter a SPA no root, preservando a organizacao da F00.
 `src/app` continua concentrando bootstrap e roteamento; `src/features/auth`
-isola estado, servico, schemas e guards de autenticacao; `src/pages` guarda as
-telas de rota; `src/components/auth` guarda pecas visuais reutilizaveis dos
-formularios; `src/lib/supabase.ts` centraliza a criacao do cliente Supabase.
+isola estado, servico, schemas, mensagens e guards de autenticacao; `src/pages`
+guarda as telas de rota; `src/components/ui` e `src/components/layout` fornecem
+as pecas visuais reutilizadas pelos formularios e pela area privada;
+`src/lib/supabase.ts` centraliza a criacao do cliente Supabase.
 
 ## Phase 0 Research Summary
 

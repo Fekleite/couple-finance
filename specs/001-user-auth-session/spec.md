@@ -4,7 +4,7 @@
 
 **Created**: 2026-06-01
 
-**Status**: Draft
+**Status**: Implemented
 
 **Input**: User description: "F01 - Autenticacao e sessao do usuario. Permitir cadastro, login, logout, recuperacao de senha, sessao persistente e protecao de areas privadas para o Couple Finance."
 

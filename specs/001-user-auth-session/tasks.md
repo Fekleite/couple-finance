@@ -22,9 +22,9 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 **Purpose**: Add auth dependencies and shared project configuration required before implementation starts.
 
-- [ ] T001 Update auth dependencies in package.json and package-lock.json with @supabase/supabase-js, react-hook-form, zod, and @hookform/resolvers
-- [ ] T002 [P] Create documented Supabase auth environment placeholders in .env.example
-- [ ] T003 [P] Add auth redirect URL guidance to specs/001-user-auth-session/quickstart.md
+- [X] T001 Update auth dependencies in package.json and package-lock.json with @supabase/supabase-js, react-hook-form, zod, and @hookform/resolvers
+- [X] T002 [P] Create documented Supabase auth environment placeholders in .env.example
+- [X] T003 [P] Add auth redirect URL guidance to specs/001-user-auth-session/quickstart.md
 
 ---
 
@@ -34,20 +34,20 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T004 Create Supabase client configuration in src/lib/supabase.ts
-- [ ] T005 [P] Define route metadata for public and private auth routes in src/app/routes.ts
-- [ ] T006 [P] Define auth domain types and session states in src/features/auth/auth-types.ts
-- [ ] T007 [P] Define shared Portuguese auth message constants in src/features/auth/auth-messages.ts
-- [ ] T008 [P] Define Zod schemas for login, signup, forgot password, and reset password in src/features/auth/auth-schemas.ts
-- [ ] T009 Implement Supabase auth wrapper methods in src/features/auth/auth-service.ts
-- [ ] T010 Implement AuthProvider session initialization and auth event handling in src/features/auth/auth-context.tsx
-- [ ] T011 Implement useAuth hook with provider usage guard in src/features/auth/use-auth.ts
-- [ ] T012 Wrap the app router with AuthProvider in src/app/app.tsx
-- [ ] T013 [P] Create reusable auth card shell in src/components/auth/auth-card.tsx
-- [ ] T014 [P] Create accessible form message component in src/components/auth/auth-form-message.tsx
-- [ ] T015 [P] Create reusable password field component in src/components/auth/password-field.tsx
-- [ ] T016 [P] Create reusable submit button component in src/components/auth/submit-button.tsx
-- [ ] T017 [P] Add auth test helpers and Supabase mocks in src/test/auth-test-utils.tsx
+- [X] T004 Create Supabase client configuration in src/lib/supabase.ts
+- [X] T005 [P] Define route metadata for public and private auth routes in src/app/routes.ts
+- [X] T006 [P] Define auth domain types and session states in src/features/auth/auth-types.ts
+- [X] T007 [P] Define shared Portuguese auth message constants in src/features/auth/auth-messages.ts
+- [X] T008 [P] Define Zod schemas for login, signup, forgot password, and reset password in src/features/auth/auth-schemas.ts
+- [X] T009 Implement Supabase auth wrapper methods in src/features/auth/auth-service.ts
+- [X] T010 Implement AuthProvider session initialization and auth event handling in src/features/auth/auth-context.tsx
+- [X] T011 Implement useAuth hook with provider usage guard in src/features/auth/use-auth.ts
+- [X] T012 Wrap the app router with AuthProvider in src/app/app.tsx
+- [X] T013 [P] Reuse card shell patterns through src/components/ui/card.tsx in auth pages
+- [X] T014 [P] Reuse accessible form message patterns through src/components/ui/alert.tsx and src/components/ui/field.tsx
+- [X] T015 [P] Reuse password inputs with labels, descriptions and errors through src/components/ui/input.tsx and src/components/ui/field.tsx
+- [X] T016 [P] Reuse submit button loading/disabled states through src/components/ui/button.tsx
+- [X] T017 [P] Add auth test helpers and Supabase mocks in src/test/auth-test-utils.tsx
 
 **Checkpoint**: Foundation ready; user story implementation can now begin in priority order or in parallel where capacity allows.
 
@@ -61,16 +61,16 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 ### Tests for User Story 1
 
-- [ ] T018 [P] [US1] Add signup schema validation tests in src/features/auth/auth-schemas.test.ts
-- [ ] T019 [P] [US1] Add signup service success and normalized error tests in src/features/auth/auth-service.test.ts
-- [ ] T020 [P] [US1] Add signup page interaction and accessibility tests in src/pages/sign-up-page.test.tsx
+- [X] T018 [P] [US1] Add signup schema validation tests in src/features/auth/auth-schemas.test.ts
+- [X] T019 [P] [US1] Add signup service success and normalized error tests in src/features/auth/auth-service.test.ts
+- [X] T020 [P] [US1] Add signup page interaction and accessibility tests in src/pages/sign-up-page.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T021 [US1] Implement signup service flow and error mapping in src/features/auth/auth-service.ts
-- [ ] T022 [US1] Implement signup form page with validation, loading, success, and recoverable error states in src/pages/sign-up-page.tsx
-- [ ] T023 [US1] Register /sign-up route and authenticated redirect behavior in src/app/router.tsx
-- [ ] T024 [US1] Add signup navigation links from public home and login contexts in src/components/layout/public-navigation.tsx
+- [X] T021 [US1] Implement signup service flow and error mapping in src/features/auth/auth-service.ts
+- [X] T022 [US1] Implement signup form page with validation, loading, success, and recoverable error states in src/pages/sign-up-page.tsx
+- [X] T023 [US1] Register /sign-up route and authenticated redirect behavior in src/app/router.tsx
+- [X] T024 [US1] Add signup navigation links from public home and login contexts in src/components/layout/public-navigation.tsx
 
 **Checkpoint**: User Story 1 is independently functional and testable as the MVP slice.
 
@@ -84,17 +84,17 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 ### Tests for User Story 2
 
-- [ ] T025 [P] [US2] Add login schema validation tests in src/features/auth/auth-schemas.test.ts
-- [ ] T026 [P] [US2] Add session provider persistence and auth event tests in src/features/auth/auth-context.test.tsx
-- [ ] T027 [P] [US2] Add login page interaction and invalid credentials tests in src/pages/login-page.test.tsx
+- [X] T025 [P] [US2] Add login schema validation tests in src/features/auth/auth-schemas.test.ts
+- [X] T026 [P] [US2] Add session provider persistence and auth event tests in src/features/auth/auth-context.test.tsx
+- [X] T027 [P] [US2] Add login page interaction and invalid credentials tests in src/pages/login-page.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T028 [US2] Implement login service flow and secure invalid credential mapping in src/features/auth/auth-service.ts
-- [ ] T029 [US2] Implement login form page with validation, loading, secure error, and signup/recovery links in src/pages/login-page.tsx
-- [ ] T030 [US2] Implement authenticated private home with user context and no financial feature promises in src/pages/private-home-page.tsx
-- [ ] T031 [US2] Register /login and /app route metadata in src/app/routes.ts
-- [ ] T032 [US2] Register /login and initial authenticated /app route entries in src/app/router.tsx
+- [X] T028 [US2] Implement login service flow and secure invalid credential mapping in src/features/auth/auth-service.ts
+- [X] T029 [US2] Implement login form page with validation, loading, secure error, and signup/recovery links in src/pages/login-page.tsx
+- [X] T030 [US2] Implement authenticated private home with user context and no financial feature promises in src/pages/private-home-page.tsx
+- [X] T031 [US2] Register /login and /app route metadata in src/app/routes.ts
+- [X] T032 [US2] Register /login and initial authenticated /app route entries in src/app/router.tsx
 
 **Checkpoint**: User Story 2 works independently with login and persisted session behavior.
 
@@ -108,17 +108,17 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 ### Tests for User Story 3
 
-- [ ] T033 [P] [US3] Add ProtectedRoute loading, unauthenticated, expired, and authenticated tests in src/features/auth/protected-route.test.tsx
-- [ ] T034 [P] [US3] Add PublicAuthRoute redirect and loop-prevention tests in src/features/auth/public-auth-route.test.tsx
-- [ ] T035 [P] [US3] Add route contract tests for /app, /login, /sign-up, /forgot-password, /reset-password, and * in src/app/routes.test.ts
+- [X] T033 [P] [US3] Add ProtectedRoute loading, unauthenticated, expired, and authenticated tests in src/features/auth/protected-route.test.tsx
+- [X] T034 [P] [US3] Add PublicAuthRoute redirect and loop-prevention tests in src/features/auth/public-auth-route.test.tsx
+- [X] T035 [P] [US3] Add route contract tests for /app, /login, /sign-up, /forgot-password, /reset-password, and * in src/app/routes.test.ts
 
 ### Implementation for User Story 3
 
-- [ ] T036 [US3] Implement ProtectedRoute guard with loading, expired, error, and login redirect handling in src/features/auth/protected-route.tsx
-- [ ] T037 [US3] Implement PublicAuthRoute guard for authenticated redirects from public auth pages in src/features/auth/public-auth-route.tsx
-- [ ] T038 [US3] Implement authenticated layout with private loading, error, and session-expired feedback in src/components/layout/authenticated-layout.tsx
-- [ ] T039 [US3] Apply ProtectedRoute and PublicAuthRoute wrappers in src/app/router.tsx
-- [ ] T040 [US3] Update not-found safe navigation for authenticated and unauthenticated users in src/pages/not-found-page.tsx
+- [X] T036 [US3] Implement ProtectedRoute guard with loading, expired, error, and login redirect handling in src/features/auth/protected-route.tsx
+- [X] T037 [US3] Implement PublicAuthRoute guard for authenticated redirects from public auth pages in src/features/auth/public-auth-route.tsx
+- [X] T038 [US3] Implement authenticated layout with private loading, error, and session-expired feedback in src/components/layout/authenticated-layout.tsx
+- [X] T039 [US3] Apply ProtectedRoute and PublicAuthRoute wrappers in src/app/router.tsx
+- [X] T040 [US3] Update not-found safe navigation for authenticated and unauthenticated users in src/pages/not-found-page.tsx
 
 **Checkpoint**: User Story 3 blocks private content until authentication is confirmed.
 
@@ -132,14 +132,14 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 ### Tests for User Story 4
 
-- [ ] T041 [P] [US4] Add logout service and session ending tests in src/features/auth/auth-service.test.ts
-- [ ] T042 [P] [US4] Add authenticated layout logout interaction tests in src/components/layout/authenticated-layout.test.tsx
+- [X] T041 [P] [US4] Add logout service and session ending tests in src/features/auth/auth-service.test.ts
+- [X] T042 [P] [US4] Add authenticated layout logout interaction tests in src/components/layout/authenticated-layout.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T043 [US4] Implement signOut service flow and safe error mapping in src/features/auth/auth-service.ts
-- [ ] T044 [US4] Wire logout action, disabled ending state, and post-logout navigation in src/components/layout/authenticated-layout.tsx
-- [ ] T045 [US4] Add logout success and session-ended feedback handling in src/pages/login-page.tsx
+- [X] T043 [US4] Implement signOut service flow and safe error mapping in src/features/auth/auth-service.ts
+- [X] T044 [US4] Wire logout action, disabled ending state, and post-logout navigation in src/components/layout/authenticated-layout.tsx
+- [X] T045 [US4] Add logout success and session-ended feedback handling in src/pages/login-page.tsx
 
 **Checkpoint**: User Story 4 reliably ends access on the current device.
 
@@ -153,18 +153,18 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 ### Tests for User Story 5
 
-- [ ] T046 [P] [US5] Add forgot and reset password schema validation tests in src/features/auth/auth-schemas.test.ts
-- [ ] T047 [P] [US5] Add password recovery service tests for neutral confirmation, temporary failure, and update password in src/features/auth/auth-service.test.ts
-- [ ] T048 [P] [US5] Add forgot password page interaction tests in src/pages/forgot-password-page.test.tsx
-- [ ] T049 [P] [US5] Add reset password page valid, invalid, expired, and success state tests in src/pages/reset-password-page.test.tsx
+- [X] T046 [P] [US5] Add forgot and reset password schema validation tests in src/features/auth/auth-schemas.test.ts
+- [X] T047 [P] [US5] Add password recovery service tests for neutral confirmation, temporary failure, and update password in src/features/auth/auth-service.test.ts
+- [X] T048 [P] [US5] Add forgot password page interaction tests in src/pages/forgot-password-page.test.tsx
+- [X] T049 [P] [US5] Add reset password page valid, invalid, expired, and success state tests in src/pages/reset-password-page.test.tsx
 
 ### Implementation for User Story 5
 
-- [ ] T050 [US5] Implement password recovery request and update password service flows in src/features/auth/auth-service.ts
-- [ ] T051 [US5] Implement forgot password form page with neutral confirmation and retry behavior in src/pages/forgot-password-page.tsx
-- [ ] T052 [US5] Implement reset password form page with recovery event handling and invalid-link guidance in src/pages/reset-password-page.tsx
-- [ ] T053 [US5] Register /forgot-password and /reset-password routes with recovery-safe behavior in src/app/router.tsx
-- [ ] T054 [US5] Add recovery navigation links from login and reset contexts in src/pages/login-page.tsx
+- [X] T050 [US5] Implement password recovery request and update password service flows in src/features/auth/auth-service.ts
+- [X] T051 [US5] Implement forgot password form page with neutral confirmation and retry behavior in src/pages/forgot-password-page.tsx
+- [X] T052 [US5] Implement reset password form page with recovery event handling and invalid-link guidance in src/pages/reset-password-page.tsx
+- [X] T053 [US5] Register /forgot-password and /reset-password routes with recovery-safe behavior in src/app/router.tsx
+- [X] T054 [US5] Add recovery navigation links from login and reset contexts in src/pages/login-page.tsx
 
 **Checkpoint**: User Story 5 completes the recovery and reset flow without revealing account existence.
 
@@ -174,16 +174,16 @@ description: "Task list for F01 - Autenticacao e sessao do usuario"
 
 **Purpose**: Validate the complete feature across documentation, accessibility, responsiveness, security, and build quality.
 
-- [ ] T055 [P] Update implementation notes and manual validation outcomes in specs/001-user-auth-session/quickstart.md
-- [ ] T056 [P] Review Portuguese auth copy against secure message contract in src/features/auth/auth-messages.ts
-- [ ] T057 [P] Validate keyboard focus, labels, associated errors, and announced feedback for auth flows in src/pages/login-page.tsx
-- [ ] T058 [P] Validate mobile layout, keyboard visibility, and 200% text zoom for auth flows in src/styles/globals.css
-- [ ] T059 [P] Confirm no private content, tokens, passwords, Supabase payloads, or secret keys are logged in src/features/auth/auth-service.ts
-- [ ] T060 Run npm run lint and fix reported issues in package.json
-- [ ] T061 Run npm run format:check and fix reported formatting issues in package.json
-- [ ] T062 Run npm run typecheck and fix reported type issues in tsconfig.json
-- [ ] T063 Run npm run test:run and fix reported test failures in src/test/setup.ts
-- [ ] T064 Run npm run build and fix reported production build issues in package.json
+- [X] T055 [P] Update implementation notes and manual validation outcomes in specs/001-user-auth-session/quickstart.md
+- [X] T056 [P] Review Portuguese auth copy against secure message contract in src/features/auth/auth-messages.ts
+- [X] T057 [P] Validate keyboard focus, labels, associated errors, and announced feedback for auth flows in src/pages/login-page.tsx
+- [X] T058 [P] Validate mobile layout, keyboard visibility, and 200% text zoom for auth flows in src/styles/globals.css
+- [X] T059 [P] Confirm no private content, tokens, passwords, Supabase payloads, or secret keys are logged in src/features/auth/auth-service.ts
+- [X] T060 Run npm run lint and fix reported issues in package.json
+- [X] T061 Run npm run format:check and fix reported formatting issues in package.json
+- [X] T062 Run npm run typecheck and fix reported type issues in tsconfig.json
+- [X] T063 Run npm run test:run and fix reported test failures in src/test/setup.ts
+- [X] T064 Run npm run build and fix reported production build issues in package.json
 
 ---
 

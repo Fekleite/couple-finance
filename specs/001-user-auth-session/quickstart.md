@@ -59,6 +59,20 @@ npm run test:run
 npm run build
 ```
 
+## Implementation notes
+
+- Auth dependencies installed: `@supabase/supabase-js`, `react-hook-form`,
+  `zod` and `@hookform/resolvers`.
+- The frontend reads only `VITE_SUPABASE_URL`,
+  `VITE_SUPABASE_PUBLISHABLE_KEY` and `VITE_SUPABASE_AUTH_REDIRECT_URL`.
+- Auth state is centralized in `src/features/auth/auth-context.tsx`; private
+  routes render only after the session status is `authenticated`.
+- Supabase Auth is used for credentials, recovery and session persistence. This
+  feature does not create database tables, migrations, RLS policies or financial
+  records.
+- Automated coverage includes schemas, service message mapping, provider session
+  states, route guards, route metadata and auth form interactions.
+
 ## Accessibility and responsive validation
 
 - Testar cadastro, login, recuperacao, redefinicao e logout por teclado.
@@ -77,6 +91,7 @@ npm run build
 - Confirmar que logout encerra acesso privado no dispositivo atual.
 - Confirmar que tokens, senhas e payloads sensiveis nao sao logados.
 - Confirmar que `.env.local` nao entra no controle de versao.
+- Confirmar que `.env.example` contem somente placeholders publicos.
 
 ## Out of scope checks
 
