@@ -79,6 +79,12 @@ a F02 registra convite e permite link/rota testavel para quem recebeu. O plano
 deve documentar o ponto de extensao para entrega transacional futura sem
 prometer envio real.
 
+**Implementation note**: A implementacao registra `budget_invitations` e expoe
+o fluxo por `/app/invites/:invitationId`. A entrega real de e-mail deve ser
+adicionada futuramente em ponto separado, preferencialmente por backend/Edge
+Function com segredo fora do cliente, sem alterar a regra de autorizacao por
+RLS/RPC.
+
 **Alternatives considered**: Integrar servico externo de e-mail agora foi
 rejeitado por ampliar superficie de seguranca, variaveis secretas e testes.
 Supabase Edge Function foi rejeitada pelo mesmo motivo enquanto nao houver

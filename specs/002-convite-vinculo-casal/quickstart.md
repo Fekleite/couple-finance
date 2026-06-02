@@ -55,6 +55,15 @@ supabase db reset
 supabase migration list --local
 ```
 
+Migration criada nesta implementacao:
+
+```bash
+supabase/migrations/20260602000000_create_couple_linking.sql
+```
+
+Validacao local tentada em 2026-06-02 com Supabase CLI `2.101.0`; `supabase db
+reset` nao foi concluido porque o Docker daemon nao estava ativo no ambiente.
+
 ## Development
 
 ```bash
@@ -75,6 +84,11 @@ Fluxos manuais esperados:
 10. Repetir com novo convite para validar recusa.
 11. Abrir convite inexistente, terminal, expirado e de outro usuario para
     confirmar mensagem segura.
+
+Rotas finais da F02:
+
+- `/app`: central de estado do vinculo.
+- `/app/invites/:invitationId`: detalhe e resposta de convite.
 
 ## Technical Validation
 

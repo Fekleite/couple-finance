@@ -20,10 +20,10 @@
 
 **Purpose**: Prepare the feature area and shared test helpers without changing behavior.
 
-- [ ] T001 Create couple feature directory placeholder in src/features/couple/.gitkeep
-- [ ] T002 Create Supabase migrations directory placeholder in supabase/migrations/.gitkeep
-- [ ] T003 [P] Create couple test utility scaffold in src/test/couple-test-utils.tsx
-- [ ] T004 [P] Create Supabase database validation notes file in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T001 Create couple feature directory placeholder in src/features/couple/.gitkeep
+- [X] T002 Create Supabase migrations directory placeholder in supabase/migrations/.gitkeep
+- [X] T003 [P] Create couple test utility scaffold in src/test/couple-test-utils.tsx
+- [X] T004 [P] Create Supabase database validation notes file in specs/002-convite-vinculo-casal/supabase-validation.md
 
 ---
 
@@ -33,18 +33,18 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T005 Create migration for shared_budgets, budget_members, budget_invitations, constraints, indexes, RLS enablement, policies, and RPC stubs in supabase/migrations/20260602000000_create_couple_linking.sql
-- [ ] T006 Add SQL validation scenarios for constraints, one active budget per user, max two active members, and invitation terminal states in specs/002-convite-vinculo-casal/supabase-validation.md
-- [ ] T007 [P] Define couple domain types, invitation statuses, member roles, summaries, and service result types in src/features/couple/couple-types.ts
-- [ ] T008 [P] Define relationship state union and state priority helpers in src/features/couple/relationship-state.ts
-- [ ] T009 [P] Define neutral success, validation, loading, unavailable, and retry messages in src/features/couple/couple-messages.ts
-- [ ] T010 [P] Define Zod schemas for invitee e-mail trimming, normalized comparison, and own-email blocking in src/features/couple/couple-schemas.ts
-- [ ] T011 [P] Add schema tests for valid e-mail, empty e-mail, invalid e-mail, uppercase/space normalization, and own-email blocking in src/features/couple/couple-schemas.test.ts
-- [ ] T012 [P] Add relationship-state priority tests for loading, linked, sent, received, empty, unavailable, and error states in src/features/couple/relationship-state.test.ts
-- [ ] T013 Create typed Supabase operation wrapper signatures for getRelationshipState, createSharedBudgetAndInvite, getInvitation, acceptInvitation, declineInvitation, and cancelInvitation in src/features/couple/couple-service.ts
-- [ ] T014 Add service tests with mocked Supabase client for safe error mapping and unauthorized rows behaving as absent in src/features/couple/couple-service.test.ts
-- [ ] T015 Add route metadata for /app/invites/:invitationId and update future protected areas in src/app/routes.ts
-- [ ] T016 Add route metadata tests for private app and invitation routes in src/app/routes.test.ts
+- [X] T005 Create migration for shared_budgets, budget_members, budget_invitations, constraints, indexes, RLS enablement, policies, and RPC stubs in supabase/migrations/20260602000000_create_couple_linking.sql
+- [X] T006 Add SQL validation scenarios for constraints, one active budget per user, max two active members, and invitation terminal states in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T007 [P] Define couple domain types, invitation statuses, member roles, summaries, and service result types in src/features/couple/couple-types.ts
+- [X] T008 [P] Define relationship state union and state priority helpers in src/features/couple/relationship-state.ts
+- [X] T009 [P] Define neutral success, validation, loading, unavailable, and retry messages in src/features/couple/couple-messages.ts
+- [X] T010 [P] Define Zod schemas for invitee e-mail trimming, normalized comparison, and own-email blocking in src/features/couple/couple-schemas.ts
+- [X] T011 [P] Add schema tests for valid e-mail, empty e-mail, invalid e-mail, uppercase/space normalization, and own-email blocking in src/features/couple/couple-schemas.test.ts
+- [X] T012 [P] Add relationship-state priority tests for loading, linked, sent, received, empty, unavailable, and error states in src/features/couple/relationship-state.test.ts
+- [X] T013 Create typed Supabase operation wrapper signatures for getRelationshipState, createSharedBudgetAndInvite, getInvitation, acceptInvitation, declineInvitation, and cancelInvitation in src/features/couple/couple-service.ts
+- [X] T014 Add service tests with mocked Supabase client for safe error mapping and unauthorized rows behaving as absent in src/features/couple/couple-service.test.ts
+- [X] T015 Add route metadata for /app/invites/:invitationId and update future protected areas in src/app/routes.ts
+- [X] T016 Add route metadata tests for private app and invitation routes in src/app/routes.test.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin.
 
@@ -58,19 +58,19 @@
 
 ### Tests for User Story 1
 
-- [ ] T017 [P] [US1] Add service tests for createSharedBudgetAndInvite success, invalid own-budget precondition, duplicate pending invite handling, and safe Supabase errors in src/features/couple/couple-service.test.ts
-- [ ] T018 [P] [US1] Add action tests for invite creation success, validation errors, loading lock, and retryable failure state in src/features/couple/couple-actions.test.ts
-- [ ] T019 [P] [US1] Add private home tests for no_shared_budget form, field labels, associated validation, keyboard submit, success message, and invitation_sent state in src/pages/private-home-page.test.tsx
-- [ ] T020 [P] [US1] Add RLS validation cases for creator budget creation, own active budget blocking, own-email blocking, and pending invitation visibility in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T017 [P] [US1] Add service tests for createSharedBudgetAndInvite success, invalid own-budget precondition, duplicate pending invite handling, and safe Supabase errors in src/features/couple/couple-service.test.ts
+- [X] T018 [P] [US1] Add action tests for invite creation success, validation errors, loading lock, and retryable failure state in src/features/couple/couple-actions.test.ts
+- [X] T019 [P] [US1] Add private home tests for no_shared_budget form, field labels, associated validation, keyboard submit, success message, and invitation_sent state in src/pages/private-home-page.test.tsx
+- [X] T020 [P] [US1] Add RLS validation cases for creator budget creation, own active budget blocking, own-email blocking, and pending invitation visibility in specs/002-convite-vinculo-casal/supabase-validation.md
 
 ### Implementation for User Story 1
 
-- [ ] T021 [US1] Implement createSharedBudgetAndInvite SQL function or guarded inserts for budget, creator membership, pending invitation, expiration, and self-invite blocking in supabase/migrations/20260602000000_create_couple_linking.sql
-- [ ] T022 [US1] Implement createSharedBudgetAndInvite service call and result mapping in src/features/couple/couple-service.ts
-- [ ] T023 [US1] Implement create invitation form actions and state reducer in src/features/couple/couple-actions.ts
-- [ ] T024 [US1] Implement no_shared_budget and invitation_sent view models in src/features/couple/relationship-state.ts
-- [ ] T025 [US1] Update PrivateHomePage to render invite form, pending sent invitation summary, loading state, validation errors, and success feedback in src/pages/private-home-page.tsx
-- [ ] T026 [US1] Wire couple test helpers for authenticated users, mocked relationship states, and form submission utilities in src/test/couple-test-utils.tsx
+- [X] T021 [US1] Implement createSharedBudgetAndInvite SQL function or guarded inserts for budget, creator membership, pending invitation, expiration, and self-invite blocking in supabase/migrations/20260602000000_create_couple_linking.sql
+- [X] T022 [US1] Implement createSharedBudgetAndInvite service call and result mapping in src/features/couple/couple-service.ts
+- [X] T023 [US1] Implement create invitation form actions and state reducer in src/features/couple/couple-actions.ts
+- [X] T024 [US1] Implement no_shared_budget and invitation_sent view models in src/features/couple/relationship-state.ts
+- [X] T025 [US1] Update PrivateHomePage to render invite form, pending sent invitation summary, loading state, validation errors, and success feedback in src/pages/private-home-page.tsx
+- [X] T026 [US1] Wire couple test helpers for authenticated users, mocked relationship states, and form submission utilities in src/test/couple-test-utils.tsx
 
 **Checkpoint**: US1 is fully functional and testable independently.
 
@@ -84,19 +84,19 @@
 
 ### Tests for User Story 2
 
-- [ ] T027 [P] [US2] Add RPC/service tests for acceptInvitation success, repeated accept, already-linked invitee blocking, expired invite blocking, and unauthorized invite blocking in src/features/couple/couple-service.test.ts
-- [ ] T028 [P] [US2] Add invitation page tests for unauthenticated redirect behavior, authorized invite display, accept button loading lock, success feedback, and unavailable state in src/pages/invitation-page.test.tsx
-- [ ] T029 [P] [US2] Add hook tests for invitation_received and couple_linked transitions after accepting an invite in src/features/couple/use-couple-relationship.test.tsx
-- [ ] T030 [P] [US2] Add RLS validation cases for invitee-only visibility, unrelated user denial, transactional acceptance, and exactly two active members in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T027 [P] [US2] Add RPC/service tests for acceptInvitation success, repeated accept, already-linked invitee blocking, expired invite blocking, and unauthorized invite blocking in src/features/couple/couple-service.test.ts
+- [X] T028 [P] [US2] Add invitation page tests for unauthenticated redirect behavior, authorized invite display, accept button loading lock, success feedback, and unavailable state in src/pages/invitation-page.test.tsx
+- [X] T029 [P] [US2] Add hook tests for invitation_received and couple_linked transitions after accepting an invite in src/features/couple/use-couple-relationship.test.tsx
+- [X] T030 [P] [US2] Add RLS validation cases for invitee-only visibility, unrelated user denial, transactional acceptance, and exactly two active members in specs/002-convite-vinculo-casal/supabase-validation.md
 
 ### Implementation for User Story 2
 
-- [ ] T031 [US2] Implement accept_invitation RPC with transactional validation, max-two-member guard, idempotent result handling, and responded_at update in supabase/migrations/20260602000000_create_couple_linking.sql
-- [ ] T032 [US2] Implement getInvitation and acceptInvitation service calls with safe unavailable mapping in src/features/couple/couple-service.ts
-- [ ] T033 [US2] Implement useCoupleRelationship hook for relationship loading, refetch, invite lookup, accept mutation, and error states in src/features/couple/use-couple-relationship.ts
-- [ ] T034 [US2] Create InvitationPage with authorized invite summary, sign-in/create-account instruction state, accept action, loading feedback, and safe unavailable message in src/pages/invitation-page.tsx
-- [ ] T035 [US2] Register /app/invites/:invitationId under ProtectedRoute and AuthenticatedLayout in src/app/router.tsx
-- [ ] T036 [US2] Update PrivateHomePage to show couple_linked state without balances, transactions, goals, categories, charts, or dashboard data in src/pages/private-home-page.tsx
+- [X] T031 [US2] Implement accept_invitation RPC with transactional validation, max-two-member guard, idempotent result handling, and responded_at update in supabase/migrations/20260602000000_create_couple_linking.sql
+- [X] T032 [US2] Implement getInvitation and acceptInvitation service calls with safe unavailable mapping in src/features/couple/couple-service.ts
+- [X] T033 [US2] Implement useCoupleRelationship hook for relationship loading, refetch, invite lookup, accept mutation, and error states in src/features/couple/use-couple-relationship.ts
+- [X] T034 [US2] Create InvitationPage with authorized invite summary, sign-in/create-account instruction state, accept action, loading feedback, and safe unavailable message in src/pages/invitation-page.tsx
+- [X] T035 [US2] Register /app/invites/:invitationId under ProtectedRoute and AuthenticatedLayout in src/app/router.tsx
+- [X] T036 [US2] Update PrivateHomePage to show couple_linked state without balances, transactions, goals, categories, charts, or dashboard data in src/pages/private-home-page.tsx
 
 **Checkpoint**: US2 completes the core couple-linking promise with US1.
 
@@ -110,18 +110,18 @@
 
 ### Tests for User Story 3
 
-- [ ] T037 [P] [US3] Add service tests for declineInvitation and cancelInvitation success, terminal invite retry, expired invite blocking, and unauthorized actor blocking in src/features/couple/couple-service.test.ts
-- [ ] T038 [P] [US3] Add invitation page tests for decline action text, loading lock, confirmation message, keyboard behavior, and no membership creation state in src/pages/invitation-page.test.tsx
-- [ ] T039 [P] [US3] Add private home tests for cancelling a sent invitation, cancellation confirmation, and unavailable future accept messaging in src/pages/private-home-page.test.tsx
-- [ ] T040 [P] [US3] Add RLS validation cases for invitee decline, inviter cancel, unrelated user denial, and terminal invitation immutability in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T037 [P] [US3] Add service tests for declineInvitation and cancelInvitation success, terminal invite retry, expired invite blocking, and unauthorized actor blocking in src/features/couple/couple-service.test.ts
+- [X] T038 [P] [US3] Add invitation page tests for decline action text, loading lock, confirmation message, keyboard behavior, and no membership creation state in src/pages/invitation-page.test.tsx
+- [X] T039 [P] [US3] Add private home tests for cancelling a sent invitation, cancellation confirmation, and unavailable future accept messaging in src/pages/private-home-page.test.tsx
+- [X] T040 [P] [US3] Add RLS validation cases for invitee decline, inviter cancel, unrelated user denial, and terminal invitation immutability in specs/002-convite-vinculo-casal/supabase-validation.md
 
 ### Implementation for User Story 3
 
-- [ ] T041 [US3] Implement decline_invitation and cancel_invitation database functions or guarded updates with role checks and responded_at updates in supabase/migrations/20260602000000_create_couple_linking.sql
-- [ ] T042 [US3] Implement declineInvitation and cancelInvitation service calls with idempotent terminal-state mapping in src/features/couple/couple-service.ts
-- [ ] T043 [US3] Extend couple actions for decline and cancel mutations with loading, success, retryable error, and unavailable states in src/features/couple/couple-actions.ts
-- [ ] T044 [US3] Add decline action and confirmation feedback to InvitationPage in src/pages/invitation-page.tsx
-- [ ] T045 [US3] Add cancel action and confirmation feedback to invitation_sent state in PrivateHomePage in src/pages/private-home-page.tsx
+- [X] T041 [US3] Implement decline_invitation and cancel_invitation database functions or guarded updates with role checks and responded_at updates in supabase/migrations/20260602000000_create_couple_linking.sql
+- [X] T042 [US3] Implement declineInvitation and cancelInvitation service calls with idempotent terminal-state mapping in src/features/couple/couple-service.ts
+- [X] T043 [US3] Extend couple actions for decline and cancel mutations with loading, success, retryable error, and unavailable states in src/features/couple/couple-actions.ts
+- [X] T044 [US3] Add decline action and confirmation feedback to InvitationPage in src/pages/invitation-page.tsx
+- [X] T045 [US3] Add cancel action and confirmation feedback to invitation_sent state in PrivateHomePage in src/pages/private-home-page.tsx
 
 **Checkpoint**: US3 is independently functional and preserves consent for unresolved invitations.
 
@@ -135,17 +135,17 @@
 
 ### Tests for User Story 4
 
-- [ ] T046 [P] [US4] Add relationship hook tests for all relationship states, refetch behavior, recoverable errors, and no private details during loading in src/features/couple/use-couple-relationship.test.tsx
-- [ ] T047 [P] [US4] Add private home tests for all relationship states, one primary action per state, safe messages, and absence of financial data terms in src/pages/private-home-page.test.tsx
-- [ ] T048 [P] [US4] Add route tests to ensure protected invitation route waits for auth resolution and avoids login/app redirect loops in src/app/routes.test.ts
-- [ ] T049 [P] [US4] Add message tests for success, loading, validation, unavailable, and retry copy that excludes raw Supabase errors and financial details in src/features/couple/couple-actions.test.ts
+- [X] T046 [P] [US4] Add relationship hook tests for all relationship states, refetch behavior, recoverable errors, and no private details during loading in src/features/couple/use-couple-relationship.test.tsx
+- [X] T047 [P] [US4] Add private home tests for all relationship states, one primary action per state, safe messages, and absence of financial data terms in src/pages/private-home-page.test.tsx
+- [X] T048 [P] [US4] Add route tests to ensure protected invitation route waits for auth resolution and avoids login/app redirect loops in src/app/routes.test.ts
+- [X] T049 [P] [US4] Add message tests for success, loading, validation, unavailable, and retry copy that excludes raw Supabase errors and financial details in src/features/couple/couple-actions.test.ts
 
 ### Implementation for User Story 4
 
-- [ ] T050 [US4] Complete getRelationshipState query mapping for active membership, pending sent invite, pending received invite, linked members, unavailable invite, and retryable error in src/features/couple/couple-service.ts
-- [ ] T051 [US4] Complete useCoupleRelationship hook integration for /app state loading, mutation refreshes, and privacy-preserving initial render in src/features/couple/use-couple-relationship.ts
-- [ ] T052 [US4] Refine PrivateHomePage responsive state sections, accessible headings, focus order, and text-expanded layout for all relationship states in src/pages/private-home-page.tsx
-- [ ] T053 [US4] Refine InvitationPage unavailable, already-linked, expired, cancelled, declined, accepted, unauthorized, and error views in src/pages/invitation-page.tsx
+- [X] T050 [US4] Complete getRelationshipState query mapping for active membership, pending sent invite, pending received invite, linked members, unavailable invite, and retryable error in src/features/couple/couple-service.ts
+- [X] T051 [US4] Complete useCoupleRelationship hook integration for /app state loading, mutation refreshes, and privacy-preserving initial render in src/features/couple/use-couple-relationship.ts
+- [X] T052 [US4] Refine PrivateHomePage responsive state sections, accessible headings, focus order, and text-expanded layout for all relationship states in src/pages/private-home-page.tsx
+- [X] T053 [US4] Refine InvitationPage unavailable, already-linked, expired, cancelled, declined, accepted, unauthorized, and error views in src/pages/invitation-page.tsx
 
 **Checkpoint**: US4 provides complete relationship-state clarity across the private area.
 
@@ -155,13 +155,13 @@
 
 **Purpose**: Validate the full feature, document execution, and tighten accessibility, privacy, and mobile behavior.
 
-- [ ] T054 [P] Update quickstart with final F02 route paths, Supabase migration command used, and manual validation notes in specs/002-convite-vinculo-casal/quickstart.md
-- [ ] T055 [P] Add implementation notes about no real e-mail provider and future delivery extension point in specs/002-convite-vinculo-casal/research.md
-- [ ] T056 Run Supabase local validation or document skipped database validation with reason and expected command output in specs/002-convite-vinculo-casal/supabase-validation.md
-- [ ] T057 Run accessibility review for keyboard, focus, labels, error associations, loading announcements, touch targets, and 200% text on src/pages/private-home-page.tsx and src/pages/invitation-page.tsx
-- [ ] T058 Run mobile responsive review for /app and /app/invites/:invitationId at mobile, tablet, and desktop widths in src/pages/private-home-page.tsx and src/pages/invitation-page.tsx
-- [ ] T059 Run financial privacy audit confirming no balances, transactions, categories, goals, dashboard values, charts, service_role keys, raw SQL errors, or user_metadata authorization in src/features/couple/couple-service.ts
-- [ ] T060 Run full validation suite npm run lint, npm run format:check, npm run typecheck, npm run test:run, and npm run build from package.json
+- [X] T054 [P] Update quickstart with final F02 route paths, Supabase migration command used, and manual validation notes in specs/002-convite-vinculo-casal/quickstart.md
+- [X] T055 [P] Add implementation notes about no real e-mail provider and future delivery extension point in specs/002-convite-vinculo-casal/research.md
+- [X] T056 Run Supabase local validation or document skipped database validation with reason and expected command output in specs/002-convite-vinculo-casal/supabase-validation.md
+- [X] T057 Run accessibility review for keyboard, focus, labels, error associations, loading announcements, touch targets, and 200% text on src/pages/private-home-page.tsx and src/pages/invitation-page.tsx
+- [X] T058 Run mobile responsive review for /app and /app/invites/:invitationId at mobile, tablet, and desktop widths in src/pages/private-home-page.tsx and src/pages/invitation-page.tsx
+- [X] T059 Run financial privacy audit confirming no balances, transactions, categories, goals, dashboard values, charts, service_role keys, raw SQL errors, or user_metadata authorization in src/features/couple/couple-service.ts
+- [X] T060 Run full validation suite npm run lint, npm run format:check, npm run typecheck, npm run test:run, and npm run build from package.json
 
 ---
 
