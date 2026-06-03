@@ -40,6 +40,37 @@ Criar ou ajustar:
 6. Testes de integracao com estados F02 quando relevante.
 7. Migration incremental somente se a revisao de RLS/RPC apontar lacuna real.
 
+## Implemented Module Paths
+
+- `src/features/permissions/permission-types.ts`: enums tipados para estados,
+  escopos, tipos de dados, acoes, decisoes e mensagens seguras.
+- `src/features/permissions/permission-state.ts`: adapter de
+  `RelationshipState` da F02 para `PermissionState` da F03.
+- `src/features/permissions/permission-matrix.ts`: decisoes puras para
+  `canPerformPermissionAction` e `getPermissionDecision`.
+- `src/features/permissions/visibility-scope.ts`: classificacao e rotulos
+  acessiveis para informacoes individuais, compartilhadas, indisponiveis e em
+  verificacao.
+- `src/features/permissions/visibility-label.tsx`: componente compacto para
+  exibir escopo sem depender apenas de cor.
+- `src/features/permissions/permission-messages.ts`: mensagens neutras e
+  mapeamento seguro de falhas.
+- `src/features/permissions/query-scope.ts`: contrato para listas, buscas,
+  contadores, resumos e agregacoes futuras.
+- `src/features/permissions/index.ts`: API publica para F04-F10.
+
+## Validation Commands Added During Implementation
+
+Os comandos abaixo foram usados como gates finais da F03:
+
+```bash
+npm run lint
+npm run format:check
+npm run typecheck
+npm run test:run
+npm run build
+```
+
 ## Development
 
 ```bash
@@ -140,6 +171,13 @@ Checagens de seguranca:
 - Testar larguras mobile comuns, tablet e desktop.
 - Testar texto ampliado ate 200%.
 - Confirmar que estados de carregamento nao exibem dados privados.
+
+## Manual Validation Status
+
+A validacao manual completa com tres usuarios depende de um projeto Supabase
+local/remoto com Authentication configurado. Os cenarios e resultados esperados
+estao registrados em `rls-hardening-review.md` para execucao antes de publicar
+ambiente compartilhado.
 
 ## Out of Scope Checks
 

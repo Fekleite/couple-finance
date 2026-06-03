@@ -18,10 +18,10 @@
 
 **Purpose**: Create the permissions feature slice and validation scaffolding without changing behavior yet.
 
-- [ ] T001 Create permissions feature directory and placeholder module in src/features/permissions/.gitkeep
-- [ ] T002 [P] Create reusable permissions test fixtures for users, memberships, invitations, and data scopes in src/test/permissions-test-utils.ts
-- [ ] T003 [P] Create RLS hardening review document with checklist headings from the contracts in specs/003-data-permissions-isolation/rls-hardening-review.md
-- [ ] T004 [P] Add F03 implementation notes and validation commands to specs/003-data-permissions-isolation/quickstart.md
+- [x] T001 Create permissions feature directory and placeholder module in src/features/permissions/.gitkeep
+- [x] T002 [P] Create reusable permissions test fixtures for users, memberships, invitations, and data scopes in src/test/permissions-test-utils.ts
+- [x] T003 [P] Create RLS hardening review document with checklist headings from the contracts in specs/003-data-permissions-isolation/rls-hardening-review.md
+- [x] T004 [P] Add F03 implementation notes and validation commands to specs/003-data-permissions-isolation/quickstart.md
 
 ---
 
@@ -31,11 +31,11 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T005 Define PermissionState, DataScope, DataType, PermissionAction, VisibilityScope, PermissionDecision, and SafeMessageKey types in src/features/permissions/permission-types.ts
-- [ ] T006 Implement RelationshipState to PermissionState mapping for F02 states in src/features/permissions/permission-state.ts
-- [ ] T007 [P] Add exhaustive type coverage tests for permission enums and F02 state mapping in src/features/permissions/permission-state.test.ts
-- [ ] T008 Review existing F02 policies, grants, functions, indexes, and constraints against the RLS contract in specs/003-data-permissions-isolation/rls-hardening-review.md
-- [ ] T009 Create incremental hardening migration when the review identifies a concrete gap in supabase/migrations/20260603000000_harden_permissions_isolation.sql
+- [x] T005 Define PermissionState, DataScope, DataType, PermissionAction, VisibilityScope, PermissionDecision, and SafeMessageKey types in src/features/permissions/permission-types.ts
+- [x] T006 Implement RelationshipState to PermissionState mapping for F02 states in src/features/permissions/permission-state.ts
+- [x] T007 [P] Add exhaustive type coverage tests for permission enums and F02 state mapping in src/features/permissions/permission-state.test.ts
+- [x] T008 Review existing F02 policies, grants, functions, indexes, and constraints against the RLS contract in specs/003-data-permissions-isolation/rls-hardening-review.md
+- [x] T009 Create incremental hardening migration when the review identifies a concrete gap in supabase/migrations/20260603000000_harden_permissions_isolation.sql
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -49,18 +49,18 @@
 
 ### Tests for User Story 1
 
-- [ ] T010 [P] [US1] Add permission matrix tests for individual data, shared budget data, and unrelated authenticated users in src/features/permissions/permission-matrix.test.ts
-- [ ] T011 [P] [US1] Add visibility classification tests for individual, shared, inaccessible, and unknown_loading scopes in src/features/permissions/visibility-scope.test.ts
-- [ ] T012 [P] [US1] Add static RLS contract tests for shared_budgets and budget_members policies, grants, and indexes in src/features/permissions/rls-patterns.test.ts
-- [ ] T013 [P] [US1] Add private home integration tests for loading-before-access, no-link individual mode, active-couple shared mode, and unrelated user blocking in src/pages/private-home-page.test.tsx
+- [x] T010 [P] [US1] Add permission matrix tests for individual data, shared budget data, and unrelated authenticated users in src/features/permissions/permission-matrix.test.ts
+- [x] T011 [P] [US1] Add visibility classification tests for individual, shared, inaccessible, and unknown_loading scopes in src/features/permissions/visibility-scope.test.ts
+- [x] T012 [P] [US1] Add static RLS contract tests for shared_budgets and budget_members policies, grants, and indexes in src/features/permissions/rls-patterns.test.ts
+- [x] T013 [P] [US1] Add private home integration tests for loading-before-access, no-link individual mode, active-couple shared mode, and unrelated user blocking in src/pages/private-home-page.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T014 [US1] Implement canPerformPermissionAction and getPermissionDecision for individual, shared, and inaccessible data in src/features/permissions/permission-matrix.ts
-- [ ] T015 [US1] Implement classifyVisibility and visibility label helpers for individual, shared, inaccessible, and unknown_loading scopes in src/features/permissions/visibility-scope.ts
-- [ ] T016 [US1] Integrate permission decisions into the private home loading, no-link, and active-couple states in src/pages/private-home-page.tsx
-- [ ] T017 [US1] Export the permissions public API used by future financial features in src/features/permissions/index.ts
-- [ ] T018 [US1] Record US1 validation scenarios and any RLS hardening result in specs/003-data-permissions-isolation/rls-hardening-review.md
+- [x] T014 [US1] Implement canPerformPermissionAction and getPermissionDecision for individual, shared, and inaccessible data in src/features/permissions/permission-matrix.ts
+- [x] T015 [US1] Implement classifyVisibility and visibility label helpers for individual, shared, inaccessible, and unknown_loading scopes in src/features/permissions/visibility-scope.ts
+- [x] T016 [US1] Integrate permission decisions into the private home loading, no-link, and active-couple states in src/pages/private-home-page.tsx
+- [x] T017 [US1] Export the permissions public API used by future financial features in src/features/permissions/index.ts
+- [x] T018 [US1] Record US1 validation scenarios and any RLS hardening result in specs/003-data-permissions-isolation/rls-hardening-review.md
 
 **Checkpoint**: User Story 1 is fully functional and testable independently.
 
@@ -74,17 +74,17 @@
 
 ### Tests for User Story 2
 
-- [ ] T019 [P] [US2] Add permission matrix tests for sent_pending_invitation, received_pending_invitation, unavailable_invitation, ended_or_inactive_couple_link, and active_couple_link in src/features/permissions/permission-matrix.test.ts
-- [ ] T020 [P] [US2] Add F02 relationship-state adapter tests for invitation_sent, invitation_received, couple_linked, invitation_unavailable, error, and loading in src/features/permissions/permission-state.test.ts
-- [ ] T021 [P] [US2] Add invitation page integration tests for pending invite response access, unavailable invite blocking, and no shared data before acceptance in src/pages/invitation-page.test.tsx
-- [ ] T022 [P] [US2] Add static RPC tests for accept_invitation, decline_invitation, cancel_invitation, and create_shared_budget_and_invite failure privacy in src/features/permissions/rls-patterns.test.ts
+- [x] T019 [P] [US2] Add permission matrix tests for sent_pending_invitation, received_pending_invitation, unavailable_invitation, ended_or_inactive_couple_link, and active_couple_link in src/features/permissions/permission-matrix.test.ts
+- [x] T020 [P] [US2] Add F02 relationship-state adapter tests for invitation_sent, invitation_received, couple_linked, invitation_unavailable, error, and loading in src/features/permissions/permission-state.test.ts
+- [x] T021 [P] [US2] Add invitation page integration tests for pending invite response access, unavailable invite blocking, and no shared data before acceptance in src/pages/invitation-page.test.tsx
+- [x] T022 [P] [US2] Add static RPC tests for accept_invitation, decline_invitation, cancel_invitation, and create_shared_budget_and_invite failure privacy in src/features/permissions/rls-patterns.test.ts
 
 ### Implementation for User Story 2
 
-- [ ] T023 [US2] Extend getPermissionDecision with invitation-specific inviter, invitee, active member, and unavailable state rules in src/features/permissions/permission-matrix.ts
-- [ ] T024 [US2] Apply safe permission state handling to invitation loading, unavailable, accept, decline, and retry flows in src/pages/invitation-page.tsx
-- [ ] T025 [US2] Ensure couple action results map unavailable or inactive invitation outcomes to safe permission decisions in src/features/couple/couple-actions.ts
-- [ ] T026 [US2] Document allowed actions per relationship state for F02 and future features in specs/003-data-permissions-isolation/contracts/permission-operations.md
+- [x] T023 [US2] Extend getPermissionDecision with invitation-specific inviter, invitee, active member, and unavailable state rules in src/features/permissions/permission-matrix.ts
+- [x] T024 [US2] Apply safe permission state handling to invitation loading, unavailable, accept, decline, and retry flows in src/pages/invitation-page.tsx
+- [x] T025 [US2] Ensure couple action results map unavailable or inactive invitation outcomes to safe permission decisions in src/features/couple/couple-actions.ts
+- [x] T026 [US2] Document allowed actions per relationship state for F02 and future features in specs/003-data-permissions-isolation/contracts/permission-operations.md
 
 **Checkpoint**: User Stories 1 and 2 both work independently.
 
@@ -98,18 +98,18 @@
 
 ### Tests for User Story 3
 
-- [ ] T027 [P] [US3] Add safe message tests for unavailable, checking, blocked, individual-only, shared-only, empty, and temporary-failure keys in src/features/permissions/permission-messages.test.ts
-- [ ] T028 [P] [US3] Add mapPermissionFailure tests for Supabase RLS no rows, RPC unavailable, nonexistent resource, removed resource, unrelated resource, and service failure in src/features/permissions/permission-messages.test.ts
-- [ ] T029 [P] [US3] Add query-scope assertion tests for list, search, count, summarize, chart, and empty-state inputs in src/features/permissions/query-scope.test.ts
-- [ ] T030 [P] [US3] Add page tests that private home and invitation failures do not render unrelated names, emails, balances, transaction labels, category labels, or raw Supabase errors in src/pages/private-home-page.test.tsx and src/pages/invitation-page.test.tsx
+- [x] T027 [P] [US3] Add safe message tests for unavailable, checking, blocked, individual-only, shared-only, empty, and temporary-failure keys in src/features/permissions/permission-messages.test.ts
+- [x] T028 [P] [US3] Add mapPermissionFailure tests for Supabase RLS no rows, RPC unavailable, nonexistent resource, removed resource, unrelated resource, and service failure in src/features/permissions/permission-messages.test.ts
+- [x] T029 [P] [US3] Add query-scope assertion tests for list, search, count, summarize, chart, and empty-state inputs in src/features/permissions/query-scope.test.ts
+- [x] T030 [P] [US3] Add page tests that private home and invitation failures do not render unrelated names, emails, balances, transaction labels, category labels, or raw Supabase errors in src/pages/private-home-page.test.tsx and src/pages/invitation-page.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T031 [US3] Implement PERMISSION_MESSAGES, getPermissionMessage, and mapPermissionFailure in src/features/permissions/permission-messages.ts
-- [ ] T032 [US3] Implement assertAuthorizedQueryScope for individual, shared, aggregate, and inaccessible query scopes in src/features/permissions/query-scope.ts
-- [ ] T033 [US3] Replace raw blocked-access and unavailable-copy usage with permission message helpers in src/pages/private-home-page.tsx
-- [ ] T034 [US3] Replace raw blocked-access and unavailable-copy usage with permission message helpers in src/pages/invitation-page.tsx
-- [ ] T035 [US3] Ensure couple service errors are converted to neutral action results without raw Supabase details in src/features/couple/couple-service.ts
+- [x] T031 [US3] Implement PERMISSION_MESSAGES, getPermissionMessage, and mapPermissionFailure in src/features/permissions/permission-messages.ts
+- [x] T032 [US3] Implement assertAuthorizedQueryScope for individual, shared, aggregate, and inaccessible query scopes in src/features/permissions/query-scope.ts
+- [x] T033 [US3] Replace raw blocked-access and unavailable-copy usage with permission message helpers in src/pages/private-home-page.tsx
+- [x] T034 [US3] Replace raw blocked-access and unavailable-copy usage with permission message helpers in src/pages/invitation-page.tsx
+- [x] T035 [US3] Ensure couple service errors are converted to neutral action results without raw Supabase details in src/features/couple/couple-service.ts
 
 **Checkpoint**: User Stories 1, 2, and 3 are independently functional without indirect disclosure.
 
@@ -123,16 +123,16 @@
 
 ### Tests for User Story 4
 
-- [ ] T036 [P] [US4] Add visibility label accessibility tests for text content, aria descriptions, and non-color-only labels in src/features/permissions/visibility-scope.test.ts
-- [ ] T037 [P] [US4] Add private home responsive and accessibility tests for individual, shared, inaccessible, loading, empty, and error states in src/pages/private-home-page.test.tsx
-- [ ] T038 [P] [US4] Add invitation page responsive and accessibility tests for unavailable, checking, received invite, and blocked action states in src/pages/invitation-page.test.tsx
+- [x] T036 [P] [US4] Add visibility label accessibility tests for text content, aria descriptions, and non-color-only labels in src/features/permissions/visibility-scope.test.ts
+- [x] T037 [P] [US4] Add private home responsive and accessibility tests for individual, shared, inaccessible, loading, empty, and error states in src/pages/private-home-page.test.tsx
+- [x] T038 [P] [US4] Add invitation page responsive and accessibility tests for unavailable, checking, received invite, and blocked action states in src/pages/invitation-page.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T039 [US4] Add a reusable visibility label component for compact individual, shared, inaccessible, and checking states in src/features/permissions/visibility-label.tsx
-- [ ] T040 [US4] Render visibility labels in private home relationship states without exposing partner-private data in src/pages/private-home-page.tsx
-- [ ] T041 [US4] Render visibility labels and neutral blocked-action feedback in invitation states in src/pages/invitation-page.tsx
-- [ ] T042 [US4] Document final visibility label wording and mobile/accessibility review notes in specs/003-data-permissions-isolation/contracts/visibility-scopes.md
+- [x] T039 [US4] Add a reusable visibility label component for compact individual, shared, inaccessible, and checking states in src/features/permissions/visibility-label.tsx
+- [x] T040 [US4] Render visibility labels in private home relationship states without exposing partner-private data in src/pages/private-home-page.tsx
+- [x] T041 [US4] Render visibility labels and neutral blocked-action feedback in invitation states in src/pages/invitation-page.tsx
+- [x] T042 [US4] Document final visibility label wording and mobile/accessibility review notes in specs/003-data-permissions-isolation/contracts/visibility-scopes.md
 
 **Checkpoint**: All user stories are independently functional and understandable.
 
@@ -142,14 +142,14 @@
 
 **Purpose**: Final validation, documentation, and quality gates across all stories.
 
-- [ ] T043 [P] Update feature documentation with implemented permission module paths and public API notes in specs/003-data-permissions-isolation/quickstart.md
-- [ ] T044 [P] Update product feature index with F03 permissions and data-isolation status in docs/FEATURES.md
-- [ ] T045 Run lint validation and fix reported issues in src/features/permissions/permission-types.ts
-- [ ] T046 Run formatting validation and fix reported issues in specs/003-data-permissions-isolation/tasks.md
-- [ ] T047 Run TypeScript validation and fix reported issues in src/features/permissions/index.ts
-- [ ] T048 Run Vitest validation and fix reported failures in src/features/permissions/permission-matrix.test.ts
-- [ ] T049 Run production build validation and fix reported issues in src/app/router.tsx
-- [ ] T050 Complete quickstart manual validation for three users and record results in specs/003-data-permissions-isolation/rls-hardening-review.md
+- [x] T043 [P] Update feature documentation with implemented permission module paths and public API notes in specs/003-data-permissions-isolation/quickstart.md
+- [x] T044 [P] Update product feature index with F03 permissions and data-isolation status in docs/FEATURES.md
+- [x] T045 Run lint validation and fix reported issues in src/features/permissions/permission-types.ts
+- [x] T046 Run formatting validation and fix reported issues in specs/003-data-permissions-isolation/tasks.md
+- [x] T047 Run TypeScript validation and fix reported issues in src/features/permissions/index.ts
+- [x] T048 Run Vitest validation and fix reported failures in src/features/permissions/permission-matrix.test.ts
+- [x] T049 Run production build validation and fix reported issues in src/app/router.tsx
+- [x] T050 Complete quickstart manual validation for three users and record results in specs/003-data-permissions-isolation/rls-hardening-review.md
 
 ---
 

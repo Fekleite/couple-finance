@@ -39,3 +39,21 @@ type VisibilityLabel = {
   usuarios nao relacionados.
 - `shared` so aparece depois de membership ativa confirmada.
 - `individual` nao implica que parceiro possa ver a informacao.
+
+## Implemented Label Wording
+
+| Scope | Label | Description |
+|-------|-------|-------------|
+| `individual` | So voce | Esta informacao fica visivel somente para voce. |
+| `shared` | Espaco compartilhado | Esta informacao pertence ao espaco compartilhado do casal. |
+| `inaccessible` | Indisponivel | Esta informacao nao esta disponivel para voce. |
+| `unknown_loading` | Verificando acesso | Estamos verificando seu acesso antes de mostrar qualquer informacao. |
+
+## Mobile and Accessibility Notes
+
+- O componente `VisibilityLabel` usa icone, texto e `aria-label`, sem depender
+  apenas de cor.
+- O rotulo usa texto curto, quebra de linha permitida e largura maxima do
+  container para telas pequenas.
+- Estados de convite recebido e convite indisponivel mostram limite de acesso
+  antes de qualquer acao de aceite, recusa ou retry.

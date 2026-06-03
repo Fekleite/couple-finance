@@ -79,3 +79,19 @@ Rules:
 - Consultas individuais exigem `user_id = currentUser.id`.
 - Consultas compartilhadas exigem `shared_budget_id` de membership ativa.
 - Consultas agregadas herdam o mesmo escopo.
+
+## Relationship State Operation Matrix
+
+| F02 state | F03 permission state | Allowed actions |
+|-----------|----------------------|-----------------|
+| `loading` | `unauthenticated` | Somente estado de verificacao; nao renderiza dados privados |
+| `no_shared_budget` | `no_couple_link` | Dados individuais proprios; criar convite permitido pelo fluxo F02 |
+| `invitation_sent` | `sent_pending_invitation` | Dados individuais proprios; remetente pode ver/cancelar o convite enviado |
+| `invitation_received` | `received_pending_invitation` | Dados individuais proprios; destinatario pode ver/responder ao convite |
+| `couple_linked` | `active_couple_link` | Dados individuais proprios e dados compartilhados do espaco ativo |
+| `invitation_unavailable` | `unavailable_invitation` | Mensagem segura; sem acesso compartilhado |
+| `error` | `ended_or_inactive_couple_link` | Mensagem segura/retry; sem acesso compartilhado |
+
+Convites pendentes, indisponiveis ou inativos nao concedem acesso a dados
+financeiros compartilhados. Acoes de lista, busca, contagem e resumo devem usar
+o mesmo escopo autorizado da leitura.
