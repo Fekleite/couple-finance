@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
+import { getPermissionMessage, VisibilityLabel } from "@/features/permissions";
 import { setPageTitle } from "@/lib/page-title";
 
 export function InvitationPage() {
@@ -23,12 +24,20 @@ export function InvitationPage() {
 
   if (!invitationId || relationshipState.status === "invitation_unavailable") {
     return (
-      <ErrorState title={COUPLE_MESSAGES.unavailableTitle} message={COUPLE_MESSAGES.unavailable} />
+      <ErrorState
+        title={COUPLE_MESSAGES.unavailableTitle}
+        message={getPermissionMessage("permissionUnavailable")}
+      />
     );
   }
 
   if (!invitation && relationshipState.status === "loading") {
-    return <LoadingState title="Verificando convite" message={COUPLE_MESSAGES.loadingInvitation} />;
+    return (
+      <LoadingState
+        title="Verificando convite"
+        message={getPermissionMessage("permissionChecking")}
+      />
+    );
   }
 
   if (relationshipState.status === "error") {
@@ -44,7 +53,10 @@ export function InvitationPage() {
 
   if (!invitation) {
     return (
-      <ErrorState title={COUPLE_MESSAGES.unavailableTitle} message={COUPLE_MESSAGES.unavailable} />
+      <ErrorState
+        title={COUPLE_MESSAGES.unavailableTitle}
+        message={getPermissionMessage("permissionUnavailable")}
+      />
     );
   }
 
@@ -59,10 +71,12 @@ export function InvitationPage() {
       ) : null}
       <Card>
         <CardHeader>
+          <VisibilityLabel scope="inaccessible" className="mb-2 w-fit" />
           <CardTitle>{COUPLE_MESSAGES.receivedTitle}</CardTitle>
           <CardDescription>
             {invitation.inviterLabel} convidou voce para entrar em {invitation.sharedBudgetName}. A
-            resposta cria apenas o vinculo do casal para as proximas etapas.
+            resposta cria apenas o vinculo do casal para as proximas etapas.{" "}
+            {getPermissionMessage("permissionBlocked")}
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-3 sm:flex-row">

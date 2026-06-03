@@ -1,5 +1,6 @@
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import type { CoupleActionResult, CoupleServiceResult } from "@/features/couple/couple-types";
+import { getPermissionMessage } from "@/features/permissions";
 
 export type CoupleMutationState = {
   status: "idle" | "loading" | "success" | "error" | "unavailable";
@@ -41,6 +42,25 @@ export function coupleMutationReducer(
 export function toActionResult<T>(result: CoupleServiceResult<T>): CoupleActionResult {
   if (result.ok) {
     return { ok: true, message: result.message ?? "Acao concluida." };
+  }
+
+  if (
+    result.reason &&
+    [
+      "not_found",
+      "expired",
+      "cancelled",
+      "declined",
+      "accepted",
+      "unauthorized",
+      "service_error"
+    ].includes(result.reason)
+  ) {
+    return {
+      ok: false,
+      message: getPermissionMessage("permissionUnavailable"),
+      reason: result.reason
+    };
   }
 
   return {

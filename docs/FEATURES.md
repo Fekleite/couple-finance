@@ -61,6 +61,10 @@ As features abaixo foram avaliadas com base nos princípios da constitution:
 - **Valor para o usuário**: garante confiança e evita exposição de dados financeiros.
 - **Dependências**: F01, F02, Supabase PostgreSQL e RLS.
 - **Esforço**: Alto.
+- **Status atual**: implementada na branch `003-data-permissions-isolation`,
+  com modulo `src/features/permissions`, matriz reutilizavel, mensagens
+  seguras, rotulos de visibilidade, contratos de query scope, testes e revisao
+  RLS da F02.
 
 ### F04 - Categorias financeiras padrão
 

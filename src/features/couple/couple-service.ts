@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-import { COUPLE_MESSAGES, sanitizeCoupleMessage } from "@/features/couple/couple-messages";
+import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import { normalizeEmail } from "@/features/couple/couple-schemas";
 import type {
   CoupleOperationContext,
@@ -17,6 +17,7 @@ import {
   resolveRelationshipState,
   type RelationshipState
 } from "@/features/couple/relationship-state";
+import { getPermissionMessage, mapPermissionFailure } from "@/features/permissions";
 import { getSupabaseClient } from "@/lib/supabase";
 
 type QueryResult<T> = { data: T | null; error: { message?: string; code?: string } | null };
@@ -359,15 +360,20 @@ function unavailable(reason: UnavailableReason): CoupleServiceResult<never> {
   return {
     ok: false,
     reason,
-    message: COUPLE_MESSAGES.unavailable
+    message: getPermissionMessage("permissionUnavailable")
   };
 }
 
 function temporaryFailure(error: unknown): CoupleServiceResult<never> {
+  const messageKey = mapPermissionFailure({
+    kind: "service_failure",
+    message: error instanceof Error ? error.message : undefined
+  });
+
   return {
     ok: false,
     reason: "temporary_failure",
-    message: sanitizeCoupleMessage(error instanceof Error ? error.message : undefined)
+    message: getPermissionMessage(messageKey)
   };
 }
 

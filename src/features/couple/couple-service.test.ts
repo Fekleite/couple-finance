@@ -9,6 +9,7 @@ import {
   getInvitation,
   getRelationshipState
 } from "@/features/couple/couple-service";
+import { getPermissionMessage } from "@/features/permissions";
 import { getSupabaseClient } from "@/lib/supabase";
 
 vi.mock("@/lib/supabase", () => ({
@@ -91,7 +92,7 @@ describe("couple service", () => {
     await expect(getInvitation(context, "invite-1")).resolves.toEqual({
       ok: false,
       reason: "not_found",
-      message: COUPLE_MESSAGES.unavailable
+      message: getPermissionMessage("permissionUnavailable")
     });
   });
 
@@ -147,7 +148,7 @@ describe("couple service", () => {
     await expect(getInvitation(context, "invite-1")).resolves.toEqual({
       ok: false,
       reason: "expired",
-      message: COUPLE_MESSAGES.unavailable
+      message: getPermissionMessage("permissionUnavailable")
     });
   });
 });
