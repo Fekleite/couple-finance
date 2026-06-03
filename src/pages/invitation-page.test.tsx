@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { InvitationPage } from "@/pages/invitation-page";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
+import { getPermissionMessage } from "@/features/permissions";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
 import { renderWithCoupleRoute } from "@/test/couple-test-utils";
 
@@ -100,6 +101,6 @@ describe("InvitationPage", () => {
       path: "/app/invites/:invitationId"
     });
 
-    expect(screen.getByText(COUPLE_MESSAGES.unavailable)).toBeInTheDocument();
+    expect(screen.getByText(getPermissionMessage("permissionUnavailable"))).toBeInTheDocument();
   });
 });

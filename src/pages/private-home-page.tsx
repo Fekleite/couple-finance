@@ -16,6 +16,7 @@ import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import { createInviteSchema, type InviteFormValues } from "@/features/couple/couple-schemas";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
 import { useAuth } from "@/features/auth/use-auth";
+import { getPermissionMessage, VisibilityLabel } from "@/features/permissions";
 import { setPageTitle } from "@/lib/page-title";
 
 export function PrivateHomePage() {
@@ -49,7 +50,10 @@ export function PrivateHomePage() {
 
   if (relationshipState.status === "loading") {
     return (
-      <LoadingState title="Verificando seu espaco" message={COUPLE_MESSAGES.loadingRelationship} />
+      <LoadingState
+        title="Verificando seu espaco"
+        message={getPermissionMessage("permissionChecking")}
+      />
     );
   }
 
@@ -75,6 +79,7 @@ export function PrivateHomePage() {
       {relationshipState.status === "no_shared_budget" ? (
         <Card>
           <CardHeader>
+            <VisibilityLabel scope="individual" className="mb-2 w-fit" />
             <CardTitle>{COUPLE_MESSAGES.noSharedBudgetTitle}</CardTitle>
             <CardDescription>{COUPLE_MESSAGES.noSharedBudgetMessage}</CardDescription>
           </CardHeader>
@@ -106,6 +111,7 @@ export function PrivateHomePage() {
       {relationshipState.status === "invitation_sent" ? (
         <Card>
           <CardHeader>
+            <VisibilityLabel scope="individual" className="mb-2 w-fit" />
             <CardTitle>{COUPLE_MESSAGES.sentTitle}</CardTitle>
             <CardDescription>
               Convite pendente para {relationshipState.invitation.inviteeEmail}. Expira em{" "}
@@ -128,10 +134,12 @@ export function PrivateHomePage() {
       {relationshipState.status === "invitation_received" ? (
         <Card>
           <CardHeader>
+            <VisibilityLabel scope="inaccessible" className="mb-2 w-fit" />
             <CardTitle>{COUPLE_MESSAGES.receivedTitle}</CardTitle>
             <CardDescription>
               {relationshipState.invitation.inviterLabel} convidou voce para{" "}
-              {relationshipState.invitation.sharedBudgetName}.
+              {relationshipState.invitation.sharedBudgetName}.{" "}
+              {getPermissionMessage("permissionBlocked")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -145,6 +153,7 @@ export function PrivateHomePage() {
       {relationshipState.status === "couple_linked" ? (
         <Card>
           <CardHeader>
+            <VisibilityLabel scope="shared" className="mb-2 w-fit" />
             <CardTitle>{COUPLE_MESSAGES.linkedTitle}</CardTitle>
             <CardDescription>{COUPLE_MESSAGES.linkedMessage}</CardDescription>
           </CardHeader>
@@ -160,7 +169,7 @@ export function PrivateHomePage() {
       {relationshipState.status === "invitation_unavailable" ? (
         <ErrorState
           title={COUPLE_MESSAGES.unavailableTitle}
-          message={COUPLE_MESSAGES.unavailable}
+          message={getPermissionMessage("permissionUnavailable")}
         />
       ) : null}
     </div>

@@ -5,6 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { PrivateHomePage } from "@/pages/private-home-page";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
+import { getPermissionMessage } from "@/features/permissions";
 import { renderWithCoupleAuth } from "@/test/couple-test-utils";
 
 vi.mock("@/features/couple/use-couple-relationship", () => ({
@@ -116,14 +117,14 @@ describe("PrivateHomePage couple states", () => {
   it("renders loading, unavailable and retryable error states safely", () => {
     mockRelationship({ relationshipState: { status: "loading" } });
     const loading = renderWithCoupleAuth(<PrivateHomePage />);
-    expect(screen.getByText(COUPLE_MESSAGES.loadingRelationship)).toBeInTheDocument();
+    expect(screen.getByText(getPermissionMessage("permissionChecking"))).toBeInTheDocument();
     loading.unmount();
 
     mockRelationship({
       relationshipState: { status: "invitation_unavailable", reason: "expired" }
     });
     const unavailable = renderWithCoupleAuth(<PrivateHomePage />);
-    expect(screen.getByText(COUPLE_MESSAGES.unavailable)).toBeInTheDocument();
+    expect(screen.getByText(getPermissionMessage("permissionUnavailable"))).toBeInTheDocument();
     unavailable.unmount();
 
     mockRelationship({
