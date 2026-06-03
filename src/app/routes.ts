@@ -37,6 +37,12 @@ export const PRIVATE_ROUTES = {
     title: "Espaco privado | Couple Finance",
     description: "Area autenticada inicial do Couple Finance.",
     status: "available"
+  },
+  invitation: {
+    path: "/app/invites/:invitationId",
+    title: "Convite do casal | Couple Finance",
+    description: "Visualize e responda a um convite para espaco compartilhado.",
+    status: "available"
   }
 } as const;
 
@@ -44,7 +50,7 @@ export const FUTURE_PROTECTED_AREAS = [
   {
     label: "Convite de casal",
     intendedFeature: "F02",
-    status: "planned"
+    status: "available"
   },
   {
     label: "Dashboard financeiro",
