@@ -78,6 +78,20 @@ export function PrivateHomePage() {
 
       <Card>
         <CardHeader>
+          <CardTitle>Registrar transacao</CardTitle>
+          <CardDescription>
+            Adicione uma receita ou despesa individual ou compartilhada.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button asChild>
+            <Link to={PRIVATE_ROUTES.newTransaction.path}>Nova transacao</Link>
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle>Categorias financeiras padrao</CardTitle>
           <CardDescription>
             Consulte o vocabulario disponivel para classificar futuras movimentacoes.
