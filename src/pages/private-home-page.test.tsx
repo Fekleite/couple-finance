@@ -32,6 +32,14 @@ describe("PrivateHomePage couple states", () => {
     mockRelationship();
   });
 
+  it("links to the read-only standard category catalog", () => {
+    renderWithCoupleAuth(<PrivateHomePage />);
+    expect(screen.getByRole("link", { name: /consultar categorias/i })).toHaveAttribute(
+      "href",
+      "/app/categories"
+    );
+  });
+
   it("renders no_shared_budget form with accessible validation and keyboard submit", async () => {
     const user = userEvent.setup();
     const createInvite = vi
@@ -111,7 +119,7 @@ describe("PrivateHomePage couple states", () => {
     renderWithCoupleAuth(<PrivateHomePage />);
 
     expect(screen.getByText(COUPLE_MESSAGES.linkedTitle)).toBeInTheDocument();
-    expect(screen.queryByText(/dashboard|grafico|categoria/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/dashboard|grafico/i)).not.toBeInTheDocument();
   });
 
   it("renders loading, unavailable and retryable error states safely", () => {

@@ -76,6 +76,20 @@ export function PrivateHomePage() {
         </Alert>
       ) : null}
 
+      <Card>
+        <CardHeader>
+          <CardTitle>Categorias financeiras padrao</CardTitle>
+          <CardDescription>
+            Consulte o vocabulario disponivel para classificar futuras movimentacoes.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button asChild variant="secondary">
+            <Link to={PRIVATE_ROUTES.categories.path}>Consultar categorias</Link>
+          </Button>
+        </CardContent>
+      </Card>
+
       {relationshipState.status === "no_shared_budget" ? (
         <Card>
           <CardHeader>

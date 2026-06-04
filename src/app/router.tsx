@@ -13,6 +13,7 @@ import { NotFoundPage } from "@/pages/not-found-page";
 import { PrivateHomePage } from "@/pages/private-home-page";
 import { ResetPasswordPage } from "@/pages/reset-password-page";
 import { SignUpPage } from "@/pages/sign-up-page";
+import { CategoriesPage } from "@/pages/categories-page";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
               {
                 path: PRIVATE_ROUTES.invitation.path,
                 element: <InvitationPage />
+              },
+              {
+                path: PRIVATE_ROUTES.categories.path,
+                element: <CategoriesPage />
               }
             ]
           }
