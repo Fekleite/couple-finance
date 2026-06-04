@@ -18,6 +18,10 @@ describe("route metadata", () => {
     expect(PUBLIC_ROUTES.resetPassword.path).toBe("/reset-password");
     expect(PRIVATE_ROUTES.app.path).toBe("/app");
     expect(PRIVATE_ROUTES.invitation.path).toBe("/app/invites/:invitationId");
+    expect(PRIVATE_ROUTES.categories).toMatchObject({
+      path: "/app/categories",
+      status: "available"
+    });
   });
 
   it("marks invitation available and future dashboard planned", () => {

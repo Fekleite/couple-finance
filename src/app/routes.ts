@@ -43,6 +43,12 @@ export const PRIVATE_ROUTES = {
     title: "Convite do casal | Couple Finance",
     description: "Visualize e responda a um convite para espaco compartilhado.",
     status: "available"
+  },
+  categories: {
+    path: "/app/categories",
+    title: "Categorias financeiras | Couple Finance",
+    description: "Consulte o catalogo padrao de categorias financeiras.",
+    status: "available"
   }
 } as const;
 

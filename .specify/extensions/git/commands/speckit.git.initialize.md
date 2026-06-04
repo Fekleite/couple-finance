@@ -14,8 +14,8 @@ Run the appropriate script from the project root:
 - **PowerShell**: `.specify/extensions/git/scripts/powershell/initialize-repo.ps1`
 
 If the extension scripts are not found, fall back to:
-- **Bash**: `git init && git add . && git commit -m "Initial commit from Specify template"`
-- **PowerShell**: `git init; git add .; git commit -m "Initial commit from Specify template"`
+- **Bash**: `git init && git add . && git commit -m "chore(spec-kit): initialize repository"`
+- **PowerShell**: `git init; git add .; git commit -m "chore(spec-kit): initialize repository"`
 
 The script handles all checks internally:
 - Skips if Git is not available
