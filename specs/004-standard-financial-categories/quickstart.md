@@ -132,3 +132,31 @@ Confirmar que a F04 nao introduz:
 - Filtros, dashboard, graficos, saldos, metas ou auditoria.
 - Contadores ou totais por categoria.
 - Categorizacao automatica.
+
+## Implementation Validation Results
+
+Validation performed on 2026-06-03:
+
+- `npm run lint`: PASS.
+- `npm run format:check`: PASS.
+- `npm run typecheck`: PASS.
+- `npm run test:run`: PASS, 30 files and 108 tests.
+- `npm run build`: PASS. Vite emitted a non-blocking chunk-size warning.
+- Focused category/page/route suite: PASS, 8 files and 26 tests.
+- `git diff --check`: PASS.
+- Static migration contract validation: PASS for constraints, eleven-category
+  idempotent seed, RLS, authenticated SELECT grant, anonymous denial by revoke,
+  and absence of authenticated mutation grants.
+- Privacy and scope review: PASS. Production category code does not query or
+  expose ownership, membership, movements, counters, totals, dashboards, or
+  automatic categorization.
+
+Pending environment-dependent validation:
+
+- `supabase migration list --local` could not connect because the local
+  Supabase stack was not running.
+- `supabase start` could not start because Docker Desktop was not running.
+- `supabase db reset` and live Data API checks for anonymous/authenticated RLS
+  and mutation denial remain pending until Docker is available.
+- Hands-on mobile viewport, 200% text zoom, screen-reader, and complete manual
+  acceptance review remain pending.

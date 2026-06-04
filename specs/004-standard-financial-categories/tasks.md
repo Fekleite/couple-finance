@@ -23,8 +23,8 @@ implemented and tested as an independent increment.
 **Purpose**: Prepare the feature module and reusable test support without
 changing product behavior.
 
-- [ ] T001 Create the categories feature public API scaffold in `src/features/categories/index.ts`
-- [ ] T002 [P] Create reusable standard-category fixtures and Supabase row builders in `src/test/category-test-utils.ts`
+- [X] T001 Create the categories feature public API scaffold in `src/features/categories/index.ts`
+- [X] T002 [P] Create reusable standard-category fixtures and Supabase row builders in `src/test/category-test-utils.ts`
 
 ---
 
@@ -35,10 +35,10 @@ required by every user story.
 
 **CRITICAL**: No user story work begins until this phase is complete.
 
-- [ ] T003 Create `public.standard_financial_categories` with constraints, idempotent eleven-category seed, RLS, authenticated SELECT grant, and revoked client mutations in `supabase/migrations/20260603000000_create_standard_financial_categories.sql`
-- [ ] T004 [P] Define `CategoryApplicability`, persisted row shape, frontend category shape, service result, and catalog state unions in `src/features/categories/category-types.ts`
-- [ ] T005 [P] Define neutral loading, empty, unavailable, and retry copy in `src/features/categories/category-messages.ts`
-- [ ] T006 Validate seed idempotency, constraints, authenticated SELECT, anonymous denial, and authenticated mutation denial against `supabase/migrations/20260603000000_create_standard_financial_categories.sql`
+- [X] T003 Create `public.standard_financial_categories` with constraints, idempotent eleven-category seed, RLS, authenticated SELECT grant, and revoked client mutations in `supabase/migrations/20260603000000_create_standard_financial_categories.sql`
+- [X] T004 [P] Define `CategoryApplicability`, persisted row shape, frontend category shape, service result, and catalog state unions in `src/features/categories/category-types.ts`
+- [X] T005 [P] Define neutral loading, empty, unavailable, and retry copy in `src/features/categories/category-messages.ts`
+- [X] T006 Validate seed idempotency, constraints, authenticated SELECT, anonymous denial, and authenticated mutation denial against `supabase/migrations/20260603000000_create_standard_financial_categories.sql`
 
 **Checkpoint**: The canonical catalog and shared frontend contracts are ready.
 
@@ -57,19 +57,19 @@ descriptions, while loading, empty, error, and retry states remain safe.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T007 [P] [US1] Test active-only ordered Supabase querying, snake-case mapping, and safe failure handling in `src/features/categories/category-service.test.ts`
-- [ ] T008 [P] [US1] Test loading, ready, empty, error, retry, and session-change behavior in `src/features/categories/use-categories.test.tsx`
-- [ ] T009 [P] [US1] Test the authenticated catalog page content, canonical order, feedback states, and absence of financial counters or movements in `src/pages/categories-page.test.tsx`
-- [ ] T010 [P] [US1] Test `/app/categories` metadata and protected route registration in `src/app/routes.test.ts`
+- [X] T007 [P] [US1] Test active-only ordered Supabase querying, snake-case mapping, and safe failure handling in `src/features/categories/category-service.test.ts`
+- [X] T008 [P] [US1] Test loading, ready, empty, error, retry, and session-change behavior in `src/features/categories/use-categories.test.tsx`
+- [X] T009 [P] [US1] Test the authenticated catalog page content, canonical order, feedback states, and absence of financial counters or movements in `src/pages/categories-page.test.tsx`
+- [X] T010 [P] [US1] Test `/app/categories` metadata and protected route registration in `src/app/routes.test.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Implement `listActiveCategories` with explicit columns, active filtering, ascending order, row mapping, and safe errors in `src/features/categories/category-service.ts`
-- [ ] T012 [US1] Implement catalog loading state and refresh behavior that invalidates stale results on auth-session changes in `src/features/categories/use-categories.ts`
-- [ ] T013 [P] [US1] Implement a responsive, semantic read-only category option presentation with decorative code-to-icon mapping in `src/features/categories/category-option.tsx`
-- [ ] T014 [US1] Implement the authenticated catalog page using the category hook and shared feedback components in `src/pages/categories-page.tsx`
-- [ ] T015 [US1] Register `/app/categories` metadata and protected page routing in `src/app/routes.ts` and `src/app/router.tsx`
-- [ ] T016 [US1] Add a clear authenticated entry point to the catalog without implying financial activity in `src/pages/private-home-page.tsx`
+- [X] T011 [US1] Implement `listActiveCategories` with explicit columns, active filtering, ascending order, row mapping, and safe errors in `src/features/categories/category-service.ts`
+- [X] T012 [US1] Implement catalog loading state and refresh behavior that invalidates stale results on auth-session changes in `src/features/categories/use-categories.ts`
+- [X] T013 [P] [US1] Implement a responsive, semantic read-only category option presentation with decorative code-to-icon mapping in `src/features/categories/category-option.tsx`
+- [X] T014 [US1] Implement the authenticated catalog page using the category hook and shared feedback components in `src/pages/categories-page.tsx`
+- [X] T015 [US1] Register `/app/categories` metadata and protected page routing in `src/app/routes.ts` and `src/app/router.tsx`
+- [X] T016 [US1] Add a clear authenticated entry point to the catalog without implying financial activity in `src/pages/private-home-page.tsx`
 
 **Checkpoint**: User Story 1 is functional and independently testable as the
 MVP.
@@ -89,13 +89,13 @@ applicability filtering, and `Outros` as the final fallback.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T017 [P] [US2] Test keyboard operation, accessible labels and descriptions, visible selected state, disabled state, applicability filtering, unknown values, empty input, and final `Outros` ordering in `src/features/categories/category-selector.test.tsx`
+- [X] T017 [P] [US2] Test keyboard operation, accessible labels and descriptions, visible selected state, disabled state, applicability filtering, unknown values, empty input, and final `Outros` ordering in `src/features/categories/category-selector.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] Implement the pure controlled category selector with native or equivalent selection semantics and mobile-first layout in `src/features/categories/category-selector.tsx`
-- [ ] T019 [US2] Reuse the semantic category option presentation for selectable and selected states without color-only meaning in `src/features/categories/category-option.tsx`
-- [ ] T020 [US2] Export the reusable selector and its prop types from `src/features/categories/index.ts`
+- [X] T018 [US2] Implement the pure controlled category selector with native or equivalent selection semantics and mobile-first layout in `src/features/categories/category-selector.tsx`
+- [X] T019 [US2] Reuse the semantic category option presentation for selectable and selected states without color-only meaning in `src/features/categories/category-option.tsx`
+- [X] T020 [US2] Export the reusable selector and its prop types from `src/features/categories/index.ts`
 
 **Checkpoint**: User Story 2 is independently usable by future movement flows
 without introducing persistence.
@@ -117,15 +117,15 @@ or unauthorized-scope data.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T021 [P] [US3] Test catalog invariants, stable codes, unique positive order, required minimum categories, applicability, final `Outros`, and absence of ownership or usage fields in `src/features/categories/category-catalog.test.ts`
-- [ ] T022 [P] [US3] Test that category query construction never requests users, memberships, budgets, movements, or counters in `src/features/categories/category-service.test.ts`
-- [ ] T023 [P] [US3] Test that catalog presentation and messages do not reveal or imply individual, shared, or inaccessible financial records in `src/pages/categories-page.test.tsx`
+- [X] T021 [P] [US3] Test catalog invariants, stable codes, unique positive order, required minimum categories, applicability, final `Outros`, and absence of ownership or usage fields in `src/features/categories/category-catalog.test.ts`
+- [X] T022 [P] [US3] Test that category query construction never requests users, memberships, budgets, movements, or counters in `src/features/categories/category-service.test.ts`
+- [X] T023 [P] [US3] Test that catalog presentation and messages do not reveal or imply individual, shared, or inaccessible financial records in `src/pages/categories-page.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] Implement reusable catalog invariant and applicability helpers that never filter by ownership context in `src/features/categories/category-catalog.ts`
-- [ ] T025 [US3] Add neutral `CategoryUsageContext` and future `categoryCode` reference contracts without creating movement persistence in `src/features/categories/category-types.ts`
-- [ ] T026 [US3] Apply shared catalog helpers to the service, page, and selector exports in `src/features/categories/category-service.ts`, `src/pages/categories-page.tsx`, and `src/features/categories/index.ts`
+- [X] T024 [US3] Implement reusable catalog invariant and applicability helpers that never filter by ownership context in `src/features/categories/category-catalog.ts`
+- [X] T025 [US3] Add neutral `CategoryUsageContext` and future `categoryCode` reference contracts without creating movement persistence in `src/features/categories/category-types.ts`
+- [X] T026 [US3] Apply shared catalog helpers to the service, page, and selector exports in `src/features/categories/category-service.ts`, `src/pages/categories-page.tsx`, and `src/features/categories/index.ts`
 
 **Checkpoint**: All stories are independently functional and the category
 vocabulary remains privacy-neutral.
@@ -137,11 +137,11 @@ vocabulary remains privacy-neutral.
 **Purpose**: Validate the complete feature against technical, accessibility,
 privacy, responsive, and scope requirements.
 
-- [ ] T027 [P] Update implementation and validation notes with final commands and observed results in `specs/004-standard-financial-categories/quickstart.md`
-- [ ] T028 Run `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test:run`, and `npm run build` and resolve failures in affected files under `src/features/categories/`, `src/pages/categories-page.tsx`, and `src/app/`
+- [X] T027 [P] Update implementation and validation notes with final commands and observed results in `specs/004-standard-financial-categories/quickstart.md`
+- [X] T028 Run `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test:run`, and `npm run build` and resolve failures in affected files under `src/features/categories/`, `src/pages/categories-page.tsx`, and `src/app/`
 - [ ] T029 Validate migration reset, local migration listing, RLS, grants, seed order, and mutation denial using `supabase/migrations/20260603000000_create_standard_financial_categories.sql`
 - [ ] T030 Perform mobile, 200% text zoom, no-horizontal-scroll, keyboard-only, focus-visible, and screen-reader semantics review against `src/pages/categories-page.tsx` and `src/features/categories/category-selector.tsx`
-- [ ] T031 Perform privacy and out-of-scope review confirming no raw Supabase errors, ownership leakage, movements, totals, counters, filters, dashboards, or automatic categorization in `src/features/categories/` and `src/pages/categories-page.tsx`
+- [X] T031 Perform privacy and out-of-scope review confirming no raw Supabase errors, ownership leakage, movements, totals, counters, filters, dashboards, or automatic categorization in `src/features/categories/` and `src/pages/categories-page.tsx`
 - [ ] T032 Verify all manual acceptance scenarios and record final validation results in `specs/004-standard-financial-categories/quickstart.md`
 
 ---
