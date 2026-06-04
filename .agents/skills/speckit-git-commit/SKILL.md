@@ -40,10 +40,10 @@ auto_commit:
   default: false          # Global toggle — set true to enable for all commands
   after_specify:
     enabled: true          # Override per-command
-    message: "[Spec Kit] Add specification"
+    message: "docs(spec-kit): add specification"
   after_plan:
     enabled: false
-    message: "[Spec Kit] Add implementation plan"
+    message: "docs(spec-kit): add implementation plan"
 ```
 
 ## Graceful Degradation
