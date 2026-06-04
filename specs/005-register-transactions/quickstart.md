@@ -135,3 +135,41 @@ Confirmar que F05 nao introduz:
 - Categorias personalizadas ou alteracao do catalogo.
 - Recorrencia, agendamento, parcelas, anexos ou importacao bancaria.
 - Multiplas moedas, aprovacao ou auditoria detalhada.
+
+## Implementation Validation - 2026-06-04
+
+Implemented the secure transaction migration, exact currency and civil-date
+contracts, idempotent service/controller flow, accessible mobile-first form,
+authorized success summary, protected route, and private-home entry point.
+
+Observed automated results:
+
+- `npm run lint`: PASS
+- `npm run format:check`: PASS
+- `npm run typecheck`: PASS
+- `npm run test:run`: PASS (38 files, 123 tests)
+- `npm run build`: PASS; Vite reports the existing bundle-size advisory
+- `git diff --check`: PASS
+- Migration contract tests: PASS for constraints, indexes, grants, RPC-only
+  mutation, function security, idempotency, active-membership checks, and RLS
+
+Observed reviews:
+
+- Privacy: no raw errors, private IDs, e-mails, payload logs, or client-supplied
+  creator values are displayed.
+- Accessibility/mobile: visible labels, semantic groups, associated errors,
+  keyboard controls, live status, touch-sized actions, bounded responsive
+  layout, and no horizontal-layout dependency are present.
+- Scope: no list, filter, search, edit, delete, totals, balance, dashboard,
+  chart, custom category, recurrence, attachment, import, or audit history was
+  introduced.
+- Financial clarity: type, exact value, civil date, category, creator,
+  responsible person, and visibility remain distinct in the form and summary.
+
+Open local/manual validation:
+
+- `supabase db reset` and `supabase migration list --local` could not run
+  because Docker Desktop was not running.
+- Live individual/shared authorization scenarios, 200% text zoom, screen-reader
+  behavior, and the complete manual acceptance walkthrough remain to be run
+  against a started local Supabase stack.

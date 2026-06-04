@@ -24,8 +24,8 @@ implemented and tested as an independent increment.
 **Purpose**: Prepare the transaction feature boundary and reusable test support
 without changing product behavior.
 
-- [ ] T001 Create the transactions feature public API scaffold in `src/features/transactions/index.ts`
-- [ ] T002 [P] Create authorized transaction, relationship, category, and RPC fixtures in `src/test/transaction-test-utils.ts`
+- [X] T001 Create the transactions feature public API scaffold in `src/features/transactions/index.ts`
+- [X] T002 [P] Create authorized transaction, relationship, category, and RPC fixtures in `src/test/transaction-test-utils.ts`
 
 ---
 
@@ -36,10 +36,10 @@ operation, and frontend contracts required by every user story.
 
 **CRITICAL**: No user story work begins until this phase is complete.
 
-- [ ] T003 Define persisted rows, canonical submissions, authorized summaries, form context, submission states, and service result unions in `src/features/transactions/transaction-types.ts`
-- [ ] T004 [P] Define neutral validation, unavailable-context, conflict, recoverable-failure, loading, and success copy in `src/features/transactions/transaction-messages.ts`
-- [ ] T005 Create `public.financial_transactions`, constraints, indexes, explicit grants, SELECT RLS, private privileged creation function, and public idempotent RPC in `supabase/migrations/20260604000000_create_financial_transactions.sql`
-- [ ] T006 Validate migration structure, constraints, indexes, function security, grants, RPC-only mutation, idempotency, and RLS contracts in `src/features/transactions/transaction-migration.test.ts`
+- [X] T003 Define persisted rows, canonical submissions, authorized summaries, form context, submission states, and service result unions in `src/features/transactions/transaction-types.ts`
+- [X] T004 [P] Define neutral validation, unavailable-context, conflict, recoverable-failure, loading, and success copy in `src/features/transactions/transaction-messages.ts`
+- [X] T005 Create `public.financial_transactions`, constraints, indexes, explicit grants, SELECT RLS, private privileged creation function, and public idempotent RPC in `supabase/migrations/20260604000000_create_financial_transactions.sql`
+- [X] T006 Validate migration structure, constraints, indexes, function security, grants, RPC-only mutation, idempotency, and RLS contracts in `src/features/transactions/transaction-migration.test.ts`
 
 **Checkpoint**: Secure persistence and shared frontend contracts are ready.
 
@@ -58,25 +58,25 @@ the summary, and verify the persisted row is readable only by its creator.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T007 [P] [US1] Test exact `pt-BR` input-to-cents parsing, upper and lower bounds, formatting, and invalid monetary input in `src/features/transactions/transaction-money.test.ts`
-- [ ] T008 [P] [US1] Test normalized title and observation, positive amount, explicit type, civil date, category, individual defaults, and creator responsibility in `src/features/transactions/transaction-schemas.test.ts`
-- [ ] T009 [P] [US1] Test individual RPC argument mapping, authorized result mapping, creator-derived responsibility, and safe service failures in `src/features/transactions/transaction-service.test.ts`
-- [ ] T010 [P] [US1] Test individual defaults, category applicability, valid submission, and success reset behavior in `src/features/transactions/use-transaction-form.test.tsx`
-- [ ] T011 [P] [US1] Test individual form fields, validation associations, explicit visibility, confirmation summary, and no list or totals in `src/features/transactions/transaction-form.test.tsx`
-- [ ] T012 [P] [US1] Test authenticated `/app/transactions/new` metadata, protected routing, page states, and private-home entry point in `src/app/routes.test.ts`, `src/pages/new-transaction-page.test.tsx`, and `src/pages/private-home-page.test.tsx`
+- [X] T007 [P] [US1] Test exact `pt-BR` input-to-cents parsing, upper and lower bounds, formatting, and invalid monetary input in `src/features/transactions/transaction-money.test.ts`
+- [X] T008 [P] [US1] Test normalized title and observation, positive amount, explicit type, civil date, category, individual defaults, and creator responsibility in `src/features/transactions/transaction-schemas.test.ts`
+- [X] T009 [P] [US1] Test individual RPC argument mapping, authorized result mapping, creator-derived responsibility, and safe service failures in `src/features/transactions/transaction-service.test.ts`
+- [X] T010 [P] [US1] Test individual defaults, category applicability, valid submission, and success reset behavior in `src/features/transactions/use-transaction-form.test.tsx`
+- [X] T011 [P] [US1] Test individual form fields, validation associations, explicit visibility, confirmation summary, and no list or totals in `src/features/transactions/transaction-form.test.tsx`
+- [X] T012 [P] [US1] Test authenticated `/app/transactions/new` metadata, protected routing, page states, and private-home entry point in `src/app/routes.test.ts`, `src/pages/new-transaction-page.test.tsx`, and `src/pages/private-home-page.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T013 [P] [US1] Implement exact `pt-BR` currency parsing and formatting helpers in `src/features/transactions/transaction-money.ts`
-- [ ] T014 [P] [US1] Implement canonical transaction and individual-form Zod schemas with civil-date validation in `src/features/transactions/transaction-schemas.ts`
-- [ ] T015 [US1] Implement `createFinancialTransaction` RPC invocation, explicit argument mapping, authorized response mapping, and safe failures in `src/features/transactions/transaction-service.ts`
-- [ ] T016 [US1] Implement individual form context loading, safe defaults, applicable-category handling, submit coordination, and new-registration reset in `src/features/transactions/use-transaction-form.ts`
-- [ ] T017 [P] [US1] Implement the authorized confirmation card with type, amount, date, category, responsible person, visibility, and new-registration action in `src/features/transactions/transaction-success-summary.tsx`
-- [ ] T018 [US1] Implement the controlled individual transaction form with title, amount, type, date, category, visibility, observation, and submit feedback in `src/features/transactions/transaction-form.tsx`
-- [ ] T019 [US1] Implement the authenticated new-transaction page and page title in `src/pages/new-transaction-page.tsx`
-- [ ] T020 [US1] Register `/app/transactions/new` metadata and protected page routing in `src/app/routes.ts` and `src/app/router.tsx`
-- [ ] T021 [US1] Add a clear private-home entry point for registering a transaction in `src/pages/private-home-page.tsx`
-- [ ] T022 [US1] Export the individual transaction API from `src/features/transactions/index.ts`
+- [X] T013 [P] [US1] Implement exact `pt-BR` currency parsing and formatting helpers in `src/features/transactions/transaction-money.ts`
+- [X] T014 [P] [US1] Implement canonical transaction and individual-form Zod schemas with civil-date validation in `src/features/transactions/transaction-schemas.ts`
+- [X] T015 [US1] Implement `createFinancialTransaction` RPC invocation, explicit argument mapping, authorized response mapping, and safe failures in `src/features/transactions/transaction-service.ts`
+- [X] T016 [US1] Implement individual form context loading, safe defaults, applicable-category handling, submit coordination, and new-registration reset in `src/features/transactions/use-transaction-form.ts`
+- [X] T017 [P] [US1] Implement the authorized confirmation card with type, amount, date, category, responsible person, visibility, and new-registration action in `src/features/transactions/transaction-success-summary.tsx`
+- [X] T018 [US1] Implement the controlled individual transaction form with title, amount, type, date, category, visibility, observation, and submit feedback in `src/features/transactions/transaction-form.tsx`
+- [X] T019 [US1] Implement the authenticated new-transaction page and page title in `src/pages/new-transaction-page.tsx`
+- [X] T020 [US1] Register `/app/transactions/new` metadata and protected page routing in `src/app/routes.ts` and `src/app/router.tsx`
+- [X] T021 [US1] Add a clear private-home entry point for registering a transaction in `src/pages/private-home-page.tsx`
+- [X] T022 [US1] Export the individual transaction API from `src/features/transactions/index.ts`
 
 **Checkpoint**: User Story 1 is functional and independently testable as the
 MVP, including for a person without an active couple link.
@@ -98,18 +98,18 @@ create or read it.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T023 [P] [US2] Test shared RPC arguments, creator and responsible distinction, active-budget requirements, and safe unauthorized failures in `src/features/transactions/transaction-service.test.ts`
-- [ ] T024 [P] [US2] Test shared visibility eligibility, active responsible options, visibility changes, and stale responsible clearing in `src/features/transactions/use-transaction-form.test.tsx`
-- [ ] T025 [P] [US2] Test shared visibility and responsible controls, creator clarification, and safely blocked shared states in `src/features/transactions/transaction-form.test.tsx`
-- [ ] T026 [US2] Extend migration contract tests for active creator/responsible membership checks, inactive-budget denial, shared SELECT RLS, and non-disclosing failures in `src/features/transactions/transaction-migration.test.ts`
+- [X] T023 [P] [US2] Test shared RPC arguments, creator and responsible distinction, active-budget requirements, and safe unauthorized failures in `src/features/transactions/transaction-service.test.ts`
+- [X] T024 [P] [US2] Test shared visibility eligibility, active responsible options, visibility changes, and stale responsible clearing in `src/features/transactions/use-transaction-form.test.tsx`
+- [X] T025 [P] [US2] Test shared visibility and responsible controls, creator clarification, and safely blocked shared states in `src/features/transactions/transaction-form.test.tsx`
+- [X] T026 [US2] Extend migration contract tests for active creator/responsible membership checks, inactive-budget denial, shared SELECT RLS, and non-disclosing failures in `src/features/transactions/transaction-migration.test.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Extend canonical schemas for shared budget and eligible responsible-person requirements in `src/features/transactions/transaction-schemas.ts`
-- [ ] T028 [US2] Load the authorized active shared context and build neutral `Voce` and `Pessoa parceira` responsible options in `src/features/transactions/use-transaction-form.ts`
-- [ ] T029 [US2] Implement shared visibility selection, eligible responsible selection, stale-option clearing, and blocked-context guidance in `src/features/transactions/transaction-form.tsx`
-- [ ] T030 [US2] Extend service failure mapping for shared context and responsible-person revalidation without exposing private identifiers in `src/features/transactions/transaction-service.ts`
-- [ ] T031 [US2] Show shared visibility, distinct creator/responsible labels, and authorized category resolution in `src/features/transactions/transaction-success-summary.tsx`
+- [X] T027 [US2] Extend canonical schemas for shared budget and eligible responsible-person requirements in `src/features/transactions/transaction-schemas.ts`
+- [X] T028 [US2] Load the authorized active shared context and build neutral `Voce` and `Pessoa parceira` responsible options in `src/features/transactions/use-transaction-form.ts`
+- [X] T029 [US2] Implement shared visibility selection, eligible responsible selection, stale-option clearing, and blocked-context guidance in `src/features/transactions/transaction-form.tsx`
+- [X] T030 [US2] Extend service failure mapping for shared context and responsible-person revalidation without exposing private identifiers in `src/features/transactions/transaction-service.ts`
+- [X] T031 [US2] Show shared visibility, distinct creator/responsible labels, and authorized category resolution in `src/features/transactions/transaction-success-summary.tsx`
 
 **Checkpoint**: User Story 2 is independently testable with active members and
 denies every inactive or unrelated shared context safely.
@@ -130,19 +130,19 @@ created.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T032 [P] [US3] Test attempt-key creation, repeated-submit suppression, same-payload retry, changed-payload key renewal, and new-registration key renewal in `src/features/transactions/transaction-submission.test.ts`
-- [ ] T033 [P] [US3] Test unavailable-category rejection without `other` fallback and all field boundary errors in `src/features/transactions/transaction-schemas.test.ts`
-- [ ] T034 [P] [US3] Test safe mapping of validation, unavailable category, unavailable shared context, unavailable responsible, conflict, and temporary failures in `src/features/transactions/transaction-service.test.ts`
-- [ ] T035 [P] [US3] Test recoverable-data preservation, option revalidation, blocked states, retries, and post-attempt edits in `src/features/transactions/use-transaction-form.test.tsx`
-- [ ] T036 [US3] Extend migration contract tests for same-key equivalent payload recovery, different-payload conflict, per-creator key isolation, and atomic revalidation in `src/features/transactions/transaction-migration.test.ts`
+- [X] T032 [P] [US3] Test attempt-key creation, repeated-submit suppression, same-payload retry, changed-payload key renewal, and new-registration key renewal in `src/features/transactions/transaction-submission.test.ts`
+- [X] T033 [P] [US3] Test unavailable-category rejection without `other` fallback and all field boundary errors in `src/features/transactions/transaction-schemas.test.ts`
+- [X] T034 [P] [US3] Test safe mapping of validation, unavailable category, unavailable shared context, unavailable responsible, conflict, and temporary failures in `src/features/transactions/transaction-service.test.ts`
+- [X] T035 [P] [US3] Test recoverable-data preservation, option revalidation, blocked states, retries, and post-attempt edits in `src/features/transactions/use-transaction-form.test.tsx`
+- [X] T036 [US3] Extend migration contract tests for same-key equivalent payload recovery, different-payload conflict, per-creator key isolation, and atomic revalidation in `src/features/transactions/transaction-migration.test.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T037 [P] [US3] Implement canonical payload comparison, UUID attempt lifecycle, in-flight suppression, and retry rules in `src/features/transactions/transaction-submission.ts`
-- [ ] T038 [US3] Integrate idempotent submission, recoverable-data preservation, context refresh, and changed-payload key renewal in `src/features/transactions/use-transaction-form.ts`
-- [ ] T039 [US3] Associate actionable field errors, announce recoverable/global failures, disable repeated confirmation, and preserve safe values in `src/features/transactions/transaction-form.tsx`
-- [ ] T040 [US3] Map RPC validation and conflict outcomes to typed safe results while excluding raw errors and private values in `src/features/transactions/transaction-service.ts`
-- [ ] T041 [US3] Export submission helpers and resilient form contracts from `src/features/transactions/index.ts`
+- [X] T037 [P] [US3] Implement canonical payload comparison, UUID attempt lifecycle, in-flight suppression, and retry rules in `src/features/transactions/transaction-submission.ts`
+- [X] T038 [US3] Integrate idempotent submission, recoverable-data preservation, context refresh, and changed-payload key renewal in `src/features/transactions/use-transaction-form.ts`
+- [X] T039 [US3] Associate actionable field errors, announce recoverable/global failures, disable repeated confirmation, and preserve safe values in `src/features/transactions/transaction-form.tsx`
+- [X] T040 [US3] Map RPC validation and conflict outcomes to typed safe results while excluding raw errors and private values in `src/features/transactions/transaction-service.ts`
+- [X] T041 [US3] Export submission helpers and resilient form contracts from `src/features/transactions/index.ts`
 
 **Checkpoint**: User Story 3 is independently testable and every intended
 submission creates at most one transaction.
@@ -163,15 +163,15 @@ or horizontal scrolling.
 
 > Write these tests first and confirm they fail before implementation.
 
-- [ ] T042 [P] [US4] Test keyboard operation, logical field order, labels, descriptions, error references, focus movement, and status announcements in `src/features/transactions/transaction-form.test.tsx`
-- [ ] T043 [P] [US4] Test perceivable success content, creator clarification, and keyboard-operable new-registration action in `src/features/transactions/transaction-form.test.tsx`
-- [ ] T044 [P] [US4] Test mobile-first page structure, feedback states, and absence of horizontal-layout assumptions in `src/pages/new-transaction-page.test.tsx`
+- [X] T042 [P] [US4] Test keyboard operation, logical field order, labels, descriptions, error references, focus movement, and status announcements in `src/features/transactions/transaction-form.test.tsx`
+- [X] T043 [P] [US4] Test perceivable success content, creator clarification, and keyboard-operable new-registration action in `src/features/transactions/transaction-form.test.tsx`
+- [X] T044 [P] [US4] Test mobile-first page structure, feedback states, and absence of horizontal-layout assumptions in `src/pages/new-transaction-page.test.tsx`
 
 ### Implementation for User Story 4
 
-- [ ] T045 [US4] Apply semantic field grouping, visible labels, error associations, live status feedback, focus management, touch-safe controls, and responsive layout in `src/features/transactions/transaction-form.tsx`
-- [ ] T046 [US4] Apply semantic success announcement, non-color-only labels, responsive content, and focus restoration in `src/features/transactions/transaction-success-summary.tsx`
-- [ ] T047 [US4] Apply mobile-first page spacing, readable width, and perceivable loading, error, blocked, and success transitions in `src/pages/new-transaction-page.tsx`
+- [X] T045 [US4] Apply semantic field grouping, visible labels, error associations, live status feedback, focus management, touch-safe controls, and responsive layout in `src/features/transactions/transaction-form.tsx`
+- [X] T046 [US4] Apply semantic success announcement, non-color-only labels, responsive content, and focus restoration in `src/features/transactions/transaction-success-summary.tsx`
+- [X] T047 [US4] Apply mobile-first page spacing, readable width, and perceivable loading, error, blocked, and success transitions in `src/pages/new-transaction-page.tsx`
 
 **Checkpoint**: All four user stories are functional and the complete
 registration journey is accessible and mobile-first.
@@ -183,15 +183,15 @@ registration journey is accessible and mobile-first.
 **Purpose**: Validate the integrated feature against database, technical,
 privacy, accessibility, responsive, performance, and scope requirements.
 
-- [ ] T048 [P] Update implementation and validation notes with final commands and observed results in `specs/005-register-transactions/quickstart.md`
-- [ ] T049 Run `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test:run`, and `npm run build` and resolve failures in affected files under `src/features/transactions/`, `src/pages/`, and `src/app/`
+- [X] T048 [P] Update implementation and validation notes with final commands and observed results in `specs/005-register-transactions/quickstart.md`
+- [X] T049 Run `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test:run`, and `npm run build` and resolve failures in affected files under `src/features/transactions/`, `src/pages/`, and `src/app/`
 - [ ] T050 Validate local migration reset, grants, RPC exposure, private function security, constraints, indexes, idempotency, and RLS using `supabase/migrations/20260604000000_create_financial_transactions.sql`
-- [ ] T051 Perform individual/shared authorization and privacy review confirming no raw errors, private IDs, unauthorized people, transactions, budgets, or relationship states leak from `src/features/transactions/` and `src/pages/new-transaction-page.tsx`
-- [ ] T052 Perform mobile, 200% text zoom, no-horizontal-scroll, keyboard-only, focus-visible, and screen-reader semantics review against `src/pages/new-transaction-page.tsx` and `src/features/transactions/transaction-form.tsx`
-- [ ] T053 Verify currency, civil-date, category, creator, responsible-person, and visibility clarity in `src/features/transactions/transaction-form.tsx` and `src/features/transactions/transaction-success-summary.tsx`
-- [ ] T054 Confirm F05 introduces no transaction list, filter, search, edit, delete, totals, balance, dashboard, chart, custom category, recurrence, attachment, import, or audit-history behavior in `src/features/transactions/`, `src/pages/`, and `src/app/`
+- [X] T051 Perform individual/shared authorization and privacy review confirming no raw errors, private IDs, unauthorized people, transactions, budgets, or relationship states leak from `src/features/transactions/` and `src/pages/new-transaction-page.tsx`
+- [X] T052 Perform mobile, 200% text zoom, no-horizontal-scroll, keyboard-only, focus-visible, and screen-reader semantics review against `src/pages/new-transaction-page.tsx` and `src/features/transactions/transaction-form.tsx`
+- [X] T053 Verify currency, civil-date, category, creator, responsible-person, and visibility clarity in `src/features/transactions/transaction-form.tsx` and `src/features/transactions/transaction-success-summary.tsx`
+- [X] T054 Confirm F05 introduces no transaction list, filter, search, edit, delete, totals, balance, dashboard, chart, custom category, recurrence, attachment, import, or audit-history behavior in `src/features/transactions/`, `src/pages/`, and `src/app/`
 - [ ] T055 Verify all manual acceptance scenarios and record final validation results in `specs/005-register-transactions/quickstart.md`
-- [ ] T056 Run `git diff --check`, resolve whitespace errors in all F05 files, and record the result in `specs/005-register-transactions/quickstart.md`
+- [X] T056 Run `git diff --check`, resolve whitespace errors in all F05 files, and record the result in `specs/005-register-transactions/quickstart.md`
 
 ---
 
