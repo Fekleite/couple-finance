@@ -22,6 +22,11 @@ describe("route metadata", () => {
       path: "/app/categories",
       status: "available"
     });
+    expect(PRIVATE_ROUTES.newTransaction).toMatchObject({
+      path: "/app/transactions/new",
+      title: "Registrar transacao | Couple Finance",
+      status: "available"
+    });
   });
 
   it("marks invitation available and future dashboard planned", () => {

@@ -49,6 +49,12 @@ export const PRIVATE_ROUTES = {
     title: "Categorias financeiras | Couple Finance",
     description: "Consulte o catalogo padrao de categorias financeiras.",
     status: "available"
+  },
+  newTransaction: {
+    path: "/app/transactions/new",
+    title: "Registrar transacao | Couple Finance",
+    description: "Registre uma receita ou despesa individual ou compartilhada.",
+    status: "available"
   }
 } as const;
 
