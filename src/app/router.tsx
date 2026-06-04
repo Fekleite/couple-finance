@@ -15,6 +15,7 @@ import { ResetPasswordPage } from "@/pages/reset-password-page";
 import { SignUpPage } from "@/pages/sign-up-page";
 import { CategoriesPage } from "@/pages/categories-page";
 import { NewTransactionPage } from "@/pages/new-transaction-page";
+import { TransactionsPage } from "@/pages/transactions-page";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
               {
                 path: PRIVATE_ROUTES.categories.path,
                 element: <CategoriesPage />
+              },
+              {
+                path: PRIVATE_ROUTES.transactions.path,
+                element: <TransactionsPage />
               },
               {
                 path: PRIVATE_ROUTES.newTransaction.path,

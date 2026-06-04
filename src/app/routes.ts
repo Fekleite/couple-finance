@@ -50,6 +50,12 @@ export const PRIVATE_ROUTES = {
     description: "Consulte o catalogo padrao de categorias financeiras.",
     status: "available"
   },
+  transactions: {
+    path: "/app/transactions",
+    title: "Transacoes | Couple Finance",
+    description: "Consulte e filtre suas transacoes autorizadas por mes.",
+    status: "available"
+  },
   newTransaction: {
     path: "/app/transactions/new",
     title: "Registrar transacao | Couple Finance",

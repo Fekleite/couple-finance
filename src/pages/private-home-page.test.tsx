@@ -40,6 +40,18 @@ describe("PrivateHomePage couple states", () => {
     );
   });
 
+  it("links to the authorized transaction list without replacing creation", () => {
+    renderWithCoupleAuth(<PrivateHomePage />);
+    expect(screen.getByRole("link", { name: /ver transacoes/i })).toHaveAttribute(
+      "href",
+      "/app/transactions"
+    );
+    expect(screen.getByRole("link", { name: /nova transacao/i })).toHaveAttribute(
+      "href",
+      "/app/transactions/new"
+    );
+  });
+
   it("renders no_shared_budget form with accessible validation and keyboard submit", async () => {
     const user = userEvent.setup();
     const createInvite = vi
