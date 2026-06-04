@@ -22,8 +22,8 @@ implemented and validated as an independent increment.
 **Purpose**: Prepare reusable fixtures and feature entry points for F06 without
 changing existing transaction-creation behavior.
 
-- [ ] T001 Create the shared F06 test utility module scaffold in src/test/transaction-list-test-utils.ts
-- [ ] T002 [P] Create the transaction list contract module scaffold in src/features/transactions/transaction-list-types.ts
+- [X] T001 Create the shared F06 test utility module scaffold in src/test/transaction-list-test-utils.ts
+- [X] T002 [P] Create the transaction list contract module scaffold in src/features/transactions/transaction-list-types.ts
 
 ---
 
@@ -36,18 +36,18 @@ required by every user story.
 
 ### Tests for Foundational Contracts
 
-- [ ] T003 [P] Add civil-month tests for current month, adjacent months, year boundaries, and timezone-free date limits in src/features/transactions/transaction-month.test.ts
-- [ ] T004 [P] Add canonical URL parsing, serialization, invalid-value cleanup, search normalization, and filter-clearing tests in src/features/transactions/transaction-query.test.ts
-- [ ] T005 [P] Add migration contract tests for security invoker, grants, parameter validation, normalized literal search, stable cursor ordering, authorized options, RLS, and revocation behavior in src/features/transactions/transaction-list-migration.test.ts
-- [ ] T006 [P] Add coordinated RPC response mapping, invalid-query, and temporary-failure tests in src/features/transactions/transaction-list-service.test.ts
+- [X] T003 [P] Add civil-month tests for current month, adjacent months, year boundaries, and timezone-free date limits in src/features/transactions/transaction-month.test.ts
+- [X] T004 [P] Add canonical URL parsing, serialization, invalid-value cleanup, search normalization, and filter-clearing tests in src/features/transactions/transaction-query.test.ts
+- [X] T005 [P] Add migration contract tests for security invoker, grants, parameter validation, normalized literal search, stable cursor ordering, authorized options, RLS, and revocation behavior in src/features/transactions/transaction-list-migration.test.ts
+- [X] T006 [P] Add coordinated RPC response mapping, invalid-query, and temporary-failure tests in src/features/transactions/transaction-list-service.test.ts
 
 ### Implementation for Foundational Contracts
 
-- [ ] T007 Define transaction filters, civil month, query input/result, pagination cursor, list state, and safe service error types in src/features/transactions/transaction-list-types.ts
-- [ ] T008 [P] Implement timezone-free civil-month parsing, navigation, limits, and pt-BR labels in src/features/transactions/transaction-month.ts
-- [ ] T009 Implement canonical filter parsing, URL serialization, text normalization, individual clearing, and clear-all behavior in src/features/transactions/transaction-query.ts
-- [ ] T010 Implement the private immutable search normalizer, composite indexes, security-invoker list_financial_transactions RPC, parameter validation, authorized options, and minimal grants in supabase/migrations/20260605000000_list_filter_financial_transactions.sql
-- [ ] T011 Implement the typed Supabase RPC adapter, coordinated response mapping, abort-signal support, and safe failure conversion in src/features/transactions/transaction-list-service.ts
+- [X] T007 Define transaction filters, civil month, query input/result, pagination cursor, list state, and safe service error types in src/features/transactions/transaction-list-types.ts
+- [X] T008 [P] Implement timezone-free civil-month parsing, navigation, limits, and pt-BR labels in src/features/transactions/transaction-month.ts
+- [X] T009 Implement canonical filter parsing, URL serialization, text normalization, individual clearing, and clear-all behavior in src/features/transactions/transaction-query.ts
+- [X] T010 Implement the private immutable search normalizer, composite indexes, security-invoker list_financial_transactions RPC, parameter validation, authorized options, and minimal grants in supabase/migrations/20260605000000_list_filter_financial_transactions.sql
+- [X] T011 Implement the typed Supabase RPC adapter, coordinated response mapping, abort-signal support, and safe failure conversion in src/features/transactions/transaction-list-service.ts
 
 **Checkpoint**: Canonical filters and the authorized paginated query are ready
 for all user-story increments.
@@ -66,20 +66,20 @@ then switch months and verify the period changes.
 
 ### Tests for User Story 1
 
-- [ ] T012 [P] [US1] Add initial monthly load, month change, stable pagination, and authorized-result hook tests in src/features/transactions/use-transaction-list.test.tsx
-- [ ] T013 [P] [US1] Add semantic item tests for title, positive currency, type, date, category, responsible person, visibility, and conditional creator label in src/features/transactions/transaction-list-item.test.tsx
-- [ ] T014 [P] [US1] Add populated monthly list, stable order, and load-more interaction tests in src/features/transactions/transaction-list.test.tsx
-- [ ] T015 [P] [US1] Add authenticated transactions route and monthly consultation page tests in src/pages/transactions-page.test.tsx
-- [ ] T016 [P] [US1] Add /app/transactions route metadata and protection assertions in src/app/routes.test.ts
+- [X] T012 [P] [US1] Add initial monthly load, month change, stable pagination, and authorized-result hook tests in src/features/transactions/use-transaction-list.test.tsx
+- [X] T013 [P] [US1] Add semantic item tests for title, positive currency, type, date, category, responsible person, visibility, and conditional creator label in src/features/transactions/transaction-list-item.test.tsx
+- [X] T014 [P] [US1] Add populated monthly list, stable order, and load-more interaction tests in src/features/transactions/transaction-list.test.tsx
+- [X] T015 [P] [US1] Add authenticated transactions route and monthly consultation page tests in src/pages/transactions-page.test.tsx
+- [X] T016 [P] [US1] Add /app/transactions route metadata and protection assertions in src/app/routes.test.ts
 
 ### Implementation for User Story 1
 
-- [ ] T017 [US1] Implement current-request monthly loading, page accumulation, cursor handling, and duplicate load-more prevention in src/features/transactions/use-transaction-list.ts
-- [ ] T018 [P] [US1] Implement the semantic financial transaction list item without IDs, observation, totals, or mutation actions in src/features/transactions/transaction-list-item.tsx
-- [ ] T019 [US1] Implement the populated transaction list and explicit Carregar mais control in src/features/transactions/transaction-list.tsx
-- [ ] T020 [US1] Create the monthly transactions consultation page with title and feature composition in src/pages/transactions-page.tsx
-- [ ] T021 [US1] Add /app/transactions route metadata while preserving /app/transactions/new in src/app/routes.ts
-- [ ] T022 [US1] Register TransactionsPage inside the authenticated layout in src/app/router.tsx
+- [X] T017 [US1] Implement current-request monthly loading, page accumulation, cursor handling, and duplicate load-more prevention in src/features/transactions/use-transaction-list.ts
+- [X] T018 [P] [US1] Implement the semantic financial transaction list item without IDs, observation, totals, or mutation actions in src/features/transactions/transaction-list-item.tsx
+- [X] T019 [US1] Implement the populated transaction list and explicit Carregar mais control in src/features/transactions/transaction-list.tsx
+- [X] T020 [US1] Create the monthly transactions consultation page with title and feature composition in src/pages/transactions-page.tsx
+- [X] T021 [US1] Add /app/transactions route metadata while preserving /app/transactions/new in src/app/routes.ts
+- [X] T022 [US1] Register TransactionsPage inside the authenticated layout in src/app/router.tsx
 
 **Checkpoint**: User Story 1 is independently usable as the MVP monthly
 authorized transaction list.
@@ -98,17 +98,17 @@ that clearing filters preserves the selected month.
 
 ### Tests for User Story 2
 
-- [ ] T023 [P] [US2] Add active-filter derivation, authorized option mapping, individual removal, and clear-all tests in src/features/transactions/transaction-filters.test.ts
-- [ ] T024 [P] [US2] Add keyboard-operable month, category, responsible, type, search, active-filter, and clear-all control tests in src/features/transactions/transaction-list-controls.test.tsx
-- [ ] T025 [P] [US2] Extend coordinated RPC service tests for combined filters, normalized text, authorized historical options, and cursor reset in src/features/transactions/transaction-list-service.test.ts
-- [ ] T026 [P] [US2] Add filtered page URL/back-forward and combined-filter journey tests in src/pages/transactions-page.test.tsx
+- [X] T023 [P] [US2] Add active-filter derivation, authorized option mapping, individual removal, and clear-all tests in src/features/transactions/transaction-filters.test.ts
+- [X] T024 [P] [US2] Add keyboard-operable month, category, responsible, type, search, active-filter, and clear-all control tests in src/features/transactions/transaction-list-controls.test.tsx
+- [X] T025 [P] [US2] Extend coordinated RPC service tests for combined filters, normalized text, authorized historical options, and cursor reset in src/features/transactions/transaction-list-service.test.ts
+- [X] T026 [P] [US2] Add filtered page URL/back-forward and combined-filter journey tests in src/pages/transactions-page.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Implement authorized option mapping and removable active-filter presentation models in src/features/transactions/transaction-filters.ts
-- [ ] T028 [US2] Implement month navigation, filter controls, text search, active filters, individual clearing, and clear-all controls in src/features/transactions/transaction-list-controls.tsx
-- [ ] T029 [US2] Connect canonical URL filters to controls and reset loaded pages whenever filters change in src/features/transactions/use-transaction-list.ts
-- [ ] T030 [US2] Integrate filter controls and authorized options into the consultation page in src/pages/transactions-page.tsx
+- [X] T027 [US2] Implement authorized option mapping and removable active-filter presentation models in src/features/transactions/transaction-filters.ts
+- [X] T028 [US2] Implement month navigation, filter controls, text search, active filters, individual clearing, and clear-all controls in src/features/transactions/transaction-list-controls.tsx
+- [X] T029 [US2] Connect canonical URL filters to controls and reset loaded pages whenever filters change in src/features/transactions/use-transaction-list.ts
+- [X] T030 [US2] Integrate filter controls and authorized options into the consultation page in src/pages/transactions-page.tsx
 
 **Checkpoint**: User Story 2 can locate authorized transactions using combined
 filters without exposing unrelated options or changing the selected month.
@@ -127,15 +127,15 @@ verify each state is safe and only the newest response becomes visible.
 
 ### Tests for User Story 3
 
-- [ ] T031 [P] [US3] Add neutral private-by-default loading, empty-month, no-match, loading-more, and error message tests in src/features/transactions/transaction-list.test.tsx
-- [ ] T032 [P] [US3] Add stale-response suppression, abort, retry, filter reset, session/context reset, and revoked-access clearing tests in src/features/transactions/use-transaction-list.test.tsx
-- [ ] T033 [P] [US3] Add safe public-copy checks that reject raw SQL, RLS, Supabase, IDs, inaccessible-data hints, and judgmental wording in src/features/transactions/transaction-list-messages.test.ts
+- [X] T031 [P] [US3] Add neutral private-by-default loading, empty-month, no-match, loading-more, and error message tests in src/features/transactions/transaction-list.test.tsx
+- [X] T032 [P] [US3] Add stale-response suppression, abort, retry, filter reset, session/context reset, and revoked-access clearing tests in src/features/transactions/use-transaction-list.test.tsx
+- [X] T033 [P] [US3] Add safe public-copy checks that reject raw SQL, RLS, Supabase, IDs, inaccessible-data hints, and judgmental wording in src/features/transactions/transaction-list-messages.test.ts
 
 ### Implementation for User Story 3
 
-- [ ] T034 [US3] Define neutral pt-BR copy and safe retry/clear-filter actions for every transaction list state in src/features/transactions/transaction-list-messages.ts
-- [ ] T035 [US3] Implement monotonic request ownership, abort handling, stale-response suppression, retry, and immediate clearing on query/session/context changes in src/features/transactions/use-transaction-list.ts
-- [ ] T036 [US3] Render distinct loading, empty-month, no-match, loading-more, and recoverable-error states with appropriate actions in src/features/transactions/transaction-list.tsx
+- [X] T034 [US3] Define neutral pt-BR copy and safe retry/clear-filter actions for every transaction list state in src/features/transactions/transaction-list-messages.ts
+- [X] T035 [US3] Implement monotonic request ownership, abort handling, stale-response suppression, retry, and immediate clearing on query/session/context changes in src/features/transactions/use-transaction-list.ts
+- [X] T036 [US3] Render distinct loading, empty-month, no-match, loading-more, and recoverable-error states with appropriate actions in src/features/transactions/transaction-list.tsx
 
 **Checkpoint**: User Story 3 independently explains every consultation outcome
 without retaining or implying inaccessible financial data.
@@ -153,16 +153,16 @@ verify no essential action depends only on color, icon, or horizontal scrolling.
 
 ### Tests for User Story 4
 
-- [ ] T037 [P] [US4] Add accessible names, focus order, perceivable updates, non-color meaning, and keyboard-operation tests in src/features/transactions/transaction-list-controls.test.tsx
-- [ ] T038 [P] [US4] Add semantic status announcements, keyboard load-more/retry, and mobile-friendly list structure tests in src/features/transactions/transaction-list.test.tsx
-- [ ] T039 [P] [US4] Add mobile composition, text-content clarity, and absence-of-horizontal-overflow assertions in src/pages/transactions-page.test.tsx
+- [X] T037 [P] [US4] Add accessible names, focus order, perceivable updates, non-color meaning, and keyboard-operation tests in src/features/transactions/transaction-list-controls.test.tsx
+- [X] T038 [P] [US4] Add semantic status announcements, keyboard load-more/retry, and mobile-friendly list structure tests in src/features/transactions/transaction-list.test.tsx
+- [X] T039 [P] [US4] Add mobile composition, text-content clarity, and absence-of-horizontal-overflow assertions in src/pages/transactions-page.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T040 [US4] Add responsive filter layout, visible focus, complete labels, and accessible active-filter removal behavior in src/features/transactions/transaction-list-controls.tsx
-- [ ] T041 [US4] Add responsive item layout and explicit text labels for type, responsible person, creator, and visibility in src/features/transactions/transaction-list-item.tsx
-- [ ] T042 [US4] Add semantic list/status regions, moderated live announcements, and stable focus behavior in src/features/transactions/transaction-list.tsx
-- [ ] T043 [US4] Finalize the mobile-first page composition without horizontal scrolling in src/pages/transactions-page.tsx
+- [X] T040 [US4] Add responsive filter layout, visible focus, complete labels, and accessible active-filter removal behavior in src/features/transactions/transaction-list-controls.tsx
+- [X] T041 [US4] Add responsive item layout and explicit text labels for type, responsible person, creator, and visibility in src/features/transactions/transaction-list-item.tsx
+- [X] T042 [US4] Add semantic list/status regions, moderated live announcements, and stable focus behavior in src/features/transactions/transaction-list.tsx
+- [X] T043 [US4] Finalize the mobile-first page composition without horizontal scrolling in src/pages/transactions-page.tsx
 
 **Checkpoint**: User Story 4 makes the complete consultation journey usable
 across viewport sizes and interaction modes.
@@ -174,13 +174,13 @@ across viewport sizes and interaction modes.
 **Purpose**: Validate security, performance, scope, and project-wide quality
 after the desired user stories are complete.
 
-- [ ] T044 [P] Add a discreet transactions-list entry to the authenticated home without replacing the existing creation entry in src/pages/private-home-page.tsx
-- [ ] T045 [P] Add authenticated-home navigation coverage for the transactions-list entry in src/pages/private-home-page.test.tsx
-- [ ] T046 Audit transaction list exports and remove accidental cross-feature exposure in src/features/transactions/index.ts
+- [X] T044 [P] Add a discreet transactions-list entry to the authenticated home without replacing the existing creation entry in src/pages/private-home-page.tsx
+- [X] T045 [P] Add authenticated-home navigation coverage for the transactions-list entry in src/pages/private-home-page.test.tsx
+- [X] T046 Audit transaction list exports and remove accidental cross-feature exposure in src/features/transactions/index.ts
 - [ ] T047 Validate the local Supabase migration, query plan, grants, RLS matrix, revocation, cursor behavior, and 1,000-row monthly performance using specs/006-list-filter-transactions/quickstart.md
 - [ ] T048 Validate mobile, 200% text zoom, keyboard-only operation, focus behavior, screen-reader announcements, and neutral financial labels using specs/006-list-filter-transactions/quickstart.md
-- [ ] T049 Run npm run lint, npm run format:check, npm run typecheck, npm run test:run, npm run build, and git diff --check; record any required follow-up in specs/006-list-filter-transactions/quickstart.md
-- [ ] T050 Confirm F06 introduces no totals, balances, counts, details, mutations, dashboards, charts, exports, or new dependencies by reviewing specs/006-list-filter-transactions/quickstart.md
+- [X] T049 Run npm run lint, npm run format:check, npm run typecheck, npm run test:run, npm run build, and git diff --check; record any required follow-up in specs/006-list-filter-transactions/quickstart.md
+- [X] T050 Confirm F06 introduces no totals, balances, counts, details, mutations, dashboards, charts, exports, or new dependencies by reviewing specs/006-list-filter-transactions/quickstart.md
 
 ---
 

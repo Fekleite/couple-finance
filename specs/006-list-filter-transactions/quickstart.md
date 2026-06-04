@@ -155,3 +155,19 @@ Confirmar que F06 nao introduz:
 - Categorias personalizadas, perfis, nomes customizados ou auditoria.
 - TanStack Query, React Hook Form, Zod, Recharts ou dependencia adicional sem
   justificativa.
+
+## Implementation Validation - 2026-06-04
+
+- `npm run lint`: passou.
+- `npm run format:check`: passou.
+- `npm run typecheck`: passou.
+- `npm run test:run`: passou com 49 arquivos e 141 testes.
+- `npm run build`: passou.
+- `git diff --check`: passou.
+- Revisao estatica confirmou RPC `security invoker`, grants minimos, cursor
+  composto, opcoes autorizadas e ausencia de contagens/agregacoes no frontend.
+- `supabase db reset` nao foi concluido porque o Docker Desktop nao estava em
+  execucao. Validacao local de migration, plano, matriz RLS, revogacao e
+  desempenho com 1.000 linhas permanece pendente.
+- Revisao manual em viewport mobile, zoom de 200%, teclado e leitor de tela
+  permanece pendente em ambiente interativo.

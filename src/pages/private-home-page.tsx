@@ -78,6 +78,20 @@ export function PrivateHomePage() {
 
       <Card>
         <CardHeader>
+          <CardTitle>Consultar transacoes</CardTitle>
+          <CardDescription>
+            Visualize e filtre as movimentacoes disponiveis por mes.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button asChild variant="secondary">
+            <Link to={PRIVATE_ROUTES.transactions.path}>Ver transacoes</Link>
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle>Registrar transacao</CardTitle>
           <CardDescription>
             Adicione uma receita ou despesa individual ou compartilhada.
