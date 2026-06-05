@@ -99,6 +99,12 @@ npm run build
   para lista completa.
 - Leitor de tela quando disponivel: confirmar nomes de regioes, significado dos
   indicadores e anuncio moderado de atualizacao.
+- Leitor de tela: confirmar que a regiao "Resumo financeiro do mes" anuncia os
+  quatro indicadores com valor e significado textual.
+- Teclado: confirmar ordem periodo, indicadores, transacoes recentes, lista
+  completa e acoes preservadas da home privada.
+- Mobile: confirmar que os botoes de mes, indicadores e itens recentes quebram
+  linha sem rolagem horizontal em largura estreita.
 - Texto ampliado ate 200%: confirmar que valores e labels nao se sobrepoem.
 - Privacidade: revisar estados vazios, erro e perda de acesso sem inferencias.
 - Clareza financeira: confirmar que receitas, despesas, saldo e

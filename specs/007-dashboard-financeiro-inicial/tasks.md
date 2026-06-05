@@ -18,11 +18,11 @@
 
 **Purpose**: Create the dashboard feature surface and shared test scaffolding without implementing user story behavior.
 
-- [ ] T001 Create dashboard feature barrel with placeholder exports in src/features/dashboard/index.ts
-- [ ] T002 [P] Create dashboard feature directory README notes for module boundaries in src/features/dashboard/README.md
-- [ ] T003 [P] Create dashboard test data builders for periods, indicators and recent transactions in src/test/dashboard-test-utils.ts
-- [ ] T004 [P] Create empty dashboard migration test shell in src/features/dashboard/dashboard-migration.test.ts
-- [ ] T005 [P] Create dashboard route test shell for private home replacement in src/pages/private-home-page.test.tsx
+- [X] T001 Create dashboard feature barrel with placeholder exports in src/features/dashboard/index.ts
+- [X] T002 [P] Create dashboard feature directory README notes for module boundaries in src/features/dashboard/README.md
+- [X] T003 [P] Create dashboard test data builders for periods, indicators and recent transactions in src/test/dashboard-test-utils.ts
+- [X] T004 [P] Create empty dashboard migration test shell in src/features/dashboard/dashboard-migration.test.ts
+- [X] T005 [P] Create dashboard route test shell for private home replacement in src/pages/private-home-page.test.tsx
 
 ---
 
@@ -32,16 +32,16 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T006 [P] Define dashboard period, indicator, recent transaction, response and failure types in src/features/dashboard/dashboard-types.ts
-- [ ] T007 [P] Define neutral dashboard copy constants for loading, empty, error, result meanings and labels in src/features/dashboard/dashboard-messages.ts
-- [ ] T008 [P] Add dashboard message unit tests for safe Brazilian Portuguese copy without inaccessible-data hints in src/features/dashboard/dashboard-messages.test.ts
-- [ ] T009 Implement dashboard service result mapping and safe failure normalization for public.get_financial_dashboard in src/features/dashboard/dashboard-service.ts
-- [ ] T010 [P] Add dashboard service contract tests for RPC arguments, recent limit 5 and safe error reasons in src/features/dashboard/dashboard-service.test.ts
-- [ ] T011 Implement dashboard state reducer with loading, refreshing, ready, empty_month and error transitions in src/features/dashboard/dashboard-state.ts
-- [ ] T012 [P] Add dashboard state reducer tests for allowed transitions and clearing sensitive retained data in src/features/dashboard/dashboard-state.test.ts
-- [ ] T013 Implement useDashboard hook skeleton with month input, request id concurrency guard, retry callback and context reset support in src/features/dashboard/use-dashboard.ts
-- [ ] T014 [P] Add useDashboard hook tests for stale response suppression and retry wiring in src/features/dashboard/use-dashboard.test.tsx
-- [ ] T015 Export dashboard types, messages, service, state and hook from src/features/dashboard/index.ts
+- [X] T006 [P] Define dashboard period, indicator, recent transaction, response and failure types in src/features/dashboard/dashboard-types.ts
+- [X] T007 [P] Define neutral dashboard copy constants for loading, empty, error, result meanings and labels in src/features/dashboard/dashboard-messages.ts
+- [X] T008 [P] Add dashboard message unit tests for safe Brazilian Portuguese copy without inaccessible-data hints in src/features/dashboard/dashboard-messages.test.ts
+- [X] T009 Implement dashboard service result mapping and safe failure normalization for public.get_financial_dashboard in src/features/dashboard/dashboard-service.ts
+- [X] T010 [P] Add dashboard service contract tests for RPC arguments, recent limit 5 and safe error reasons in src/features/dashboard/dashboard-service.test.ts
+- [X] T011 Implement dashboard state reducer with loading, refreshing, ready, empty_month and error transitions in src/features/dashboard/dashboard-state.ts
+- [X] T012 [P] Add dashboard state reducer tests for allowed transitions and clearing sensitive retained data in src/features/dashboard/dashboard-state.test.ts
+- [X] T013 Implement useDashboard hook skeleton with month input, request id concurrency guard, retry callback and context reset support in src/features/dashboard/use-dashboard.ts
+- [X] T014 [P] Add useDashboard hook tests for stale response suppression and retry wiring in src/features/dashboard/use-dashboard.test.tsx
+- [X] T015 Export dashboard types, messages, service, state and hook from src/features/dashboard/index.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in priority order or in parallel by different implementers.
 
@@ -55,22 +55,22 @@
 
 ### Tests for User Story 1
 
-- [ ] T016 [P] [US1] Add migration tests for security invoker RPC, authenticated grant, fixed search_path and indicator-only authorization in src/features/dashboard/dashboard-migration.test.ts
-- [ ] T017 [P] [US1] Add dashboard summary tests for income, expenses, balance, positive, negative, zero and empty authorized month calculations in src/features/dashboard/dashboard-summary.test.ts
-- [ ] T018 [P] [US1] Add indicator card accessibility tests for labels, values and text result meanings in src/features/dashboard/dashboard-indicator-card.test.tsx
-- [ ] T019 [P] [US1] Add dashboard view tests for current-month summary rendering and month-change indicator refresh in src/features/dashboard/dashboard-view.test.tsx
-- [ ] T020 [P] [US1] Add private home route tests for default current month, valid month query and invalid month normalization in src/pages/private-home-page.test.tsx
+- [X] T016 [P] [US1] Add migration tests for security invoker RPC, authenticated grant, fixed search_path and indicator-only authorization in src/features/dashboard/dashboard-migration.test.ts
+- [X] T017 [P] [US1] Add dashboard summary tests for income, expenses, balance, positive, negative, zero and empty authorized month calculations in src/features/dashboard/dashboard-summary.test.ts
+- [X] T018 [P] [US1] Add indicator card accessibility tests for labels, values and text result meanings in src/features/dashboard/dashboard-indicator-card.test.tsx
+- [X] T019 [P] [US1] Add dashboard view tests for current-month summary rendering and month-change indicator refresh in src/features/dashboard/dashboard-view.test.tsx
+- [X] T020 [P] [US1] Add private home route tests for default current month, valid month query and invalid month normalization in src/pages/private-home-page.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T021 [US1] Create public.get_financial_dashboard security invoker RPC with validated month inputs, authenticated grant, fixed search_path and authorized indicator aggregation in supabase/migrations/20260605010000_financial_dashboard_initial.sql
-- [ ] T022 [P] [US1] Implement dashboard summary helpers for formatted income, expenses, balance and result reading in src/features/dashboard/dashboard-summary.ts
-- [ ] T023 [P] [US1] Implement dashboard indicator card component with semantic labels and non-color-only result text in src/features/dashboard/dashboard-indicator-card.tsx
-- [ ] T024 [US1] Complete dashboard service mapping from snake_case RPC indicator response to camelCase dashboard types in src/features/dashboard/dashboard-service.ts
-- [ ] T025 [US1] Complete useDashboard loading, refreshing and ready states for selected month summary data in src/features/dashboard/use-dashboard.ts
-- [ ] T026 [US1] Implement dashboard view month selector, summary region and four indicators in src/features/dashboard/dashboard-view.tsx
-- [ ] T027 [US1] Replace the initial private home content with dashboard coordination while preserving links to transactions, new transaction and categories in src/pages/private-home-page.tsx
-- [ ] T028 [US1] Update dashboard feature exports for summary, indicator card and view in src/features/dashboard/index.ts
+- [X] T021 [US1] Create public.get_financial_dashboard security invoker RPC with validated month inputs, authenticated grant, fixed search_path and authorized indicator aggregation in supabase/migrations/20260605010000_financial_dashboard_initial.sql
+- [X] T022 [P] [US1] Implement dashboard summary helpers for formatted income, expenses, balance and result reading in src/features/dashboard/dashboard-summary.ts
+- [X] T023 [P] [US1] Implement dashboard indicator card component with semantic labels and non-color-only result text in src/features/dashboard/dashboard-indicator-card.tsx
+- [X] T024 [US1] Complete dashboard service mapping from snake_case RPC indicator response to camelCase dashboard types in src/features/dashboard/dashboard-service.ts
+- [X] T025 [US1] Complete useDashboard loading, refreshing and ready states for selected month summary data in src/features/dashboard/use-dashboard.ts
+- [X] T026 [US1] Implement dashboard view month selector, summary region and four indicators in src/features/dashboard/dashboard-view.tsx
+- [X] T027 [US1] Replace the initial private home content with dashboard coordination while preserving links to transactions, new transaction and categories in src/pages/private-home-page.tsx
+- [X] T028 [US1] Update dashboard feature exports for summary, indicator card and view in src/features/dashboard/index.ts
 
 **Checkpoint**: User Story 1 is fully functional and testable as the MVP.
 
@@ -84,18 +84,18 @@
 
 ### Tests for User Story 2
 
-- [ ] T029 [P] [US2] Add migration tests for recent transaction ordering, limit 5, omitted observation and inaccessible row exclusion in src/features/dashboard/dashboard-migration.test.ts
-- [ ] T030 [P] [US2] Add recent transaction component tests for title, positive amount, type, date, category, responsible label and visibility in src/features/dashboard/dashboard-recent-transaction.test.tsx
-- [ ] T031 [P] [US2] Add dashboard service tests for recent transaction response mapping and missing optional creator display in src/features/dashboard/dashboard-service.test.ts
-- [ ] T032 [P] [US2] Add dashboard view tests for concise recent list, empty recent area and link to full transaction list in src/features/dashboard/dashboard-view.test.tsx
+- [X] T029 [P] [US2] Add migration tests for recent transaction ordering, limit 5, omitted observation and inaccessible row exclusion in src/features/dashboard/dashboard-migration.test.ts
+- [X] T030 [P] [US2] Add recent transaction component tests for title, positive amount, type, date, category, responsible label and visibility in src/features/dashboard/dashboard-recent-transaction.test.tsx
+- [X] T031 [P] [US2] Add dashboard service tests for recent transaction response mapping and missing optional creator display in src/features/dashboard/dashboard-service.test.ts
+- [X] T032 [P] [US2] Add dashboard view tests for concise recent list, empty recent area and link to full transaction list in src/features/dashboard/dashboard-view.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T033 [US2] Extend public.get_financial_dashboard RPC to return recent_transactions ordered by transaction_date, created_at and id with recent_limit_input capped at 10 in supabase/migrations/20260605010000_financial_dashboard_initial.sql
-- [ ] T034 [US2] Extend dashboard service mapping for recent_transactions fields and creator/responsible labels in src/features/dashboard/dashboard-service.ts
-- [ ] T035 [P] [US2] Implement dashboard recent transaction component reusing transaction money/date formatting and visibility labels in src/features/dashboard/dashboard-recent-transaction.tsx
-- [ ] T036 [US2] Integrate recent transactions section and transaction-list link into dashboard view without pagination, filters or mutations in src/features/dashboard/dashboard-view.tsx
-- [ ] T037 [US2] Update dashboard test builders with ordered recent transaction fixtures in src/test/dashboard-test-utils.ts
+- [X] T033 [US2] Extend public.get_financial_dashboard RPC to return recent_transactions ordered by transaction_date, created_at and id with recent_limit_input capped at 10 in supabase/migrations/20260605010000_financial_dashboard_initial.sql
+- [X] T034 [US2] Extend dashboard service mapping for recent_transactions fields and creator/responsible labels in src/features/dashboard/dashboard-service.ts
+- [X] T035 [P] [US2] Implement dashboard recent transaction component reusing transaction money/date formatting and visibility labels in src/features/dashboard/dashboard-recent-transaction.tsx
+- [X] T036 [US2] Integrate recent transactions section and transaction-list link into dashboard view without pagination, filters or mutations in src/features/dashboard/dashboard-view.tsx
+- [X] T037 [US2] Update dashboard test builders with ordered recent transaction fixtures in src/test/dashboard-test-utils.ts
 
 **Checkpoint**: User Stories 1 and 2 both work independently and the dashboard remains concise.
 
@@ -109,19 +109,19 @@
 
 ### Tests for User Story 3
 
-- [ ] T038 [P] [US3] Add migration tests for empty authorized month, inactive memberships, ended links, pending invites and shared-access revocation in src/features/dashboard/dashboard-migration.test.ts
-- [ ] T039 [P] [US3] Add dashboard state tests for empty_month, error, retry and sensitive context reset transitions in src/features/dashboard/dashboard-state.test.ts
-- [ ] T040 [P] [US3] Add useDashboard tests for relationship/session key changes clearing stale shared data before refetch in src/features/dashboard/use-dashboard.test.tsx
-- [ ] T041 [P] [US3] Add dashboard view tests for loading, refreshing, empty and recoverable error states with safe actions in src/features/dashboard/dashboard-view.test.tsx
+- [X] T038 [P] [US3] Add migration tests for empty authorized month, inactive memberships, ended links, pending invites and shared-access revocation in src/features/dashboard/dashboard-migration.test.ts
+- [X] T039 [P] [US3] Add dashboard state tests for empty_month, error, retry and sensitive context reset transitions in src/features/dashboard/dashboard-state.test.ts
+- [X] T040 [P] [US3] Add useDashboard tests for relationship/session key changes clearing stale shared data before refetch in src/features/dashboard/use-dashboard.test.tsx
+- [X] T041 [P] [US3] Add dashboard view tests for loading, refreshing, empty and recoverable error states with safe actions in src/features/dashboard/dashboard-view.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T042 [US3] Harden public.get_financial_dashboard RPC authorization joins so only active budget_members grant shared access in supabase/migrations/20260605010000_financial_dashboard_initial.sql
-- [ ] T043 [US3] Implement dashboard empty and error state derivation with zeroed indicators and no retained recent transactions in src/features/dashboard/dashboard-state.ts
-- [ ] T044 [US3] Implement safe loading, refreshing, empty, unavailable and retry messages in src/features/dashboard/dashboard-messages.ts
-- [ ] T045 [US3] Wire useDashboard context reset for user id and shared budget id changes in src/features/dashboard/use-dashboard.ts
-- [ ] T046 [US3] Render safe LoadingState, EmptyState and ErrorState flows with retry in src/features/dashboard/dashboard-view.tsx
-- [ ] T047 [US3] Pass authenticated user and relationship context keys from private home into the dashboard hook/view in src/pages/private-home-page.tsx
+- [X] T042 [US3] Harden public.get_financial_dashboard RPC authorization joins so only active budget_members grant shared access in supabase/migrations/20260605010000_financial_dashboard_initial.sql
+- [X] T043 [US3] Implement dashboard empty and error state derivation with zeroed indicators and no retained recent transactions in src/features/dashboard/dashboard-state.ts
+- [X] T044 [US3] Implement safe loading, refreshing, empty, unavailable and retry messages in src/features/dashboard/dashboard-messages.ts
+- [X] T045 [US3] Wire useDashboard context reset for user id and shared budget id changes in src/features/dashboard/use-dashboard.ts
+- [X] T046 [US3] Render safe LoadingState, EmptyState and ErrorState flows with retry in src/features/dashboard/dashboard-view.tsx
+- [X] T047 [US3] Pass authenticated user and relationship context keys from private home into the dashboard hook/view in src/pages/private-home-page.tsx
 
 **Checkpoint**: User Stories 1, 2 and 3 handle normal, empty, failure and revocation scenarios without leaking data.
 
@@ -135,18 +135,18 @@
 
 ### Tests for User Story 4
 
-- [ ] T048 [P] [US4] Add dashboard view accessibility tests for named regions, aria-live updates, keyboard month controls and focus order in src/features/dashboard/dashboard-view.test.tsx
-- [ ] T049 [P] [US4] Add private home accessibility tests for route heading, landmark order and preserved navigation links in src/pages/private-home-page.test.tsx
-- [ ] T050 [P] [US4] Add indicator and recent transaction responsive class assertions for no horizontal-scroll patterns in src/features/dashboard/dashboard-view.test.tsx
-- [ ] T051 [P] [US4] Add manual mobile and screen-reader review checklist entries for dashboard flows in specs/007-dashboard-financeiro-inicial/quickstart.md
+- [X] T048 [P] [US4] Add dashboard view accessibility tests for named regions, aria-live updates, keyboard month controls and focus order in src/features/dashboard/dashboard-view.test.tsx
+- [X] T049 [P] [US4] Add private home accessibility tests for route heading, landmark order and preserved navigation links in src/pages/private-home-page.test.tsx
+- [X] T050 [P] [US4] Add indicator and recent transaction responsive class assertions for no horizontal-scroll patterns in src/features/dashboard/dashboard-view.test.tsx
+- [X] T051 [P] [US4] Add manual mobile and screen-reader review checklist entries for dashboard flows in specs/007-dashboard-financeiro-inicial/quickstart.md
 
 ### Implementation for User Story 4
 
-- [ ] T052 [US4] Refine dashboard view responsive layout for mobile, tablet and desktop without horizontal scrolling in src/features/dashboard/dashboard-view.tsx
-- [ ] T053 [US4] Add accessible month navigation labels, disabled states and perceivable update status in src/features/dashboard/dashboard-view.tsx
-- [ ] T054 [US4] Refine indicator card focus, heading levels and text descriptions for assistive technologies in src/features/dashboard/dashboard-indicator-card.tsx
-- [ ] T055 [US4] Refine recent transaction semantics, compact wrapping and creator/responsible clarification in src/features/dashboard/dashboard-recent-transaction.tsx
-- [ ] T056 [US4] Adjust private home page heading hierarchy and dashboard-first layout for mobile scanability in src/pages/private-home-page.tsx
+- [X] T052 [US4] Refine dashboard view responsive layout for mobile, tablet and desktop without horizontal scrolling in src/features/dashboard/dashboard-view.tsx
+- [X] T053 [US4] Add accessible month navigation labels, disabled states and perceivable update status in src/features/dashboard/dashboard-view.tsx
+- [X] T054 [US4] Refine indicator card focus, heading levels and text descriptions for assistive technologies in src/features/dashboard/dashboard-indicator-card.tsx
+- [X] T055 [US4] Refine recent transaction semantics, compact wrapping and creator/responsible clarification in src/features/dashboard/dashboard-recent-transaction.tsx
+- [X] T056 [US4] Adjust private home page heading hierarchy and dashboard-first layout for mobile scanability in src/pages/private-home-page.tsx
 
 **Checkpoint**: All user stories are independently functional, accessible and responsive.
 
@@ -156,13 +156,13 @@
 
 **Purpose**: Validate the complete dashboard and clean up cross-story quality concerns.
 
-- [ ] T057 [P] Run npm run lint and fix any issues in src/features/dashboard/
-- [ ] T058 [P] Run npm run format:check and format changed files in src/features/dashboard/
-- [ ] T059 Run npm run typecheck and fix TypeScript contract issues in src/features/dashboard/
-- [ ] T060 Run npm run test:run and fix failing dashboard, route, migration and shared helper tests in src/features/dashboard/
-- [ ] T061 Run npm run build and fix production build issues in src/features/dashboard/
-- [ ] T062 [P] Perform quickstart privacy, mobile, keyboard and financial clarity review in specs/007-dashboard-financeiro-inicial/quickstart.md
-- [ ] T063 Audit final scope to confirm no charts, detailed filters, pagination, goals, mutations, exports or predictive alerts were added in src/features/dashboard/
+- [X] T057 [P] Run npm run lint and fix any issues in src/features/dashboard/
+- [X] T058 [P] Run npm run format:check and format changed files in src/features/dashboard/
+- [X] T059 Run npm run typecheck and fix TypeScript contract issues in src/features/dashboard/
+- [X] T060 Run npm run test:run and fix failing dashboard, route, migration and shared helper tests in src/features/dashboard/
+- [X] T061 Run npm run build and fix production build issues in src/features/dashboard/
+- [X] T062 [P] Perform quickstart privacy, mobile, keyboard and financial clarity review in specs/007-dashboard-financeiro-inicial/quickstart.md
+- [X] T063 Audit final scope to confirm no charts, detailed filters, pagination, goals, mutations, exports or predictive alerts were added in src/features/dashboard/
 
 ---
 
