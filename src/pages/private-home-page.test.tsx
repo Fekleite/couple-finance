@@ -5,11 +5,17 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { PrivateHomePage } from "@/pages/private-home-page";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
+import { useDashboard } from "@/features/dashboard";
 import { getPermissionMessage } from "@/features/permissions";
-import { renderWithCoupleAuth } from "@/test/couple-test-utils";
+import { dashboardPeriod, dashboardResponse } from "@/test/dashboard-test-utils";
+import { renderWithCoupleAuth, renderWithCoupleRoute } from "@/test/couple-test-utils";
 
 vi.mock("@/features/couple/use-couple-relationship", () => ({
   useCoupleRelationship: vi.fn()
+}));
+vi.mock("@/features/dashboard", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/features/dashboard")>()),
+  useDashboard: vi.fn()
 }));
 
 function mockRelationship(overrides: Partial<ReturnType<typeof useCoupleRelationship>> = {}) {
@@ -30,6 +36,40 @@ describe("PrivateHomePage couple states", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockRelationship();
+    const period = dashboardPeriod();
+    vi.mocked(useDashboard).mockReturnValue({
+      state: { ...dashboardResponse({ period }), status: "ready", period },
+      retry: vi.fn()
+    });
+  });
+
+  it("renders dashboard first with default current month and preserved landmark order", () => {
+    renderWithCoupleRoute(<PrivateHomePage />, { route: "/app", path: "/app" });
+    expect(screen.getByRole("heading", { name: /dashboard financeiro/i })).toBeInTheDocument();
+    expect(screen.getByLabelText("Resumo financeiro do mes")).toBeInTheDocument();
+    expect(screen.getByLabelText("Acoes financeiras")).toBeInTheDocument();
+  });
+
+  it("uses a valid month query and normalizes invalid months", async () => {
+    renderWithCoupleRoute(<PrivateHomePage />, {
+      route: "/app?month=2026-05",
+      path: "/app"
+    });
+    expect(useDashboard).toHaveBeenCalledWith(
+      expect.objectContaining({ key: "2026-05" }),
+      expect.stringContaining("user-a")
+    );
+
+    const invalid = renderWithCoupleRoute(<PrivateHomePage />, {
+      route: "/app?month=not-a-month",
+      path: "/app"
+    });
+    await waitFor(() => expect(useDashboard).toHaveBeenCalled());
+    const calls = vi.mocked(useDashboard).mock.calls;
+    const lastCall = calls[calls.length - 1];
+    expect(lastCall?.[0].key).toMatch(/^\d{4}-\d{2}$/);
+    expect(lastCall?.[0].key).not.toBe("not-a-month");
+    invalid.unmount();
   });
 
   it("links to the read-only standard category catalog", () => {
@@ -116,7 +156,7 @@ describe("PrivateHomePage couple states", () => {
     );
   });
 
-  it("renders linked state without future feature content", () => {
+  it("renders linked state with active shared context and no future charts", () => {
     mockRelationship({
       relationshipState: {
         status: "couple_linked",
@@ -131,7 +171,8 @@ describe("PrivateHomePage couple states", () => {
     renderWithCoupleAuth(<PrivateHomePage />);
 
     expect(screen.getByText(COUPLE_MESSAGES.linkedTitle)).toBeInTheDocument();
-    expect(screen.queryByText(/dashboard|grafico/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /dashboard financeiro/i })).toBeInTheDocument();
+    expect(screen.queryByText(/grafico/i)).not.toBeInTheDocument();
   });
 
   it("renders loading, unavailable and retryable error states safely", () => {

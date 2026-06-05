@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import { PRIVATE_ROUTES } from "@/app/routes";
 import { ErrorState } from "@/components/feedback/error-state";
@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import { createInviteSchema, type InviteFormValues } from "@/features/couple/couple-schemas";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
+import { DashboardView, normalizeDashboardMonth, useDashboard } from "@/features/dashboard";
 import { useAuth } from "@/features/auth/use-auth";
 import { getPermissionMessage, VisibilityLabel } from "@/features/permissions";
 import { setPageTitle } from "@/lib/page-title";
@@ -23,6 +24,16 @@ export function PrivateHomePage() {
   const { user } = useAuth();
   const { relationshipState, mutationState, createInvite, cancel, refresh } =
     useCoupleRelationship();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedPeriod = useMemo(
+    () => normalizeDashboardMonth(searchParams.get("month")),
+    [searchParams]
+  );
+  const authorizationContext = `${user?.id ?? "signed-out"}:${relationshipContext(relationshipState)}`;
+  const { state: dashboardState, retry: retryDashboard } = useDashboard(
+    selectedPeriod,
+    authorizationContext
+  );
   const inviteSchema = useMemo(() => createInviteSchema(user?.email), [user?.email]);
   const {
     register,
@@ -40,6 +51,13 @@ export function PrivateHomePage() {
   useEffect(() => {
     setPageTitle(PRIVATE_ROUTES.app.title);
   }, []);
+  useEffect(() => {
+    if (searchParams.get("month") !== selectedPeriod.key) {
+      const next = new URLSearchParams(searchParams);
+      next.set("month", selectedPeriod.key);
+      setSearchParams(next, { replace: true });
+    }
+  }, [searchParams, selectedPeriod, setSearchParams]);
 
   async function onSubmit(values: InviteFormValues) {
     const result = await createInvite(values);
@@ -69,54 +87,67 @@ export function PrivateHomePage() {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-4">
+    <div className="mx-auto grid w-full max-w-4xl gap-5">
       {mutationState.message ? (
         <Alert variant={mutationState.status === "error" ? "destructive" : "default"}>
           <AlertDescription>{mutationState.message}</AlertDescription>
         </Alert>
       ) : null}
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Consultar transacoes</CardTitle>
-          <CardDescription>
-            Visualize e filtre as movimentacoes disponiveis por mes.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button asChild variant="secondary">
-            <Link to={PRIVATE_ROUTES.transactions.path}>Ver transacoes</Link>
-          </Button>
-        </CardContent>
-      </Card>
+      <DashboardView
+        selectedPeriod={selectedPeriod}
+        state={dashboardState}
+        onRetry={retryDashboard}
+        onMonthChange={(period) => {
+          const next = new URLSearchParams(searchParams);
+          next.set("month", period.key);
+          setSearchParams(next);
+        }}
+      />
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Registrar transacao</CardTitle>
-          <CardDescription>
-            Adicione uma receita ou despesa individual ou compartilhada.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button asChild>
-            <Link to={PRIVATE_ROUTES.newTransaction.path}>Nova transacao</Link>
-          </Button>
-        </CardContent>
-      </Card>
+      <section className="grid min-w-0 gap-3 sm:grid-cols-3" aria-label="Acoes financeiras">
+        <Card size="sm" className="min-w-0">
+          <CardHeader>
+            <CardTitle className="text-base">Consultar transacoes</CardTitle>
+            <CardDescription>
+              Visualize e filtre as movimentacoes disponiveis por mes.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild variant="secondary" className="w-full">
+              <Link to={PRIVATE_ROUTES.transactions.path}>Ver transacoes</Link>
+            </Button>
+          </CardContent>
+        </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Categorias financeiras padrao</CardTitle>
-          <CardDescription>
-            Consulte o vocabulario disponivel para classificar futuras movimentacoes.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button asChild variant="secondary">
-            <Link to={PRIVATE_ROUTES.categories.path}>Consultar categorias</Link>
-          </Button>
-        </CardContent>
-      </Card>
+        <Card size="sm" className="min-w-0">
+          <CardHeader>
+            <CardTitle className="text-base">Registrar transacao</CardTitle>
+            <CardDescription>
+              Adicione uma receita ou despesa individual ou compartilhada.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild className="w-full">
+              <Link to={PRIVATE_ROUTES.newTransaction.path}>Nova transacao</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card size="sm" className="min-w-0">
+          <CardHeader>
+            <CardTitle className="text-base">Categorias financeiras padrao</CardTitle>
+            <CardDescription>
+              Consulte o vocabulario para classificar movimentacoes.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild variant="secondary" className="w-full">
+              <Link to={PRIVATE_ROUTES.categories.path}>Consultar categorias</Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </section>
 
       {relationshipState.status === "no_shared_budget" ? (
         <Card>
@@ -222,4 +253,9 @@ function formatDate(value: string): string {
   return new Intl.DateTimeFormat("pt-BR", {
     dateStyle: "medium"
   }).format(new Date(value));
+}
+
+function relationshipContext(state: ReturnType<typeof useCoupleRelationship>["relationshipState"]) {
+  if (state.status === "couple_linked") return `${state.status}:${state.sharedBudget.id}`;
+  return state.status;
 }
