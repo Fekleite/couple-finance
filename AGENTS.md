@@ -1,5 +1,5 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-specs/007-dashboard-financeiro-inicial/plan.md
+specs/008-metas-financeiras/plan.md
 <!-- SPECKIT END -->
