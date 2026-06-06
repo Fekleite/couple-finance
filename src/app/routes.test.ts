@@ -31,6 +31,11 @@ describe("route metadata", () => {
       path: "/app/transactions",
       status: "available"
     });
+    expect(PRIVATE_ROUTES.goals).toMatchObject({
+      path: "/app/goals",
+      title: "Metas financeiras | Couple Finance",
+      status: "available"
+    });
   });
 
   it("marks invitation available and future dashboard planned", () => {
