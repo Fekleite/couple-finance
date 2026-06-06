@@ -15,7 +15,12 @@ import { Input } from "@/components/ui/input";
 import { COUPLE_MESSAGES } from "@/features/couple/couple-messages";
 import { createInviteSchema, type InviteFormValues } from "@/features/couple/couple-schemas";
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
-import { DashboardView, normalizeDashboardMonth, useDashboard } from "@/features/dashboard";
+import {
+  DashboardView,
+  normalizeDashboardMonth,
+  useDashboard,
+  useDashboardCharts
+} from "@/features/dashboard";
 import { useAuth } from "@/features/auth/use-auth";
 import { getPermissionMessage, VisibilityLabel } from "@/features/permissions";
 import { setPageTitle } from "@/lib/page-title";
@@ -31,6 +36,10 @@ export function PrivateHomePage() {
   );
   const authorizationContext = `${user?.id ?? "signed-out"}:${relationshipContext(relationshipState)}`;
   const { state: dashboardState, retry: retryDashboard } = useDashboard(
+    selectedPeriod,
+    authorizationContext
+  );
+  const { state: chartState, retry: retryCharts } = useDashboardCharts(
     selectedPeriod,
     authorizationContext
   );
@@ -97,7 +106,9 @@ export function PrivateHomePage() {
       <DashboardView
         selectedPeriod={selectedPeriod}
         state={dashboardState}
+        chartsState={chartState}
         onRetry={retryDashboard}
+        onChartsRetry={retryCharts}
         onMonthChange={(period) => {
           const next = new URLSearchParams(searchParams);
           next.set("month", period.key);
