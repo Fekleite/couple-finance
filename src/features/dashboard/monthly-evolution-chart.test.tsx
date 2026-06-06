@@ -8,18 +8,18 @@ import {
 import { MonthlyEvolutionChart } from "./monthly-evolution-chart";
 
 describe("MonthlyEvolutionChart", () => {
-  it("renders all monthly labels, selected month and result meanings", () => {
+  it("renders a compact visual chart and selected month summary", () => {
     const data = dashboardChartsResponse({ monthlyEvolution: monthlyEvolutionFixture() });
-    render(
+    const { container } = render(
       <MonthlyEvolutionChart
         periodLabel={data.period.label}
         window={data.evolutionWindow}
         points={data.monthlyEvolution}
       />
     );
-    expect(screen.getAllByText(/jan. 2026/i)).not.toHaveLength(0);
+    expect(container.querySelector("[data-slot='chart']")).toHaveClass("h-40");
     expect(screen.getByText(/jun. 2026, Mes selecionado/i)).toBeInTheDocument();
     expect(screen.getAllByText(/saldo negativo/i)).not.toHaveLength(0);
-    expect(screen.getByText(/sem movimentacoes autorizadas/i)).toBeInTheDocument();
+    expect(screen.getByText(/jan. 2026/i)).toHaveClass("sr-only");
   });
 });
