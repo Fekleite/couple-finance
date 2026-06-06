@@ -9,19 +9,30 @@ import { Button } from "@/components/ui/button";
 import { formatCurrencyFromCents } from "@/features/transactions/transaction-money";
 import { moveCivilMonth } from "@/features/transactions/transaction-month";
 import { DashboardIndicatorCard } from "./dashboard-indicator-card";
+import { DashboardChartsSection } from "./dashboard-charts-section";
 import { DASHBOARD_MESSAGES as messages, resultMeaningMessage } from "./dashboard-messages";
 import { DashboardRecentTransactionItem } from "./dashboard-recent-transaction";
 import { formatSignedCurrency } from "./dashboard-summary";
+import type { DashboardChartsState } from "./dashboard-chart-types";
 import type { DashboardPeriod, DashboardState } from "./dashboard-types";
 
 type Props = {
   state: DashboardState;
+  chartsState?: DashboardChartsState;
   selectedPeriod: DashboardPeriod;
   onMonthChange: (period: DashboardPeriod) => void;
   onRetry: () => void;
+  onChartsRetry?: () => void;
 };
 
-export function DashboardView({ state, selectedPeriod, onMonthChange, onRetry }: Props) {
+export function DashboardView({
+  state,
+  chartsState,
+  selectedPeriod,
+  onMonthChange,
+  onRetry,
+  onChartsRetry
+}: Props) {
   const period = state.period ?? selectedPeriod;
 
   if (state.status === "loading" || state.status === "refreshing") {
@@ -94,6 +105,13 @@ export function DashboardView({ state, selectedPeriod, onMonthChange, onRetry }:
           />
         </div>
       </section>
+      {chartsState ? (
+        <DashboardChartsSection
+          selectedPeriod={selectedPeriod}
+          state={chartsState}
+          onRetry={onChartsRetry ?? onRetry}
+        />
+      ) : null}
       <section className="grid min-w-0 gap-3" aria-label={messages.recentRegion}>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h3 className="text-lg font-semibold">{messages.recentRegion}</h3>
