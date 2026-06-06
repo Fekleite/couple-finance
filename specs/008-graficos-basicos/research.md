@@ -105,18 +105,17 @@ graficos foi rejeitado porque pessoas sem vinculo ativo perderiam valor da
 feature. Misturar individual e compartilhado no comparativo foi rejeitado por
 privacidade.
 
-## Decision: Graficos nativos acessiveis sem adicionar Recharts
+## Decision: Usar Shadcn/UI Chart com Recharts e texto persistente
 
-**Rationale**: `package.json` nao inclui Recharts atualmente. A F08 precisa de
-tres visualizacoes pequenas: barras/lista proporcional por categoria, serie
-mensal curta e barras comparativas de dois membros. Componentes nativos com
-HTML/CSS/SVG permitem controlar labels, texto equivalente, foco, contraste,
-responsividade e testes sem aumentar bundle nem politica de dependencia.
+**Rationale**: A F08 usa o componente `chart` do Shadcn/UI para manter
+consistencia com o design system. Esse componente usa Recharts por baixo, entao
+`recharts` passa a ser dependencia explicita. Valores monetarios, pesos,
+legendas e leitura de saldo continuam em texto persistente fora de tooltips para
+preservar acessibilidade, testes e clareza mobile.
 
-**Alternatives considered**: Adicionar Recharts foi rejeitado nesta fase porque
-o ganho para graficos simples nao supera custo de bundle, acessibilidade e
-testes. Canvas foi rejeitado porque exigiria mais trabalho para equivalentes
-acessiveis.
+**Alternatives considered**: Manter graficos manuais em HTML/CSS/SVG foi
+rejeitado apos a decisao de padronizar a experiencia visual no Shadcn/UI Chart.
+Canvas foi rejeitado porque exigiria mais trabalho para equivalentes acessiveis.
 
 ## Decision: Tooltips sao complementares, nunca fonte essencial
 

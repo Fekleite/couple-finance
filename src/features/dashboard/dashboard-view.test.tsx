@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 
+import { dashboardChartsResponse } from "@/test/dashboard-chart-test-utils";
 import { dashboardPeriod, dashboardResponse } from "@/test/dashboard-test-utils";
 import { DashboardView } from "./dashboard-view";
 
@@ -14,6 +15,7 @@ describe("DashboardView", () => {
         <DashboardView
           selectedPeriod={period}
           state={{ ...dashboardResponse({ period }), status: "ready", period }}
+          chartsState={{ ...dashboardChartsResponse({ period }), status: "ready", period }}
           onMonthChange={vi.fn()}
           onRetry={vi.fn()}
         />
@@ -21,6 +23,7 @@ describe("DashboardView", () => {
     );
     expect(screen.getByRole("heading", { name: /dashboard financeiro/i })).toBeInTheDocument();
     expect(screen.getByLabelText("Resumo financeiro do mes")).toHaveClass("min-w-0");
+    expect(screen.getByRole("heading", { name: /graficos do mes/i })).toBeInTheDocument();
     expect(screen.getByText("Receitas do mes")).toBeInTheDocument();
     expect(screen.getByText("Mercado")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ver lista completa/i })).toHaveAttribute(

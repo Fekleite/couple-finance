@@ -5,7 +5,8 @@
 - Estar na branch `008-graficos-basicos`.
 - Ter Supabase local/configurado conforme features F02-F07.
 - Ter migrations anteriores aplicadas, incluindo dashboard inicial da F07.
-- Confirmar que `package.json` nao exige Recharts para esta feature.
+- Confirmar que `package.json` inclui Recharts para o componente `chart` do
+  Shadcn/UI.
 
 ## Development Flow
 
@@ -29,7 +30,6 @@
    `authenticated` e validacao segura de periodo/janela.
 
 4. Implementar modulos em `src/features/dashboard/`:
-
    - `dashboard-chart-types.ts`
    - `dashboard-chart-service.ts`
    - `dashboard-chart-state.ts`
@@ -95,6 +95,21 @@ npm run typecheck
 npm run test:run
 npm run build
 ```
+
+## Implementation Notes
+
+- `public.get_financial_dashboard_charts` lives in
+  `supabase/migrations/20260605020000_basic_financial_charts.sql` and returns
+  only aggregate chart blocks.
+- Frontend chart modules live in `src/features/dashboard/` with separate files
+  for types, messages, state, service, hook, accessible summaries and Shadcn/UI
+  chart components backed by Recharts.
+- Dashboard integration keeps the F07 indicators/recent transactions unchanged
+  and adds `DashboardChartsSection` between summary indicators and recent
+  transactions.
+- Validation should cover the RPC migration contract, service mapper, request
+  state transitions, hook abort/retry behavior, chart copy, component states,
+  private route rendering and mobile-friendly semantic layout.
 
 ## Manual Privacy Review
 

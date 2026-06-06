@@ -11,21 +11,21 @@ RPC dedicada `security invoker` retorna, em uma resposta coordenada sob RLS, a
 distribuicao de despesas por categoria do mes selecionado, uma evolucao curta
 de receitas, despesas e saldo, e um comparativo neutro de responsabilidades
 compartilhadas quando houver vinculo ativo. O frontend evolui
-`src/features/dashboard` com componentes nativos acessiveis em HTML/CSS/SVG,
-reutilizando contratos de mes civil, dinheiro, visibilidade, categorias,
-responsaveis e estados da F04-F07, sem criar relatorios avancados, filtros
-detalhados, drill-down, metas, mutacoes ou nova dependencia de graficos.
+`src/features/dashboard` com componentes acessiveis baseados no `chart` do
+Shadcn/UI sobre Recharts, reutilizando contratos de mes civil, dinheiro,
+visibilidade, categorias, responsaveis e estados da F04-F07, sem criar
+relatorios avancados, filtros detalhados, drill-down, metas ou mutacoes.
 
 ## Technical Context
 
 **Language/Version**: TypeScript em modo estrito sobre React 19, Vite 8 e React
 Router 7, conforme dependencias atuais do projeto.
 
-**Primary Dependencies**: React, Vite, TailwindCSS, Shadcn/ui, React Router,
-Lucide React, `@supabase/supabase-js`, Supabase Auth, Supabase PostgreSQL,
-Supabase RLS, ESLint, Prettier, Husky, lint-staged, Vitest e Testing Library.
-Recharts, TanStack Query, bibliotecas de data, estado global, virtualizacao,
-animacao ou relatorio nao serao adicionadas nesta feature.
+**Primary Dependencies**: React, Vite, TailwindCSS, Shadcn/ui, Shadcn/UI Chart,
+Recharts, React Router, Lucide React, `@supabase/supabase-js`, Supabase Auth,
+Supabase PostgreSQL, Supabase RLS, ESLint, Prettier, Husky, lint-staged, Vitest
+e Testing Library. TanStack Query, bibliotecas de data, estado global,
+virtualizacao, animacao ou relatorio nao serao adicionadas nesta feature.
 
 **Storage**: Reutilizar `public.financial_transactions`,
 `public.standard_financial_categories` e `public.budget_members`. Nova migration
@@ -58,12 +58,13 @@ exportacao, recomendacoes ou mutacoes; dados compartilhados revogados deixam de
 aparecer na proxima consulta.
 
 **Scale/Scope**: Oitava feature privada do MVP: uma RPC publica fina, evolucao
-modular do dashboard, componentes nativos de grafico, contratos reutilizaveis
-para visualizacoes basicas e atualizacao da referencia de plano em `AGENTS.md`.
+modular do dashboard, componentes de grafico via Shadcn/UI Chart, contratos
+reutilizaveis para visualizacoes basicas e atualizacao da referencia de plano em
+`AGENTS.md`.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 - **Simplicity & UX**: PASS. A feature adiciona tres visualizacoes basicas
   dentro do dashboard, mantendo a leitura rapida e evitando superficie de
@@ -206,4 +207,5 @@ restam clarificacoes pendentes.
 - **Technical Quality**: PASS. O desenho reaproveita F04-F07 e separa consulta,
   estado, apresentacao e mensagens em modulos tipados.
 - **Performance & Financial Data Clarity**: PASS. Agregacoes no banco, series
-  pequenas e ausencia de nova dependencia sustentam desempenho e clareza.
+  pequenas e uso do componente chart do design system sustentam desempenho e
+  clareza.

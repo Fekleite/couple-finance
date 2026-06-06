@@ -18,10 +18,10 @@
 
 **Purpose**: Prepare the existing dashboard feature area for chart-specific implementation without adding a chart dependency.
 
-- [ ] T001 Review F08 implementation constraints and source layout in specs/008-graficos-basicos/plan.md
-- [ ] T002 Review current F07 dashboard service, hook, state, and view patterns in src/features/dashboard/dashboard-service.ts
-- [ ] T003 [P] Confirm no chart library dependency is added for F08 in package.json
-- [ ] T004 [P] Add chart test fixture scaffolding exports to src/test/dashboard-chart-test-utils.ts
+- [X] T001 Review F08 implementation constraints and source layout in specs/008-graficos-basicos/plan.md
+- [X] T002 Review current F07 dashboard service, hook, state, and view patterns in src/features/dashboard/dashboard-service.ts
+- [X] T003 [P] Confirm no chart library dependency is added for F08 in package.json
+- [X] T004 [P] Add chart test fixture scaffolding exports to src/test/dashboard-chart-test-utils.ts
 
 ---
 
@@ -31,18 +31,18 @@
 
 **Critical**: No user story implementation can begin until this phase is complete.
 
-- [ ] T005 Create migration file for public.get_financial_dashboard_charts RPC in supabase/migrations/20260605020000_basic_financial_charts.sql
-- [ ] T006 Add migration tests for security invoker, fixed search_path, authenticated grant, invalid query handling, and absence of raw transaction details in src/features/dashboard/dashboard-chart-migration.test.ts
-- [ ] T007 [P] Define chart period, query, response, distribution, evolution, comparison, summary, and state types in src/features/dashboard/dashboard-chart-types.ts
-- [ ] T008 [P] Implement safe chart copy, labels, retry text, empty states, unavailable shared state, and neutral member-comparison wording in src/features/dashboard/dashboard-chart-messages.ts
-- [ ] T009 [P] Add unit tests for safe chart copy and neutral/private wording in src/features/dashboard/dashboard-chart-messages.test.ts
-- [ ] T010 Implement chart query normalization, six-month evolution window helpers, stale-data sanitization, and state transitions in src/features/dashboard/dashboard-chart-state.ts
-- [ ] T011 Add unit tests for month boundaries, evolution window, request states, error states, and sensitive-context clearing in src/features/dashboard/dashboard-chart-state.test.ts
-- [ ] T012 Implement Supabase RPC client and response mapper for get_financial_dashboard_charts in src/features/dashboard/dashboard-chart-service.ts
-- [ ] T013 Add service tests for RPC arguments, abort signal handling, invalid query mapping, safe error mapping, and response mapping in src/features/dashboard/dashboard-chart-service.test.ts
-- [ ] T014 Implement useDashboardCharts with monotonic request id, abort handling, retry, period reload, and authorization-context clearing in src/features/dashboard/use-dashboard-charts.ts
-- [ ] T015 Add hook tests for initial load, retry, rapid month changes, stale response rejection, and context change clearing in src/features/dashboard/use-dashboard-charts.test.tsx
-- [ ] T016 Export chart types, service helpers, state helpers, hook, and messages from src/features/dashboard/index.ts
+- [X] T005 Create migration file for public.get_financial_dashboard_charts RPC in supabase/migrations/20260605020000_basic_financial_charts.sql
+- [X] T006 Add migration tests for security invoker, fixed search_path, authenticated grant, invalid query handling, and absence of raw transaction details in src/features/dashboard/dashboard-chart-migration.test.ts
+- [X] T007 [P] Define chart period, query, response, distribution, evolution, comparison, summary, and state types in src/features/dashboard/dashboard-chart-types.ts
+- [X] T008 [P] Implement safe chart copy, labels, retry text, empty states, unavailable shared state, and neutral member-comparison wording in src/features/dashboard/dashboard-chart-messages.ts
+- [X] T009 [P] Add unit tests for safe chart copy and neutral/private wording in src/features/dashboard/dashboard-chart-messages.test.ts
+- [X] T010 Implement chart query normalization, six-month evolution window helpers, stale-data sanitization, and state transitions in src/features/dashboard/dashboard-chart-state.ts
+- [X] T011 Add unit tests for month boundaries, evolution window, request states, error states, and sensitive-context clearing in src/features/dashboard/dashboard-chart-state.test.ts
+- [X] T012 Implement Supabase RPC client and response mapper for get_financial_dashboard_charts in src/features/dashboard/dashboard-chart-service.ts
+- [X] T013 Add service tests for RPC arguments, abort signal handling, invalid query mapping, safe error mapping, and response mapping in src/features/dashboard/dashboard-chart-service.test.ts
+- [X] T014 Implement useDashboardCharts with monotonic request id, abort handling, retry, period reload, and authorization-context clearing in src/features/dashboard/use-dashboard-charts.ts
+- [X] T015 Add hook tests for initial load, retry, rapid month changes, stale response rejection, and context change clearing in src/features/dashboard/use-dashboard-charts.test.tsx
+- [X] T016 Export chart types, service helpers, state helpers, hook, and messages from src/features/dashboard/index.ts
 
 **Checkpoint**: Chart data can be queried, mapped, tested, and represented safely before any visual chart is added.
 
@@ -56,17 +56,17 @@
 
 ### Tests for User Story 1
 
-- [ ] T017 [P] [US1] Add RPC migration assertions for category grouping, expense-only aggregation, basis-point weights, and deterministic ordering in src/features/dashboard/dashboard-chart-migration.test.ts
-- [ ] T018 [P] [US1] Add service mapper tests for categoryDistribution fields, category labels, rank, and empty distribution handling in src/features/dashboard/dashboard-chart-service.test.ts
-- [ ] T019 [P] [US1] Add component tests for category labels, monetary totals, relative weights, highest category identification, tie order, and empty state in src/features/dashboard/category-expense-chart.test.tsx
+- [X] T017 [P] [US1] Add RPC migration assertions for category grouping, expense-only aggregation, basis-point weights, and deterministic ordering in src/features/dashboard/dashboard-chart-migration.test.ts
+- [X] T018 [P] [US1] Add service mapper tests for categoryDistribution fields, category labels, rank, and empty distribution handling in src/features/dashboard/dashboard-chart-service.test.ts
+- [X] T019 [P] [US1] Add component tests for category labels, monetary totals, relative weights, highest category identification, tie order, and empty state in src/features/dashboard/category-expense-chart.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T020 [US1] Implement category_distribution SQL in public.get_financial_dashboard_charts using authorized selected-month expenses in supabase/migrations/20260605020000_basic_financial_charts.sql
-- [ ] T021 [P] [US1] Implement category accessible-summary builder for highest category, totals, empty month, and privacy note in src/features/dashboard/accessible-chart-summary.ts
-- [ ] T022 [P] [US1] Add tests for category accessible-summary text and privacy-safe empty wording in src/features/dashboard/accessible-chart-summary.test.ts
-- [ ] T023 [US1] Implement native responsive category expense chart with persistent labels, values, weights, and no color-only meaning in src/features/dashboard/category-expense-chart.tsx
-- [ ] T024 [US1] Add category chart fixtures for multiple categories, one category, tied categories, historical category labels, and empty month in src/test/dashboard-chart-test-utils.ts
+- [X] T020 [US1] Implement category_distribution SQL in public.get_financial_dashboard_charts using authorized selected-month expenses in supabase/migrations/20260605020000_basic_financial_charts.sql
+- [X] T021 [P] [US1] Implement category accessible-summary builder for highest category, totals, empty month, and privacy note in src/features/dashboard/accessible-chart-summary.ts
+- [X] T022 [P] [US1] Add tests for category accessible-summary text and privacy-safe empty wording in src/features/dashboard/accessible-chart-summary.test.ts
+- [X] T023 [US1] Implement native responsive category expense chart with persistent labels, values, weights, and no color-only meaning in src/features/dashboard/category-expense-chart.tsx
+- [X] T024 [US1] Add category chart fixtures for multiple categories, one category, tied categories, historical category labels, and empty month in src/test/dashboard-chart-test-utils.ts
 
 **Checkpoint**: US1 is fully functional and testable as the MVP chart increment.
 
@@ -80,16 +80,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T025 [P] [US2] Add RPC migration assertions for six-month window generation, empty months, income totals, expense totals, balances, and selected-month marker in src/features/dashboard/dashboard-chart-migration.test.ts
-- [ ] T026 [P] [US2] Add service mapper tests for monthlyEvolution fields, resultMeaning, hasAuthorizedMonthData, and positive income/expense presentation values in src/features/dashboard/dashboard-chart-service.test.ts
-- [ ] T027 [P] [US2] Add component tests for monthly labels, selected month, income, expense, positive balance, negative balance, zero balance, and empty month wording in src/features/dashboard/monthly-evolution-chart.test.tsx
+- [X] T025 [P] [US2] Add RPC migration assertions for six-month window generation, empty months, income totals, expense totals, balances, and selected-month marker in src/features/dashboard/dashboard-chart-migration.test.ts
+- [X] T026 [P] [US2] Add service mapper tests for monthlyEvolution fields, resultMeaning, hasAuthorizedMonthData, and positive income/expense presentation values in src/features/dashboard/dashboard-chart-service.test.ts
+- [X] T027 [P] [US2] Add component tests for monthly labels, selected month, income, expense, positive balance, negative balance, zero balance, and empty month wording in src/features/dashboard/monthly-evolution-chart.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T028 [US2] Implement monthly_evolution SQL in public.get_financial_dashboard_charts with six civil months and authorized income, expense, and balance in supabase/migrations/20260605020000_basic_financial_charts.sql
-- [ ] T029 [P] [US2] Extend accessible-summary builder for monthly evolution headline, month details, selected-month context, and empty-month meaning in src/features/dashboard/accessible-chart-summary.ts
-- [ ] T030 [US2] Implement native responsive monthly evolution chart with persistent income, expense, balance, selected-month, and result-meaning text in src/features/dashboard/monthly-evolution-chart.tsx
-- [ ] T031 [US2] Add monthly evolution fixtures for six-month windows, empty months, selected month, and balance meanings in src/test/dashboard-chart-test-utils.ts
+- [X] T028 [US2] Implement monthly_evolution SQL in public.get_financial_dashboard_charts with six civil months and authorized income, expense, and balance in supabase/migrations/20260605020000_basic_financial_charts.sql
+- [X] T029 [P] [US2] Extend accessible-summary builder for monthly evolution headline, month details, selected-month context, and empty-month meaning in src/features/dashboard/accessible-chart-summary.ts
+- [X] T030 [US2] Implement native responsive monthly evolution chart with persistent income, expense, balance, selected-month, and result-meaning text in src/features/dashboard/monthly-evolution-chart.tsx
+- [X] T031 [US2] Add monthly evolution fixtures for six-month windows, empty months, selected month, and balance meanings in src/test/dashboard-chart-test-utils.ts
 
 **Checkpoint**: US2 can be delivered independently after foundation and does not require member comparison.
 
@@ -103,16 +103,16 @@
 
 ### Tests for User Story 3
 
-- [ ] T032 [P] [US3] Add RPC migration assertions for active shared membership, inactive relationship exclusion, responsible_user grouping, partner individual exclusion, and unavailable_shared status in src/features/dashboard/dashboard-chart-migration.test.ts
-- [ ] T033 [P] [US3] Add service mapper tests for memberComparison status, basis, self/partner labels, weights, empty comparison, and unavailable_shared mapping in src/features/dashboard/dashboard-chart-service.test.ts
-- [ ] T034 [P] [US3] Add component tests for neutral labels, shared-only values, empty comparison, unavailable shared state, and creator/responsible distinction text in src/features/dashboard/member-comparison-chart.test.tsx
+- [X] T032 [P] [US3] Add RPC migration assertions for active shared membership, inactive relationship exclusion, responsible_user grouping, partner individual exclusion, and unavailable_shared status in src/features/dashboard/dashboard-chart-migration.test.ts
+- [X] T033 [P] [US3] Add service mapper tests for memberComparison status, basis, self/partner labels, weights, empty comparison, and unavailable_shared mapping in src/features/dashboard/dashboard-chart-service.test.ts
+- [X] T034 [P] [US3] Add component tests for neutral labels, shared-only values, empty comparison, unavailable shared state, and creator/responsible distinction text in src/features/dashboard/member-comparison-chart.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T035 [US3] Implement member_comparison SQL in public.get_financial_dashboard_charts using only authorized shared expenses from the active shared budget in supabase/migrations/20260605020000_basic_financial_charts.sql
-- [ ] T036 [P] [US3] Extend accessible-summary builder for neutral member comparison, shared-only privacy note, and creator/responsible distinction in src/features/dashboard/accessible-chart-summary.ts
-- [ ] T037 [US3] Implement native responsive member comparison chart with neutral labels, safe unavailable state, shared-only empty state, and persistent values in src/features/dashboard/member-comparison-chart.tsx
-- [ ] T038 [US3] Add member comparison fixtures for active couple, no active couple, partner individual transactions, and responsible-person split in src/test/dashboard-chart-test-utils.ts
+- [X] T035 [US3] Implement member_comparison SQL in public.get_financial_dashboard_charts using only authorized shared expenses from the active shared budget in supabase/migrations/20260605020000_basic_financial_charts.sql
+- [X] T036 [P] [US3] Extend accessible-summary builder for neutral member comparison, shared-only privacy note, and creator/responsible distinction in src/features/dashboard/accessible-chart-summary.ts
+- [X] T037 [US3] Implement native responsive member comparison chart with neutral labels, safe unavailable state, shared-only empty state, and persistent values in src/features/dashboard/member-comparison-chart.tsx
+- [X] T038 [US3] Add member comparison fixtures for active couple, no active couple, partner individual transactions, and responsible-person split in src/test/dashboard-chart-test-utils.ts
 
 **Checkpoint**: US3 is independently testable and preserves privacy boundaries for shared data.
 
@@ -126,16 +126,16 @@
 
 ### Tests for User Story 4
 
-- [ ] T039 [P] [US4] Add chart section tests for semantic regions, headings, aria-live update, keyboard-reachable retry, loading, refreshing, ready, empty, unavailable_shared, and error states in src/features/dashboard/dashboard-charts-section.test.tsx
-- [ ] T040 [P] [US4] Add dashboard integration tests for selected-month propagation, chart refresh on month change, and sensitive data clearing on authorization-context change in src/features/dashboard/dashboard-view.test.tsx
-- [ ] T041 [P] [US4] Add private home page integration tests for chart hook wiring, dashboard route rendering, retry propagation, and period URL consistency in src/pages/private-home-page.test.tsx
+- [X] T039 [P] [US4] Add chart section tests for semantic regions, headings, aria-live update, keyboard-reachable retry, loading, refreshing, ready, empty, unavailable_shared, and error states in src/features/dashboard/dashboard-charts-section.test.tsx
+- [X] T040 [P] [US4] Add dashboard integration tests for selected-month propagation, chart refresh on month change, and sensitive data clearing on authorization-context change in src/features/dashboard/dashboard-view.test.tsx
+- [X] T041 [P] [US4] Add private home page integration tests for chart hook wiring, dashboard route rendering, retry propagation, and period URL consistency in src/pages/private-home-page.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T042 [US4] Implement dashboard charts section composition with chart-level states, accessible summaries, retry action, and responsive layout in src/features/dashboard/dashboard-charts-section.tsx
-- [ ] T043 [US4] Integrate useDashboardCharts and DashboardChartsSection into the dashboard screen without changing transaction indicators in src/features/dashboard/dashboard-view.tsx
-- [ ] T044 [US4] Wire chart authorization context, selected period, retry, and page-level rendering through the private home page in src/pages/private-home-page.tsx
-- [ ] T045 [US4] Add or update route smoke coverage so the private dashboard keeps rendering after chart integration in src/app/routes.test.ts
+- [X] T042 [US4] Implement dashboard charts section composition with chart-level states, accessible summaries, retry action, and responsive layout in src/features/dashboard/dashboard-charts-section.tsx
+- [X] T043 [US4] Integrate useDashboardCharts and DashboardChartsSection into the dashboard screen without changing transaction indicators in src/features/dashboard/dashboard-view.tsx
+- [X] T044 [US4] Wire chart authorization context, selected period, retry, and page-level rendering through the private home page in src/pages/private-home-page.tsx
+- [X] T045 [US4] Add or update route smoke coverage so the private dashboard keeps rendering after chart integration in src/app/routes.test.ts
 
 **Checkpoint**: All chart stories are usable together in the private dashboard with accessible and safe states.
 
@@ -145,13 +145,13 @@
 
 **Purpose**: Final validation across security, performance, documentation, formatting, and quickstart.
 
-- [ ] T046 [P] Update dashboard README with F08 RPC, hook, chart component, accessibility, and privacy boundaries in src/features/dashboard/README.md
-- [ ] T047 [P] Document generated tasks and validation notes for F08 in specs/008-graficos-basicos/quickstart.md
-- [ ] T048 Audit Supabase migration SQL for redundant indexes and add only needed period/type/category/responsible indexes in supabase/migrations/20260605020000_basic_financial_charts.sql
-- [ ] T049 Run lint validation and fix issues reported for chart files using package.json
-- [ ] T050 Run format check and fix formatting issues reported for chart files using package.json
-- [ ] T051 Run typecheck and test suite validation for F08 using package.json
-- [ ] T052 Run production build validation for F08 using package.json
+- [X] T046 [P] Update dashboard README with F08 RPC, hook, chart component, accessibility, and privacy boundaries in src/features/dashboard/README.md
+- [X] T047 [P] Document generated tasks and validation notes for F08 in specs/008-graficos-basicos/quickstart.md
+- [X] T048 Audit Supabase migration SQL for redundant indexes and add only needed period/type/category/responsible indexes in supabase/migrations/20260605020000_basic_financial_charts.sql
+- [X] T049 Run lint validation and fix issues reported for chart files using package.json
+- [X] T050 Run format check and fix formatting issues reported for chart files using package.json
+- [X] T051 Run typecheck and test suite validation for F08 using package.json
+- [X] T052 Run production build validation for F08 using package.json
 
 ---
 
