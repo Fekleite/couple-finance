@@ -102,6 +102,12 @@ describe("PrivateHomePage couple states", () => {
     );
   });
 
+  it("links to goals without adding dashboard summaries or goal charts", () => {
+    renderWithCoupleAuth(<PrivateHomePage />);
+    expect(screen.getByRole("link", { name: /ver metas/i })).toHaveAttribute("href", "/app/goals");
+    expect(screen.queryByText(/grafico de metas/i)).not.toBeInTheDocument();
+  });
+
   it("renders no_shared_budget form with accessible validation and keyboard submit", async () => {
     const user = userEvent.setup();
     const createInvite = vi

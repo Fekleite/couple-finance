@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
+import { Loader2, Target } from "lucide-react";
 import { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useSearchParams } from "react-router-dom";
@@ -116,7 +116,10 @@ export function PrivateHomePage() {
         }}
       />
 
-      <section className="grid min-w-0 gap-3 sm:grid-cols-3" aria-label="Acoes financeiras">
+      <section
+        className="grid min-w-0 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Acoes financeiras"
+      >
         <Card size="sm" className="min-w-0">
           <CardHeader>
             <CardTitle className="text-base">Consultar transacoes</CardTitle>
@@ -155,6 +158,21 @@ export function PrivateHomePage() {
           <CardContent>
             <Button asChild variant="secondary" className="w-full">
               <Link to={PRIVATE_ROUTES.categories.path}>Consultar categorias</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card size="sm" className="min-w-0">
+          <CardHeader>
+            <CardTitle className="text-base">Metas financeiras</CardTitle>
+            <CardDescription>Acompanhe objetivos individuais ou compartilhados.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild variant="secondary" className="w-full">
+              <Link to={PRIVATE_ROUTES.goals.path}>
+                <Target aria-hidden="true" />
+                Ver metas
+              </Link>
             </Button>
           </CardContent>
         </Card>

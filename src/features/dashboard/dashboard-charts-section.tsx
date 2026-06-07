@@ -49,13 +49,13 @@ export function DashboardChartsSection({ state, selectedPeriod, onRetry }: Props
         />
       ) : null}
       {state.status === "ready" ? (
-        <div className="grid min-w-0 gap-3 xl:grid-cols-3">
-          <CategoryExpenseChart periodLabel={period.label} items={state.categoryDistribution} />
+        <div className="grid min-w-0 gap-3 lg:grid-cols-2">
           <MonthlyEvolutionChart
             periodLabel={period.label}
             window={state.evolutionWindow}
             points={state.monthlyEvolution}
           />
+          <CategoryExpenseChart periodLabel={period.label} items={state.categoryDistribution} />
           <MemberComparisonChart periodLabel={period.label} comparison={state.memberComparison} />
         </div>
       ) : null}

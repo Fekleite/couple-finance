@@ -14,7 +14,7 @@ describe("CategoryExpenseChart", () => {
     );
     expect(screen.getByRole("heading", { name: /despesas por categoria/i })).toBeInTheDocument();
     expect(screen.getAllByText(/moradia/i)).not.toHaveLength(0);
-    expect(screen.getByText("50% do total de despesas autorizadas.")).toBeInTheDocument();
+    expect(screen.getByText("50% do total.")).toBeInTheDocument();
     expect(screen.getByText(/maior categoria: moradia/i)).toHaveClass("sr-only");
   });
 
