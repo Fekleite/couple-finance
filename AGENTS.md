@@ -2,7 +2,7 @@
 
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-specs/009-metas-financeiras/plan.md
+specs/009-financial-audit/plan.md
 
 <!-- SPECKIT END -->
 
