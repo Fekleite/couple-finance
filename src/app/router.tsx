@@ -5,6 +5,7 @@ import { AuthenticatedLayout } from "@/components/layout/authenticated-layout";
 import { AppLayout } from "@/components/layout/app-layout";
 import { ProtectedRoute } from "@/features/auth/protected-route";
 import { PublicAuthRoute } from "@/features/auth/public-auth-route";
+import { AuditPage } from "@/pages/audit-page";
 import { ForgotPasswordPage } from "@/pages/forgot-password-page";
 import { GoalsPage } from "@/pages/goals-page";
 import { HomePage } from "@/pages/home-page";
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
               {
                 path: PRIVATE_ROUTES.goals.path,
                 element: <GoalsPage />
+              },
+              {
+                path: PRIVATE_ROUTES.audit.path,
+                element: <AuditPage />
               },
               {
                 path: PRIVATE_ROUTES.newTransaction.path,

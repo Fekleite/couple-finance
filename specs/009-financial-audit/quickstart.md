@@ -113,3 +113,18 @@ npm run build
 - Interface funciona em mobile, tablet e desktop.
 - Foco visivel e ordem de teclado fazem sentido.
 - Nenhuma mensagem revela SQL, RLS, IDs privados ou detalhes internos.
+
+## Validation coverage notes
+
+- SQL/RLS: `audit-migration.test.ts` cobre tabela, constraints fechadas,
+  indices recentes, grants, RLS individual/compartilhado e registro atomico nas
+  RPCs de transacoes e metas.
+- Servico e autorizacao: testes de service, state, hook, authorization e safe
+  snapshot cobrem consulta sob RLS, limites, ausencia de contagem total,
+  descarte de contexto e rotulos seguros.
+- UI: testes de item, lista, view e pagina cobrem estados de loading, vazio,
+  erro, bloqueio, retry, linguagem neutra, estrutura semantica e ausencia de
+  detalhes privados.
+- Acessibilidade manual: revisar largura mobile, zoom de texto ate 200%, ordem
+  de leitura, foco do retry e compreensao dos campos acao, item, autoria,
+  momento e visibilidade.

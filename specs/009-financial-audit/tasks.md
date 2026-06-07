@@ -20,10 +20,10 @@
 
 **Purpose**: Create the feature surface and shared test utilities without changing behavior.
 
-- [ ] T001 Create audit feature barrel exporting placeholders in src/features/audit/index.ts
-- [ ] T002 [P] Create audit test data builders for rows, events, actors, and Supabase client mocks in src/test/audit-test-utils.ts
-- [ ] T003 [P] Create the audit page shell with route-level heading placeholder in src/pages/audit-page.tsx
-- [ ] T004 [P] Create the audit migration test file that loads the planned SQL migration text in src/features/audit/audit-migration.test.ts
+- [X] T001 Create audit feature barrel exporting placeholders in src/features/audit/index.ts
+- [X] T002 [P] Create audit test data builders for rows, events, actors, and Supabase client mocks in src/test/audit-test-utils.ts
+- [X] T003 [P] Create the audit page shell with route-level heading placeholder in src/pages/audit-page.tsx
+- [X] T004 [P] Create the audit migration test file that loads the planned SQL migration text in src/features/audit/audit-migration.test.ts
 
 ---
 
@@ -33,15 +33,15 @@
 
 **CRITICAL**: No user story implementation can begin until this phase is complete.
 
-- [ ] T005 [P] Define audit domain types for rows, action types, visibility, summaries, query options, results, and presentation states in src/features/audit/audit-types.ts
-- [ ] T006 [P] Add route metadata for `/app/audit` with private title and description in src/app/routes.ts
-- [ ] T007 [P] Add failing route tests for the private audit route and unknown-route behavior in src/app/routes.test.ts
-- [ ] T008 Create the financial audit migration file with table, constraints, indexes, RLS enabled, and explicit grants in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T009 Add migration tests for table fields, closed check constraints, RLS enablement, grants, and indexes in src/features/audit/audit-migration.test.ts
-- [ ] T010 Add private audit route wiring to render AuditPage under AuthenticatedLayout in src/app/router.tsx
-- [ ] T011 Add route tests proving `/app/audit` is protected and renders through the authenticated tree in src/app/routes.test.ts
-- [ ] T012 Add navigation entry tests for the audit route inside the authenticated layout in src/components/layout/authenticated-layout.test.tsx
-- [ ] T013 Add a private navigation link to `/app/audit` without exposing audit data in src/components/layout/authenticated-layout.tsx
+- [X] T005 [P] Define audit domain types for rows, action types, visibility, summaries, query options, results, and presentation states in src/features/audit/audit-types.ts
+- [X] T006 [P] Add route metadata for `/app/audit` with private title and description in src/app/routes.ts
+- [X] T007 [P] Add failing route tests for the private audit route and unknown-route behavior in src/app/routes.test.ts
+- [X] T008 Create the financial audit migration file with table, constraints, indexes, RLS enabled, and explicit grants in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T009 Add migration tests for table fields, closed check constraints, RLS enablement, grants, and indexes in src/features/audit/audit-migration.test.ts
+- [X] T010 Add private audit route wiring to render AuditPage under AuthenticatedLayout in src/app/router.tsx
+- [X] T011 Add route tests proving `/app/audit` is protected and renders through the authenticated tree in src/app/routes.test.ts
+- [X] T012 Add navigation entry tests for the audit route inside the authenticated layout in src/components/layout/authenticated-layout.test.tsx
+- [X] T013 Add a private navigation link to `/app/audit` without exposing audit data in src/components/layout/authenticated-layout.tsx
 
 **Checkpoint**: Database and route foundation are ready for story work.
 
@@ -55,28 +55,28 @@
 
 ### Tests for User Story 1
 
-- [ ] T014 [P] [US1] Add SQL tests for individual event read policy, no direct client writes, deterministic recent ordering, and limit behavior in src/features/audit/audit-migration.test.ts
-- [ ] T015 [P] [US1] Add service tests for successful direct RLS query, query filters, max limit clamping, generic failures, and row mapping in src/features/audit/audit-service.test.ts
-- [ ] T016 [P] [US1] Add state-machine tests for loading, ready, empty, refreshing, error, blocked, and stale-response discard states in src/features/audit/audit-state.test.ts
-- [ ] T017 [P] [US1] Add hook tests for initial load, retry, latest-request-wins behavior, and clearing data when session changes in src/features/audit/use-audit-events.test.tsx
-- [ ] T018 [P] [US1] Add message tests for action labels, item labels, date/time text, currency text, visibility labels, empty text, and retryable error text in src/features/audit/audit-messages.test.ts
-- [ ] T019 [P] [US1] Add component tests for authorized list rendering, loading, empty, error, retry, and no total count exposure in src/features/audit/audit-list.test.tsx
-- [ ] T020 [P] [US1] Add page tests proving AuditPage renders the audit view and private route title copy in src/pages/audit-page.test.tsx
+- [X] T014 [P] [US1] Add SQL tests for individual event read policy, no direct client writes, deterministic recent ordering, and limit behavior in src/features/audit/audit-migration.test.ts
+- [X] T015 [P] [US1] Add service tests for successful direct RLS query, query filters, max limit clamping, generic failures, and row mapping in src/features/audit/audit-service.test.ts
+- [X] T016 [P] [US1] Add state-machine tests for loading, ready, empty, refreshing, error, blocked, and stale-response discard states in src/features/audit/audit-state.test.ts
+- [X] T017 [P] [US1] Add hook tests for initial load, retry, latest-request-wins behavior, and clearing data when session changes in src/features/audit/use-audit-events.test.tsx
+- [X] T018 [P] [US1] Add message tests for action labels, item labels, date/time text, currency text, visibility labels, empty text, and retryable error text in src/features/audit/audit-messages.test.ts
+- [X] T019 [P] [US1] Add component tests for authorized list rendering, loading, empty, error, retry, and no total count exposure in src/features/audit/audit-list.test.tsx
+- [X] T020 [P] [US1] Add page tests proving AuditPage renders the audit view and private route title copy in src/pages/audit-page.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T021 [US1] Implement private SQL helper `private.record_financial_audit_event` with safe validation and `search_path = ''` in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T022 [US1] Update `create_financial_transaction` to register `transaction_created` audit events atomically in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T023 [US1] Update `create_individual_goal` and `create_shared_goal` to register `goal_created` audit events atomically in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T024 [US1] Implement audit row mapping, query construction, limit clamping, generatedAt, and safe failure handling in src/features/audit/audit-service.ts
-- [ ] T025 [US1] Implement pure audit presentation state transitions and stale-response guards in src/features/audit/audit-state.ts
-- [ ] T026 [US1] Implement useAuditEvents with initial fetch, retry, refresh, session/context clearing, and latest-request-wins logic in src/features/audit/use-audit-events.ts
-- [ ] T027 [US1] Implement action, item, currency, date/time, visibility, empty, loading, and error messages in src/features/audit/audit-messages.ts
-- [ ] T028 [US1] Implement AuditEventItem with textual action, item, author, moment, visibility, and snapshot summary in src/features/audit/audit-event-item.tsx
-- [ ] T029 [US1] Implement AuditList with semantic list structure, loading, empty, error, retry, and no global count in src/features/audit/audit-list.tsx
-- [ ] T030 [US1] Implement AuditView to compose the hook and list while preserving safe blocked/error states in src/features/audit/audit-view.tsx
-- [ ] T031 [US1] Replace the audit page placeholder with AuditView and route-level title in src/pages/audit-page.tsx
-- [ ] T032 [US1] Export the implemented audit modules from src/features/audit/index.ts
+- [X] T021 [US1] Implement private SQL helper `private.record_financial_audit_event` with safe validation and `search_path = ''` in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T022 [US1] Update `create_financial_transaction` to register `transaction_created` audit events atomically in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T023 [US1] Update `create_individual_goal` and `create_shared_goal` to register `goal_created` audit events atomically in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T024 [US1] Implement audit row mapping, query construction, limit clamping, generatedAt, and safe failure handling in src/features/audit/audit-service.ts
+- [X] T025 [US1] Implement pure audit presentation state transitions and stale-response guards in src/features/audit/audit-state.ts
+- [X] T026 [US1] Implement useAuditEvents with initial fetch, retry, refresh, session/context clearing, and latest-request-wins logic in src/features/audit/use-audit-events.ts
+- [X] T027 [US1] Implement action, item, currency, date/time, visibility, empty, loading, and error messages in src/features/audit/audit-messages.ts
+- [X] T028 [US1] Implement AuditEventItem with textual action, item, author, moment, visibility, and snapshot summary in src/features/audit/audit-event-item.tsx
+- [X] T029 [US1] Implement AuditList with semantic list structure, loading, empty, error, retry, and no global count in src/features/audit/audit-list.tsx
+- [X] T030 [US1] Implement AuditView to compose the hook and list while preserving safe blocked/error states in src/features/audit/audit-view.tsx
+- [X] T031 [US1] Replace the audit page placeholder with AuditView and route-level title in src/pages/audit-page.tsx
+- [X] T032 [US1] Export the implemented audit modules from src/features/audit/index.ts
 
 **Checkpoint**: User Story 1 is fully functional and independently testable as the MVP.
 
@@ -90,19 +90,19 @@
 
 ### Tests for User Story 2
 
-- [ ] T033 [P] [US2] Add SQL tests for shared event read policy, active membership checks, inactive membership denial, and revocation on next query in src/features/audit/audit-migration.test.ts
-- [ ] T034 [P] [US2] Add authorization helper tests for current user, authorized partner, unavailable actor, active shared budget, and inactive shared access in src/features/audit/audit-authorization.test.ts
-- [ ] T035 [P] [US2] Add service tests for mixed individual/shared results, hasActiveSharedBudget mapping, and no shared inference in failures or empty results in src/features/audit/audit-service.test.ts
-- [ ] T036 [P] [US2] Add hook tests proving shared events are cleared and revalidated when the active shared budget context changes in src/features/audit/use-audit-events.test.tsx
+- [X] T033 [P] [US2] Add SQL tests for shared event read policy, active membership checks, inactive membership denial, and revocation on next query in src/features/audit/audit-migration.test.ts
+- [X] T034 [P] [US2] Add authorization helper tests for current user, authorized partner, unavailable actor, active shared budget, and inactive shared access in src/features/audit/audit-authorization.test.ts
+- [X] T035 [P] [US2] Add service tests for mixed individual/shared results, hasActiveSharedBudget mapping, and no shared inference in failures or empty results in src/features/audit/audit-service.test.ts
+- [X] T036 [P] [US2] Add hook tests proving shared events are cleared and revalidated when the active shared budget context changes in src/features/audit/use-audit-events.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T037 [US2] Add shared-event RLS policy using active `budget_members` membership in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T038 [US2] Update goal RPC audit registration for `update_goal`, `complete_goal`, and `archive_goal` shared and individual events in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T039 [US2] Implement audit authorization helpers for actor label, shared access context, and visibility display in src/features/audit/audit-authorization.ts
-- [ ] T040 [US2] Integrate audit authorization helpers into AuditEventItem author and visibility rendering in src/features/audit/audit-event-item.tsx
-- [ ] T041 [US2] Extend audit service to resolve active shared budget context safely without total event counts in src/features/audit/audit-service.ts
-- [ ] T042 [US2] Refresh audit events after successful goal mutations by adding a stable audit refresh signal in src/features/goals/use-goals.ts
+- [X] T037 [US2] Add shared-event RLS policy using active `budget_members` membership in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T038 [US2] Update goal RPC audit registration for `update_goal`, `complete_goal`, and `archive_goal` shared and individual events in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T039 [US2] Implement audit authorization helpers for actor label, shared access context, and visibility display in src/features/audit/audit-authorization.ts
+- [X] T040 [US2] Integrate audit authorization helpers into AuditEventItem author and visibility rendering in src/features/audit/audit-event-item.tsx
+- [X] T041 [US2] Extend audit service to resolve active shared budget context safely without total event counts in src/features/audit/audit-service.ts
+- [X] T042 [US2] Refresh audit events after successful goal mutations by adding a stable audit refresh signal in src/features/goals/use-goals.ts
 
 **Checkpoint**: User Stories 1 and 2 work independently and together.
 
@@ -116,17 +116,17 @@
 
 ### Tests for User Story 3
 
-- [ ] T043 [P] [US3] Add SQL tests for individual owner-only policies, anonymous denial, partner denial, no direct insert/update/delete, and no owner/shared scope ambiguity in src/features/audit/audit-migration.test.ts
-- [ ] T044 [P] [US3] Add snapshot safety tests for allowed fields, excluded private fields, label normalization, status validation, and no diff payload in src/features/audit/audit-safe-snapshot.test.ts
-- [ ] T045 [P] [US3] Add UI tests proving empty, loading, error, and blocked states do not reveal inaccessible individual events in src/features/audit/audit-view.test.tsx
+- [X] T043 [P] [US3] Add SQL tests for individual owner-only policies, anonymous denial, partner denial, no direct insert/update/delete, and no owner/shared scope ambiguity in src/features/audit/audit-migration.test.ts
+- [X] T044 [P] [US3] Add snapshot safety tests for allowed fields, excluded private fields, label normalization, status validation, and no diff payload in src/features/audit/audit-safe-snapshot.test.ts
+- [X] T045 [P] [US3] Add UI tests proving empty, loading, error, and blocked states do not reveal inaccessible individual events in src/features/audit/audit-view.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T046 [US3] Tighten migration constraints for individual/shared exclusivity, safe subject labels, allowed statuses, allowed summary keys, and amount bounds in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T047 [US3] Implement safe snapshot helpers for transaction and goal audit data in src/features/audit/audit-safe-snapshot.ts
-- [ ] T048 [US3] Mirror safe snapshot rules inside audit registration SQL for transaction and goal events in supabase/migrations/20260607000000_create_financial_audit_events.sql
-- [ ] T049 [US3] Remove all UI count, permission-denied-detail, SQL, RLS, id, and inaccessible-item wording from audit messages in src/features/audit/audit-messages.ts
-- [ ] T050 [US3] Ensure AuditView clears retained data for blocked session, changed user, and changed shared context states in src/features/audit/audit-view.tsx
+- [X] T046 [US3] Tighten migration constraints for individual/shared exclusivity, safe subject labels, allowed statuses, allowed summary keys, and amount bounds in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T047 [US3] Implement safe snapshot helpers for transaction and goal audit data in src/features/audit/audit-safe-snapshot.ts
+- [X] T048 [US3] Mirror safe snapshot rules inside audit registration SQL for transaction and goal events in supabase/migrations/20260607000000_create_financial_audit_events.sql
+- [X] T049 [US3] Remove all UI count, permission-denied-detail, SQL, RLS, id, and inaccessible-item wording from audit messages in src/features/audit/audit-messages.ts
+- [X] T050 [US3] Ensure AuditView clears retained data for blocked session, changed user, and changed shared context states in src/features/audit/audit-view.tsx
 
 **Checkpoint**: User Stories 1, 2, and 3 preserve authorization and privacy boundaries.
 
@@ -140,16 +140,16 @@
 
 ### Tests for User Story 4
 
-- [ ] T051 [P] [US4] Add accessibility and neutral-language tests for event text, prohibited wording, semantic list structure, and actor labels in src/features/audit/audit-event-item.test.tsx
-- [ ] T052 [P] [US4] Add responsive rendering tests for mobile width, text wrapping, no horizontal-scroll assumptions, and visible retry action in src/features/audit/audit-list.test.tsx
-- [ ] T053 [P] [US4] Add full view tests for keyboard-focusable retry, perceptible states, and readable ordering of action, item, author, moment, and visibility in src/features/audit/audit-view.test.tsx
+- [X] T051 [P] [US4] Add accessibility and neutral-language tests for event text, prohibited wording, semantic list structure, and actor labels in src/features/audit/audit-event-item.test.tsx
+- [X] T052 [P] [US4] Add responsive rendering tests for mobile width, text wrapping, no horizontal-scroll assumptions, and visible retry action in src/features/audit/audit-list.test.tsx
+- [X] T053 [P] [US4] Add full view tests for keyboard-focusable retry, perceptible states, and readable ordering of action, item, author, moment, and visibility in src/features/audit/audit-view.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T054 [US4] Refine AuditEventItem markup for semantic reading order, non-color-only badges, visible focus, and mobile text wrapping in src/features/audit/audit-event-item.tsx
-- [ ] T055 [US4] Refine AuditList layout for mobile-first spacing, stable state dimensions, readable empty/error/loading text, and accessible retry button in src/features/audit/audit-list.tsx
-- [ ] T056 [US4] Refine AuditView and AuditPage composition so headings, landmarks, loading, empty, and error states are announced clearly in src/features/audit/audit-view.tsx
-- [ ] T057 [US4] Audit and update neutral Portuguese copy for transparency without blame, ranking, surveillance, or comparison in src/features/audit/audit-messages.ts
+- [X] T054 [US4] Refine AuditEventItem markup for semantic reading order, non-color-only badges, visible focus, and mobile text wrapping in src/features/audit/audit-event-item.tsx
+- [X] T055 [US4] Refine AuditList layout for mobile-first spacing, stable state dimensions, readable empty/error/loading text, and accessible retry button in src/features/audit/audit-list.tsx
+- [X] T056 [US4] Refine AuditView and AuditPage composition so headings, landmarks, loading, empty, and error states are announced clearly in src/features/audit/audit-view.tsx
+- [X] T057 [US4] Audit and update neutral Portuguese copy for transparency without blame, ranking, surveillance, or comparison in src/features/audit/audit-messages.ts
 
 **Checkpoint**: All user stories are independently functional and accessible.
 
@@ -159,14 +159,14 @@
 
 **Purpose**: Final validation, documentation alignment, and feature-wide cleanup.
 
-- [ ] T058 [P] Add quickstart validation coverage notes for SQL, RLS, UI states, and manual accessibility checks in specs/009-financial-audit/quickstart.md
-- [ ] T059 [P] Add feature README notes for audit module responsibilities and privacy boundaries in src/features/audit/README.md
-- [ ] T060 [P] Run and fix `npm run lint` findings across src/features/audit and src/pages/audit-page.tsx
-- [ ] T061 [P] Run and fix `npm run format:check` findings across src/features/audit and specs/009-financial-audit/tasks.md
-- [ ] T062 [P] Run and fix `npm run typecheck` findings across src/features/audit and src/app/router.tsx
-- [ ] T063 [P] Run and fix `npm run test:run` findings across src/features/audit, src/pages/audit-page.test.tsx, and src/app/routes.test.ts
-- [ ] T064 Run and fix `npm run build` findings for the complete application in package.json
-- [ ] T065 Perform manual quickstart scenarios for individual events, shared events, revocation, privacy inference, mobile layout, keyboard navigation, and neutral language in specs/009-financial-audit/quickstart.md
+- [X] T058 [P] Add quickstart validation coverage notes for SQL, RLS, UI states, and manual accessibility checks in specs/009-financial-audit/quickstart.md
+- [X] T059 [P] Add feature README notes for audit module responsibilities and privacy boundaries in src/features/audit/README.md
+- [X] T060 [P] Run and fix `npm run lint` findings across src/features/audit and src/pages/audit-page.tsx
+- [X] T061 [P] Run and fix `npm run format:check` findings across src/features/audit and specs/009-financial-audit/tasks.md
+- [X] T062 [P] Run and fix `npm run typecheck` findings across src/features/audit and src/app/router.tsx
+- [X] T063 [P] Run and fix `npm run test:run` findings across src/features/audit, src/pages/audit-page.test.tsx, and src/app/routes.test.ts
+- [X] T064 Run and fix `npm run build` findings for the complete application in package.json
+- [X] T065 Perform manual quickstart scenarios for individual events, shared events, revocation, privacy inference, mobile layout, keyboard navigation, and neutral language in specs/009-financial-audit/quickstart.md
 
 ---
 

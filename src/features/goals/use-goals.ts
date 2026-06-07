@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { createGoal, archiveGoal, completeGoal, listGoals, updateGoal } from "./goal-service";
+import { emitAuditRefresh } from "@/features/audit/audit-refresh-signal";
 import {
   goalsErrorState,
   goalsStateFromResult,
@@ -59,6 +60,7 @@ export function useGoals(authorizationContext = "") {
         setState((previous) => goalsErrorState(previous, result.message));
         return result;
       }
+      emitAuditRefresh();
       await load(false, result.message);
       return result;
     },

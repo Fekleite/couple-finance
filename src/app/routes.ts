@@ -62,6 +62,12 @@ export const PRIVATE_ROUTES = {
     description: "Crie e acompanhe metas financeiras individuais ou compartilhadas.",
     status: "available"
   },
+  audit: {
+    path: "/app/audit",
+    title: "Auditoria financeira | Couple Finance",
+    description: "Consulte alteracoes recentes autorizadas em transacoes e metas.",
+    status: "available"
+  },
   newTransaction: {
     path: "/app/transactions/new",
     title: "Registrar transacao | Couple Finance",

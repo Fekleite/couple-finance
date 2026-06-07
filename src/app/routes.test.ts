@@ -36,6 +36,11 @@ describe("route metadata", () => {
       title: "Metas financeiras | Couple Finance",
       status: "available"
     });
+    expect(PRIVATE_ROUTES.audit).toMatchObject({
+      path: "/app/audit",
+      title: "Auditoria financeira | Couple Finance",
+      status: "available"
+    });
   });
 
   it("marks invitation available and future dashboard planned", () => {

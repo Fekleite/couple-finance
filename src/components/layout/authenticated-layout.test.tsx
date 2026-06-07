@@ -53,4 +53,24 @@ describe("AuthenticatedLayout", () => {
     expect(screen.getByText(AUTH_MESSAGES.logoutProgress)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /saindo/i })).toBeDisabled();
   });
+
+  it("offers private navigation to financial audit without exposing event data", () => {
+    renderWithRouterAndAuth(
+      <Routes>
+        <Route element={<AuthenticatedLayout />}>
+          <Route path="/app" element={<p>Area privada</p>} />
+        </Route>
+      </Routes>,
+      {
+        route: "/app",
+        auth: createAuthContextValue({
+          status: "authenticated",
+          user: { id: "user-1", email: "ana@example.com" }
+        })
+      }
+    );
+
+    expect(screen.getByRole("link", { name: /auditoria/i })).toHaveAttribute("href", "/app/audit");
+    expect(screen.queryByText(/alteracao recente/i)).not.toBeInTheDocument();
+  });
 });
