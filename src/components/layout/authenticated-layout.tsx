@@ -1,7 +1,7 @@
-import { LogOut } from "lucide-react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { History, LogOut } from "lucide-react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
-import { PUBLIC_ROUTES } from "@/app/routes";
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { AUTH_MESSAGES } from "@/features/auth/auth-messages";
@@ -43,6 +43,14 @@ export function AuthenticatedLayout() {
           <AlertDescription>{message}</AlertDescription>
         </Alert>
       ) : null}
+      <nav aria-label="Navegacao privada" className="flex flex-wrap gap-2">
+        <Button asChild variant="secondary">
+          <Link to={PRIVATE_ROUTES.audit.path}>
+            <History className="mr-2 h-4 w-4" aria-hidden="true" />
+            Auditoria
+          </Link>
+        </Button>
+      </nav>
       <Outlet />
     </section>
   );
