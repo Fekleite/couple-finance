@@ -1,7 +1,7 @@
 # F11 Essential Flow Audit Checklist
 
-**Feature**: F11 - Responsividade e acessibilidade base  
-**Review date**: 2026-06-08  
+**Feature**: F11 - Responsividade e acessibilidade base
+**Review date**: 2026-06-08
 **Scope**: Existing MVP flows only; no backend, RLS, ownership, or persistence changes.
 
 ## Mobile, Tablet, And Desktop Review
