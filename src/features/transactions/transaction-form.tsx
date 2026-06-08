@@ -24,16 +24,16 @@ export function TransactionForm() {
   }
   const submitting = form.state.status === "submitting";
   return (
-    <Card>
+    <Card className="min-w-0 overflow-hidden">
       <CardHeader>
-        <CardTitle>Dados da transacao</CardTitle>
-        <CardDescription>
+        <CardTitle className="break-words">Dados da transacao</CardTitle>
+        <CardDescription className="break-words">
           Informe os dados essenciais. Nenhuma categoria e escolhida automaticamente.
         </CardDescription>
       </CardHeader>
       <CardContent>
         {form.state.status === "recoverable_error" || form.state.status === "blocked" ? (
-          <Alert variant="destructive" className="mb-6" aria-live="assertive">
+          <Alert variant="destructive" className="mb-6" role="alert" aria-live="assertive">
             <AlertDescription>{form.state.message}</AlertDescription>
           </Alert>
         ) : null}
@@ -80,7 +80,7 @@ export function TransactionForm() {
               error={form.errors.transactionDate}
               onChange={(value) => form.updateValue("transactionDate", value)}
             />
-            <div data-invalid={Boolean(form.errors.categoryCode)}>
+            <div className="min-w-0" data-invalid={Boolean(form.errors.categoryCode)}>
               <CategorySelector
                 categories={form.categories}
                 applicability={form.values.transactionType || undefined}
@@ -119,13 +119,13 @@ export function TransactionForm() {
                 onChange={(value) => form.updateValue("responsibleUserId", value)}
               />
             ) : (
-              <p className="text-sm text-muted-foreground">Responsavel: Voce</p>
+              <p className="text-sm break-words text-muted-foreground">Responsavel: Voce</p>
             )}
             <Field data-invalid={Boolean(form.errors.observation)}>
               <FieldLabel htmlFor="transaction-observation">Observacao opcional</FieldLabel>
               <textarea
                 id="transaction-observation"
-                className="min-h-24 w-full rounded-md border bg-transparent p-3 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="min-h-24 w-full min-w-0 rounded-md border bg-transparent p-3 break-words outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                 value={form.values.observation}
                 maxLength={500}
                 aria-invalid={Boolean(form.errors.observation)}
@@ -204,12 +204,12 @@ function Choice({
 }) {
   return (
     <fieldset aria-describedby={error ? `${name}-error` : undefined}>
-      <legend className="text-sm font-medium">{legend}</legend>
+      <legend className="text-sm font-medium break-words">{legend}</legend>
       <div className="mt-2 grid gap-2 sm:grid-cols-2">
         {options.map(([optionValue, label]) => (
           <label
             key={optionValue}
-            className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border p-3 has-[:focus-visible]:ring-2 has-[:checked]:border-primary"
+            className="flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded-lg border p-3 break-words has-[:focus-visible]:ring-2 has-[:checked]:border-primary"
           >
             <input
               type="radio"

@@ -114,7 +114,7 @@ export function DashboardView({
       ) : null}
       <section className="grid min-w-0 gap-3" aria-label={messages.recentRegion}>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="text-lg font-semibold">{messages.recentRegion}</h3>
+          <h3 className="text-lg font-semibold break-words">{messages.recentRegion}</h3>
           <Button asChild variant="secondary" size="sm">
             <Link to={PRIVATE_ROUTES.transactions.path}>{messages.fullList}</Link>
           </Button>
@@ -144,12 +144,14 @@ function DashboardHeader({
 }) {
   return (
     <header className="grid min-w-0 gap-4">
-      <div>
-        <p className="text-sm font-semibold uppercase text-primary">{messages.currentMonth}</p>
-        <h2 id="dashboard-title" className="mt-2 text-2xl font-bold">
+      <div className="min-w-0">
+        <p className="text-sm font-semibold break-words text-primary uppercase">
+          {messages.currentMonth}
+        </p>
+        <h2 id="dashboard-title" className="mt-2 text-2xl font-bold break-words">
           Dashboard financeiro
         </h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        <p className="mt-2 text-sm leading-6 break-words text-muted-foreground">
           Acompanhe os indicadores e as ultimas movimentacoes disponiveis para voce.
         </p>
       </div>
@@ -158,7 +160,7 @@ function DashboardHeader({
         aria-label={messages.selectedPeriod}
       >
         <p className="min-w-0 break-words text-base font-semibold">{period.label}</p>
-        <div className="grid grid-cols-2 gap-2 sm:flex">
+        <div className="grid min-w-0 grid-cols-2 gap-2 sm:flex">
           <Button
             type="button"
             variant="secondary"

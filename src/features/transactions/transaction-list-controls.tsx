@@ -22,7 +22,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
 
   return (
     <section className="grid min-w-0 gap-4 rounded-xl border bg-card p-4" aria-label="Filtros">
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex min-w-0 items-center justify-between gap-2">
         <Button
           type="button"
           variant="secondary"
@@ -47,7 +47,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
         <label className="grid gap-1 text-sm">
           Categoria
           <select
-            className="h-9 min-w-0 rounded-md border bg-background px-2"
+            className="min-h-10 min-w-0 rounded-md border bg-background px-2 md:min-h-9"
             value={filters.categoryCode ?? ""}
             onChange={(event) => update({ categoryCode: event.target.value || null })}
           >
@@ -62,7 +62,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
         <label className="grid gap-1 text-sm">
           Responsavel
           <select
-            className="h-9 min-w-0 rounded-md border bg-background px-2"
+            className="min-h-10 min-w-0 rounded-md border bg-background px-2 md:min-h-9"
             value={filters.responsibleUserId ?? ""}
             onChange={(event) => update({ responsibleUserId: event.target.value || null })}
           >
@@ -77,7 +77,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
         <label className="grid gap-1 text-sm">
           Tipo
           <select
-            className="h-9 min-w-0 rounded-md border bg-background px-2"
+            className="min-h-10 min-w-0 rounded-md border bg-background px-2 md:min-h-9"
             value={filters.transactionType ?? ""}
             onChange={(event) =>
               update({ transactionType: (event.target.value as "income" | "expense") || null })

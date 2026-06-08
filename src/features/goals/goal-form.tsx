@@ -98,7 +98,7 @@ export function GoalForm({
           maxLength={80}
           onChange={(value) => updateValue("name", value)}
         />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid min-w-0 gap-4 sm:grid-cols-2">
           <TextField
             id="goal-target"
             label="Valor alvo"
@@ -129,8 +129,8 @@ export function GoalForm({
         <fieldset
           aria-describedby={errors.visibility ? "goal-visibility-error" : "goal-visibility-help"}
         >
-          <legend className="text-sm font-medium">Visibilidade</legend>
-          <div className="mt-2 grid gap-2 sm:grid-cols-2">
+          <legend className="text-sm font-medium break-words">Visibilidade</legend>
+          <div className="mt-2 grid min-w-0 gap-2 sm:grid-cols-2">
             <Choice
               name="goal-visibility"
               label="Individual"
@@ -157,7 +157,7 @@ export function GoalForm({
           </FieldDescription>
           <FieldError id="goal-visibility-error" errors={[{ message: errors.visibility }]} />
         </fieldset>
-        <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
           <Button
             type="submit"
             size="lg"
@@ -224,7 +224,7 @@ function Choice({
   onChange: () => void;
 }) {
   return (
-    <label className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border p-3 has-[:focus-visible]:ring-2 has-[:checked]:border-primary">
+    <label className="flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded-md border p-3 break-words has-[:focus-visible]:ring-2 has-[:checked]:border-primary">
       <input
         type="radio"
         name={name}

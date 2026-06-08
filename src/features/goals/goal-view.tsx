@@ -52,10 +52,12 @@ export function GoalView({
           <AlertDescription>{GOAL_MESSAGES.sharedBlocked}</AlertDescription>
         </Alert>
       ) : null}
-      <Card>
+      <Card className="min-w-0 overflow-hidden">
         <CardHeader>
-          <CardTitle>{editingGoal ? "Editar meta" : "Nova meta financeira"}</CardTitle>
-          <CardDescription>
+          <CardTitle className="break-words">
+            {editingGoal ? "Editar meta" : "Nova meta financeira"}
+          </CardTitle>
+          <CardDescription className="break-words">
             Informe valores manuais. Metas nao sao vinculadas automaticamente a transacoes.
           </CardDescription>
         </CardHeader>

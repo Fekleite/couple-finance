@@ -24,12 +24,16 @@ export function DashboardIndicatorCard({
   return (
     <Card size="sm" className="min-w-0 focus-within:ring-2 focus-within:ring-ring">
       <CardHeader className="gap-1">
-        <CardTitle className="text-sm font-medium text-muted-foreground">{label}</CardTitle>
+        <CardTitle className="text-sm font-medium break-words text-muted-foreground">
+          {label}
+        </CardTitle>
       </CardHeader>
       <CardContent className="grid gap-2">
         <p className={`break-words text-2xl font-bold tabular-nums ${toneClass}`}>{value}</p>
-        <p className="text-sm leading-5 text-muted-foreground">{description}</p>
-        {resultText ? <p className="text-sm font-medium leading-5">{resultText}</p> : null}
+        <p className="text-sm leading-5 break-words text-muted-foreground">{description}</p>
+        {resultText ? (
+          <p className="text-sm leading-5 font-medium break-words">{resultText}</p>
+        ) : null}
       </CardContent>
     </Card>
   );
