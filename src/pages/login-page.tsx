@@ -60,11 +60,11 @@ export function LoginPage() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md">
+    <Card className="mx-auto w-full max-w-md min-w-0 overflow-hidden">
       <CardHeader>
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">Acesso privado</p>
-        <CardTitle className="text-2xl">Entrar</CardTitle>
-        <CardDescription>
+        <p className="text-sm font-semibold break-words text-primary uppercase">Acesso privado</p>
+        <CardTitle className="text-2xl break-words">Entrar</CardTitle>
+        <CardDescription className="break-words">
           Acesse seu espaco privado com e-mail e senha. Mensagens de erro preservam sua privacidade.
         </CardDescription>
       </CardHeader>
@@ -72,11 +72,14 @@ export function LoginPage() {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <FieldGroup className="gap-4">
             {formMessage ? (
-              <Alert variant={formTone === "error" ? "destructive" : "default"}>
+              <Alert
+                variant={formTone === "error" ? "destructive" : "default"}
+                role={formTone === "error" ? "alert" : "status"}
+              >
                 <AlertDescription>{formMessage}</AlertDescription>
               </Alert>
             ) : null}
-            <Field className="gap2" data-invalid={Boolean(errors.email)}>
+            <Field className="gap-2" data-invalid={Boolean(errors.email)}>
               <FieldLabel htmlFor="login-email">E-mail</FieldLabel>
               <Input
                 id="login-email"
@@ -88,7 +91,7 @@ export function LoginPage() {
               />
               <FieldError id="login-email-error" errors={[errors.email]} />
             </Field>
-            <Field className="gap2" data-invalid={Boolean(errors.password)}>
+            <Field className="gap-2" data-invalid={Boolean(errors.password)}>
               <FieldLabel htmlFor="login-password">Senha</FieldLabel>
               <Input
                 id="login-password"
@@ -100,15 +103,21 @@ export function LoginPage() {
               />
               <FieldError id="login-password-error" errors={[errors.password]} />
             </Field>
-            <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+            >
               {isSubmitting ? <Loader2 className="animate-spin" aria-hidden="true" /> : null}
               {isSubmitting ? "Entrando..." : "Entrar"}
             </Button>
-            <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+            <div className="space-y-2 text-sm leading-6 break-words text-muted-foreground">
               <p>
                 Ainda nao tem conta?{" "}
                 <Link
-                  className="font-medium text-primary underline-offset-4 hover:underline"
+                  className="font-medium break-words text-primary underline-offset-4 hover:underline"
                   to={PUBLIC_ROUTES.signUp.path}
                 >
                   Criar conta
@@ -117,7 +126,7 @@ export function LoginPage() {
               <p>
                 Esqueceu a senha?{" "}
                 <Link
-                  className="font-medium text-primary underline-offset-4 hover:underline"
+                  className="font-medium break-words text-primary underline-offset-4 hover:underline"
                   to={PUBLIC_ROUTES.forgotPassword.path}
                 >
                   Recuperar acesso

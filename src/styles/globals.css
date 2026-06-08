@@ -124,7 +124,42 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    @apply scroll-smooth;
+    overflow-x: clip;
+    text-size-adjust: 100%;
+  }
+
+  :where(body, #root) {
+    min-width: 0;
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-wrap: anywhere;
+  }
+
+  :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])) {
+    @apply focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none;
+  }
+
+  :where(img, svg, canvas, video) {
+    max-width: 100%;
+  }
+
+  :where(p, h1, h2, h3, h4, h5, h6, dd, dt, li, label, legend, figcaption) {
+    overflow-wrap: anywhere;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

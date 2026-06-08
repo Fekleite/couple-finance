@@ -69,26 +69,29 @@ export function ResetPasswordPage() {
   const invalidLink = status === "unauthenticated";
 
   return (
-    <Card className="mx-auto w-full max-w-md">
+    <Card className="mx-auto w-full max-w-md min-w-0 overflow-hidden">
       <CardHeader>
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">Acesso privado</p>
-        <CardTitle className="text-2xl">Redefinir senha</CardTitle>
-        <CardDescription>
+        <p className="text-sm font-semibold break-words text-primary uppercase">Acesso privado</p>
+        <CardTitle className="text-2xl break-words">Redefinir senha</CardTitle>
+        <CardDescription className="break-words">
           Defina uma nova senha quando o link de recuperacao estiver valido.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {formMessage ? (
-            <Alert variant={formTone === "error" ? "destructive" : "default"}>
+            <Alert
+              variant={formTone === "error" ? "destructive" : "default"}
+              role={formTone === "error" ? "alert" : "status"}
+            >
               <AlertDescription>{formMessage}</AlertDescription>
             </Alert>
           ) : null}
           {invalidLink ? (
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="text-sm leading-6 break-words text-muted-foreground">
               Solicite um novo e-mail em{" "}
               <Link
-                className="font-medium text-primary underline-offset-4 hover:underline"
+                className="font-medium break-words text-primary underline-offset-4 hover:underline"
                 to={PUBLIC_ROUTES.forgotPassword.path}
               >
                 recuperar acesso
@@ -132,7 +135,13 @@ export function ResetPasswordPage() {
                   />
                   <FieldError id="reset-confirm-password-error" errors={[errors.confirmPassword]} />
                 </Field>
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                >
                   {isSubmitting ? <Loader2 className="animate-spin" aria-hidden="true" /> : null}
                   {isSubmitting ? "Atualizando..." : "Atualizar senha"}
                 </Button>

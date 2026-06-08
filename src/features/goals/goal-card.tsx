@@ -28,11 +28,13 @@ export function GoalCard({ goal, submitting, onEdit, onComplete, onArchive }: Pr
           <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
               <CardTitle className="break-words text-base">{goal.name}</CardTitle>
-              <CardDescription>
+              <CardDescription className="break-words">
                 {visibilityLabel(goal.visibility)} • {statusLabel(goal.status)}
               </CardDescription>
             </div>
-            <p className="text-sm font-semibold text-primary">{progress.displayPercent}%</p>
+            <p className="text-sm font-semibold break-words text-primary">
+              {progress.displayPercent}%
+            </p>
           </div>
         </CardHeader>
         <CardContent className="grid gap-3">
@@ -44,10 +46,10 @@ export function GoalCard({ goal, submitting, onEdit, onComplete, onArchive }: Pr
           </div>
           <p className="sr-only">{progressSummary(goal, progress)}</p>
           <div className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <p>Atual: {formatCurrencyFromCents(goal.currentAmountCents)}</p>
-            <p>Alvo: {formatCurrencyFromCents(goal.targetAmountCents)}</p>
-            <p>{progressSummary(goal, progress)}</p>
-            <p>{deadlineMessage(deadline, goal.deadlineDate)}</p>
+            <p className="break-words">Atual: {formatCurrencyFromCents(goal.currentAmountCents)}</p>
+            <p className="break-words">Alvo: {formatCurrencyFromCents(goal.targetAmountCents)}</p>
+            <p className="break-words">{progressSummary(goal, progress)}</p>
+            <p className="break-words">{deadlineMessage(deadline, goal.deadlineDate)}</p>
           </div>
           <div className="grid gap-2 sm:grid-cols-3">
             <Button

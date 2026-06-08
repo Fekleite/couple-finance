@@ -5,7 +5,8 @@ export const AUTH_MESSAGES = {
   weakPassword: "Use pelo menos 8 caracteres.",
   passwordMismatch: "Repita a mesma senha.",
   invalidLogin: "E-mail ou senha invalidos. Confira os dados e tente novamente.",
-  existingSignupEmail: "Ja existe uma conta com este e-mail. Entre na conta ou recupere o acesso.",
+  existingSignupEmail:
+    "Nao foi possivel criar a conta com esses dados. Entre ou recupere o acesso.",
   signupSuccess: "Conta criada com sucesso. Preparando seu espaco privado.",
   signupConfirmation:
     "Conta criada. Se a confirmacao por e-mail estiver ativa, siga as instrucoes enviadas.",

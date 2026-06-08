@@ -3,9 +3,13 @@ import type { AuditActionType, AuditItemType, AuditVisibility } from "./audit-ty
 export const AUDIT_MESSAGES = {
   title: "Auditoria financeira",
   subtitle: "Alteracoes recentes salvas em transacoes e metas que voce pode acessar.",
+  loadingTitle: "Auditoria financeira",
   loading: "Carregando alteracoes recentes...",
+  emptyTitle: "Auditoria sem registros recentes",
   empty: "Nenhuma alteracao financeira autorizada aparece por enquanto.",
+  errorTitle: "Nao foi possivel carregar a auditoria",
   error: "Nao foi possivel carregar as alteracoes agora. Tente novamente.",
+  blockedTitle: "Acesso necessario",
   blocked: "Entre novamente para consultar as alteracoes autorizadas.",
   retry: "Tentar novamente",
   sharedUnavailable: "Eventos compartilhados aparecem apenas enquanto o vinculo estiver ativo."

@@ -22,11 +22,11 @@ export function DashboardChartsSection({ state, selectedPeriod, onRetry }: Props
       aria-live="polite"
       aria-busy={state.status === "loading" || state.status === "refreshing"}
     >
-      <div className="grid gap-1">
-        <h3 id="dashboard-charts-title" className="text-lg font-semibold">
+      <div className="grid min-w-0 gap-1">
+        <h3 id="dashboard-charts-title" className="text-lg font-semibold break-words">
           {DASHBOARD_CHART_MESSAGES.sectionTitle}
         </h3>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm break-words text-muted-foreground">
           {DASHBOARD_CHART_MESSAGES.sectionDescription}
         </p>
       </div>
