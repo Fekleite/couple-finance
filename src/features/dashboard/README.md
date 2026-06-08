@@ -17,3 +17,11 @@ The dashboard feature owns the initial monthly financial overview rendered at
   or predictive alerts here.
 - Chart empty, unavailable and error states must not imply hidden or blocked
   financial data.
+- Keep dashboard cards, period controls, recent transactions and chart sections
+  `min-w-0`, stackable on mobile, and able to wrap long money, category, period
+  and status text.
+- Every visual financial indicator or chart must keep a textual equivalent for
+  period, value, scope and trend; color, hover and tooltip cannot be the only
+  channel.
+- Retry, empty and partial-data states should use neutral authorized-data
+  language and shared feedback components when practical.

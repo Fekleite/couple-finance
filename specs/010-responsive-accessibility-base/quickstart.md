@@ -16,6 +16,9 @@ npm run dev
 
 ## Required Validation Commands
 
+F11 uses the existing project toolchain only. No new accessibility, browser E2E,
+or visual-regression dependency is required for this feature.
+
 ```bash
 npm run lint
 npm run format:check
@@ -23,6 +26,15 @@ npm run typecheck
 npm run test:run
 npm run build
 ```
+
+Focused automated coverage should stay in Vitest and Testing Library for:
+
+- shared button, input, field, feedback-state, and layout semantics;
+- auth form labels, invalid states, and safe messages;
+- transaction form/list controls, safe retry, and input preservation;
+- dashboard indicators, charts, text equivalents, and authorized empty/error
+  states;
+- goals progress/actions and audit event/state semantics.
 
 ## Essential Flow Review
 
@@ -121,3 +133,13 @@ A F11 esta pronta para tasks quando:
 - Nenhum fluxo essencial depende exclusivamente de desktop.
 - Nenhum estado ou mensagem cria inferencia de dado inacessivel.
 - Todos os checks tecnicos obrigatorios estao planejados.
+
+## Acceptance Gate Results
+
+- `npm run typecheck`: passed on 2026-06-08.
+- `npm run test:run`: passed on 2026-06-08.
+- `npm run lint`: passed on 2026-06-08.
+- `npm run format:check`: passed on 2026-06-08.
+- `npm run build`: passed on 2026-06-08.
+- Manual mobile/tablet/desktop review: recorded in
+  `checklists/f11-essential-flows.md` for essential flows and safe states.

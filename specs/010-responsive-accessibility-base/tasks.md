@@ -22,9 +22,9 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 **Purpose**: Establish the feature audit surface and reusable acceptance baseline before code changes.
 
-- [ ] T001 Create the F11 essential-flow audit checklist covering auth, account recovery, private home, couple invitation, permissions, categories, transactions, dashboard, charts, goals, and audit in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
-- [ ] T002 [P] Document the no-new-dependency testing approach and required validation commands for F11 in specs/010-responsive-accessibility-base/quickstart.md
-- [ ] T003 [P] Add a future-feature responsive and accessibility acceptance baseline checklist to specs/010-responsive-accessibility-base/checklists/requirements.md
+- [X] T001 Create the F11 essential-flow audit checklist covering auth, account recovery, private home, couple invitation, permissions, categories, transactions, dashboard, charts, goals, and audit in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
+- [X] T002 [P] Document the no-new-dependency testing approach and required validation commands for F11 in specs/010-responsive-accessibility-base/quickstart.md
+- [X] T003 [P] Add a future-feature responsive and accessibility acceptance baseline checklist to specs/010-responsive-accessibility-base/checklists/requirements.md
 
 ---
 
@@ -34,17 +34,17 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 **CRITICAL**: No user story work should begin until this phase is complete.
 
-- [ ] T004 Add global viewport overflow, focus visibility, long-word wrapping, and reduced-motion baseline styles in src/styles/globals.css
-- [ ] T005 [P] Add responsive and focus regression tests for shared buttons and links in src/components/ui/button.test.tsx
-- [ ] T006 [P] Add field label, aria-describedby, aria-invalid, and role=alert regression tests in src/components/ui/field.test.tsx
-- [ ] T007 [P] Add input focus, disabled, invalid, and long-value regression tests in src/components/ui/input.test.tsx
-- [ ] T008 Harden Button touch target, icon-only accessible-name expectations, disabled/loading layout stability, and text wrapping in src/components/ui/button.tsx
-- [ ] T009 Harden Field and FieldError semantics, stable ids support, error association, and long text wrapping in src/components/ui/field.tsx
-- [ ] T010 Harden Input responsive width, focus ring visibility, invalid state, and text overflow behavior in src/components/ui/input.tsx
-- [ ] T011 [P] Add interface-state component tests for loading, empty, error, retry, and assistive announcements in src/components/feedback/interface-state.test.tsx
-- [ ] T012 Harden LoadingState, EmptyState, and ErrorState responsive layout, status semantics, retry action naming, and safe-message constraints in src/components/feedback/loading-state.tsx
-- [ ] T013 Harden EmptyState responsive layout, status semantics, retry/action naming, and safe-message constraints in src/components/feedback/empty-state.tsx
-- [ ] T014 Harden ErrorState responsive layout, status semantics, retry action naming, and safe-message constraints in src/components/feedback/error-state.tsx
+- [X] T004 Add global viewport overflow, focus visibility, long-word wrapping, and reduced-motion baseline styles in src/styles/globals.css
+- [X] T005 [P] Add responsive and focus regression tests for shared buttons and links in src/components/ui/button.test.tsx
+- [X] T006 [P] Add field label, aria-describedby, aria-invalid, and role=alert regression tests in src/components/ui/field.test.tsx
+- [X] T007 [P] Add input focus, disabled, invalid, and long-value regression tests in src/components/ui/input.test.tsx
+- [X] T008 Harden Button touch target, icon-only accessible-name expectations, disabled/loading layout stability, and text wrapping in src/components/ui/button.tsx
+- [X] T009 Harden Field and FieldError semantics, stable ids support, error association, and long text wrapping in src/components/ui/field.tsx
+- [X] T010 Harden Input responsive width, focus ring visibility, invalid state, and text overflow behavior in src/components/ui/input.tsx
+- [X] T011 [P] Add interface-state component tests for loading, empty, error, retry, and assistive announcements in src/components/feedback/interface-state.test.tsx
+- [X] T012 Harden LoadingState, EmptyState, and ErrorState responsive layout, status semantics, retry action naming, and safe-message constraints in src/components/feedback/loading-state.tsx
+- [X] T013 Harden EmptyState responsive layout, status semantics, retry/action naming, and safe-message constraints in src/components/feedback/empty-state.tsx
+- [X] T014 Harden ErrorState responsive layout, status semantics, retry action naming, and safe-message constraints in src/components/feedback/error-state.tsx
 
 **Checkpoint**: Shared UI, feedback, and CSS baseline are ready for user stories.
 
@@ -60,28 +60,28 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 > Write or update these tests before implementation and confirm they fail for missing behavior where practical.
 
-- [ ] T015 [P] [US1] Add responsive layout tests for public auth and recovery pages in src/pages/login-page.test.tsx
-- [ ] T016 [P] [US1] Add responsive layout tests for sign-up, forgot-password, and reset-password pages in src/pages/sign-up-page.test.tsx, src/pages/forgot-password-page.test.tsx, and src/pages/reset-password-page.test.tsx
-- [ ] T017 [P] [US1] Add responsive private navigation tests for wrapping links and reachable sign-out in src/components/layout/authenticated-layout.test.tsx
-- [ ] T018 [P] [US1] Add responsive transaction form tests for long labels, keyboard-safe actions, and no lost inputs in src/features/transactions/transaction-form.test.tsx
-- [ ] T019 [P] [US1] Add responsive transaction list and filter tests for long category names, large amounts, and mobile stacking in src/features/transactions/transaction-list.test.tsx
-- [ ] T020 [P] [US1] Add responsive dashboard and chart section tests for long periods, large values, and mobile stacking in src/features/dashboard/dashboard-view.test.tsx
-- [ ] T021 [P] [US1] Add responsive goals and audit tests for long names, long status text, and reachable actions in src/features/goals/goal-view.test.tsx and src/features/audit/audit-view.test.tsx
+- [X] T015 [P] [US1] Add responsive layout tests for public auth and recovery pages in src/pages/login-page.test.tsx
+- [X] T016 [P] [US1] Add responsive layout tests for sign-up, forgot-password, and reset-password pages in src/pages/sign-up-page.test.tsx, src/pages/forgot-password-page.test.tsx, and src/pages/reset-password-page.test.tsx
+- [X] T017 [P] [US1] Add responsive private navigation tests for wrapping links and reachable sign-out in src/components/layout/authenticated-layout.test.tsx
+- [X] T018 [P] [US1] Add responsive transaction form tests for long labels, keyboard-safe actions, and no lost inputs in src/features/transactions/transaction-form.test.tsx
+- [X] T019 [P] [US1] Add responsive transaction list and filter tests for long category names, large amounts, and mobile stacking in src/features/transactions/transaction-list.test.tsx
+- [X] T020 [P] [US1] Add responsive dashboard and chart section tests for long periods, large values, and mobile stacking in src/features/dashboard/dashboard-view.test.tsx
+- [X] T021 [P] [US1] Add responsive goals and audit tests for long names, long status text, and reachable actions in src/features/goals/goal-view.test.tsx and src/features/audit/audit-view.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T022 [US1] Harden AppLayout to prevent page-level horizontal overflow and keep main content constrained on narrow screens in src/components/layout/app-layout.tsx
-- [ ] T023 [US1] Expand AuthenticatedLayout private navigation to expose essential MVP routes with wrapping, min-width constraints, and mobile-reachable actions in src/components/layout/authenticated-layout.tsx
-- [ ] T024 [US1] Harden PublicNavigation wrapping, skip-link behavior, and small-screen link targets in src/components/layout/public-navigation.tsx
-- [ ] T025 [US1] Harden login, sign-up, forgot-password, and reset-password page containers for small screens and enlarged text in src/pages/login-page.tsx, src/pages/sign-up-page.tsx, src/pages/forgot-password-page.tsx, and src/pages/reset-password-page.tsx
-- [ ] T026 [US1] Harden transaction form layout, radio groups, category selector container, textarea, and submit action for narrow screens in src/features/transactions/transaction-form.tsx
-- [ ] T027 [US1] Harden transaction list controls and filters for stacking, long option labels, and reachable actions in src/features/transactions/transaction-list-controls.tsx
-- [ ] T028 [US1] Harden transaction list items for long titles, large values, dates, visibility labels, and no horizontal overflow in src/features/transactions/transaction-list-item.tsx
-- [ ] T029 [US1] Harden dashboard indicators, period controls, recent transactions, and chart section layout for mobile stacking in src/features/dashboard/dashboard-view.tsx
-- [ ] T030 [US1] Harden chart cards and chart containers to preserve summaries and avoid clipping at narrow widths in src/features/dashboard/dashboard-charts-section.tsx
-- [ ] T031 [US1] Harden goal cards, progress blocks, and goal forms for long names, large amounts, and mobile stacking in src/features/goals/goal-view.tsx
-- [ ] T032 [US1] Harden audit list and audit event items for long event text, timestamps, and mobile wrapping in src/features/audit/audit-list.tsx
-- [ ] T033 [US1] Record completed mobile/tablet/desktop manual review results for all essential flows in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
+- [X] T022 [US1] Harden AppLayout to prevent page-level horizontal overflow and keep main content constrained on narrow screens in src/components/layout/app-layout.tsx
+- [X] T023 [US1] Expand AuthenticatedLayout private navigation to expose essential MVP routes with wrapping, min-width constraints, and mobile-reachable actions in src/components/layout/authenticated-layout.tsx
+- [X] T024 [US1] Harden PublicNavigation wrapping, skip-link behavior, and small-screen link targets in src/components/layout/public-navigation.tsx
+- [X] T025 [US1] Harden login, sign-up, forgot-password, and reset-password page containers for small screens and enlarged text in src/pages/login-page.tsx, src/pages/sign-up-page.tsx, src/pages/forgot-password-page.tsx, and src/pages/reset-password-page.tsx
+- [X] T026 [US1] Harden transaction form layout, radio groups, category selector container, textarea, and submit action for narrow screens in src/features/transactions/transaction-form.tsx
+- [X] T027 [US1] Harden transaction list controls and filters for stacking, long option labels, and reachable actions in src/features/transactions/transaction-list-controls.tsx
+- [X] T028 [US1] Harden transaction list items for long titles, large values, dates, visibility labels, and no horizontal overflow in src/features/transactions/transaction-list-item.tsx
+- [X] T029 [US1] Harden dashboard indicators, period controls, recent transactions, and chart section layout for mobile stacking in src/features/dashboard/dashboard-view.tsx
+- [X] T030 [US1] Harden chart cards and chart containers to preserve summaries and avoid clipping at narrow widths in src/features/dashboard/dashboard-charts-section.tsx
+- [X] T031 [US1] Harden goal cards, progress blocks, and goal forms for long names, large amounts, and mobile stacking in src/features/goals/goal-view.tsx
+- [X] T032 [US1] Harden audit list and audit event items for long event text, timestamps, and mobile wrapping in src/features/audit/audit-list.tsx
+- [X] T033 [US1] Record completed mobile/tablet/desktop manual review results for all essential flows in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
 
 **Checkpoint**: User Story 1 is independently usable and testable as the MVP scope.
 
@@ -95,26 +95,26 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 ### Tests for User Story 2
 
-- [ ] T034 [P] [US2] Add keyboard navigation tests for private layout links, sign-out, and route reachability in src/components/layout/authenticated-layout.test.tsx
-- [ ] T035 [P] [US2] Add accessible label and validation association tests for auth forms in src/pages/login-page.test.tsx
-- [ ] T036 [P] [US2] Add accessible label, field error, and keyboard tests for transaction form controls in src/features/transactions/transaction-form.test.tsx
-- [ ] T037 [P] [US2] Add accessible label and keyboard tests for category selector and category options in src/features/categories/category-selector.test.tsx
-- [ ] T038 [P] [US2] Add text-equivalent and role/name tests for dashboard indicators and charts in src/features/dashboard/dashboard-charts-section.test.tsx
-- [ ] T039 [P] [US2] Add accessible progress and keyboard action tests for goals in src/features/goals/goal-card.test.tsx
-- [ ] T040 [P] [US2] Add audit event semantic structure and screen-reader text tests in src/features/audit/audit-event-item.test.tsx
+- [X] T034 [P] [US2] Add keyboard navigation tests for private layout links, sign-out, and route reachability in src/components/layout/authenticated-layout.test.tsx
+- [X] T035 [P] [US2] Add accessible label and validation association tests for auth forms in src/pages/login-page.test.tsx
+- [X] T036 [P] [US2] Add accessible label, field error, and keyboard tests for transaction form controls in src/features/transactions/transaction-form.test.tsx
+- [X] T037 [P] [US2] Add accessible label and keyboard tests for category selector and category options in src/features/categories/category-selector.test.tsx
+- [X] T038 [P] [US2] Add text-equivalent and role/name tests for dashboard indicators and charts in src/features/dashboard/dashboard-charts-section.test.tsx
+- [X] T039 [P] [US2] Add accessible progress and keyboard action tests for goals in src/features/goals/goal-card.test.tsx
+- [X] T040 [P] [US2] Add audit event semantic structure and screen-reader text tests in src/features/audit/audit-event-item.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T041 [US2] Add or repair skip-link target, main landmark, page heading semantics, and focus-visible behavior in src/components/layout/app-layout.tsx
-- [ ] T042 [US2] Add complete accessible names for icon buttons, nav links, sign-out, and private route controls in src/components/layout/authenticated-layout.tsx
-- [ ] T043 [US2] Add accessible names, descriptions, invalid states, and error associations for auth form fields in src/pages/login-page.tsx
-- [ ] T044 [US2] Add accessible names, descriptions, invalid states, and error associations for sign-up and account recovery fields in src/pages/sign-up-page.tsx, src/pages/forgot-password-page.tsx, and src/pages/reset-password-page.tsx
-- [ ] T045 [US2] Add accessible names, fieldset descriptions, disabled reasons, and error associations for transaction form radio groups and category selection in src/features/transactions/transaction-form.tsx
-- [ ] T046 [US2] Add semantic labels and keyboard-operable controls to transaction filters in src/features/transactions/transaction-list-controls.tsx
-- [ ] T047 [US2] Add textual summaries, headings, and accessible descriptions for dashboard indicators and charts in src/features/dashboard/dashboard-charts-section.tsx
-- [ ] T048 [US2] Add accessible progress text and keyboard-operable actions for goal cards and goal forms in src/features/goals/goal-card.tsx
-- [ ] T049 [US2] Add semantic event structure, accessible timestamps, and readable financial context to audit items in src/features/audit/audit-event-item.tsx
-- [ ] T050 [US2] Record keyboard, focus, enlarged text, and assistive technology manual review results in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
+- [X] T041 [US2] Add or repair skip-link target, main landmark, page heading semantics, and focus-visible behavior in src/components/layout/app-layout.tsx
+- [X] T042 [US2] Add complete accessible names for icon buttons, nav links, sign-out, and private route controls in src/components/layout/authenticated-layout.tsx
+- [X] T043 [US2] Add accessible names, descriptions, invalid states, and error associations for auth form fields in src/pages/login-page.tsx
+- [X] T044 [US2] Add accessible names, descriptions, invalid states, and error associations for sign-up and account recovery fields in src/pages/sign-up-page.tsx, src/pages/forgot-password-page.tsx, and src/pages/reset-password-page.tsx
+- [X] T045 [US2] Add accessible names, fieldset descriptions, disabled reasons, and error associations for transaction form radio groups and category selection in src/features/transactions/transaction-form.tsx
+- [X] T046 [US2] Add semantic labels and keyboard-operable controls to transaction filters in src/features/transactions/transaction-list-controls.tsx
+- [X] T047 [US2] Add textual summaries, headings, and accessible descriptions for dashboard indicators and charts in src/features/dashboard/dashboard-charts-section.tsx
+- [X] T048 [US2] Add accessible progress text and keyboard-operable actions for goal cards and goal forms in src/features/goals/goal-card.tsx
+- [X] T049 [US2] Add semantic event structure, accessible timestamps, and readable financial context to audit items in src/features/audit/audit-event-item.tsx
+- [X] T050 [US2] Record keyboard, focus, enlarged text, and assistive technology manual review results in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
 
 **Checkpoint**: User Story 2 is independently keyboard-operable and understandable by assistive technology.
 
@@ -128,28 +128,28 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 ### Tests for User Story 3
 
-- [ ] T051 [P] [US3] Add safe auth and session-expired message tests in src/features/auth/auth-context.test.tsx
-- [ ] T052 [P] [US3] Add safe no-shared-relationship and invitation state tests in src/features/couple/relationship-state.test.ts
-- [ ] T053 [P] [US3] Add safe permission-unavailable message tests in src/features/permissions/permission-messages.test.ts
-- [ ] T054 [P] [US3] Add safe category empty/error message tests in src/features/categories/category-service.test.ts
-- [ ] T055 [P] [US3] Add transaction validation, submission failure, retry, and input preservation tests in src/features/transactions/use-transaction-form.test.tsx
-- [ ] T056 [P] [US3] Add dashboard empty/error/retry privacy tests in src/features/dashboard/dashboard-state.test.ts
-- [ ] T057 [P] [US3] Add goals empty/error/retry privacy tests in src/features/goals/goal-messages.test.ts
-- [ ] T058 [P] [US3] Add audit empty/error/retry privacy tests in src/features/audit/audit-messages.test.ts
+- [X] T051 [P] [US3] Add safe auth and session-expired message tests in src/features/auth/auth-context.test.tsx
+- [X] T052 [P] [US3] Add safe no-shared-relationship and invitation state tests in src/features/couple/relationship-state.test.ts
+- [X] T053 [P] [US3] Add safe permission-unavailable message tests in src/features/permissions/permission-messages.test.ts
+- [X] T054 [P] [US3] Add safe category empty/error message tests in src/features/categories/category-service.test.ts
+- [X] T055 [P] [US3] Add transaction validation, submission failure, retry, and input preservation tests in src/features/transactions/use-transaction-form.test.tsx
+- [X] T056 [P] [US3] Add dashboard empty/error/retry privacy tests in src/features/dashboard/dashboard-state.test.ts
+- [X] T057 [P] [US3] Add goals empty/error/retry privacy tests in src/features/goals/goal-messages.test.ts
+- [X] T058 [P] [US3] Add audit empty/error/retry privacy tests in src/features/audit/audit-messages.test.ts
 
 ### Implementation for User Story 3
 
-- [ ] T059 [US3] Standardize neutral safe auth, recovery, logout, and session-expired messages in src/features/auth/auth-messages.ts
-- [ ] T060 [US3] Standardize no-shared-relationship, invitation, and relationship loss messages without data inference in src/features/couple/couple-messages.ts
-- [ ] T061 [US3] Standardize permission-unavailable messages that do not distinguish missing, removed, or unauthorized data in src/features/permissions/permission-messages.ts
-- [ ] T062 [US3] Standardize category empty/error messages and retry guidance without hidden-data inference in src/features/categories/category-messages.ts
-- [ ] T063 [US3] Standardize transaction validation, empty list, save failure, retry, and destructive-action messages in src/features/transactions/transaction-messages.ts
-- [ ] T064 [US3] Standardize dashboard empty, partial-data, chart error, retry, and authorized-data messages in src/features/dashboard/dashboard-messages.ts
-- [ ] T065 [US3] Standardize goal empty, progress, archive/complete, error, and retry messages in src/features/goals/goal-messages.ts
-- [ ] T066 [US3] Standardize audit empty, load failure, retry, and event-context messages in src/features/audit/audit-messages.ts
-- [ ] T067 [US3] Ensure transaction form preserves safe user-entered data after validation and recoverable submit errors in src/features/transactions/use-transaction-form.ts
-- [ ] T068 [US3] Ensure recoverable errors expose retry actions and retrying feedback in dashboard, goals, transactions, and audit state hooks in src/features/dashboard/use-dashboard.ts, src/features/goals/use-goals.ts, src/features/transactions/use-transaction-list.ts, and src/features/audit/use-audit-events.ts
-- [ ] T069 [US3] Record safe-message manual review results for empty, error, permission, no-shared-relationship, and session-expired scenarios in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
+- [X] T059 [US3] Standardize neutral safe auth, recovery, logout, and session-expired messages in src/features/auth/auth-messages.ts
+- [X] T060 [US3] Standardize no-shared-relationship, invitation, and relationship loss messages without data inference in src/features/couple/couple-messages.ts
+- [X] T061 [US3] Standardize permission-unavailable messages that do not distinguish missing, removed, or unauthorized data in src/features/permissions/permission-messages.ts
+- [X] T062 [US3] Standardize category empty/error messages and retry guidance without hidden-data inference in src/features/categories/category-messages.ts
+- [X] T063 [US3] Standardize transaction validation, empty list, save failure, retry, and destructive-action messages in src/features/transactions/transaction-messages.ts
+- [X] T064 [US3] Standardize dashboard empty, partial-data, chart error, retry, and authorized-data messages in src/features/dashboard/dashboard-messages.ts
+- [X] T065 [US3] Standardize goal empty, progress, archive/complete, error, and retry messages in src/features/goals/goal-messages.ts
+- [X] T066 [US3] Standardize audit empty, load failure, retry, and event-context messages in src/features/audit/audit-messages.ts
+- [X] T067 [US3] Ensure transaction form preserves safe user-entered data after validation and recoverable submit errors in src/features/transactions/use-transaction-form.ts
+- [X] T068 [US3] Ensure recoverable errors expose retry actions and retrying feedback in dashboard, goals, transactions, and audit state hooks in src/features/dashboard/use-dashboard.ts, src/features/goals/use-goals.ts, src/features/transactions/use-transaction-list.ts, and src/features/audit/use-audit-events.ts
+- [X] T069 [US3] Record safe-message manual review results for empty, error, permission, no-shared-relationship, and session-expired scenarios in specs/010-responsive-accessibility-base/checklists/f11-essential-flows.md
 
 **Checkpoint**: User Story 3 is independently recoverable, understandable, and privacy-preserving.
 
@@ -159,14 +159,14 @@ description: "Task list for F11 responsive and accessibility baseline"
 
 **Purpose**: Final validation, documentation, and regression hardening across all stories.
 
-- [ ] T070 [P] Update feature README notes with responsive, accessibility, and safe-message conventions in src/features/dashboard/README.md
-- [ ] T071 [P] Update audit feature README notes with safe event text and privacy-preserving state conventions in src/features/audit/README.md
-- [ ] T072 Run npm run lint and fix any F11 issues in src/styles/globals.css
-- [ ] T073 Run npm run format:check and fix any F11 formatting issues in specs/010-responsive-accessibility-base/tasks.md
-- [ ] T074 Run npm run typecheck and fix any F11 typing issues in src/components/ui/field.tsx
-- [ ] T075 Run npm run test:run and fix any F11 regression failures in src/test/setup.ts
-- [ ] T076 Run npm run build and fix any F11 production build issues in src/app/router.tsx
-- [ ] T077 Complete the quickstart acceptance gate with command results and manual review notes in specs/010-responsive-accessibility-base/quickstart.md
+- [X] T070 [P] Update feature README notes with responsive, accessibility, and safe-message conventions in src/features/dashboard/README.md
+- [X] T071 [P] Update audit feature README notes with safe event text and privacy-preserving state conventions in src/features/audit/README.md
+- [X] T072 Run npm run lint and fix any F11 issues in src/styles/globals.css
+- [X] T073 Run npm run format:check and fix any F11 formatting issues in specs/010-responsive-accessibility-base/tasks.md
+- [X] T074 Run npm run typecheck and fix any F11 typing issues in src/components/ui/field.tsx
+- [X] T075 Run npm run test:run and fix any F11 regression failures in src/test/setup.ts
+- [X] T076 Run npm run build and fix any F11 production build issues in src/app/router.tsx
+- [X] T077 Complete the quickstart acceptance gate with command results and manual review notes in specs/010-responsive-accessibility-base/quickstart.md
 
 ---
 
