@@ -64,11 +64,11 @@ export function SignUpPage() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md">
+    <Card className="mx-auto w-full max-w-md min-w-0 overflow-hidden">
       <CardHeader>
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">Acesso privado</p>
-        <CardTitle className="text-2xl">Criar conta</CardTitle>
-        <CardDescription>
+        <p className="text-sm font-semibold break-words text-primary uppercase">Acesso privado</p>
+        <CardTitle className="text-2xl break-words">Criar conta</CardTitle>
+        <CardDescription className="break-words">
           Use e-mail e senha para iniciar seu espaco privado antes de qualquer dado financeiro.
         </CardDescription>
       </CardHeader>
@@ -76,7 +76,10 @@ export function SignUpPage() {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <FieldGroup className="gap-4">
             {formMessage ? (
-              <Alert variant={formTone === "error" ? "destructive" : "default"}>
+              <Alert
+                variant={formTone === "error" ? "destructive" : "default"}
+                role={formTone === "error" ? "alert" : "status"}
+              >
                 <AlertDescription>{formMessage}</AlertDescription>
               </Alert>
             ) : null}
@@ -138,14 +141,20 @@ export function SignUpPage() {
               />
               <FieldError id="signup-confirm-password-error" errors={[errors.confirmPassword]} />
             </Field>
-            <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+            >
               {isSubmitting ? <Loader2 className="animate-spin" aria-hidden="true" /> : null}
               {isSubmitting ? "Criando conta..." : "Criar conta"}
             </Button>
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="text-sm leading-6 break-words text-muted-foreground">
               Ja tem conta?{" "}
               <Link
-                className="font-medium text-primary underline-offset-4 hover:underline"
+                className="font-medium break-words text-primary underline-offset-4 hover:underline"
                 to="/login"
               >
                 Entrar

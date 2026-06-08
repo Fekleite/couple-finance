@@ -42,11 +42,11 @@ export function ForgotPasswordPage() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md">
+    <Card className="mx-auto w-full max-w-md min-w-0 overflow-hidden">
       <CardHeader>
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">Acesso privado</p>
-        <CardTitle className="text-2xl">Recuperar acesso</CardTitle>
-        <CardDescription>
+        <p className="text-sm font-semibold break-words text-primary uppercase">Acesso privado</p>
+        <CardTitle className="text-2xl break-words">Recuperar acesso</CardTitle>
+        <CardDescription className="break-words">
           Informe seu e-mail. A resposta nao revela se existe uma conta associada.
         </CardDescription>
       </CardHeader>
@@ -54,7 +54,10 @@ export function ForgotPasswordPage() {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <FieldGroup className="gap-4">
             {formMessage ? (
-              <Alert variant={formTone === "error" ? "destructive" : "default"}>
+              <Alert
+                variant={formTone === "error" ? "destructive" : "default"}
+                role={formTone === "error" ? "alert" : "status"}
+              >
                 <AlertDescription>{formMessage}</AlertDescription>
               </Alert>
             ) : null}
@@ -70,14 +73,20 @@ export function ForgotPasswordPage() {
               />
               <FieldError id="recovery-email-error" errors={[errors.email]} />
             </Field>
-            <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className="w-full"
+              size="lg"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+            >
               {isSubmitting ? <Loader2 className="animate-spin" aria-hidden="true" /> : null}
               {isSubmitting ? "Enviando..." : "Enviar instrucoes"}
             </Button>
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="text-sm leading-6 break-words text-muted-foreground">
               Lembrou a senha?{" "}
               <Link
-                className="font-medium text-primary underline-offset-4 hover:underline"
+                className="font-medium break-words text-primary underline-offset-4 hover:underline"
                 to={PUBLIC_ROUTES.login.path}
               >
                 Entrar

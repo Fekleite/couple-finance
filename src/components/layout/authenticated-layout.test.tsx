@@ -54,7 +54,7 @@ describe("AuthenticatedLayout", () => {
     expect(screen.getByRole("button", { name: /saindo/i })).toBeDisabled();
   });
 
-  it("offers private navigation to financial audit without exposing event data", () => {
+  it("offers reachable private navigation for MVP areas without exposing event data", () => {
     renderWithRouterAndAuth(
       <Routes>
         <Route element={<AuthenticatedLayout />}>
@@ -70,7 +70,46 @@ describe("AuthenticatedLayout", () => {
       }
     );
 
+    expect(screen.getByRole("link", { name: /inicio privado/i })).toHaveAttribute("href", "/app");
+    expect(screen.getByRole("link", { name: /categorias/i })).toHaveAttribute(
+      "href",
+      "/app/categories"
+    );
+    expect(screen.getByRole("link", { name: /^transacoes$/i })).toHaveAttribute(
+      "href",
+      "/app/transactions"
+    );
+    expect(screen.getByRole("link", { name: /registrar transacao/i })).toHaveAttribute(
+      "href",
+      "/app/transactions/new"
+    );
+    expect(screen.getByRole("link", { name: /metas/i })).toHaveAttribute("href", "/app/goals");
     expect(screen.getByRole("link", { name: /auditoria/i })).toHaveAttribute("href", "/app/audit");
     expect(screen.queryByText(/alteracao recente/i)).not.toBeInTheDocument();
+  });
+
+  it("keeps private controls keyboard reachable in logical order", async () => {
+    const user = userEvent.setup();
+    renderWithRouterAndAuth(
+      <Routes>
+        <Route element={<AuthenticatedLayout />}>
+          <Route path="/app" element={<p>Area privada</p>} />
+        </Route>
+      </Routes>,
+      {
+        route: "/app",
+        auth: createAuthContextValue({
+          status: "authenticated",
+          user: { id: "user-1", email: "ana@example.com" }
+        })
+      }
+    );
+
+    await user.tab();
+    expect(screen.getByRole("button", { name: /sair da conta/i })).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("link", { name: /inicio privado/i })).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("link", { name: /categorias/i })).toHaveFocus();
   });
 });

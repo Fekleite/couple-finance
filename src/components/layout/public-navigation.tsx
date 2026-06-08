@@ -7,24 +7,24 @@ import { cn } from "@/lib/utils";
 export function PublicNavigation() {
   return (
     <nav
-      className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
       aria-label="Navegacao publica"
     >
       <NavLink
         to={PUBLIC_ROUTES.home.path}
-        className="inline-flex w-fit flex-col rounded-md px-1 py-1"
+        className="inline-flex w-fit max-w-full flex-col rounded-md px-1 py-1"
         aria-label="Ir para a pagina inicial do Couple Finance"
       >
-        <span className="text-lg font-bold text-primary">Couple Finance</span>
-        <span className="text-sm text-muted-foreground">Fundacao publica</span>
+        <span className="text-lg font-bold break-words text-primary">Couple Finance</span>
+        <span className="text-sm break-words text-muted-foreground">Fundacao publica</span>
       </NavLink>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
         <NavLink
           to={PUBLIC_ROUTES.home.path}
           className={({ isActive }) =>
             cn(
-              "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              "min-h-10 rounded-md px-3 py-2 text-sm font-medium break-words text-muted-foreground hover:bg-muted hover:text-foreground",
               isActive && "bg-muted text-foreground"
             )
           }
@@ -35,7 +35,7 @@ export function PublicNavigation() {
           to={PUBLIC_ROUTES.signUp.path}
           className={({ isActive }) =>
             cn(
-              "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              "min-h-10 rounded-md px-3 py-2 text-sm font-medium break-words text-muted-foreground hover:bg-muted hover:text-foreground",
               isActive && "bg-muted text-foreground"
             )
           }
@@ -46,7 +46,7 @@ export function PublicNavigation() {
           to={PUBLIC_ROUTES.login.path}
           className={({ isActive }) =>
             cn(
-              "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              "min-h-10 rounded-md px-3 py-2 text-sm font-medium break-words text-muted-foreground hover:bg-muted hover:text-foreground",
               isActive && "bg-muted text-foreground"
             )
           }
@@ -55,7 +55,7 @@ export function PublicNavigation() {
         </NavLink>
         <NavLink
           to={PRIVATE_ROUTES.app.path}
-          className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="min-h-10 rounded-md px-3 py-2 text-sm font-medium break-words text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           Espaco privado
         </NavLink>
