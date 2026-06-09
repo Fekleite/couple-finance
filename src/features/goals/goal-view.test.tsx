@@ -31,6 +31,7 @@ describe("GoalView", () => {
       />
     );
     expect(screen.getAllByText(/metas compartilhadas ficam disponiveis/i)).toHaveLength(2);
+    expect(screen.getByText(/valores manuais, separados das transacoes/i)).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /concluidas/i }));
     expect(onStatusFilterChange).toHaveBeenCalledWith("completed");
     await user.click(screen.getByRole("button", { name: /editar/i }));

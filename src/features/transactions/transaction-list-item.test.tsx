@@ -19,9 +19,10 @@ describe("TransactionListItem", () => {
     );
     expect(screen.getByText("Mercado")).toBeInTheDocument();
     expect(screen.getByText(/R\$\s*123,45/)).toBeInTheDocument();
-    expect(screen.getByText("Tipo: Despesa")).toBeInTheDocument();
-    expect(screen.getByText("Visibilidade: Compartilhada")).toBeInTheDocument();
-    expect(screen.getByText("Criador: Pessoa parceira")).toBeInTheDocument();
+    expect(screen.getByText(/Tipo: Despesa/)).toHaveTextContent(/Categoria: Alimentacao/);
+    expect(screen.getByText(/Tipo: Despesa/)).toHaveTextContent(/Data:/);
+    expect(screen.getByText(/Responsavel:/)).toHaveTextContent(/Visibilidade: Compartilhada/);
+    expect(screen.getByText(/Responsavel:/)).toHaveTextContent(/Criador: Pessoa parceira/);
     expect(document.body.textContent).not.toContain(item.id);
   });
 });

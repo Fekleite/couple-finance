@@ -17,7 +17,9 @@ function SessionProbe() {
   return (
     <div>
       <span>{status}</span>
+      <span>{user?.name}</span>
       <span>{user?.email}</span>
+      <span>{user?.avatarUrl}</span>
       <span>{message}</span>
     </div>
   );
@@ -31,7 +33,11 @@ describe("AuthProvider", () => {
 
   it("recognizes an existing session during initial load", async () => {
     vi.mocked(getCurrentSession).mockResolvedValue({
-      user: { id: "user-1", email: "ana@example.com" },
+      user: {
+        id: "user-1",
+        email: "ana@example.com",
+        user_metadata: { full_name: "Ana Financeira", avatar_url: "https://example.com/a.png" }
+      },
       expires_at: 123
     } as never);
 
@@ -42,7 +48,9 @@ describe("AuthProvider", () => {
     );
 
     await waitFor(() => expect(screen.getByText("authenticated")).toBeInTheDocument());
+    expect(screen.getByText("Ana Financeira")).toBeInTheDocument();
     expect(screen.getByText("ana@example.com")).toBeInTheDocument();
+    expect(screen.getByText("https://example.com/a.png")).toBeInTheDocument();
   });
 
   it("shows recoverable error when session check fails", async () => {

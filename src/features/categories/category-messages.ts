@@ -1,8 +1,8 @@
 export const CATEGORY_MESSAGES = {
   loadingTitle: "Carregando categorias",
-  loadingMessage: "Preparando as opcoes padrao para consulta.",
+  loadingMessage: "Carregando opcoes padrao.",
   emptyTitle: "Categorias indisponiveis",
-  emptyMessage: "Nenhuma categoria padrao esta disponivel neste momento.",
+  emptyMessage: "Nenhuma categoria padrao esta disponivel.",
   errorTitle: "Nao foi possivel carregar as categorias",
   errorMessage: "Tente novamente em instantes.",
   retryLabel: "Tentar novamente"

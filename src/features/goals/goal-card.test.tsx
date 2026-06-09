@@ -24,7 +24,11 @@ describe("GoalCard", () => {
     );
     expect(screen.getByText("Reserva de emergencia")).toBeInTheDocument();
     expect(screen.getByText(/compartilhada/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/125% alcancado/i)).toHaveLength(2);
+    expect(screen.getAllByText(/125% alcancado/i)).toHaveLength(1);
+    expect(screen.getByRole("progressbar", { name: /progresso da meta/i })).toHaveAttribute(
+      "aria-valuenow",
+      "100"
+    );
     expect(screen.getByText(/R\$ 1.250,00/)).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /editar/i }));
     await user.click(screen.getByRole("button", { name: /concluir a meta/i }));

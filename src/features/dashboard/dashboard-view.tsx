@@ -77,30 +77,21 @@ export function DashboardView({
         <EmptyState title={messages.emptyTitle} message={messages.empty} />
       ) : null}
       <section className="grid min-w-0 gap-3" aria-label={messages.summaryRegion}>
-        <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid min-w-0 gap-3 sm:grid-cols-3">
           <DashboardIndicatorCard
             label={messages.incomeLabel}
             value={formatCurrencyFromCents(indicators.incomeCents)}
-            description={messages.incomeDescription}
             tone="positive"
           />
           <DashboardIndicatorCard
             label={messages.expenseLabel}
             value={formatCurrencyFromCents(indicators.expenseCents)}
-            description={messages.expenseDescription}
             tone="negative"
           />
           <DashboardIndicatorCard
             label={messages.balanceLabel}
             value={formatSignedCurrency(indicators.balanceCents)}
-            description={messages.balanceDescription}
             resultText={resultMeaningMessage(indicators.resultMeaning)}
-            tone={resultTone}
-          />
-          <DashboardIndicatorCard
-            label={messages.resultLabel}
-            value={formatSignedCurrency(indicators.balanceCents)}
-            description={resultMeaningMessage(indicators.resultMeaning)}
             tone={resultTone}
           />
         </div>
@@ -152,7 +143,7 @@ function DashboardHeader({
           Dashboard financeiro
         </h2>
         <p className="mt-2 text-sm leading-6 break-words text-muted-foreground">
-          Acompanhe os indicadores e as ultimas movimentacoes disponiveis para voce.
+          Indicadores e movimentacoes autorizadas.
         </p>
       </div>
       <div

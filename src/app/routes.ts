@@ -2,8 +2,8 @@ export const PUBLIC_ROUTES = {
   home: {
     path: "/",
     title: "Couple Finance",
-    description: "Organizacao financeira para casais com clareza, privacidade e simplicidade.",
-    status: "available"
+    description: "Redireciona visitantes para a entrada do sistema.",
+    status: "redirect"
   },
   login: {
     path: "/login",

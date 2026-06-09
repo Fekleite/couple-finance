@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { FUTURE_PROTECTED_AREAS, PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
-import { FutureAreaIndicator } from "@/components/layout/future-area-indicator";
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
 import { cn } from "@/lib/utils";
 
 export function PublicNavigation() {
@@ -11,26 +10,15 @@ export function PublicNavigation() {
       aria-label="Navegacao publica"
     >
       <NavLink
-        to={PUBLIC_ROUTES.home.path}
+        to={PUBLIC_ROUTES.login.path}
         className="inline-flex w-fit max-w-full flex-col rounded-md px-1 py-1"
-        aria-label="Ir para a pagina inicial do Couple Finance"
+        aria-label="Ir para a entrada do Couple Finance"
       >
         <span className="text-lg font-bold break-words text-primary">Couple Finance</span>
-        <span className="text-sm break-words text-muted-foreground">Fundacao publica</span>
+        <span className="text-sm break-words text-muted-foreground">Controle financeiro</span>
       </NavLink>
 
       <div className="flex min-w-0 flex-wrap items-center gap-2">
-        <NavLink
-          to={PUBLIC_ROUTES.home.path}
-          className={({ isActive }) =>
-            cn(
-              "min-h-10 rounded-md px-3 py-2 text-sm font-medium break-words text-muted-foreground hover:bg-muted hover:text-foreground",
-              isActive && "bg-muted text-foreground"
-            )
-          }
-        >
-          Inicio
-        </NavLink>
         <NavLink
           to={PUBLIC_ROUTES.signUp.path}
           className={({ isActive }) =>
@@ -59,13 +47,6 @@ export function PublicNavigation() {
         >
           Espaco privado
         </NavLink>
-        {FUTURE_PROTECTED_AREAS.map((area) => (
-          <FutureAreaIndicator
-            key={area.label}
-            label={area.label}
-            intendedFeature={area.intendedFeature}
-          />
-        ))}
       </div>
     </nav>
   );

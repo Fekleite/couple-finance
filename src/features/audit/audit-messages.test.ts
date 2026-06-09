@@ -14,6 +14,8 @@ describe("audit messages", () => {
     expect(auditItemLabel("goal")).toBe("meta");
     expect(auditVisibilityLabel("individual")).toBe("Individual");
     expect(formatAuditCurrency(12345)).toContain("123,45");
+    expect(AUDIT_MESSAGES.subtitle).toBe("Alteracoes recentes em transacoes e metas acessiveis.");
+    expect(AUDIT_MESSAGES.loading).not.toMatch(/\\.\\.\\./);
     expect(AUDIT_MESSAGES.empty).not.toMatch(/negado|sql|rls|id/i);
     expect(AUDIT_MESSAGES.error).not.toMatch(/negado|sql|rls|id/i);
   });

@@ -22,7 +22,7 @@ describe("AuthenticatedLayout", () => {
         route: "/app",
         auth: createAuthContextValue({
           status: "authenticated",
-          user: { id: "user-1", email: "ana@example.com" },
+          user: { id: "user-1", email: "ana@example.com", name: "Ana Financeira" },
           signOut
         })
       }
@@ -65,11 +65,15 @@ describe("AuthenticatedLayout", () => {
         route: "/app",
         auth: createAuthContextValue({
           status: "authenticated",
-          user: { id: "user-1", email: "ana@example.com" }
+          user: { id: "user-1", email: "ana@example.com", name: "Ana Financeira" }
         })
       }
     );
 
+    expect(screen.getByText("Ana Financeira")).toBeInTheDocument();
+    expect(screen.getByText("ana@example.com")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: /avatar de ana financeira/i })).toHaveTextContent("AF");
+    expect(screen.queryByRole("heading", { name: /couple finance/i })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /inicio privado/i })).toHaveAttribute("href", "/app");
     expect(screen.getByRole("link", { name: /categorias/i })).toHaveAttribute(
       "href",
@@ -86,6 +90,35 @@ describe("AuthenticatedLayout", () => {
     expect(screen.getByRole("link", { name: /metas/i })).toHaveAttribute("href", "/app/goals");
     expect(screen.getByRole("link", { name: /auditoria/i })).toHaveAttribute("href", "/app/audit");
     expect(screen.queryByText(/alteracao recente/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/conta autenticada/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/nenhum dado financeiro/i)).not.toBeInTheDocument();
+  });
+
+  it("shows image avatar when auth metadata provides one", () => {
+    renderWithRouterAndAuth(
+      <Routes>
+        <Route element={<AuthenticatedLayout />}>
+          <Route path="/app" element={<p>Area privada</p>} />
+        </Route>
+      </Routes>,
+      {
+        route: "/app",
+        auth: createAuthContextValue({
+          status: "authenticated",
+          user: {
+            id: "user-1",
+            email: "ana@example.com",
+            name: "Ana Financeira",
+            avatarUrl: "https://example.com/avatar.png"
+          }
+        })
+      }
+    );
+
+    expect(screen.getByRole("img", { name: /avatar de ana financeira/i })).toHaveAttribute(
+      "src",
+      "https://example.com/avatar.png"
+    );
   });
 
   it("keeps private controls keyboard reachable in logical order", async () => {
@@ -100,7 +133,7 @@ describe("AuthenticatedLayout", () => {
         route: "/app",
         auth: createAuthContextValue({
           status: "authenticated",
-          user: { id: "user-1", email: "ana@example.com" }
+          user: { id: "user-1", email: "ana@example.com", name: "Ana Financeira" }
         })
       }
     );

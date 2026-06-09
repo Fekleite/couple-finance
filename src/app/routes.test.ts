@@ -3,11 +3,11 @@ import { describe, expect, it } from "vitest";
 import { FUTURE_PROTECTED_AREAS, PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
 
 describe("route metadata", () => {
-  it("keeps the home route public and available", () => {
+  it("keeps the root route as a login redirect instead of a public project page", () => {
     expect(PUBLIC_ROUTES.home).toMatchObject({
       path: "/",
       title: "Couple Finance",
-      status: "available"
+      status: "redirect"
     });
   });
 

@@ -9,7 +9,10 @@ export type AuthStatus =
   | "expired"
   | "error";
 
-export type AuthUser = Pick<User, "id" | "email">;
+export type AuthUser = Pick<User, "id" | "email"> & {
+  name?: string;
+  avatarUrl?: string | null;
+};
 
 export type AuthSession = {
   user: AuthUser;
@@ -48,13 +51,25 @@ export function toAuthSession(
   session: Session,
   lastEvent: AuthSession["lastEvent"] = "INITIAL_CHECK"
 ): AuthSession {
+  const metadata = session.user.user_metadata;
+  const name = readMetadataString(metadata, "full_name") ?? readMetadataString(metadata, "name");
+  const avatarUrl =
+    readMetadataString(metadata, "avatar_url") ?? readMetadataString(metadata, "picture");
+
   return {
     user: {
       id: session.user.id,
-      email: session.user.email ?? ""
+      email: session.user.email ?? "",
+      name,
+      avatarUrl: avatarUrl ?? null
     },
     startedAt: new Date().toISOString(),
     expiresAt: session.expires_at ?? null,
     lastEvent
   };
+}
+
+function readMetadataString(metadata: User["user_metadata"], key: string): string | undefined {
+  const value = metadata[key];
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
 }

@@ -123,9 +123,7 @@ export function PrivateHomePage() {
         <Card size="sm" className="min-w-0">
           <CardHeader>
             <CardTitle className="text-base">Consultar transacoes</CardTitle>
-            <CardDescription>
-              Visualize e filtre as movimentacoes disponiveis por mes.
-            </CardDescription>
+            <CardDescription>Movimentacoes disponiveis por mes.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild variant="secondary" className="w-full">
@@ -137,9 +135,7 @@ export function PrivateHomePage() {
         <Card size="sm" className="min-w-0">
           <CardHeader>
             <CardTitle className="text-base">Registrar transacao</CardTitle>
-            <CardDescription>
-              Adicione uma receita ou despesa individual ou compartilhada.
-            </CardDescription>
+            <CardDescription>Receita ou despesa individual ou compartilhada.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild className="w-full">
@@ -151,9 +147,7 @@ export function PrivateHomePage() {
         <Card size="sm" className="min-w-0">
           <CardHeader>
             <CardTitle className="text-base">Categorias financeiras padrao</CardTitle>
-            <CardDescription>
-              Consulte o vocabulario para classificar movimentacoes.
-            </CardDescription>
+            <CardDescription>Base para classificar movimentacoes.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild variant="secondary" className="w-full">

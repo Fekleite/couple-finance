@@ -45,6 +45,9 @@ export function AuthenticatedLayout() {
   const { user, status, message, signOut } = useAuth();
   const navigate = useNavigate();
   const isEnding = status === "ending";
+  const displayName = user ? user.name?.trim() || nameFromEmail(user.email) : "Sua conta";
+  const email = user?.email || "E-mail indisponivel";
+  const initials = initialsFromName(displayName);
 
   async function handleSignOut() {
     await signOut();
@@ -57,15 +60,27 @@ export function AuthenticatedLayout() {
   return (
     <section className="min-w-0 space-y-6">
       <header className="flex min-w-0 flex-col gap-4 rounded-lg border border-border bg-background p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
-        <div className="min-w-0">
-          <p className="text-sm font-semibold break-words text-primary uppercase">
-            Espaco privado ativo
-          </p>
-          <h1 className="mt-2 text-2xl font-bold break-words">Couple Finance</h1>
-          <p className="mt-2 text-sm leading-6 break-words text-muted-foreground">
-            Acesso autenticado para {user?.email ?? "sua conta"}. Nenhum dado financeiro e exibido
-            nesta etapa.
-          </p>
+        <div className="flex min-w-0 items-center gap-3">
+          {user?.avatarUrl ? (
+            <img
+              src={user.avatarUrl}
+              alt={`Avatar de ${displayName}`}
+              className="size-11 shrink-0 rounded-full border border-border object-cover"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div
+              className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border bg-muted text-sm font-semibold text-muted-foreground"
+              aria-label={`Avatar de ${displayName}`}
+              role="img"
+            >
+              {initials}
+            </div>
+          )}
+          <div className="min-w-0">
+            <p className="font-semibold break-words">{displayName}</p>
+            <p className="text-sm leading-6 break-words text-muted-foreground">{email}</p>
+          </div>
         </div>
         <Button
           type="button"
@@ -104,4 +119,18 @@ export function AuthenticatedLayout() {
       <Outlet />
     </section>
   );
+}
+
+function nameFromEmail(email: string | undefined): string {
+  const localPart = email?.split("@")[0]?.trim();
+  return localPart || "Sua conta";
+}
+
+function initialsFromName(name: string): string {
+  const parts = name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2);
+  return parts.join("").toUpperCase() || "CF";
 }

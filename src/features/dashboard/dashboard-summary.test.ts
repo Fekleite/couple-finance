@@ -4,7 +4,8 @@ import { dashboardIndicators } from "@/test/dashboard-test-utils";
 import {
   dashboardResultReading,
   deriveResultMeaning,
-  formatSignedCurrency
+  formatSignedCurrency,
+  zeroDashboardIndicators
 } from "./dashboard-summary";
 
 describe("dashboard summary helpers", () => {
@@ -17,5 +18,15 @@ describe("dashboard summary helpers", () => {
     );
     expect(formatSignedCurrency(12345)).toMatch(/\+\s*R\$\s*123,45/);
     expect(formatSignedCurrency(-12345)).toMatch(/negativo.*R\$\s*123,45/);
+  });
+
+  it("keeps zero indicator shape explicit for empty dashboard states", () => {
+    expect(zeroDashboardIndicators()).toMatchObject({
+      incomeCents: 0,
+      expenseCents: 0,
+      balanceCents: 0,
+      resultMeaning: "zero",
+      hasAuthorizedMonthData: false
+    });
   });
 });

@@ -26,10 +26,10 @@ export function NotFoundPage() {
       </p>
       <Button asChild size="lg" className="w-fit">
         <Link
-          to={isAuthenticated ? PRIVATE_ROUTES.app.path : PUBLIC_ROUTES.home.path}
+          to={isAuthenticated ? PRIVATE_ROUTES.app.path : PUBLIC_ROUTES.login.path}
           aria-label="Voltar para uma area segura do Couple Finance"
         >
-          {isAuthenticated ? "Voltar ao espaco privado" : "Voltar ao inicio"}
+          {isAuthenticated ? "Voltar ao espaco privado" : "Ir para entrada"}
         </Link>
       </Button>
     </section>

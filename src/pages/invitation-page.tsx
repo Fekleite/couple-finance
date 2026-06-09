@@ -74,8 +74,7 @@ export function InvitationPage() {
           <VisibilityLabel scope="inaccessible" className="mb-2 w-fit" />
           <CardTitle>{COUPLE_MESSAGES.receivedTitle}</CardTitle>
           <CardDescription>
-            {invitation.inviterLabel} convidou voce para entrar em {invitation.sharedBudgetName}. A
-            resposta cria apenas o vinculo do casal para as proximas etapas.{" "}
+            {invitation.inviterLabel} convidou voce para {invitation.sharedBudgetName}.{" "}
             {getPermissionMessage("permissionBlocked")}
           </CardDescription>
         </CardHeader>

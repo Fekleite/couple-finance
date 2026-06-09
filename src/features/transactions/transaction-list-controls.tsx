@@ -21,7 +21,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
   const update = (values: Partial<TransactionFilterSet>) => onChange({ ...filters, ...values });
 
   return (
-    <section className="grid min-w-0 gap-4 rounded-xl border bg-card p-4" aria-label="Filtros">
+    <section className="grid min-w-0 gap-4 rounded-lg border bg-card p-4" aria-label="Filtros">
       <div className="flex min-w-0 items-center justify-between gap-2">
         <Button
           type="button"
@@ -89,7 +89,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
           </select>
         </label>
         <label className="grid gap-1 text-sm">
-          Buscar por titulo ou observacao
+          Buscar
           <Input
             type="search"
             value={filters.searchText ?? ""}
@@ -125,7 +125,7 @@ export function TransactionListControls({ filters, options, onChange }: Props) {
               })
             }
           >
-            Limpar filtros
+            Limpar
           </Button>
         </div>
       ) : null}

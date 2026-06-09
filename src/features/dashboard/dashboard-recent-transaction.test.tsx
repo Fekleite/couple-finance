@@ -19,8 +19,10 @@ describe("DashboardRecentTransactionItem", () => {
     );
     expect(screen.getByText("Mercado")).toBeInTheDocument();
     expect(screen.getByText(/R\$\s*123,45/)).toBeInTheDocument();
-    expect(screen.getByText("Responsavel: Voce")).toBeInTheDocument();
-    expect(screen.getByText("Criador: Pessoa parceira")).toBeInTheDocument();
+    expect(screen.getByText(/Despesa/)).toHaveTextContent(/Alimentacao/);
+    expect(screen.getByText(/Responsavel:/)).toHaveTextContent(/Voce/);
+    expect(screen.getByText(/Responsavel:/)).toHaveTextContent(/Compartilhada/);
+    expect(screen.getByText(/Responsavel:/)).toHaveTextContent(/Criador: Pessoa parceira/);
     expect(document.body.textContent).not.toContain(item.id);
   });
 });

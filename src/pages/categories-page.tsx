@@ -52,7 +52,7 @@ export function CategoriesPage() {
           Categorias financeiras
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Consulte nomes e descricoes para classificar futuras movimentacoes com clareza.
+          Categorias usadas para classificar movimentacoes.
         </p>
       </header>
       <ul className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2">
@@ -67,8 +67,8 @@ export function CategoriesPage() {
                   Categoria padrao {category.displayName}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="text-xs text-muted-foreground">
-                Codigo estavel: <code>{category.code}</code>
+              <CardContent className="text-xs break-words text-muted-foreground">
+                Codigo: <code>{category.code}</code>
               </CardContent>
             </Card>
           </li>

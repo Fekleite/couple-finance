@@ -44,5 +44,6 @@ describe("TransactionList", () => {
       <TransactionList state={{ status: "error", message: "Falha segura." }} {...props} />
     );
     expect(screen.getByRole("button", { name: "Tentar novamente" })).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/supabase|rls|policy/i);
   });
 });

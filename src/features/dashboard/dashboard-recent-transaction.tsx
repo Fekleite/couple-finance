@@ -11,19 +11,22 @@ export function DashboardRecentTransactionItem({ item }: { item: DashboardRecent
   return (
     <li>
       <Card size="sm" className="min-w-0">
-        <CardHeader className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+        <CardHeader className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 pb-0">
           <CardTitle className="min-w-0 break-words text-base">{item.title}</CardTitle>
           <p className="whitespace-nowrap font-semibold tabular-nums">
             {formatCurrencyFromCents(item.amountCents)}
           </p>
         </CardHeader>
-        <CardContent className="grid min-w-0 gap-x-4 gap-y-1 text-sm text-muted-foreground sm:grid-cols-2">
-          <p>Tipo: {item.transactionType === "income" ? "Receita" : "Despesa"}</p>
-          <p>Data: {formatCivilDate(item.transactionDate)}</p>
-          <p>Categoria: {item.categoryLabel}</p>
-          <p>Responsavel: {item.responsibleLabel}</p>
-          <p>Visibilidade: {item.visibility === "individual" ? "Individual" : "Compartilhada"}</p>
-          {showCreator ? <p>Criador: {item.creatorLabel}</p> : null}
+        <CardContent className="grid min-w-0 gap-1 text-sm text-muted-foreground">
+          <p className="break-words">
+            {item.transactionType === "income" ? "Receita" : "Despesa"} •{" "}
+            {formatCivilDate(item.transactionDate)} • {item.categoryLabel}
+          </p>
+          <p className="break-words">
+            Responsavel: {item.responsibleLabel} •{" "}
+            {item.visibility === "individual" ? "Individual" : "Compartilhada"}
+            {showCreator ? ` • Criador: ${item.creatorLabel}` : ""}
+          </p>
         </CardContent>
       </Card>
     </li>
