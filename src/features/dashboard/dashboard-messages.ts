@@ -22,10 +22,6 @@ export const DASHBOARD_MESSAGES = {
   incomeLabel: "Receitas do mes",
   expenseLabel: "Despesas do mes",
   balanceLabel: "Saldo do mes",
-  resultLabel: "Economia do mes",
-  incomeDescription: "Total de receitas autorizadas no periodo.",
-  expenseDescription: "Total de despesas autorizadas no periodo.",
-  balanceDescription: "Receitas menos despesas autorizadas no periodo.",
   positiveResult: "Resultado positivo: houve sobra no mes.",
   negativeResult: "Resultado negativo: houve deficit no mes.",
   zeroResult: "Resultado equilibrado: receitas e despesas ficaram em zero ou se compensaram."

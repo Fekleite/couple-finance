@@ -1,12 +1,12 @@
 export const COUPLE_MESSAGES = {
-  loadingRelationship: "Estamos verificando seu estado de vinculo com seguranca.",
-  loadingInvitation: "Estamos verificando se este convite pode ser aberto.",
-  creatingInvite: "Criando o espaco e registrando o convite...",
-  acceptingInvite: "Aceitando o convite...",
-  decliningInvite: "Recusando o convite...",
-  cancellingInvite: "Cancelando o convite...",
-  inviteCreated: "Espaco compartilhado criado e convite registrado. Agora e so aguardar o aceite.",
-  inviteAccepted: "Convite aceito. Voces agora compartilham o mesmo espaco financeiro.",
+  loadingRelationship: "Verificando vinculo.",
+  loadingInvitation: "Verificando convite.",
+  creatingInvite: "Criando convite...",
+  acceptingInvite: "Aceitando convite...",
+  decliningInvite: "Recusando convite...",
+  cancellingInvite: "Cancelando convite...",
+  inviteCreated: "Convite criado. Aguarde o aceite.",
+  inviteAccepted: "Convite aceito. O espaco compartilhado esta ativo.",
   inviteDeclined: "Convite recusado. Nenhum vinculo foi criado.",
   inviteCancelled: "Convite cancelado. Ele nao podera mais ser aceito.",
   emailRequired: "Informe o e-mail da pessoa parceira.",
@@ -22,8 +22,7 @@ export const COUPLE_MESSAGES = {
   sentTitle: "Convite enviado",
   receivedTitle: "Convite recebido",
   linkedTitle: "Espaco compartilhado ativo",
-  linkedMessage:
-    "O vinculo do casal esta pronto. As proximas features poderao usar este contexto compartilhado.",
+  linkedMessage: "O vinculo do casal esta pronto para dados compartilhados.",
   unavailableTitle: "Convite indisponivel",
   errorTitle: "Nao foi possivel carregar o vinculo"
 } as const;

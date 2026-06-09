@@ -23,6 +23,9 @@ describe("goal progress", () => {
       exceededAmountCents: 25000,
       achievement: "exceeded"
     });
+    expect(calculateGoalProgress(createGoal({ currentAmountCents: -1000 }))).toMatchObject({
+      barPercent: 0
+    });
   });
 
   it("resolves civil deadline states without treating null as overdue", () => {

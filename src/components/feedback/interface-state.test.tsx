@@ -13,6 +13,7 @@ describe("interface state components", () => {
     const status = screen.getByRole("status", { name: /carregando transacoes/i });
     expect(status).toHaveAttribute("aria-busy", "true");
     expect(status).toHaveTextContent(/dados autorizados/i);
+    expect(status.querySelector("svg")).not.toBeInTheDocument();
   });
 
   it("renders empty states with reachable safe actions", async () => {
@@ -29,6 +30,7 @@ describe("interface state components", () => {
     );
 
     expect(screen.getByRole("status")).toHaveTextContent(/nenhum resultado/i);
+    expect(screen.getByRole("status").querySelector("svg")).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /registrar transacao/i }));
     expect(onAction).toHaveBeenCalledTimes(1);
   });
@@ -47,6 +49,7 @@ describe("interface state components", () => {
     );
 
     expect(screen.getByRole("alert")).toHaveTextContent(/sem expor detalhes internos/i);
+    expect(screen.getByRole("alert").querySelector("svg")).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /tentar novamente/i }));
     expect(onAction).toHaveBeenCalledTimes(1);
   });

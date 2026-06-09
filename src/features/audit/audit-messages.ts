@@ -2,9 +2,9 @@ import type { AuditActionType, AuditItemType, AuditVisibility } from "./audit-ty
 
 export const AUDIT_MESSAGES = {
   title: "Auditoria financeira",
-  subtitle: "Alteracoes recentes salvas em transacoes e metas que voce pode acessar.",
+  subtitle: "Alteracoes recentes em transacoes e metas acessiveis.",
   loadingTitle: "Auditoria financeira",
-  loading: "Carregando alteracoes recentes...",
+  loading: "Carregando alteracoes recentes.",
   emptyTitle: "Auditoria sem registros recentes",
   empty: "Nenhuma alteracao financeira autorizada aparece por enquanto.",
   errorTitle: "Nao foi possivel carregar a auditoria",

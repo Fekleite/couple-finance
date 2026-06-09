@@ -25,5 +25,7 @@ describe("TransactionListControls", () => {
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ transactionType: "expense" }));
     await userEvent.click(screen.getByRole("button", { name: /remover filtro alimentacao/i }));
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ categoryCode: null }));
+    expect(screen.getByLabelText("Buscar")).toHaveAttribute("type", "search");
+    expect(screen.getByRole("button", { name: "Limpar" })).toBeInTheDocument();
   });
 });

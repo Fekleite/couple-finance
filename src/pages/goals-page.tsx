@@ -19,11 +19,9 @@ export function GoalsPage() {
   return (
     <main className="mx-auto grid w-full max-w-4xl gap-5">
       <header className="grid gap-2">
-        <p className="text-sm font-semibold uppercase text-primary">Metas financeiras</p>
         <h1 className="text-2xl font-bold">Metas financeiras</h1>
         <p className="text-sm leading-6 text-muted-foreground">
-          Acompanhe objetivos individuais ou compartilhados com valores manuais e privacidade por
-          escopo.
+          Objetivos individuais ou compartilhados com progresso manual.
         </p>
       </header>
       <GoalView

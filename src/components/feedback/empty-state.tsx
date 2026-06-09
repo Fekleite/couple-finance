@@ -1,4 +1,3 @@
-import { Inbox } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -29,13 +28,10 @@ export function EmptyState({
       role="status"
       aria-live="polite"
     >
-      <div className="flex min-w-0 items-start gap-3">
-        <Inbox className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-        <div className="min-w-0">
-          <h2 className="text-lg font-semibold break-words">{title}</h2>
-          <p className="mt-1 text-sm leading-6 break-words text-muted-foreground">{message}</p>
-          {action}
-        </div>
+      <div className="min-w-0">
+        <h2 className="text-base font-semibold break-words">{title}</h2>
+        <p className="mt-1 text-sm leading-6 break-words text-muted-foreground">{message}</p>
+        {action}
       </div>
     </section>
   );

@@ -32,19 +32,22 @@ export function GoalCard({ goal, submitting, onEdit, onComplete, onArchive }: Pr
                 {visibilityLabel(goal.visibility)} • {statusLabel(goal.status)}
               </CardDescription>
             </div>
-            <p className="text-sm font-semibold break-words text-primary">
-              {progress.displayPercent}%
-            </p>
           </div>
         </CardHeader>
         <CardContent className="grid gap-3">
-          <div className="h-3 overflow-hidden rounded-full bg-muted" aria-hidden="true">
+          <div
+            className="h-3 overflow-hidden rounded-full bg-muted"
+            role="progressbar"
+            aria-label={`Progresso da meta ${goal.name}`}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={progress.barPercent}
+          >
             <div
               className="h-full rounded-full bg-primary"
               style={{ width: `${progress.barPercent}%` }}
             />
           </div>
-          <p className="sr-only">{progressSummary(goal, progress)}</p>
           <div className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
             <p className="break-words">Atual: {formatCurrencyFromCents(goal.currentAmountCents)}</p>
             <p className="break-words">Alvo: {formatCurrencyFromCents(goal.targetAmountCents)}</p>

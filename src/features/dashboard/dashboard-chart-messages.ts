@@ -1,6 +1,5 @@
 export const DASHBOARD_CHART_MESSAGES = {
   sectionTitle: "Graficos do mes",
-  sectionDescription: "Visualizacoes basicas com dados autorizados para o periodo selecionado.",
   loadingTitle: "Carregando graficos",
   loading: "Buscando agregados autorizados para os graficos.",
   refreshing: "Atualizando os graficos do mes selecionado.",

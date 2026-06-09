@@ -58,7 +58,7 @@ export function GoalView({
             {editingGoal ? "Editar meta" : "Nova meta financeira"}
           </CardTitle>
           <CardDescription className="break-words">
-            Informe valores manuais. Metas nao sao vinculadas automaticamente a transacoes.
+            Valores manuais, separados das transacoes.
           </CardDescription>
         </CardHeader>
         <CardContent>

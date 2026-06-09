@@ -25,6 +25,8 @@ describe("DashboardView", () => {
     expect(screen.getByLabelText("Resumo financeiro do mes")).toHaveClass("min-w-0");
     expect(screen.getByRole("heading", { name: /graficos do mes/i })).toBeInTheDocument();
     expect(screen.getByText("Receitas do mes")).toBeInTheDocument();
+    expect(screen.queryByText("Economia do mes")).not.toBeInTheDocument();
+    expect(screen.getByText(/resultado positivo/i)).toBeInTheDocument();
     expect(screen.getByText("Mercado")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ver lista completa/i })).toHaveAttribute(
       "href",
@@ -75,5 +77,6 @@ describe("DashboardView", () => {
     expect(onMonthChange).toHaveBeenCalledWith(expect.objectContaining({ key: "2026-05" }));
     expect(screen.getByText(/sem movimentacoes neste mes/i)).toBeInTheDocument();
     expect(screen.getByText(/sem transacoes recentes/i)).toBeInTheDocument();
+    expect(screen.getByLabelText("Resumo financeiro do mes")).toHaveClass("min-w-0");
   });
 });

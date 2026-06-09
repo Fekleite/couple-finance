@@ -26,9 +26,6 @@ export function DashboardChartsSection({ state, selectedPeriod, onRetry }: Props
         <h3 id="dashboard-charts-title" className="text-lg font-semibold break-words">
           {DASHBOARD_CHART_MESSAGES.sectionTitle}
         </h3>
-        <p className="text-sm break-words text-muted-foreground">
-          {DASHBOARD_CHART_MESSAGES.sectionDescription}
-        </p>
       </div>
       {state.status === "loading" || state.status === "refreshing" ? (
         <LoadingState

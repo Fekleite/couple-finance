@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/routes";
 import { AuthenticatedLayout } from "@/components/layout/authenticated-layout";
@@ -8,7 +8,6 @@ import { PublicAuthRoute } from "@/features/auth/public-auth-route";
 import { AuditPage } from "@/pages/audit-page";
 import { ForgotPasswordPage } from "@/pages/forgot-password-page";
 import { GoalsPage } from "@/pages/goals-page";
-import { HomePage } from "@/pages/home-page";
 import { InvitationPage } from "@/pages/invitation-page";
 import { LoginPage } from "@/pages/login-page";
 import { NotFoundPage } from "@/pages/not-found-page";
@@ -25,7 +24,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: PUBLIC_ROUTES.home.path,
-        element: <HomePage />
+        element: <Navigate to={PUBLIC_ROUTES.login.path} replace />
       },
       {
         element: <PublicAuthRoute />,

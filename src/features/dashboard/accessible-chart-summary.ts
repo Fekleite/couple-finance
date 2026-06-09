@@ -92,7 +92,7 @@ export function buildMemberComparisonSummary(
   return {
     chartId: "member_comparison",
     periodLabel,
-    headline: "Responsabilidades compartilhadas autorizadas no mes.",
+    headline: "Despesas compartilhadas autorizadas por responsavel.",
     details: comparison.members.map(
       (item) =>
         `${item.memberLabel}: ${formatCurrencyFromCents(item.expenseCents)}, ${formatBasisPoints(item.weightBasisPoints)} do total compartilhado.`

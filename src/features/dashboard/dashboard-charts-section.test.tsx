@@ -22,6 +22,7 @@ describe("DashboardChartsSection", () => {
     expect(
       screen.getByRole("heading", { name: /responsabilidades compartilhadas/i })
     ).toBeInTheDocument();
+    expect(screen.queryByText(/visualizacoes basicas/i)).not.toBeInTheDocument();
   });
 
   it("supports loading, error and keyboard-reachable retry states", async () => {

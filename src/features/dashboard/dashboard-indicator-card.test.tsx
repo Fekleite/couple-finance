@@ -18,4 +18,12 @@ describe("DashboardIndicatorCard", () => {
     expect(screen.getByText(/\+\s*R\$\s*10,00/)).toBeInTheDocument();
     expect(screen.getByText(/houve sobra/i)).toBeInTheDocument();
   });
+
+  it("allows concise cards without helper description", () => {
+    render(<DashboardIndicatorCard label="Receitas" value="R$ 10,00" tone="positive" />);
+
+    expect(screen.getByText("Receitas")).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*10,00/)).toBeInTheDocument();
+    expect(screen.queryByText(/autorizadas no periodo/i)).not.toBeInTheDocument();
+  });
 });
