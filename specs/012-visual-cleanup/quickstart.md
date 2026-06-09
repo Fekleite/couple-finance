@@ -100,3 +100,12 @@ A F12 esta pronta quando:
 - Mobile, tablet, desktop, teclado e foco foram validados.
 - Testes cobrem alteracoes de renderizacao com risco.
 - Todos os checks finais passam.
+
+## 9. Notas da implementacao
+
+- [x] T070 A implementacao removeu icones decorativos dos estados compartilhados, consolidou o indicador duplicado do dashboard, compactou metadados de transacoes e metas, e reescreveu mensagens de categorias, convites/parceiro e auditoria.
+- Dashboard: resultado financeiro ficou no card de saldo; o card separado de "Economia do mes" foi removido.
+- Transacoes: tipo, categoria, data, responsavel, visibilidade e criador continuam visiveis em leitura compacta.
+- Metas: o progresso duplicado foi reduzido para resumo textual e barra `progressbar` acessivel.
+- Estados: loading, empty e error preservam roles, `aria-live`, acoes e mensagens seguras sem icones decorativos.
+- Validacao final em 2026-06-09: `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run test:run` e `npm run build` passaram. A suite teve 96 arquivos e 239 testes. O build manteve o aviso conhecido de chunk acima de 500 kB.

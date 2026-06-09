@@ -16,13 +16,13 @@ description: "Task list for F12 visual cleanup implementation"
 
 **Purpose**: Confirm baseline and create the review artifacts used by all stories.
 
-- [ ] T001 Run initial validation commands from `specs/012-visual-cleanup/quickstart.md`
-- [ ] T002 Create visual cleanup inventory document in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T003 [P] Create manual responsive and accessibility review checklist in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
-- [ ] T004 [P] Create safe interface state review checklist in `specs/012-visual-cleanup/checklists/safe-interface-states.md`
-- [ ] T005 [P] Review shared UI primitives for F12 candidates in `src/components/ui/card.tsx`
-- [ ] T006 [P] Review shared feedback primitives for F12 candidates in `src/components/feedback/empty-state.tsx`
-- [ ] T007 [P] Review authenticated layout for F12 candidates in `src/components/layout/authenticated-layout.tsx`
+- [X] T001 Run initial validation commands from `specs/012-visual-cleanup/quickstart.md`
+- [X] T002 Create visual cleanup inventory document in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T003 [P] Create manual responsive and accessibility review checklist in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
+- [X] T004 [P] Create safe interface state review checklist in `specs/012-visual-cleanup/checklists/safe-interface-states.md`
+- [X] T005 [P] Review shared UI primitives for F12 candidates in `src/components/ui/card.tsx`
+- [X] T006 [P] Review shared feedback primitives for F12 candidates in `src/components/feedback/empty-state.tsx`
+- [X] T007 [P] Review authenticated layout for F12 candidates in `src/components/layout/authenticated-layout.tsx`
 
 ---
 
@@ -32,17 +32,17 @@ description: "Task list for F12 visual cleanup implementation"
 
 **CRITICAL**: No user story implementation should begin until this phase is complete.
 
-- [ ] T008 Document dashboard essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T009 Document transactions essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T010 Document goals essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T011 Document categories essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T012 Document invitation and partner essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T013 Document settings availability and cleanup decision in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T014 [P] Capture current shared feedback state behavior in `src/components/feedback/interface-state.test.tsx`
-- [ ] T015 [P] Capture current authenticated layout behavior in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T016 [P] Capture current category page behavior in `src/pages/categories-page.test.tsx`
-- [ ] T017 [P] Capture current invitation page behavior in `src/pages/invitation-page.test.tsx`
-- [ ] T018 Verify no F12 task requires schema, Supabase RLS, Prisma, service, or query changes in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T008 Document dashboard essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T009 Document transactions essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T010 Document goals essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T011 Document categories essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T012 Document invitation and partner essential information and removable candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T013 Document settings availability and cleanup decision in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T014 [P] Capture current shared feedback state behavior in `src/components/feedback/interface-state.test.tsx`
+- [X] T015 [P] Capture current authenticated layout behavior in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T016 [P] Capture current category page behavior in `src/pages/categories-page.test.tsx`
+- [X] T017 [P] Capture current invitation page behavior in `src/pages/invitation-page.test.tsx`
+- [X] T018 Verify no F12 task requires schema, Supabase RLS, Prisma, service, or query changes in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
 
 **Checkpoint**: Foundation ready; all screens have a baseline review target.
 
@@ -56,20 +56,20 @@ description: "Task list for F12 visual cleanup implementation"
 
 ### Tests for User Story 1
 
-- [ ] T019 [P] [US1] Add dashboard indicator regression coverage in `src/features/dashboard/dashboard-indicator-card.test.tsx`
-- [ ] T020 [P] [US1] Add dashboard summary essential information coverage in `src/features/dashboard/dashboard-summary.test.ts`
-- [ ] T021 [P] [US1] Add dashboard chart section cleanup coverage in `src/features/dashboard/dashboard-charts-section.test.tsx`
-- [ ] T022 [P] [US1] Add dashboard view hierarchy coverage in `src/features/dashboard/dashboard-view.test.tsx`
+- [X] T019 [P] [US1] Add dashboard indicator regression coverage in `src/features/dashboard/dashboard-indicator-card.test.tsx`
+- [X] T020 [P] [US1] Add dashboard summary essential information coverage in `src/features/dashboard/dashboard-summary.test.ts`
+- [X] T021 [P] [US1] Add dashboard chart section cleanup coverage in `src/features/dashboard/dashboard-charts-section.test.tsx`
+- [X] T022 [P] [US1] Add dashboard view hierarchy coverage in `src/features/dashboard/dashboard-view.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T023 [US1] Remove or consolidate redundant dashboard indicator content in `src/features/dashboard/dashboard-indicator-card.tsx`
-- [ ] T024 [US1] Simplify dashboard summary copy while preserving totals and context in `src/features/dashboard/dashboard-summary.ts`
-- [ ] T025 [US1] Simplify dashboard chart section headings and helper text in `src/features/dashboard/dashboard-charts-section.tsx`
-- [ ] T026 [US1] Preserve essential chart text alternatives while reducing visual noise in `src/features/dashboard/accessible-chart-summary.ts`
-- [ ] T027 [US1] Simplify recent transaction presentation on dashboard in `src/features/dashboard/dashboard-recent-transaction.tsx`
-- [ ] T028 [US1] Update dashboard screen composition and hierarchy in `src/features/dashboard/dashboard-view.tsx`
-- [ ] T029 [US1] Record dashboard cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T023 [US1] Remove or consolidate redundant dashboard indicator content in `src/features/dashboard/dashboard-indicator-card.tsx`
+- [X] T024 [US1] Simplify dashboard summary copy while preserving totals and context in `src/features/dashboard/dashboard-summary.ts`
+- [X] T025 [US1] Simplify dashboard chart section headings and helper text in `src/features/dashboard/dashboard-charts-section.tsx`
+- [X] T026 [US1] Preserve essential chart text alternatives while reducing visual noise in `src/features/dashboard/accessible-chart-summary.ts`
+- [X] T027 [US1] Simplify recent transaction presentation on dashboard in `src/features/dashboard/dashboard-recent-transaction.tsx`
+- [X] T028 [US1] Update dashboard screen composition and hierarchy in `src/features/dashboard/dashboard-view.tsx`
+- [X] T029 [US1] Record dashboard cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
 
 **Checkpoint**: Dashboard story works independently and can be reviewed as the MVP for F12.
 
@@ -83,19 +83,19 @@ description: "Task list for F12 visual cleanup implementation"
 
 ### Tests for User Story 2
 
-- [ ] T030 [P] [US2] Add transaction list item essential information coverage in `src/features/transactions/transaction-list-item.test.tsx`
-- [ ] T031 [P] [US2] Add transaction list controls hierarchy coverage in `src/features/transactions/transaction-list-controls.test.tsx`
-- [ ] T032 [P] [US2] Add transaction list empty and filtered state coverage in `src/features/transactions/transaction-list.test.tsx`
-- [ ] T033 [P] [US2] Add transaction page regression coverage in `src/pages/transactions-page.test.tsx`
+- [X] T030 [P] [US2] Add transaction list item essential information coverage in `src/features/transactions/transaction-list-item.test.tsx`
+- [X] T031 [P] [US2] Add transaction list controls hierarchy coverage in `src/features/transactions/transaction-list-controls.test.tsx`
+- [X] T032 [P] [US2] Add transaction list empty and filtered state coverage in `src/features/transactions/transaction-list.test.tsx`
+- [X] T033 [P] [US2] Add transaction page regression coverage in `src/pages/transactions-page.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T034 [US2] Simplify transaction list item visual hierarchy in `src/features/transactions/transaction-list-item.tsx`
-- [ ] T035 [US2] Reduce redundant transaction filter and helper copy in `src/features/transactions/transaction-list-controls.tsx`
-- [ ] T036 [US2] Preserve safe empty and filtered list messages in `src/features/transactions/transaction-list-messages.ts`
-- [ ] T037 [US2] Simplify transaction list state composition in `src/features/transactions/transaction-list.tsx`
-- [ ] T038 [US2] Verify transaction visibility and responsible labels remain clear in `src/features/permissions/visibility-label.tsx`
-- [ ] T039 [US2] Record transaction cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T034 [US2] Simplify transaction list item visual hierarchy in `src/features/transactions/transaction-list-item.tsx`
+- [X] T035 [US2] Reduce redundant transaction filter and helper copy in `src/features/transactions/transaction-list-controls.tsx`
+- [X] T036 [US2] Preserve safe empty and filtered list messages in `src/features/transactions/transaction-list-messages.ts`
+- [X] T037 [US2] Simplify transaction list state composition in `src/features/transactions/transaction-list.tsx`
+- [X] T038 [US2] Verify transaction visibility and responsible labels remain clear in `src/features/permissions/visibility-label.tsx`
+- [X] T039 [US2] Record transaction cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
 
 **Checkpoint**: Transaction review remains independently usable and testable.
 
@@ -109,17 +109,17 @@ description: "Task list for F12 visual cleanup implementation"
 
 ### Tests for User Story 3
 
-- [ ] T040 [P] [US3] Add goal card cleanup regression coverage in `src/features/goals/goal-card.test.tsx`
-- [ ] T041 [P] [US3] Add goal progress essential information coverage in `src/features/goals/goal-progress.test.ts`
-- [ ] T042 [P] [US3] Add goal view state coverage in `src/features/goals/goal-view.test.tsx`
+- [X] T040 [P] [US3] Add goal card cleanup regression coverage in `src/features/goals/goal-card.test.tsx`
+- [X] T041 [P] [US3] Add goal progress essential information coverage in `src/features/goals/goal-progress.test.ts`
+- [X] T042 [P] [US3] Add goal view state coverage in `src/features/goals/goal-view.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T043 [US3] Consolidate repeated goal metadata in `src/features/goals/goal-card.tsx`
-- [ ] T044 [US3] Preserve progress meaning while reducing redundant labels in `src/features/goals/goal-progress.ts`
-- [ ] T045 [US3] Simplify goal list empty and populated composition in `src/features/goals/goal-list.tsx`
-- [ ] T046 [US3] Simplify goal view headings and support copy in `src/features/goals/goal-view.tsx`
-- [ ] T047 [US3] Record goals cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T043 [US3] Consolidate repeated goal metadata in `src/features/goals/goal-card.tsx`
+- [X] T044 [US3] Preserve progress meaning while reducing redundant labels in `src/features/goals/goal-progress.ts`
+- [X] T045 [US3] Simplify goal list empty and populated composition in `src/features/goals/goal-list.tsx`
+- [X] T046 [US3] Simplify goal view headings and support copy in `src/features/goals/goal-view.tsx`
+- [X] T047 [US3] Record goals cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
 
 **Checkpoint**: Goals remain understandable independently after cleanup.
 
@@ -133,20 +133,20 @@ description: "Task list for F12 visual cleanup implementation"
 
 ### Tests for User Story 4
 
-- [ ] T048 [P] [US4] Add shared empty state safe-copy coverage in `src/components/feedback/interface-state.test.tsx`
-- [ ] T049 [P] [US4] Add category message cleanup coverage in `src/features/categories/category-messages.test.ts`
-- [ ] T050 [P] [US4] Add couple message cleanup coverage in `src/features/couple/couple-messages.test.ts`
-- [ ] T051 [P] [US4] Add audit message safety regression coverage in `src/features/audit/audit-messages.test.ts`
+- [X] T048 [P] [US4] Add shared empty state safe-copy coverage in `src/components/feedback/interface-state.test.tsx`
+- [X] T049 [P] [US4] Add category message cleanup coverage in `src/features/categories/category-messages.test.ts`
+- [X] T050 [P] [US4] Add couple message cleanup coverage in `src/features/couple/couple-messages.test.ts`
+- [X] T051 [P] [US4] Add audit message safety regression coverage in `src/features/audit/audit-messages.test.ts`
 
 ### Implementation for User Story 4
 
-- [ ] T052 [US4] Simplify shared empty state copy and action hierarchy in `src/components/feedback/empty-state.tsx`
-- [ ] T053 [US4] Simplify shared loading state copy without implying real data in `src/components/feedback/loading-state.tsx`
-- [ ] T054 [US4] Simplify shared error state copy and retry hierarchy in `src/components/feedback/error-state.tsx`
-- [ ] T055 [US4] Remove redundant category empty or helper messaging in `src/features/categories/category-messages.ts`
-- [ ] T056 [US4] Simplify invitation and partner safe messages in `src/features/couple/couple-messages.ts`
-- [ ] T057 [US4] Preserve audit safe messages while reducing excess wording in `src/features/audit/audit-messages.ts`
-- [ ] T058 [US4] Record state cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/safe-interface-states.md`
+- [X] T052 [US4] Simplify shared empty state copy and action hierarchy in `src/components/feedback/empty-state.tsx`
+- [X] T053 [US4] Simplify shared loading state copy without implying real data in `src/components/feedback/loading-state.tsx`
+- [X] T054 [US4] Simplify shared error state copy and retry hierarchy in `src/components/feedback/error-state.tsx`
+- [X] T055 [US4] Remove redundant category empty or helper messaging in `src/features/categories/category-messages.ts`
+- [X] T056 [US4] Simplify invitation and partner safe messages in `src/features/couple/couple-messages.ts`
+- [X] T057 [US4] Preserve audit safe messages while reducing excess wording in `src/features/audit/audit-messages.ts`
+- [X] T058 [US4] Record state cleanup decisions and deferred candidates in `specs/012-visual-cleanup/checklists/safe-interface-states.md`
 
 **Checkpoint**: Interface states remain clear and safe across affected screens.
 
@@ -160,19 +160,19 @@ description: "Task list for F12 visual cleanup implementation"
 
 ### Tests for User Story 5
 
-- [ ] T059 [P] [US5] Add button/icon accessibility regression coverage in `src/components/ui/button.test.tsx`
-- [ ] T060 [P] [US5] Add authenticated layout focus and landmark coverage in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T061 [P] [US5] Add dashboard responsive accessibility assertions in `src/features/dashboard/dashboard-view.test.tsx`
-- [ ] T062 [P] [US5] Add transaction responsive accessibility assertions in `src/features/transactions/transaction-list.test.tsx`
-- [ ] T063 [P] [US5] Add goals responsive accessibility assertions in `src/features/goals/goal-view.test.tsx`
+- [X] T059 [P] [US5] Add button/icon accessibility regression coverage in `src/components/ui/button.test.tsx`
+- [X] T060 [P] [US5] Add authenticated layout focus and landmark coverage in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T061 [P] [US5] Add dashboard responsive accessibility assertions in `src/features/dashboard/dashboard-view.test.tsx`
+- [X] T062 [P] [US5] Add transaction responsive accessibility assertions in `src/features/transactions/transaction-list.test.tsx`
+- [X] T063 [P] [US5] Add goals responsive accessibility assertions in `src/features/goals/goal-view.test.tsx`
 
 ### Implementation for User Story 5
 
-- [ ] T064 [US5] Remove decorative or unlabeled icon-only noise from shared buttons in `src/components/ui/button.tsx`
-- [ ] T065 [US5] Preserve card spacing and readable wrapping after cleanup in `src/components/ui/card.tsx`
-- [ ] T066 [US5] Preserve authenticated layout scan order after cleanup in `src/components/layout/authenticated-layout.tsx`
-- [ ] T067 [US5] Validate revised dashboard, transactions, goals, categories, and invitation screens in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
-- [ ] T068 [US5] Record keyboard, focus, mobile, tablet, desktop, and long-content review results in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
+- [X] T064 [US5] Remove decorative or unlabeled icon-only noise from shared buttons in `src/components/ui/button.tsx`
+- [X] T065 [US5] Preserve card spacing and readable wrapping after cleanup in `src/components/ui/card.tsx`
+- [X] T066 [US5] Preserve authenticated layout scan order after cleanup in `src/components/layout/authenticated-layout.tsx`
+- [X] T067 [US5] Validate revised dashboard, transactions, goals, categories, and invitation screens in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
+- [X] T068 [US5] Record keyboard, focus, mobile, tablet, desktop, and long-content review results in `specs/012-visual-cleanup/checklists/responsive-accessible-review.md`
 
 **Checkpoint**: Revised screens remain responsive and accessible.
 
@@ -182,13 +182,13 @@ description: "Task list for F12 visual cleanup implementation"
 
 **Purpose**: Final validation and documentation after selected stories are complete.
 
-- [ ] T069 [P] Reconcile deferred cleanup candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T070 [P] Update F12 quickstart notes with implementation-specific validation findings in `specs/012-visual-cleanup/quickstart.md`
-- [ ] T071 Run final lint check with `npm run lint` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T072 Run final format check with `npm run format:check` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T073 Run final typecheck with `npm run typecheck` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T074 Run final test suite with `npm run test:run` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
-- [ ] T075 Run final build with `npm run build` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T069 [P] Reconcile deferred cleanup candidates in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T070 [P] Update F12 quickstart notes with implementation-specific validation findings in `specs/012-visual-cleanup/quickstart.md`
+- [X] T071 Run final lint check with `npm run lint` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T072 Run final format check with `npm run format:check` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T073 Run final typecheck with `npm run typecheck` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T074 Run final test suite with `npm run test:run` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
+- [X] T075 Run final build with `npm run build` and record result in `specs/012-visual-cleanup/checklists/visual-cleanup-inventory.md`
 
 ---
 
