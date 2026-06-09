@@ -40,22 +40,37 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- **Simplicity & UX**: Frequent workflows use minimal steps, provide immediate
-  feedback, and define friendly empty/loading/error states.
+- **Incremental Baseline**: The plan treats F00-F11 as completed baseline,
+  names reused flows, and identifies regression risks instead of recreating
+  existing authentication, couple, permissions, transactions, dashboard, goals,
+  audit, responsiveness, or accessibility work.
+- **Simplicity & Visual Clarity**: Frequent workflows use minimal steps, provide
+  immediate feedback, define friendly empty/loading/error states, and remove
+  visual elements that do not support decisions, safety, audit, or orientation.
 - **Financial Transparency**: Individual vs shared data, responsible person,
   totals, balances, and important financial changes are unambiguous and
   traceable where applicable.
-- **Mobile-First**: Essential MVP functionality works on mobile with touch-safe
-  controls and no desktop-only dependency.
+- **Mobile-First**: Essential functionality works on mobile with touch-safe
+  controls, no desktop-only dependency, and authenticated navigation that
+  preserves session, active route, and task context.
 - **Accessibility**: Essential interactions support keyboard use, visible focus,
-  clear labels/errors, sufficient contrast, and screen-reader semantics.
+  clear labels/errors, sufficient contrast, table/chart/navigation semantics,
+  and screen-reader compatible state changes.
 - **Security & Privacy**: Authentication, authorization, Supabase RLS/data
-  isolation, and privacy impacts are addressed before implementation.
-- **Technical Quality**: TypeScript strict mode, modular components, reusable
-  hooks/services, low coupling, high cohesion, and naming conventions are
-  reflected in the design.
-- **Performance & Financial Data Clarity**: Lists, charts, dashboards, currency,
-  dates, categories, and totals remain consistent, legible, and performant.
+  isolation, safe messages, and privacy impacts are addressed before
+  implementation.
+- **Technical Quality & Tests**: TypeScript strict mode, modular components,
+  reusable hooks/services/repositories, low coupling, high cohesion, naming
+  conventions, and proportional unit/regression tests are reflected in the
+  design.
+- **Performance, Server State & Data Clarity**: Lists, tables, charts,
+  dashboards, currency, dates, categories, totals, TanStack Query invalidation,
+  and refetch behavior remain consistent, legible, and performant.
+- **Prisma & Server-Side Boundary**: Any Prisma/schema/migration work is
+  confined to backend/server-side code, with authenticated user context,
+  permission checks, and no Prisma exposure in browser-delivered code.
+- **PR Pipeline**: The feature states how lint, format check when applicable,
+  typecheck, tests, and build run locally and in Pull Request validation.
 
 If any gate is not satisfied, document the violation in Complexity Tracking with
 the risk, rejected simpler alternative, and mitigation before proceeding.

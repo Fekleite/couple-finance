@@ -9,10 +9,14 @@ description: "Task list template for feature implementation"
 
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
-**Tests**: The examples below include test tasks. Tests are OPTIONAL only when
-the feature has no meaningful risk. Include tests or explicit validation tasks
-for financial calculations, authorization/RLS, accessibility-critical flows,
-mobile behavior, and chart/list/dashboard data clarity.
+**Tests**: For 2.0 increments, tests are REQUIRED whenever new code adds logic,
+conditional rendering, permissions, validation, formatting, filters, table
+columns, hooks, services, repositories, schema/migration behavior, query
+configuration, or regression risk. If a story has no meaningful test target,
+include an explicit validation task and justify why automated tests do not add
+value. Include tests or explicit validation tasks for financial calculations,
+authorization/RLS, accessibility-critical flows, mobile behavior, and
+chart/list/table/dashboard data clarity.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
@@ -74,6 +78,10 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T009 Setup environment configuration management
 - [ ] T010 Configure Supabase RLS/data isolation validation for financial records
 - [ ] T011 Configure accessibility, mobile viewport, and performance validation tooling
+- [ ] T012 Verify affected F00-F11 baseline flows and identify regression tests
+- [ ] T013 Configure or verify Pull Request pipeline tasks for lint, typecheck, tests, and build
+- [ ] T014 Configure TanStack Query defaults or document query-level exceptions when applicable
+- [ ] T015 Define backend/server-side boundary before any Prisma usage
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -85,24 +93,28 @@ Examples of foundational tasks (adjust based on your project):
 
 **Independent Test**: [How to verify this story works on its own]
 
-### Tests for User Story 1 (include when constitution gates require validation) ⚠️
+### Tests for User Story 1 (required when constitution gates require validation) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T012 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T013 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T014 [P] [US1] Authorization/RLS test for [financial data access] in tests/integration/test_[name].py
-- [ ] T015 [P] [US1] Accessibility/mobile validation for [user journey] in tests/e2e/test_[name].py
+- [ ] T016 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
+- [ ] T017 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T018 [P] [US1] Authorization/RLS test for [financial data access] in tests/integration/test_[name].py
+- [ ] T019 [P] [US1] Accessibility/mobile validation for [user journey] in tests/e2e/test_[name].py
+- [ ] T020 [P] [US1] Unit test for new business logic, filters, table columns, hooks, services, repositories, or query config
+- [ ] T021 [P] [US1] Regression test for affected F00-F11 baseline behavior
 
 ### Implementation for User Story 1
 
-- [ ] T016 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T017 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T018 [US1] Implement [Service] in src/services/[service].py (depends on T016, T017)
-- [ ] T019 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T020 [US1] Add validation and error handling
-- [ ] T021 [US1] Add clear individual/shared financial labels and responsible party display
-- [ ] T022 [US1] Add loading, empty, and error states
+- [ ] T022 [P] [US1] Create [Entity1] model in src/models/[entity1].py
+- [ ] T023 [P] [US1] Create [Entity2] model in src/models/[entity2].py
+- [ ] T024 [US1] Implement [Service] in src/services/[service].py (depends on T022, T023)
+- [ ] T025 [US1] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T026 [US1] Add validation and error handling
+- [ ] T027 [US1] Add clear individual/shared financial labels and responsible party display
+- [ ] T028 [US1] Add loading, empty, and error states
+- [ ] T029 [US1] Preserve TanStack Query invalidation/refetch expectations when server state changes
+- [ ] T030 [US1] Keep Prisma, if used, inside backend/server-side repositories or services only
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -116,16 +128,16 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Tests for User Story 2 (include when constitution gates require validation) ⚠️
 
-- [ ] T023 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T024 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T025 [P] [US2] Authorization/RLS test for [financial data access] in tests/integration/test_[name].py
+- [ ] T031 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
+- [ ] T032 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T033 [P] [US2] Authorization/RLS test for [financial data access] in tests/integration/test_[name].py
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US2] Implement [Service] in src/services/[service].py
-- [ ] T028 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T029 [US2] Integrate with User Story 1 components (if needed)
+- [ ] T034 [P] [US2] Create [Entity] model in src/models/[entity].py
+- [ ] T035 [US2] Implement [Service] in src/services/[service].py
+- [ ] T036 [US2] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T037 [US2] Integrate with User Story 1 components (if needed)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -139,15 +151,15 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Tests for User Story 3 (include when constitution gates require validation) ⚠️
 
-- [ ] T030 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T031 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T032 [P] [US3] Data clarity/performance validation for lists, charts, or dashboards
+- [ ] T038 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
+- [ ] T039 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T040 [P] [US3] Data clarity/performance validation for lists, charts, or dashboards
 
 ### Implementation for User Story 3
 
-- [ ] T033 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T034 [US3] Implement [Service] in src/services/[service].py
-- [ ] T035 [US3] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T041 [P] [US3] Create [Entity] model in src/models/[entity].py
+- [ ] T042 [US3] Implement [Service] in src/services/[service].py
+- [ ] T043 [US3] Implement [endpoint/feature] in src/[location]/[file].py
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -164,11 +176,14 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX [P] Documentation updates in docs/
 - [ ] TXXX Code cleanup and refactoring
 - [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
+- [ ] TXXX [P] Additional unit tests for all new logic and regression risks in tests/unit/
 - [ ] TXXX Security hardening
 - [ ] TXXX Accessibility audit for keyboard, focus, labels, errors, contrast, and screen-reader semantics
-- [ ] TXXX Mobile viewport validation for all essential MVP flows
+- [ ] TXXX Mobile viewport validation for all affected F00-F11 and incremental flows
 - [ ] TXXX Financial data formatting audit for currency, dates, categories, totals, and individual/shared labels
+- [ ] TXXX TanStack Query audit for refetchOnWindowFocus exceptions and controlled invalidation
+- [ ] TXXX Prisma/server-side boundary audit if schema, migrations, services, or repositories changed
+- [ ] TXXX Pull Request pipeline validation for lint, format check when applicable, typecheck, tests, and build
 - [ ] TXXX Run quickstart.md validation
 
 ---
@@ -193,6 +208,7 @@ Examples of foundational tasks (adjust based on your project):
 ### Within Each User Story
 
 - Tests or explicit validation tasks required by constitution gates MUST be written and FAIL before implementation
+- Regression tests for affected F00-F11 behavior before refactoring or replacing existing implementation
 - Models before services
 - Services before endpoints
 - Core implementation before integration

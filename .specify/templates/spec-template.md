@@ -80,6 +80,9 @@
 - What happens when shared and individual financial data appear together?
 - What happens when a user without authorization attempts to access shared data?
 - What happens on small mobile screens, slow networks, or empty financial states?
+- Which completed F00-F11 flows can regress, and how is equivalence verified?
+- If TanStack Query, Prisma, schema, or permissions change, what failure modes
+  must be handled?
 
 ## Requirements *(mandatory)*
 
@@ -98,6 +101,8 @@
 - **FR-006**: System MUST clearly identify whether financial information is individual or shared.
 - **FR-007**: System MUST preserve authorization and privacy boundaries for all financial data.
 - **FR-008**: System MUST provide mobile-friendly and accessible behavior for essential user journeys.
+- **FR-009**: System MUST preserve applicable F00-F11 baseline behavior or define tested equivalence for intentional replacements.
+- **FR-010**: System MUST include proportional unit, component, integration, or regression tests for new logic and changed behavior.
 
 *Example of marking unclear requirements:*
 
@@ -111,11 +116,14 @@
 
 ### Constitution Alignment *(mandatory)*
 
-- **Simplicity & UX**: [How this feature keeps frequent flows short and understandable]
+- **Incremental Baseline**: [Which F00-F11 flows are reused, changed, or at risk of regression]
+- **Simplicity & Visual Clarity**: [How this feature keeps frequent flows short, understandable, and free of non-functional visual noise]
 - **Financial Transparency**: [How the feature distinguishes individual/shared data and responsibility]
 - **Mobile & Accessibility**: [How essential interactions work on mobile, keyboard, and assistive tech]
 - **Security & Privacy**: [Authorization, privacy, and data isolation requirements]
-- **Performance & Data Clarity**: [Expected behavior for lists, charts, totals, currency, dates, and loading]
+- **Testing & PR Pipeline**: [Unit/regression tests required and local/PR checks that must pass]
+- **Performance, Query & Data Clarity**: [Expected behavior for lists, tables, charts, totals, currency, dates, loading, TanStack Query invalidation, and refetch]
+- **Prisma & Data Layer Impact**: [Whether schema, migrations, Prisma, services, repositories, or server-side APIs are affected]
 
 ## Success Criteria *(mandatory)*
 
