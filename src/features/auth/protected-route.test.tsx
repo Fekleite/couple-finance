@@ -42,6 +42,9 @@ describe("ProtectedRoute", () => {
     renderProtected("unauthenticated");
 
     expect(screen.getByText("Tela de login")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("navigation", { name: /navegacao privada/i })
+    ).not.toBeInTheDocument();
   });
 
   it("shows expired feedback for expired sessions", () => {
