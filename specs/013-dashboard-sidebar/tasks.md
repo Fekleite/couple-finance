@@ -12,11 +12,11 @@
 
 **Purpose**: Confirm the existing implementation surface and prepare the layout/navigation files without changing behavior.
 
-- [ ] T001 Review current private route tree and route constants in `src/app/router.tsx` and `src/app/routes.ts`
-- [ ] T002 Review current authenticated layout behavior and tests in `src/components/layout/authenticated-layout.tsx` and `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T003 [P] Review existing layout primitives and utilities in `src/components/layout/app-layout.tsx`, `src/components/layout/public-navigation.tsx`, and `src/lib/utils.ts`
-- [ ] T004 [P] Review current auth route guard behavior in `src/features/auth/protected-route.tsx` and `src/features/auth/protected-route.test.tsx`
-- [ ] T005 Record the implementation inventory and out-of-scope route decisions in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T001 Review current private route tree and route constants in `src/app/router.tsx` and `src/app/routes.ts`
+- [X] T002 Review current authenticated layout behavior and tests in `src/components/layout/authenticated-layout.tsx` and `src/components/layout/authenticated-layout.test.tsx`
+- [X] T003 [P] Review existing layout primitives and utilities in `src/components/layout/app-layout.tsx`, `src/components/layout/public-navigation.tsx`, and `src/lib/utils.ts`
+- [X] T004 [P] Review current auth route guard behavior in `src/features/auth/protected-route.tsx` and `src/features/auth/protected-route.test.tsx`
+- [X] T005 Record the implementation inventory and out-of-scope route decisions in `specs/013-dashboard-sidebar/quickstart.md`
 
 ---
 
@@ -26,11 +26,11 @@
 
 **Critical**: No user story work should begin until this phase is complete.
 
-- [ ] T006 [P] Add navigation item and route-match tests for dashboard, transactions, transaction creation, categories, goals, audit, and invite routes in `src/components/layout/private-navigation.test.tsx`
-- [ ] T007 [P] Add availability tests proving Settings and Partner/Invites aggregate routes are hidden while absent from `PRIVATE_ROUTES` in `src/components/layout/private-navigation.test.tsx`
-- [ ] T008 Create typed private navigation configuration and active-route helpers in `src/components/layout/private-navigation.tsx`
-- [ ] T009 Wire `PRIVATE_ROUTES` into the private navigation configuration without adding new routes in `src/components/layout/private-navigation.tsx`
-- [ ] T010 Verify foundational navigation tests fail before implementation and then pass after T008-T009 in `src/components/layout/private-navigation.test.tsx`
+- [X] T006 [P] Add navigation item and route-match tests for dashboard, transactions, transaction creation, categories, goals, audit, and invite routes in `src/components/layout/private-navigation.test.tsx`
+- [X] T007 [P] Add availability tests proving Settings and Partner/Invites aggregate routes are hidden while absent from `PRIVATE_ROUTES` in `src/components/layout/private-navigation.test.tsx`
+- [X] T008 Create typed private navigation configuration and active-route helpers in `src/components/layout/private-navigation.tsx`
+- [X] T009 Wire `PRIVATE_ROUTES` into the private navigation configuration without adding new routes in `src/components/layout/private-navigation.tsx`
+- [X] T010 Verify foundational navigation tests fail before implementation and then pass after T008-T009 in `src/components/layout/private-navigation.test.tsx`
 
 **Checkpoint**: Shared navigation model is ready; user story implementation can start.
 
@@ -44,18 +44,18 @@
 
 ### Tests for User Story 1
 
-- [ ] T011 [P] [US1] Add desktop sidebar rendering tests for authenticated users in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T012 [P] [US1] Add active-route tests for `/app`, `/app/transactions`, `/app/categories`, `/app/goals`, and `/app/audit` in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T013 [P] [US1] Add session preservation and outlet rendering regression tests in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T014 [P] [US1] Add navigation item contract coverage for labels, hrefs, and absence of private counts in `src/components/layout/private-navigation.test.tsx`
+- [X] T011 [P] [US1] Add desktop sidebar rendering tests for authenticated users in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T012 [P] [US1] Add active-route tests for `/app`, `/app/transactions`, `/app/categories`, `/app/goals`, and `/app/audit` in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T013 [P] [US1] Add session preservation and outlet rendering regression tests in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T014 [P] [US1] Add navigation item contract coverage for labels, hrefs, and absence of private counts in `src/components/layout/private-navigation.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T015 [US1] Refactor `AuthenticatedLayout` into a dashboard shell with sidebar and main content region in `src/components/layout/authenticated-layout.tsx`
-- [ ] T016 [US1] Replace the horizontal private nav with sidebar navigation using shared navigation items in `src/components/layout/authenticated-layout.tsx`
-- [ ] T017 [US1] Preserve account summary, logout behavior, session messages, and `Outlet` rendering in `src/components/layout/authenticated-layout.tsx`
-- [ ] T018 [US1] Apply desktop layout sizing, spacing, and active styles with existing TailwindCSS patterns in `src/components/layout/authenticated-layout.tsx`
-- [ ] T019 [US1] Confirm no new Settings, Partner, or Configuracoes page route was added in `src/app/routes.ts` and `src/app/router.tsx`
+- [X] T015 [US1] Refactor `AuthenticatedLayout` into a dashboard shell with sidebar and main content region in `src/components/layout/authenticated-layout.tsx`
+- [X] T016 [US1] Replace the horizontal private nav with sidebar navigation using shared navigation items in `src/components/layout/authenticated-layout.tsx`
+- [X] T017 [US1] Preserve account summary, logout behavior, session messages, and `Outlet` rendering in `src/components/layout/authenticated-layout.tsx`
+- [X] T018 [US1] Apply desktop layout sizing, spacing, and active styles with existing TailwindCSS patterns in `src/components/layout/authenticated-layout.tsx`
+- [X] T019 [US1] Confirm no new Settings, Partner, or Configuracoes page route was added in `src/app/routes.ts` and `src/app/router.tsx`
 
 **Checkpoint**: Desktop sidebar MVP is functional and independently testable.
 
@@ -69,17 +69,17 @@
 
 ### Tests for User Story 2
 
-- [ ] T020 [P] [US2] Add compact navigation open and close interaction tests in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T021 [P] [US2] Add compact navigation link activation tests for transactions and goals in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T022 [P] [US2] Add responsive class and long-label regression coverage for compact navigation in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T020 [P] [US2] Add compact navigation open and close interaction tests in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T021 [P] [US2] Add compact navigation link activation tests for transactions and goals in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T022 [P] [US2] Add responsive class and long-label regression coverage for compact navigation in `src/components/layout/authenticated-layout.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T023 [US2] Add compact navigation state and open/close controls with accessible labels in `src/components/layout/authenticated-layout.tsx`
-- [ ] T024 [US2] Render the private navigation in a mobile/tablet compact surface using existing layout primitives in `src/components/layout/authenticated-layout.tsx`
-- [ ] T025 [US2] Ensure compact navigation closes after selecting a destination while preserving route content in `src/components/layout/authenticated-layout.tsx`
-- [ ] T026 [US2] Add stable responsive dimensions and wrapping for sidebar, compact trigger, labels, and main content in `src/components/layout/authenticated-layout.tsx`
-- [ ] T027 [US2] Document the manual mobile/tablet validation path in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T023 [US2] Add compact navigation state and open/close controls with accessible labels in `src/components/layout/authenticated-layout.tsx`
+- [X] T024 [US2] Render the private navigation in a mobile/tablet compact surface using existing layout primitives in `src/components/layout/authenticated-layout.tsx`
+- [X] T025 [US2] Ensure compact navigation closes after selecting a destination while preserving route content in `src/components/layout/authenticated-layout.tsx`
+- [X] T026 [US2] Add stable responsive dimensions and wrapping for sidebar, compact trigger, labels, and main content in `src/components/layout/authenticated-layout.tsx`
+- [X] T027 [US2] Document the manual mobile/tablet validation path in `specs/013-dashboard-sidebar/quickstart.md`
 
 **Checkpoint**: Mobile/tablet navigation works independently after the desktop MVP.
 
@@ -93,17 +93,17 @@
 
 ### Tests for User Story 3
 
-- [ ] T028 [P] [US3] Add keyboard tab order tests for logout, compact trigger, sidebar links, and main content in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T029 [P] [US3] Add accessible-name tests for navigation landmarks, compact controls, and icon-backed links in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T030 [P] [US3] Add current-page semantic tests for active navigation links in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T031 [P] [US3] Add focus return tests after closing compact navigation in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T028 [P] [US3] Add keyboard tab order tests for logout, compact trigger, sidebar links, and main content in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T029 [P] [US3] Add accessible-name tests for navigation landmarks, compact controls, and icon-backed links in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T030 [P] [US3] Add current-page semantic tests for active navigation links in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T031 [P] [US3] Add focus return tests after closing compact navigation in `src/components/layout/authenticated-layout.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T032 [US3] Add semantic navigation landmarks, current-page state, and accessible labels in `src/components/layout/authenticated-layout.tsx`
-- [ ] T033 [US3] Ensure icon usage is decorative or paired with text and accessible names in `src/components/layout/authenticated-layout.tsx`
-- [ ] T034 [US3] Implement predictable keyboard open/close behavior and focus return for compact navigation in `src/components/layout/authenticated-layout.tsx`
-- [ ] T035 [US3] Preserve the skip-link and main content relationship from `src/components/layout/app-layout.tsx` while nesting the authenticated shell in `src/components/layout/authenticated-layout.tsx`
+- [X] T032 [US3] Add semantic navigation landmarks, current-page state, and accessible labels in `src/components/layout/authenticated-layout.tsx`
+- [X] T033 [US3] Ensure icon usage is decorative or paired with text and accessible names in `src/components/layout/authenticated-layout.tsx`
+- [X] T034 [US3] Implement predictable keyboard open/close behavior and focus return for compact navigation in `src/components/layout/authenticated-layout.tsx`
+- [X] T035 [US3] Preserve the skip-link and main content relationship from `src/components/layout/app-layout.tsx` while nesting the authenticated shell in `src/components/layout/authenticated-layout.tsx`
 
 **Checkpoint**: Navigation is operable and understandable by keyboard and assistive technologies.
 
@@ -117,17 +117,17 @@
 
 ### Tests for User Story 4
 
-- [ ] T036 [P] [US4] Add protected-route regression tests proving unauthenticated users do not render private navigation in `src/features/auth/protected-route.test.tsx`
-- [ ] T037 [P] [US4] Add hidden unavailable module tests for Settings and Partner/Invites aggregate navigation in `src/components/layout/private-navigation.test.tsx`
-- [ ] T038 [P] [US4] Add logout progress and safe session message tests for the new layout structure in `src/components/layout/authenticated-layout.test.tsx`
-- [ ] T039 [P] [US4] Add dynamic invite route active-state fallback tests in `src/components/layout/private-navigation.test.tsx`
+- [X] T036 [P] [US4] Add protected-route regression tests proving unauthenticated users do not render private navigation in `src/features/auth/protected-route.test.tsx`
+- [X] T037 [P] [US4] Add hidden unavailable module tests for Settings and Partner/Invites aggregate navigation in `src/components/layout/private-navigation.test.tsx`
+- [X] T038 [P] [US4] Add logout progress and safe session message tests for the new layout structure in `src/components/layout/authenticated-layout.test.tsx`
+- [X] T039 [P] [US4] Add dynamic invite route active-state fallback tests in `src/components/layout/private-navigation.test.tsx`
 
 ### Implementation for User Story 4
 
-- [ ] T040 [US4] Ensure private navigation is only rendered inside the protected authenticated layout in `src/components/layout/authenticated-layout.tsx`
-- [ ] T041 [US4] Keep unavailable modules hidden without disabled labels that imply private data in `src/components/layout/private-navigation.tsx`
-- [ ] T042 [US4] Preserve safe logout progress and session message behavior in `src/components/layout/authenticated-layout.tsx`
-- [ ] T043 [US4] Preserve dynamic invite route accessibility without adding a false aggregate Partner/Invites destination in `src/app/router.tsx` and `src/components/layout/private-navigation.tsx`
+- [X] T040 [US4] Ensure private navigation is only rendered inside the protected authenticated layout in `src/components/layout/authenticated-layout.tsx`
+- [X] T041 [US4] Keep unavailable modules hidden without disabled labels that imply private data in `src/components/layout/private-navigation.tsx`
+- [X] T042 [US4] Preserve safe logout progress and session message behavior in `src/components/layout/authenticated-layout.tsx`
+- [X] T043 [US4] Preserve dynamic invite route accessibility without adding a false aggregate Partner/Invites destination in `src/app/router.tsx` and `src/components/layout/private-navigation.tsx`
 
 **Checkpoint**: Navigation availability is safe and does not expand product scope.
 
@@ -137,15 +137,15 @@
 
 **Purpose**: Finish validation, clean up implementation details, and document any intentional scope decisions.
 
-- [ ] T044 [P] Update implementation notes for desktop, mobile, keyboard, and protected-route validation in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T045 [P] Review visual density and remove redundant navigation text, badges, or decorative icons in `src/components/layout/authenticated-layout.tsx`
-- [ ] T046 [P] Review route labels and titles for consistency with final navigation labels in `src/app/routes.ts`
-- [ ] T047 Run `npm run lint` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T048 Run `npm run format:check` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T049 Run `npm run typecheck` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T050 Run `npm run test:run` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T051 Run `npm run build` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
-- [ ] T052 Perform manual quickstart validation for desktop, tablet, mobile, keyboard, and unauthenticated access in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T044 [P] Update implementation notes for desktop, mobile, keyboard, and protected-route validation in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T045 [P] Review visual density and remove redundant navigation text, badges, or decorative icons in `src/components/layout/authenticated-layout.tsx`
+- [X] T046 [P] Review route labels and titles for consistency with final navigation labels in `src/app/routes.ts`
+- [X] T047 Run `npm run lint` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T048 Run `npm run format:check` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T049 Run `npm run typecheck` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T050 Run `npm run test:run` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T051 Run `npm run build` and record any required fixes in `specs/013-dashboard-sidebar/quickstart.md`
+- [X] T052 Perform manual quickstart validation for desktop, tablet, mobile, keyboard, and unauthenticated access in `specs/013-dashboard-sidebar/quickstart.md`
 
 ---
 

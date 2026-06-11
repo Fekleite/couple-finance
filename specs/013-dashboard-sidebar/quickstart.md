@@ -96,3 +96,33 @@ npm run build
 - Configuracoes e Parceiro/Convites nao viram paginas novas nesta feature.
 - Protecao de rotas e sessao permanecem preservadas.
 - Testes e validacoes obrigatorias passam.
+
+## Implementation Notes
+
+- Inventario revisado em `src/components/layout/authenticated-layout.tsx`,
+  `src/components/layout/authenticated-layout.test.tsx`, `src/app/routes.ts` e
+  `src/app/router.tsx`.
+- A navegacao privada foi centralizada em
+  `src/components/layout/private-navigation.tsx`.
+- A F13 manteve os destinos existentes: `/app`, `/app/transactions`,
+  `/app/transactions/new`, `/app/categories`, `/app/goals`, `/app/audit` e
+  suporte seguro a `/app/invites/:invitationId` sem item agregado falso.
+- Configuracoes e Parceiro/Convites continuam fora de escopo enquanto nao
+  houver rotas estaveis no produto.
+- A navegacao compacta usa controle de abrir/fechar, fecha apos selecao de
+  destino e preserva foco ao fechar manualmente.
+- Validacao focada executada: `npm run test:run --
+  src/components/layout/private-navigation.test.tsx
+  src/components/layout/authenticated-layout.test.tsx
+  src/features/auth/protected-route.test.tsx`.
+- Typecheck focado de implementacao executado via `npm run typecheck`.
+- Validacao final executada em 2026-06-10:
+  - `npm run lint`: PASS.
+  - `npm run format:check`: PASS apos formatar
+    `src/features/auth/protected-route.test.tsx`.
+  - `npm run typecheck`: PASS.
+  - `npm run test:run`: PASS, 97 arquivos de teste e 247 testes.
+  - `npm run build`: PASS, com aviso nao bloqueante de chunk acima de 500 kB.
+- Revisao manual guiada pelo quickstart: desktop, tablet/mobile, teclado,
+  foco, rota ativa e acesso nao autenticado cobertos por combinacao de testes
+  de componente, revisao de markup semantico e validacao das rotas existentes.
