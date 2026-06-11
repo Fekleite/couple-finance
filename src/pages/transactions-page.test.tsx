@@ -1,4 +1,5 @@
 import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { useCoupleRelationship } from "@/features/couple/use-couple-relationship";
@@ -11,7 +12,8 @@ vi.mock("@/features/couple/use-couple-relationship", () => ({ useCoupleRelations
 vi.mock("@/features/transactions/use-transaction-list", () => ({ useTransactionList: vi.fn() }));
 
 describe("TransactionsPage", () => {
-  it("composes a mobile-safe authenticated monthly consultation from URL filters", () => {
+  it("composes a mobile-safe authenticated monthly consultation from URL filters", async () => {
+    const user = userEvent.setup();
     vi.mocked(useCoupleRelationship).mockReturnValue({
       relationshipState: { status: "no_shared_budget" },
       invitation: null,
@@ -34,5 +36,11 @@ describe("TransactionsPage", () => {
     expect(screen.getByText("junho de 2026")).toBeInTheDocument();
     expect(screen.getByLabelText("Tipo")).toHaveValue("expense");
     expect(screen.getByLabelText("Transacoes do mes")).toHaveClass("min-w-0");
+    expect(screen.queryByRole("dialog", { name: /registrar transacao/i })).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /registrar transacao/i }));
+
+    expect(screen.getByRole("dialog", { name: /registrar transacao/i })).toBeInTheDocument();
+    expect(screen.getByText("Dados da transacao")).toBeInTheDocument();
   });
 });

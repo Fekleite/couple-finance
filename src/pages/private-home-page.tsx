@@ -134,12 +134,12 @@ export function PrivateHomePage() {
 
         <Card size="sm" className="min-w-0">
           <CardHeader>
-            <CardTitle className="text-base">Registrar transacao</CardTitle>
-            <CardDescription>Receita ou despesa individual ou compartilhada.</CardDescription>
+            <CardTitle className="text-base">Abrir transacoes</CardTitle>
+            <CardDescription>Consulte a lista e use o modal para registrar.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild className="w-full">
-              <Link to={PRIVATE_ROUTES.newTransaction.path}>Nova transacao</Link>
+              <Link to={PRIVATE_ROUTES.transactions.path}>Abrir transacoes</Link>
             </Button>
           </CardContent>
         </Card>
