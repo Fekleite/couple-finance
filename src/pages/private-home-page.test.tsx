@@ -90,16 +90,17 @@ describe("PrivateHomePage couple states", () => {
     );
   });
 
-  it("links to the authorized transaction list without replacing creation", () => {
+  it("links to the authorized transaction list and keeps creation out of dashboard links", () => {
     renderWithCoupleAuth(<PrivateHomePage />);
     expect(screen.getByRole("link", { name: /ver transacoes/i })).toHaveAttribute(
       "href",
       "/app/transactions"
     );
-    expect(screen.getByRole("link", { name: /nova transacao/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /abrir transacoes/i })).toHaveAttribute(
       "href",
-      "/app/transactions/new"
+      "/app/transactions"
     );
+    expect(screen.queryByRole("link", { name: /nova transacao/i })).not.toBeInTheDocument();
   });
 
   it("links to goals without adding dashboard summaries or goal charts", () => {

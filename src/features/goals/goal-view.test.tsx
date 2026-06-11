@@ -30,11 +30,18 @@ describe("GoalView", () => {
         onArchive={onArchive}
       />
     );
-    expect(screen.getAllByText(/metas compartilhadas ficam disponiveis/i)).toHaveLength(2);
+    expect(screen.getAllByText(/metas compartilhadas ficam disponiveis/i)).toHaveLength(1);
+    expect(
+      screen.queryByText(/valores manuais, separados das transacoes/i)
+    ).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /nova meta/i }));
+    expect(screen.getByRole("dialog", { name: /nova meta financeira/i })).toBeInTheDocument();
     expect(screen.getByText(/valores manuais, separados das transacoes/i)).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /fechar modal/i }));
     await user.click(screen.getByRole("button", { name: /concluidas/i }));
     expect(onStatusFilterChange).toHaveBeenCalledWith("completed");
     await user.click(screen.getByRole("button", { name: /editar/i }));
+    expect(screen.getByRole("dialog", { name: /editar meta/i })).toBeInTheDocument();
     await user.clear(screen.getByLabelText(/valor atual/i));
     await user.type(screen.getByLabelText(/valor atual/i), "900,00");
     await user.click(screen.getByRole("button", { name: /salvar meta/i }));
