@@ -12,9 +12,9 @@
 
 **Purpose**: Prepare dependency and shared test scaffolding used by all stories.
 
-- [ ] T001 Add `@tanstack/react-table` dependency to package.json and package-lock.json
-- [ ] T002 [P] Create transaction table fixture builders in src/test/transaction-table-test-utils.ts
-- [ ] T003 Verify `@tanstack/react-table` is present in package-lock.json after dependency installation
+- [X] T001 Add `@tanstack/react-table` dependency to package.json and package-lock.json
+- [X] T002 [P] Create transaction table fixture builders in src/test/transaction-table-test-utils.ts
+- [X] T003 Verify `@tanstack/react-table` is present in package-lock.json after dependency installation
 
 ---
 
@@ -24,11 +24,11 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T004 Add TransactionSortState, TransactionColumnKey, and TransactionActionAvailability types to src/features/transactions/transaction-list-types.ts
-- [ ] T005 [P] Add regression tests for existing loading, error, empty_month, no_matches, ready, and loading_more list states in src/features/transactions/transaction-list.test.tsx
-- [ ] T006 [P] Add regression tests proving existing filter parsing, serialization, and clear-additional behavior remain unchanged in src/features/transactions/transaction-query.test.ts
-- [ ] T007 [P] Add regression tests proving the transactions page keeps filter URL canonicalization and registration modal behavior in src/pages/transactions-page.test.tsx
-- [ ] T008 Document in src/features/transactions/transaction-list-service.ts comments or tests that F14 does not change the `list_financial_transactions` RPC contract
+- [X] T004 Add TransactionSortState, TransactionColumnKey, and TransactionActionAvailability types to src/features/transactions/transaction-list-types.ts
+- [X] T005 [P] Add regression tests for existing loading, error, empty_month, no_matches, ready, and loading_more list states in src/features/transactions/transaction-list.test.tsx
+- [X] T006 [P] Add regression tests proving existing filter parsing, serialization, and clear-additional behavior remain unchanged in src/features/transactions/transaction-query.test.ts
+- [X] T007 [P] Add regression tests proving the transactions page keeps filter URL canonicalization and registration modal behavior in src/pages/transactions-page.test.tsx
+- [X] T008 Document in src/features/transactions/transaction-list-service.ts comments or tests that F14 does not change the `list_financial_transactions` RPC contract
 
 **Checkpoint**: Foundation ready - user story implementation can now start.
 
@@ -42,18 +42,18 @@
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Add failing column contract tests for required columns, headers, cell content, and sortable amount/date flags in src/features/transactions/transaction-table-columns.test.tsx
-- [ ] T010 [P] [US1] Add failing table render tests for title, amount, type, category, date, responsible, visibility, shared creator, and populated rows in src/features/transactions/transaction-table.test.tsx
-- [ ] T011 [P] [US1] Add failing accessibility tests for table role, column headers, row content, and non-decorative essential labels in src/features/transactions/transaction-table.test.tsx
+- [X] T009 [P] [US1] Add failing column contract tests for required columns, headers, cell content, and sortable amount/date flags in src/features/transactions/transaction-table-columns.test.tsx
+- [X] T010 [P] [US1] Add failing table render tests for title, amount, type, category, date, responsible, visibility, shared creator, and populated rows in src/features/transactions/transaction-table.test.tsx
+- [X] T011 [P] [US1] Add failing accessibility tests for table role, column headers, row content, and non-decorative essential labels in src/features/transactions/transaction-table.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T012 [US1] Implement essential TanStack Table column definitions in src/features/transactions/transaction-table-columns.tsx
-- [ ] T013 [US1] Implement TransactionTable desktop/tablet table shell with headers, rows, cells, and empty action slot in src/features/transactions/transaction-table.tsx
-- [ ] T014 [US1] Replace ready/loading_more card list rendering with TransactionTable in src/features/transactions/transaction-list.tsx
-- [ ] T015 [US1] Preserve LoadingState, ErrorState, EmptyState, no_matches, aria-busy, aria-live, and Load More behavior in src/features/transactions/transaction-list.tsx
-- [ ] T016 [US1] Remove or limit TransactionListItem usage so it no longer owns the primary populated desktop presentation in src/features/transactions/transaction-list-item.tsx
-- [ ] T017 [US1] Export TransactionTable and table column helpers from src/features/transactions/index.ts
+- [X] T012 [US1] Implement essential TanStack Table column definitions in src/features/transactions/transaction-table-columns.tsx
+- [X] T013 [US1] Implement TransactionTable desktop/tablet table shell with headers, rows, cells, and empty action slot in src/features/transactions/transaction-table.tsx
+- [X] T014 [US1] Replace ready/loading_more card list rendering with TransactionTable in src/features/transactions/transaction-list.tsx
+- [X] T015 [US1] Preserve LoadingState, ErrorState, EmptyState, no_matches, aria-busy, aria-live, and Load More behavior in src/features/transactions/transaction-list.tsx
+- [X] T016 [US1] Remove or limit TransactionListItem usage so it no longer owns the primary populated desktop presentation in src/features/transactions/transaction-list-item.tsx
+- [X] T017 [US1] Export TransactionTable and table column helpers from src/features/transactions/index.ts
 
 **Checkpoint**: US1 is independently functional as the MVP table view.
 
@@ -67,19 +67,19 @@
 
 ### Tests for User Story 2
 
-- [ ] T018 [P] [US2] Add failing unit tests for date and amount sort transitions, default recent-first order, and stable row preservation in src/features/transactions/transaction-table-sort.test.ts
-- [ ] T019 [P] [US2] Add failing component tests for clicking date and amount headers, visible active sort state, and accessible sort state in src/features/transactions/transaction-table.test.tsx
-- [ ] T020 [P] [US2] Add failing regression tests proving filters remain serialized in URL and unchanged after sorting in src/pages/transactions-page.test.tsx
-- [ ] T021 [P] [US2] Add failing no_matches and clear-filters tests with sorted filtered data in src/features/transactions/transaction-list.test.tsx
+- [X] T018 [P] [US2] Add failing unit tests for date and amount sort transitions, default recent-first order, and stable row preservation in src/features/transactions/transaction-table-sort.test.ts
+- [X] T019 [P] [US2] Add failing component tests for clicking date and amount headers, visible active sort state, and accessible sort state in src/features/transactions/transaction-table.test.tsx
+- [X] T020 [P] [US2] Add failing regression tests proving filters remain serialized in URL and unchanged after sorting in src/pages/transactions-page.test.tsx
+- [X] T021 [P] [US2] Add failing no_matches and clear-filters tests with sorted filtered data in src/features/transactions/transaction-list.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T022 [US2] Implement TransactionSortState helpers and comparators for transactionDate and amountCents in src/features/transactions/transaction-table-sort.ts
-- [ ] T023 [US2] Integrate TanStack Table sorting state for date and amount columns in src/features/transactions/transaction-table.tsx
-- [ ] T024 [US2] Add accessible sort buttons, aria-sort semantics, and Lucide sort icons with text alternatives in src/features/transactions/transaction-table-columns.tsx
-- [ ] T025 [US2] Ensure sorting operates only on authorized loaded rows and does not trigger new service calls in src/features/transactions/transaction-table.tsx
-- [ ] T026 [US2] Preserve existing filter URL ownership and avoid adding sort parameters to TransactionFilterSet in src/features/transactions/transaction-query.ts
-- [ ] T027 [US2] Keep Load More append behavior compatible with current sorted row set in src/features/transactions/transaction-list.tsx
+- [X] T022 [US2] Implement TransactionSortState helpers and comparators for transactionDate and amountCents in src/features/transactions/transaction-table-sort.ts
+- [X] T023 [US2] Integrate TanStack Table sorting state for date and amount columns in src/features/transactions/transaction-table.tsx
+- [X] T024 [US2] Add accessible sort buttons, aria-sort semantics, and Lucide sort icons with text alternatives in src/features/transactions/transaction-table-columns.tsx
+- [X] T025 [US2] Ensure sorting operates only on authorized loaded rows and does not trigger new service calls in src/features/transactions/transaction-table.tsx
+- [X] T026 [US2] Preserve existing filter URL ownership and avoid adding sort parameters to TransactionFilterSet in src/features/transactions/transaction-query.ts
+- [X] T027 [US2] Keep Load More append behavior compatible with current sorted row set in src/features/transactions/transaction-list.tsx
 
 **Checkpoint**: US1 and US2 work independently: table review plus filter/sort interaction.
 
@@ -93,18 +93,18 @@
 
 ### Tests for User Story 3
 
-- [ ] T028 [P] [US3] Add failing component tests for compact presentation fields and labels in src/features/transactions/transaction-table.test.tsx
-- [ ] T029 [P] [US3] Add failing long-content tests for title, category, responsible, visibility, and high amount wrapping in src/features/transactions/transaction-table.test.tsx
-- [ ] T030 [P] [US3] Add failing keyboard/focus tests for compact sort controls, rows, Load More, and row actions in src/features/transactions/transaction-table.test.tsx
-- [ ] T031 [P] [US3] Add responsive regression assertions for TransactionsPage layout with the F13 authenticated layout constraints in src/pages/transactions-page.test.tsx
+- [X] T028 [P] [US3] Add failing component tests for compact presentation fields and labels in src/features/transactions/transaction-table.test.tsx
+- [X] T029 [P] [US3] Add failing long-content tests for title, category, responsible, visibility, and high amount wrapping in src/features/transactions/transaction-table.test.tsx
+- [X] T030 [P] [US3] Add failing keyboard/focus tests for compact sort controls, rows, Load More, and row actions in src/features/transactions/transaction-table.test.tsx
+- [X] T031 [P] [US3] Add responsive regression assertions for TransactionsPage layout with the F13 authenticated layout constraints in src/pages/transactions-page.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T032 [US3] Implement compact mobile row presentation with labeled fields in src/features/transactions/transaction-table.tsx
-- [ ] T033 [US3] Add responsive TailwindCSS classes that hide wide table layout and show compact layout without mandatory horizontal scrolling in src/features/transactions/transaction-table.tsx
-- [ ] T034 [US3] Add stable sizing, wrapping, and tabular numeric styles for long content and values in src/features/transactions/transaction-table.tsx
-- [ ] T035 [US3] Ensure filters, sort controls, compact rows, Load More, and actions keep visible focus and predictable keyboard order in src/features/transactions/transaction-table.tsx
-- [ ] T036 [US3] Adjust TransactionsPage container width only if needed to fit the F13 layout without reducing financial content in src/pages/transactions-page.tsx
+- [X] T032 [US3] Implement compact mobile row presentation with labeled fields in src/features/transactions/transaction-table.tsx
+- [X] T033 [US3] Add responsive TailwindCSS classes that hide wide table layout and show compact layout without mandatory horizontal scrolling in src/features/transactions/transaction-table.tsx
+- [X] T034 [US3] Add stable sizing, wrapping, and tabular numeric styles for long content and values in src/features/transactions/transaction-table.tsx
+- [X] T035 [US3] Ensure filters, sort controls, compact rows, Load More, and actions keep visible focus and predictable keyboard order in src/features/transactions/transaction-table.tsx
+- [X] T036 [US3] Adjust TransactionsPage container width only if needed to fit the F13 layout without reducing financial content in src/pages/transactions-page.tsx
 
 **Checkpoint**: US3 preserves the table experience on mobile and tablet.
 
@@ -118,18 +118,18 @@
 
 ### Tests for User Story 4
 
-- [ ] T037 [P] [US4] Add failing unit tests for action availability mapping without creating new permission rules in src/features/transactions/transaction-table-actions.test.ts
-- [ ] T038 [P] [US4] Add failing component tests for allowed edit/delete actions and omitted or disabled restricted actions in src/features/transactions/transaction-table.test.tsx
-- [ ] T039 [P] [US4] Add failing accessibility tests for action names that include transaction context in src/features/transactions/transaction-table.test.tsx
-- [ ] T040 [P] [US4] Add regression tests that existing transaction registration, validation, and audit-adjacent flows still render from the transactions page in src/pages/transactions-page.test.tsx
+- [X] T037 [P] [US4] Add failing unit tests for action availability mapping without creating new permission rules in src/features/transactions/transaction-table-actions.test.ts
+- [X] T038 [P] [US4] Add failing component tests for allowed edit/delete actions and omitted or disabled restricted actions in src/features/transactions/transaction-table.test.tsx
+- [X] T039 [P] [US4] Add failing accessibility tests for action names that include transaction context in src/features/transactions/transaction-table.test.tsx
+- [X] T040 [P] [US4] Add regression tests that existing transaction registration, validation, and audit-adjacent flows still render from the transactions page in src/pages/transactions-page.test.tsx
 
 ### Implementation for User Story 4
 
-- [ ] T041 [US4] Implement transaction action availability helper based on existing transaction/user context in src/features/transactions/transaction-table-actions.ts
-- [ ] T042 [US4] Add action column rendering for edit/delete when callbacks and permissions are available in src/features/transactions/transaction-table-columns.tsx
-- [ ] T043 [US4] Thread optional onEditTransaction and onDeleteTransaction callbacks through TransactionList props without requiring new flows in src/features/transactions/transaction-list.tsx
-- [ ] T044 [US4] Keep TransactionsPage behavior unchanged when edit/delete callbacks are not yet provided by existing flows in src/pages/transactions-page.tsx
-- [ ] T045 [US4] Use safe disabled or omitted action states that do not reveal inaccessible data in src/features/transactions/transaction-table.tsx
+- [X] T041 [US4] Implement transaction action availability helper based on existing transaction/user context in src/features/transactions/transaction-table-actions.ts
+- [X] T042 [US4] Add action column rendering for edit/delete when callbacks and permissions are available in src/features/transactions/transaction-table-columns.tsx
+- [X] T043 [US4] Thread optional onEditTransaction and onDeleteTransaction callbacks through TransactionList props without requiring new flows in src/features/transactions/transaction-list.tsx
+- [X] T044 [US4] Keep TransactionsPage behavior unchanged when edit/delete callbacks are not yet provided by existing flows in src/pages/transactions-page.tsx
+- [X] T045 [US4] Use safe disabled or omitted action states that do not reveal inaccessible data in src/features/transactions/transaction-table.tsx
 
 **Checkpoint**: US4 adds action availability without weakening permissions or inventing new financial flows.
 
@@ -139,15 +139,15 @@
 
 **Purpose**: Final validation, cleanup, and non-regression checks across all stories.
 
-- [ ] T046 [P] Update src/features/transactions/transaction-list-messages.ts only if table states need clearer non-redundant wording
-- [ ] T047 [P] Remove obsolete card-list-only tests or assertions that conflict with the new table contract in src/features/transactions/transaction-list-item.test.tsx
-- [ ] T048 [P] Verify no schema, migration, RLS, Prisma, TanStack Query, or RPC changes were introduced in supabase/migrations/
-- [ ] T049 [P] Run quickstart validation scenarios from specs/014-transactions-table/quickstart.md
-- [ ] T050 Run `npm run lint` from package.json
-- [ ] T051 Run `npm run format:check` from package.json
-- [ ] T052 Run `npm run typecheck` from package.json
-- [ ] T053 Run `npm run test:run` from package.json
-- [ ] T054 Run `npm run build` from package.json
+- [X] T046 [P] Update src/features/transactions/transaction-list-messages.ts only if table states need clearer non-redundant wording
+- [X] T047 [P] Remove obsolete card-list-only tests or assertions that conflict with the new table contract in src/features/transactions/transaction-list-item.test.tsx
+- [X] T048 [P] Verify no schema, migration, RLS, Prisma, TanStack Query, or RPC changes were introduced in supabase/migrations/
+- [X] T049 [P] Run quickstart validation scenarios from specs/014-transactions-table/quickstart.md
+- [X] T050 Run `npm run lint` from package.json
+- [X] T051 Run `npm run format:check` from package.json
+- [X] T052 Run `npm run typecheck` from package.json
+- [X] T053 Run `npm run test:run` from package.json
+- [X] T054 Run `npm run build` from package.json
 
 ---
 
