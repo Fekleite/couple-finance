@@ -17,7 +17,7 @@ export function GoalsPage() {
   }, []);
 
   return (
-    <main className="mx-auto grid w-full max-w-4xl gap-5">
+    <main className="grid w-full min-w-0 gap-5">
       <header className="grid gap-2">
         <h1 className="text-2xl font-bold">Metas financeiras</h1>
         <p className="text-sm leading-6 text-muted-foreground">

@@ -17,7 +17,7 @@ export function AuditPage() {
   }, []);
 
   return (
-    <main className="mx-auto grid w-full max-w-4xl gap-5">
+    <main className="grid w-full min-w-0 gap-5">
       <header className="grid gap-2">
         <p className="text-sm font-semibold uppercase text-primary">Auditoria financeira</p>
         <h1 className="text-2xl font-bold">Auditoria financeira</h1>

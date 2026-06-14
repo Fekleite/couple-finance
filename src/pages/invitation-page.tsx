@@ -63,7 +63,7 @@ export function InvitationPage() {
   const isLoading = mutationState.status === "loading";
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-4">
+    <div className="flex w-full min-w-0 flex-col gap-4">
       {mutationState.message ? (
         <Alert variant={mutationState.status === "unavailable" ? "destructive" : "default"}>
           <AlertDescription>{mutationState.message}</AlertDescription>
