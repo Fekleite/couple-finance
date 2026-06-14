@@ -2,18 +2,26 @@ import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/feedback/empty-state";
 import { ErrorState } from "@/components/feedback/error-state";
 import { LoadingState } from "@/components/feedback/loading-state";
-import { TransactionListItem } from "./transaction-list-item";
 import { TRANSACTION_LIST_MESSAGES as messages } from "./transaction-list-messages";
 import type { TransactionListState } from "./transaction-list-types";
+import { TransactionTable } from "./transaction-table";
+import type { TransactionActionCallbacks } from "./transaction-table-actions";
 
 type Props = {
   state: TransactionListState;
   onRetry: () => void;
   onLoadMore: () => void;
   onClearFilters: () => void;
-};
+} & TransactionActionCallbacks;
 
-export function TransactionList({ state, onRetry, onLoadMore, onClearFilters }: Props) {
+export function TransactionList({
+  state,
+  onRetry,
+  onLoadMore,
+  onClearFilters,
+  onEditTransaction,
+  onDeleteTransaction
+}: Props) {
   if (state.status === "loading") {
     return <LoadingState title={messages.loadingTitle} message={messages.loading} />;
   }
@@ -49,11 +57,11 @@ export function TransactionList({ state, onRetry, onLoadMore, onClearFilters }: 
       <p className="sr-only" role="status" aria-live="polite">
         {state.status === "loading_more" ? messages.loadingMore : "Transacoes atualizadas."}
       </p>
-      <ul className="grid min-w-0 gap-3">
-        {state.items.map((item) => (
-          <TransactionListItem key={item.id} item={item} />
-        ))}
-      </ul>
+      <TransactionTable
+        items={state.items}
+        onEditTransaction={onEditTransaction}
+        onDeleteTransaction={onDeleteTransaction}
+      />
       {state.hasMore ? (
         <Button
           type="button"
