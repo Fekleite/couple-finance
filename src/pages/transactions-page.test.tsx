@@ -43,4 +43,34 @@ describe("TransactionsPage", () => {
     expect(screen.getByRole("dialog", { name: /registrar transacao/i })).toBeInTheDocument();
     expect(screen.getByText("Dados da transacao")).toBeInTheDocument();
   });
+
+  it("opens edit and delete action dialogs from the transaction table", async () => {
+    const user = userEvent.setup();
+    vi.mocked(useCoupleRelationship).mockReturnValue({
+      relationshipState: { status: "no_shared_budget" },
+      invitation: null,
+      mutationState: { status: "idle", message: null },
+      refresh: vi.fn(),
+      createInvite: vi.fn(),
+      accept: vi.fn(),
+      decline: vi.fn(),
+      cancel: vi.fn()
+    });
+    vi.mocked(useTransactionList).mockReturnValue({
+      state: { ...transactionQueryResult(), status: "ready" },
+      retry: vi.fn(),
+      loadMore: vi.fn()
+    });
+    renderWithCoupleAuth(<TransactionsPage />, { route: "/app/transactions?month=2026-06" });
+
+    await user.click(screen.getAllByRole("button", { name: /editar transacao mercado/i })[0]);
+    expect(screen.getByRole("dialog", { name: "Editar transacao" })).toBeInTheDocument();
+    expect(
+      screen.getByText(/backend de editar\/excluir transacoes nao existe/i)
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Entendi" }));
+    await user.click(screen.getAllByRole("button", { name: /excluir transacao mercado/i })[0]);
+    expect(screen.getByRole("dialog", { name: "Excluir transacao" })).toBeInTheDocument();
+  });
 });

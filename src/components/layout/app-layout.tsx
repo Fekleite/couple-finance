@@ -12,14 +12,14 @@ export function AppLayout() {
         Pular para o conteudo principal
       </a>
       <header className="border-b border-border bg-background/95">
-        <div className="mx-auto w-full max-w-6xl min-w-0 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-screen-2xl min-w-0 px-4 py-4 sm:px-6 lg:px-8">
           <PublicNavigation />
         </div>
       </header>
       <main
         id="conteudo-principal"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-6xl min-w-0 flex-col gap-8 px-4 py-6 focus:outline-none sm:gap-12 sm:px-6 sm:py-8 lg:px-8"
+        className="mx-auto flex w-full max-w-screen-2xl min-w-0 flex-col gap-8 px-4 py-6 focus:outline-none sm:gap-12 sm:px-6 sm:py-8 lg:px-8"
       >
         <Outlet />
       </main>

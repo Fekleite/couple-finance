@@ -43,7 +43,7 @@ export function CategoriesPage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-4xl" aria-labelledby="categories-title">
+    <section className="mx-auto w-full min-w-0 max-w-6xl" aria-labelledby="categories-title">
       <header>
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">
           Catalogo padrao
@@ -55,7 +55,7 @@ export function CategoriesPage() {
           Categorias usadas para classificar movimentacoes.
         </p>
       </header>
-      <ul className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2">
+      <ul className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {orderActiveCategories(catalogState.categories).map((category) => (
           <li key={category.code} className="min-w-0">
             <Card className="h-full" size="sm">

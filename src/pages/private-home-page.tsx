@@ -96,7 +96,7 @@ export function PrivateHomePage() {
   }
 
   return (
-    <div className="mx-auto grid w-full max-w-4xl gap-5">
+    <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-5">
       {mutationState.message ? (
         <Alert variant={mutationState.status === "error" ? "destructive" : "default"}>
           <AlertDescription>{mutationState.message}</AlertDescription>

@@ -24,6 +24,7 @@ export async function listFinancialTransactions(
   signal?: AbortSignal
 ): Promise<TransactionListServiceResult> {
   try {
+    // F14 keeps this authorized RPC contract unchanged; table sorting is local over loaded rows.
     let request = client().rpc("list_financial_transactions", {
       month_start_input: query.monthStart,
       next_month_start_input: query.nextMonthStart,

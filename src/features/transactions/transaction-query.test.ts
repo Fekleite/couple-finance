@@ -37,4 +37,16 @@ describe("transaction query", () => {
     });
     expect(normalizeTransactionSearch("  cafe   central ")).toBe("cafe central");
   });
+
+  it("does not parse or serialize table sorting as a transaction filter", () => {
+    const filters = parseTransactionFilters("?month=2026-06&sort=amountCents&direction=desc");
+    expect(filters).toEqual({
+      month: "2026-06",
+      categoryCode: null,
+      responsibleUserId: null,
+      transactionType: null,
+      searchText: null
+    });
+    expect(serializeTransactionFilters(filters).toString()).toBe("month=2026-06");
+  });
 });

@@ -64,14 +64,14 @@ export function AuthenticatedLayout() {
         </aside>
 
         <div className="min-w-0 space-y-6">
-          <header className="flex min-w-0 flex-col gap-4 rounded-lg border border-border bg-background p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5 lg:hidden">
+          <header className="flex min-w-0 flex-col gap-4 rounded-lg border border-border bg-background p-4 md:flex-row md:items-center md:justify-between sm:p-5 lg:hidden">
             <AccountSummary
               displayName={displayName}
               email={email}
               initials={initials}
               avatarUrl={user?.avatarUrl}
             />
-            <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
+            <div className="grid w-full min-w-0 grid-cols-1 gap-2 sm:grid-cols-2 md:w-auto md:shrink-0 md:flex md:items-center">
               <Button
                 ref={compactTriggerRef}
                 type="button"
@@ -79,7 +79,7 @@ export function AuthenticatedLayout() {
                 onClick={() => setCompactNavigationOpen((open) => !open)}
                 aria-expanded={compactNavigationOpen}
                 aria-controls="navegacao-privada-compacta"
-                className="w-full sm:w-auto"
+                className="w-full md:w-auto"
               >
                 {compactNavigationOpen ? (
                   <X className="mr-2 h-4 w-4" aria-hidden="true" />
@@ -211,7 +211,7 @@ function SignOutButton({ isEnding, onSignOut }: SignOutButtonProps) {
       disabled={isEnding}
       aria-label={isEnding ? "Saindo da conta" : "Sair da conta"}
       aria-busy={isEnding}
-      className="w-full justify-center"
+      className="w-full justify-center md:w-auto lg:w-full"
     >
       <LogOut className="mr-2 h-4 w-4" aria-hidden="true" />
       {isEnding ? "Saindo..." : "Sair"}

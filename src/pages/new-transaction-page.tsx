@@ -7,7 +7,7 @@ import { setPageTitle } from "@/lib/page-title";
 export function NewTransactionPage() {
   useEffect(() => setPageTitle(PRIVATE_ROUTES.newTransaction.title), []);
   return (
-    <section className="mx-auto w-full min-w-0 max-w-2xl" aria-labelledby="new-transaction-title">
+    <section className="w-full min-w-0" aria-labelledby="new-transaction-title">
       <header className="mb-6">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Novo registro</p>
         <h2 id="new-transaction-title" className="mt-2 text-2xl font-bold">

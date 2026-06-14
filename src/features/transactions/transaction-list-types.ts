@@ -37,6 +37,27 @@ export type TransactionListItemData = {
   visibility: TransactionVisibility;
 };
 
+export type TransactionColumnKey =
+  | "title"
+  | "amount"
+  | "type"
+  | "category"
+  | "date"
+  | "responsible"
+  | "visibility"
+  | "actions";
+
+export type TransactionSortColumn = "transactionDate" | "amountCents";
+
+export type TransactionSortState =
+  | { column: TransactionSortColumn; direction: "asc" | "desc" }
+  | { column: null; direction: null };
+
+export type TransactionActionAvailability = {
+  canEdit: boolean;
+  canDelete: boolean;
+};
+
 export type CategoryFilterOption = {
   code: string;
   label: string;

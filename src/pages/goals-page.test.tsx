@@ -40,7 +40,7 @@ describe("GoalsPage", () => {
     renderWithCoupleAuth(<GoalsPage />, { route: "/app/goals" });
     expect(screen.getByRole("heading", { name: "Metas financeiras" })).toBeInTheDocument();
     expect(screen.getByText(/buscando somente metas/i)).toBeInTheDocument();
-    expect(screen.getByRole("main")).toHaveClass("max-w-4xl");
+    expect(screen.getByRole("main")).toHaveClass("w-full", "min-w-0");
     expect(useGoals).toHaveBeenCalledWith(expect.stringContaining("couple_linked:budget-1"));
   });
 });

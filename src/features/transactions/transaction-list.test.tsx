@@ -21,9 +21,21 @@ describe("TransactionList", () => {
     expect(screen.getByRole("list")).toBeInTheDocument();
   });
 
-  it("distinguishes empty, no-match, and retryable error states", () => {
+  it("preserves loading, loading more, empty, no-match, and retryable error states", () => {
     const props = { onRetry: vi.fn(), onLoadMore: vi.fn(), onClearFilters: vi.fn() };
-    const view = render(
+    const view = render(<TransactionList state={{ status: "loading" }} {...props} />);
+    expect(screen.getByText("Consultando transacoes")).toBeInTheDocument();
+
+    view.rerender(
+      <TransactionList
+        state={{ ...transactionQueryResult({ hasMore: true }), status: "loading_more" }}
+        {...props}
+      />
+    );
+    expect(screen.getByRole("status")).toHaveTextContent("Carregando mais transacoes...");
+    expect(screen.getByRole("button", { name: "Carregando mais transacoes..." })).toBeDisabled();
+
+    view.rerender(
       <TransactionList
         state={{
           ...transactionQueryResult({ items: [], hasAuthorizedMonthData: false }),
