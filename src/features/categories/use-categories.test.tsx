@@ -8,6 +8,7 @@ import { listActiveCategories } from "@/features/categories/category-service";
 import { useCategories } from "@/features/categories/use-categories";
 import { createAuthContextValue } from "@/test/auth-test-utils";
 import { category } from "@/test/category-test-utils";
+import { dispatchFocusReturnEvents } from "@/test/server-state-focus-test-utils";
 
 vi.mock("@/features/categories/category-service", () => ({
   listActiveCategories: vi.fn()
@@ -28,6 +29,16 @@ describe("useCategories", () => {
     vi.mocked(listActiveCategories).mockResolvedValue({ ok: true, data: [category()] });
   });
 
+  it("does not refetch categories when browser focus returns", async () => {
+    const { result } = renderHook(() => useCategories(), { wrapper });
+
+    await waitFor(() => expect(result.current.catalogState.status).toBe("ready"));
+    dispatchFocusReturnEvents();
+
+    expect(result.current.catalogState.status).toBe("ready");
+    expect(listActiveCategories).toHaveBeenCalledTimes(1);
+  });
+
   it("loads ready and empty states", async () => {
     const ready = renderHook(() => useCategories(), { wrapper });
     await waitFor(() => expect(ready.result.current.catalogState.status).toBe("ready"));
@@ -41,6 +52,27 @@ describe("useCategories", () => {
         message: CATEGORY_MESSAGES.emptyMessage
       })
     );
+  });
+
+  it("keeps category errors visible until explicit refresh", async () => {
+    vi.mocked(listActiveCategories)
+      .mockResolvedValueOnce({
+        ok: false,
+        reason: "temporary_failure",
+        message: CATEGORY_MESSAGES.errorMessage
+      })
+      .mockResolvedValueOnce({ ok: true, data: [category()] });
+    const { result } = renderHook(() => useCategories(), { wrapper });
+
+    await waitFor(() => expect(result.current.catalogState.status).toBe("error"));
+    dispatchFocusReturnEvents();
+
+    expect(result.current.catalogState.status).toBe("error");
+    expect(listActiveCategories).toHaveBeenCalledTimes(1);
+
+    await act(async () => result.current.refresh());
+    expect(result.current.catalogState.status).toBe("ready");
+    expect(listActiveCategories).toHaveBeenCalledTimes(2);
   });
 
   it("keeps loading before resolution and supports retry after a safe error", async () => {
