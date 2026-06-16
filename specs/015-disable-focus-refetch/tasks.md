@@ -18,9 +18,9 @@
 
 **Purpose**: Confirm the current server-state baseline and prepare shared test utilities.
 
-- [ ] T001 Verify `@tanstack/react-query`, `QueryClient`, `QueryClientProvider`, `useQuery`, `useMutation`, `invalidateQueries`, `focusManager`, and `refetchOnWindowFocus` are absent from `package.json`, `package-lock.json`, and `src/`
-- [ ] T002 [P] Add focus-return event helpers for hook tests in `src/test/server-state-focus-test-utils.ts`
-- [ ] T003 [P] Add server-state fixture notes for current remote consumers in `src/test/server-state-focus-test-utils.ts`
+- [X] T001 Verify `@tanstack/react-query`, `QueryClient`, `QueryClientProvider`, `useQuery`, `useMutation`, `invalidateQueries`, `focusManager`, and `refetchOnWindowFocus` are absent from `package.json`, `package-lock.json`, and `src/`
+- [X] T002 [P] Add focus-return event helpers for hook tests in `src/test/server-state-focus-test-utils.ts`
+- [X] T003 [P] Add server-state fixture notes for current remote consumers in `src/test/server-state-focus-test-utils.ts`
 
 ---
 
@@ -30,12 +30,12 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T004 Create a tracked server-state policy document covering current local hooks and future TanStack Query defaults in `src/lib/server-state-policy.md`
-- [ ] T005 [P] Add a package-level regression test that asserts `@tanstack/react-query` is not declared for F15 in `src/lib/server-state-policy.test.ts`
-- [ ] T006 [P] Add a source scan regression test that fails if `refetchOnWindowFocus` or `focusManager` appears without updating the F15 policy in `src/lib/server-state-policy.test.ts`
-- [ ] T007 [P] Add source scan coverage for forbidden global `focus` or `visibilitychange` reload listeners in `src/lib/server-state-policy.test.ts`
-- [ ] T008 Review existing remote-data hook tests and record missing coverage targets in `specs/015-disable-focus-refetch/quickstart.md`
-- [ ] T009 Confirm `supabase/migrations/` and `src/lib/supabase.ts` remain unchanged for F15 in `specs/015-disable-focus-refetch/quickstart.md`
+- [X] T004 Create a tracked server-state policy document covering current local hooks and future TanStack Query defaults in `src/lib/server-state-policy.md`
+- [X] T005 [P] Add a package-level regression test that asserts `@tanstack/react-query` is not declared for F15 in `src/lib/server-state-policy.test.ts`
+- [X] T006 [P] Add a source scan regression test that fails if `refetchOnWindowFocus` or `focusManager` appears without updating the F15 policy in `src/lib/server-state-policy.test.ts`
+- [X] T007 [P] Add source scan coverage for forbidden global `focus` or `visibilitychange` reload listeners in `src/lib/server-state-policy.test.ts`
+- [X] T008 Review existing remote-data hook tests and record missing coverage targets in `specs/015-disable-focus-refetch/quickstart.md`
+- [X] T009 Confirm `supabase/migrations/` and `src/lib/supabase.ts` remain unchanged for F15 in `specs/015-disable-focus-refetch/quickstart.md`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in priority order or in parallel where marked.
 
@@ -49,20 +49,20 @@
 
 ### Tests for User Story 1
 
-- [ ] T010 [P] [US1] Add no-refetch-on-focus regression test for transaction list service calls in `src/features/transactions/use-transaction-list.test.tsx`
-- [ ] T011 [P] [US1] Add no-refetch-on-focus regression test for dashboard summary service calls in `src/features/dashboard/use-dashboard.test.tsx`
-- [ ] T012 [P] [US1] Add no-refetch-on-focus regression test for dashboard charts service calls in `src/features/dashboard/use-dashboard-charts.test.tsx`
-- [ ] T013 [P] [US1] Add no-refetch-on-focus regression test for categories service calls in `src/features/categories/use-categories.test.tsx`
-- [ ] T014 [P] [US1] Add no-refetch-on-focus regression test for couple relationship service calls in `src/features/couple/use-couple-relationship.test.tsx`
-- [ ] T015 [P] [US1] Add no-refetch-on-focus regression test for audit service calls in `src/features/audit/use-audit-events.test.tsx`
+- [X] T010 [P] [US1] Add no-refetch-on-focus regression test for transaction list service calls in `src/features/transactions/use-transaction-list.test.tsx`
+- [X] T011 [P] [US1] Add no-refetch-on-focus regression test for dashboard summary service calls in `src/features/dashboard/use-dashboard.test.tsx`
+- [X] T012 [P] [US1] Add no-refetch-on-focus regression test for dashboard charts service calls in `src/features/dashboard/use-dashboard-charts.test.tsx`
+- [X] T013 [P] [US1] Add no-refetch-on-focus regression test for categories service calls in `src/features/categories/use-categories.test.tsx`
+- [X] T014 [P] [US1] Add no-refetch-on-focus regression test for couple relationship service calls in `src/features/couple/use-couple-relationship.test.tsx`
+- [X] T015 [P] [US1] Add no-refetch-on-focus regression test for audit service calls in `src/features/audit/use-audit-events.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T016 [US1] Update any hook that fails US1 focus tests to ignore focus-only events in `src/features/transactions/use-transaction-list.ts`
-- [ ] T017 [US1] Update any dashboard hook that fails US1 focus tests to ignore focus-only events in `src/features/dashboard/use-dashboard.ts`
-- [ ] T018 [US1] Update any chart hook that fails US1 focus tests to ignore focus-only events in `src/features/dashboard/use-dashboard-charts.ts`
-- [ ] T019 [US1] Update any catalog or relationship hook that fails US1 focus tests to ignore focus-only events in `src/features/categories/use-categories.ts` or `src/features/couple/use-couple-relationship.ts`
-- [ ] T020 [US1] Update any audit hook that fails US1 focus tests to keep explicit audit refresh behavior without focus refetch in `src/features/audit/use-audit-events.ts`
+- [X] T016 [US1] Update any hook that fails US1 focus tests to ignore focus-only events in `src/features/transactions/use-transaction-list.ts`
+- [X] T017 [US1] Update any dashboard hook that fails US1 focus tests to ignore focus-only events in `src/features/dashboard/use-dashboard.ts`
+- [X] T018 [US1] Update any chart hook that fails US1 focus tests to ignore focus-only events in `src/features/dashboard/use-dashboard-charts.ts`
+- [X] T019 [US1] Update any catalog or relationship hook that fails US1 focus tests to ignore focus-only events in `src/features/categories/use-categories.ts` or `src/features/couple/use-couple-relationship.ts`
+- [X] T020 [US1] Update any audit hook that fails US1 focus tests to keep explicit audit refresh behavior without focus refetch in `src/features/audit/use-audit-events.ts`
 
 **Checkpoint**: US1 is complete when all covered hooks keep loaded data stable and remote service mocks are not called again after focus/visibility events.
 
@@ -76,17 +76,17 @@
 
 ### Tests for User Story 2
 
-- [ ] T021 [P] [US2] Add regression test proving goal create/update/complete/archive still reload through controlled mutation flow in `src/features/goals/use-goals.test.tsx`
-- [ ] T022 [P] [US2] Add regression test proving audit refresh still happens only through `AUDIT_REFRESH_EVENT` and not focus events in `src/features/audit/use-audit-events.test.tsx`
-- [ ] T023 [P] [US2] Add regression test proving category retry remains an explicit refresh trigger after safe errors in `src/features/categories/use-categories.test.tsx`
-- [ ] T024 [P] [US2] Add regression test proving couple invite accept/create still refreshes relationship state through explicit mutation flow in `src/features/couple/use-couple-relationship.test.tsx`
+- [X] T021 [P] [US2] Add regression test proving goal create/update/complete/archive still reload through controlled mutation flow in `src/features/goals/use-goals.test.tsx`
+- [X] T022 [P] [US2] Add regression test proving audit refresh still happens only through `AUDIT_REFRESH_EVENT` and not focus events in `src/features/audit/use-audit-events.test.tsx`
+- [X] T023 [P] [US2] Add regression test proving category retry remains an explicit refresh trigger after safe errors in `src/features/categories/use-categories.test.tsx`
+- [X] T024 [P] [US2] Add regression test proving couple invite accept/create still refreshes relationship state through explicit mutation flow in `src/features/couple/use-couple-relationship.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T025 [US2] Preserve or repair goal mutation reload behavior if US2 tests fail in `src/features/goals/use-goals.ts`
-- [ ] T026 [US2] Preserve or repair explicit audit refresh behavior if US2 tests fail in `src/features/audit/use-audit-events.ts`
-- [ ] T027 [US2] Preserve or repair category retry behavior if US2 tests fail in `src/features/categories/use-categories.ts`
-- [ ] T028 [US2] Preserve or repair couple mutation refresh behavior if US2 tests fail in `src/features/couple/use-couple-relationship.ts`
+- [X] T025 [US2] Preserve or repair goal mutation reload behavior if US2 tests fail in `src/features/goals/use-goals.ts`
+- [X] T026 [US2] Preserve or repair explicit audit refresh behavior if US2 tests fail in `src/features/audit/use-audit-events.ts`
+- [X] T027 [US2] Preserve or repair category retry behavior if US2 tests fail in `src/features/categories/use-categories.ts`
+- [X] T028 [US2] Preserve or repair couple mutation refresh behavior if US2 tests fail in `src/features/couple/use-couple-relationship.ts`
 
 **Checkpoint**: US2 is complete when explicit mutation/retry/domain-event updates still work and none require switching browser tabs to refresh data.
 
@@ -100,17 +100,17 @@
 
 ### Tests for User Story 3
 
-- [ ] T029 [P] [US3] Add focus-return test preserving transaction filters and current service call count in `src/features/transactions/use-transaction-list.test.tsx`
-- [ ] T030 [P] [US3] Add focus-return test preserving dashboard period and current service call count in `src/features/dashboard/use-dashboard.test.tsx`
-- [ ] T031 [P] [US3] Add focus-return test preserving dashboard chart period and current service call count in `src/features/dashboard/use-dashboard-charts.test.tsx`
-- [ ] T032 [P] [US3] Add focus-return test preserving goal status filter and current service call count in `src/features/goals/use-goals.test.tsx`
+- [X] T029 [P] [US3] Add focus-return test preserving transaction filters and current service call count in `src/features/transactions/use-transaction-list.test.tsx`
+- [X] T030 [P] [US3] Add focus-return test preserving dashboard period and current service call count in `src/features/dashboard/use-dashboard.test.tsx`
+- [X] T031 [P] [US3] Add focus-return test preserving dashboard chart period and current service call count in `src/features/dashboard/use-dashboard-charts.test.tsx`
+- [X] T032 [P] [US3] Add focus-return test preserving goal status filter and current service call count in `src/features/goals/use-goals.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T033 [US3] Repair transaction filter/context preservation if US3 tests fail in `src/features/transactions/use-transaction-list.ts`
-- [ ] T034 [US3] Repair dashboard period/context preservation if US3 tests fail in `src/features/dashboard/use-dashboard.ts`
-- [ ] T035 [US3] Repair chart period/context preservation if US3 tests fail in `src/features/dashboard/use-dashboard-charts.ts`
-- [ ] T036 [US3] Repair goal status/context preservation if US3 tests fail in `src/features/goals/use-goals.ts`
+- [X] T033 [US3] Repair transaction filter/context preservation if US3 tests fail in `src/features/transactions/use-transaction-list.ts`
+- [X] T034 [US3] Repair dashboard period/context preservation if US3 tests fail in `src/features/dashboard/use-dashboard.ts`
+- [X] T035 [US3] Repair chart period/context preservation if US3 tests fail in `src/features/dashboard/use-dashboard-charts.ts`
+- [X] T036 [US3] Repair goal status/context preservation if US3 tests fail in `src/features/goals/use-goals.ts`
 
 **Checkpoint**: US3 is complete when focus return does not reset filters, periods, status filters, loaded state, or service call counts.
 
@@ -124,17 +124,17 @@
 
 ### Tests for User Story 4
 
-- [ ] T037 [P] [US4] Add focus-return test preserving transaction list error state until retry in `src/features/transactions/use-transaction-list.test.tsx`
-- [ ] T038 [P] [US4] Add focus-return test preserving dashboard error state until retry in `src/features/dashboard/use-dashboard.test.tsx`
-- [ ] T039 [P] [US4] Add focus-return test preserving categories error state until explicit refresh in `src/features/categories/use-categories.test.tsx`
-- [ ] T040 [P] [US4] Add focus-return test preserving audit error state or blocked state until retry/valid user context in `src/features/audit/use-audit-events.test.tsx`
+- [X] T037 [P] [US4] Add focus-return test preserving transaction list error state until retry in `src/features/transactions/use-transaction-list.test.tsx`
+- [X] T038 [P] [US4] Add focus-return test preserving dashboard error state until retry in `src/features/dashboard/use-dashboard.test.tsx`
+- [X] T039 [P] [US4] Add focus-return test preserving categories error state until explicit refresh in `src/features/categories/use-categories.test.tsx`
+- [X] T040 [P] [US4] Add focus-return test preserving audit error state or blocked state until retry/valid user context in `src/features/audit/use-audit-events.test.tsx`
 
 ### Implementation for User Story 4
 
-- [ ] T041 [US4] Repair transaction list error preservation if US4 tests fail in `src/features/transactions/use-transaction-list.ts`
-- [ ] T042 [US4] Repair dashboard error preservation if US4 tests fail in `src/features/dashboard/use-dashboard.ts`
-- [ ] T043 [US4] Repair category error preservation if US4 tests fail in `src/features/categories/use-categories.ts`
-- [ ] T044 [US4] Repair audit error or blocked-state preservation if US4 tests fail in `src/features/audit/use-audit-events.ts`
+- [X] T041 [US4] Repair transaction list error preservation if US4 tests fail in `src/features/transactions/use-transaction-list.ts`
+- [X] T042 [US4] Repair dashboard error preservation if US4 tests fail in `src/features/dashboard/use-dashboard.ts`
+- [X] T043 [US4] Repair category error preservation if US4 tests fail in `src/features/categories/use-categories.ts`
+- [X] T044 [US4] Repair audit error or blocked-state preservation if US4 tests fail in `src/features/audit/use-audit-events.ts`
 
 **Checkpoint**: US4 is complete when focus return does not hide safe errors, retry remains explicit, and no inaccessible data is revealed.
 
@@ -144,14 +144,14 @@
 
 **Purpose**: Validate policy, documentation, quality gates, and non-regression across the F15 scope.
 
-- [ ] T045 [P] Update F15 implementation notes in `specs/015-disable-focus-refetch/quickstart.md`
-- [ ] T046 [P] Run the no React Query source scan from `specs/015-disable-focus-refetch/quickstart.md`
-- [ ] T047 [P] Verify no schema, migration, RLS, Prisma, Supabase Auth, or persistence changes were introduced in `supabase/migrations/`
-- [ ] T048 [P] Run `npm run lint` and fix any F15 issues in affected `src/` and `specs/015-disable-focus-refetch/` files
-- [ ] T049 [P] Run `npm run format:check` and fix any F15 formatting issues in `src/`, `package.json`, and `specs/015-disable-focus-refetch/`
-- [ ] T050 [P] Run `npm run typecheck` and fix any F15 type errors in affected `src/` files
-- [ ] T051 [P] Run `npm run test:run` and fix any F15 regression failures in affected `src/**/*.test.ts` and `src/**/*.test.tsx` files
-- [ ] T052 Run `npm run build` and fix any F15 build failures in affected `src/`, `index.html`, or `package.json` files
+- [X] T045 [P] Update F15 implementation notes in `specs/015-disable-focus-refetch/quickstart.md`
+- [X] T046 [P] Run the no React Query source scan from `specs/015-disable-focus-refetch/quickstart.md`
+- [X] T047 [P] Verify no schema, migration, RLS, Prisma, Supabase Auth, or persistence changes were introduced in `supabase/migrations/`
+- [X] T048 [P] Run `npm run lint` and fix any F15 issues in affected `src/` and `specs/015-disable-focus-refetch/` files
+- [X] T049 [P] Run `npm run format:check` and fix any F15 formatting issues in `src/`, `package.json`, and `specs/015-disable-focus-refetch/`
+- [X] T050 [P] Run `npm run typecheck` and fix any F15 type errors in affected `src/` files
+- [X] T051 [P] Run `npm run test:run` and fix any F15 regression failures in affected `src/**/*.test.ts` and `src/**/*.test.tsx` files
+- [X] T052 Run `npm run build` and fix any F15 build failures in affected `src/`, `index.html`, or `package.json` files
 
 ---
 

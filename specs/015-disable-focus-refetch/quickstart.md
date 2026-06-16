@@ -8,9 +8,12 @@ Verifique que TanStack Query nao esta instalado nem em uso:
 rg -n "@tanstack/react-query|QueryClient|QueryClientProvider|useQuery|useMutation|invalidateQueries|focusManager|refetchOnWindowFocus" src package.json package-lock.json
 ```
 
-Resultado esperado no estado planejado: nenhuma ocorrencia em `src/` ou
-`package.json` para React Query. `@tanstack/react-table` pode existir por causa
-da F14 e nao deve ser confundido com TanStack Query.
+Resultado esperado no estado planejado: nenhuma ocorrencia em `package.json` ou
+`package-lock.json` para React Query. Apos a implementacao da F15, ocorrencias
+em `src/` devem estar restritas a `src/lib/server-state-policy.md` e
+`src/lib/server-state-policy.test.ts`, que documentam e testam a politica.
+`@tanstack/react-table` pode existir por causa da F14 e nao deve ser confundido
+com TanStack Query.
 
 ## 2. Revisar hooks remotos prioritarios
 
@@ -104,3 +107,36 @@ Se uma feature futura introduzir `@tanstack/react-query`:
 - documentar qualquer excecao por query;
 - manter invalidacoes controladas apos mutacoes financeiras;
 - nao usar foco de janela como substituto para atualizacao pos-mutacao.
+
+## 9. Notas da implementacao F15
+
+A implementacao confirmou que `@tanstack/react-query` continua ausente e que os
+hooks remotos atuais ja nao dependem de retorno de foco para recarregar dados.
+Nao houve necessidade de alterar os hooks de producao; a F15 adicionou politica
+tecnica e testes de regressao para preservar o comportamento.
+
+Cobertura adicionada:
+
+- transacoes: retorno de foco sem nova chamada, preservacao de filtros e erro
+  mantido ate retry explicito;
+- dashboard: retorno de foco sem nova chamada, preservacao de periodo e erro
+  mantido ate retry explicito;
+- graficos do dashboard: retorno de foco sem nova chamada e preservacao de
+  periodo;
+- metas: preservacao de filtro de status e recarregamentos controlados apos
+  create/update/complete/archive;
+- categorias: retorno de foco sem nova chamada e erro mantido ate refresh
+  explicito;
+- auditoria: retorno de foco sem nova chamada, refresh somente pelo evento de
+  dominio e erro mantido ate retry;
+- casal: retorno de foco sem nova chamada e refresh controlado apos create
+  invite/accept invite;
+- politica: varredura automatizada contra introducao de React Query sem plano,
+  `refetchOnWindowFocus`, `focusManager` e listeners globais de foco.
+
+Confirmacao de seguranca/persistencia:
+
+- `supabase/migrations/` permanece fora do escopo da F15;
+- `src/lib/supabase.ts` permanece fora do escopo da F15;
+- nenhuma mudanca de schema, RLS, Supabase Auth, Prisma ou persistencia foi
+  necessaria.

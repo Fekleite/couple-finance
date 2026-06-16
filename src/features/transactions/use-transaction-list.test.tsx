@@ -1,6 +1,7 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { dispatchFocusReturnEvents } from "@/test/server-state-focus-test-utils";
 import { transactionQueryResult } from "@/test/transaction-list-test-utils";
 import { listFinancialTransactions } from "./transaction-list-service";
 import { parseTransactionFilters } from "./transaction-query";
@@ -10,6 +11,22 @@ vi.mock("./transaction-list-service", () => ({ listFinancialTransactions: vi.fn(
 
 describe("useTransactionList", () => {
   beforeEach(() => vi.clearAllMocks());
+
+  it("does not refetch loaded transactions when browser focus returns", async () => {
+    vi.mocked(listFinancialTransactions).mockResolvedValue({
+      ok: true,
+      data: transactionQueryResult()
+    });
+    const { result } = renderHook(() =>
+      useTransactionList(parseTransactionFilters("?month=2026-06"), "user-a:active")
+    );
+
+    await waitFor(() => expect(result.current.state.status).toBe("ready"));
+    dispatchFocusReturnEvents();
+
+    expect(result.current.state.status).toBe("ready");
+    expect(listFinancialTransactions).toHaveBeenCalledTimes(1);
+  });
 
   it("loads the selected month and resets results when filters change", async () => {
     vi.mocked(listFinancialTransactions).mockResolvedValue({
@@ -64,5 +81,52 @@ describe("useTransactionList", () => {
     await act(async () =>
       resolveMore?.({ ok: true, data: transactionQueryResult({ hasMore: false }) })
     );
+  });
+
+  it("preserves filtered transaction context when browser focus returns", async () => {
+    vi.mocked(listFinancialTransactions).mockResolvedValue({
+      ok: true,
+      data: transactionQueryResult()
+    });
+    const filters = parseTransactionFilters("?month=2026-06&type=expense&category=housing");
+    const { result } = renderHook(() => useTransactionList(filters, "user-a:active"));
+
+    await waitFor(() => expect(result.current.state.status).toBe("ready"));
+    const readyState = result.current.state;
+    dispatchFocusReturnEvents();
+
+    expect(result.current.state).toBe(readyState);
+    expect(listFinancialTransactions).toHaveBeenCalledTimes(1);
+    expect(vi.mocked(listFinancialTransactions).mock.calls[0][0]).toMatchObject({
+      monthStart: "2026-06-01",
+      transactionType: "expense",
+      categoryCode: "housing"
+    });
+  });
+
+  it("keeps a transaction error visible until explicit retry", async () => {
+    vi.mocked(listFinancialTransactions)
+      .mockResolvedValueOnce({
+        ok: false,
+        reason: "temporary_failure",
+        message: "Nao foi possivel carregar transacoes."
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        data: transactionQueryResult()
+      });
+    const { result } = renderHook(() =>
+      useTransactionList(parseTransactionFilters("?month=2026-06"), "user-a:active")
+    );
+
+    await waitFor(() => expect(result.current.state.status).toBe("error"));
+    dispatchFocusReturnEvents();
+
+    expect(result.current.state.status).toBe("error");
+    expect(listFinancialTransactions).toHaveBeenCalledTimes(1);
+
+    await act(async () => result.current.retry());
+    await waitFor(() => expect(result.current.state.status).toBe("ready"));
+    expect(listFinancialTransactions).toHaveBeenCalledTimes(2);
   });
 });
