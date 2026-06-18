@@ -12,10 +12,10 @@
 
 **Purpose**: Confirm repository assumptions and create the CI/documentation file targets.
 
-- [ ] T001 Verify `package-lock.json` exists as the lockfile required for `npm ci`
-- [ ] T002 Verify required scripts `format:check`, `lint`, `typecheck`, `test:run`, and `build` exist in `package.json`
-- [ ] T003 [P] Create workflow directory `.github/workflows/`
-- [ ] T004 [P] Create documentation placeholder `docs/pr-quality-pipeline.md`
+- [x] T001 Verify `package-lock.json` exists as the lockfile required for `npm ci`
+- [x] T002 Verify required scripts `format:check`, `lint`, `typecheck`, `test:run`, and `build` exist in `package.json`
+- [x] T003 [P] Create workflow directory `.github/workflows/`
+- [x] T004 [P] Create documentation placeholder `docs/pr-quality-pipeline.md`
 
 ---
 
@@ -25,10 +25,10 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T005 Define CI workflow name and job name in `.github/workflows/pull-request-quality.yml` so the future required check is stable and readable
-- [ ] T006 Configure `pull_request` trigger for branch `main` in `.github/workflows/pull-request-quality.yml`
-- [ ] T007 Configure Node/npm setup and dependency installation with `npm ci` in `.github/workflows/pull-request-quality.yml`
-- [ ] T008 Ensure `.github/workflows/pull-request-quality.yml` does not reference production secrets, deployment actions, preview environments, or external monitoring
+- [x] T005 Define CI workflow name and job name in `.github/workflows/pull-request-quality.yml` so the future required check is stable and readable
+- [x] T006 Configure `pull_request` trigger for branch `main` in `.github/workflows/pull-request-quality.yml`
+- [x] T007 Configure Node/npm setup and dependency installation with `npm ci` in `.github/workflows/pull-request-quality.yml`
+- [x] T008 Ensure `.github/workflows/pull-request-quality.yml` does not reference production secrets, deployment actions, preview environments, or external monitoring
 
 **Checkpoint**: Workflow skeleton is ready; user story implementation can begin.
 
@@ -42,14 +42,14 @@
 
 ### Explicit Validation for User Story 1
 
-- [ ] T009 [P] [US1] Validate workflow trigger and branch target against `specs/016-pr-quality-pipeline/contracts/pull-request-validation.md`
-- [ ] T010 [P] [US1] Validate dependency installation uses `npm ci` and no alternate package manager in `.github/workflows/pull-request-quality.yml`
+- [x] T009 [P] [US1] Validate workflow trigger and branch target against `specs/016-pr-quality-pipeline/contracts/pull-request-validation.md`
+- [x] T010 [P] [US1] Validate dependency installation uses `npm ci` and no alternate package manager in `.github/workflows/pull-request-quality.yml`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Add checkout and Node setup steps to `.github/workflows/pull-request-quality.yml`
-- [ ] T012 [US1] Add dependency installation step `npm ci` to `.github/workflows/pull-request-quality.yml`
-- [ ] T013 [US1] Confirm the workflow reruns on Pull Request updates through default `pull_request` synchronization behavior documented in `.github/workflows/pull-request-quality.yml`
+- [x] T011 [US1] Add checkout and Node setup steps to `.github/workflows/pull-request-quality.yml`
+- [x] T012 [US1] Add dependency installation step `npm ci` to `.github/workflows/pull-request-quality.yml`
+- [x] T013 [US1] Confirm the workflow reruns on Pull Request updates through default `pull_request` synchronization behavior documented in `.github/workflows/pull-request-quality.yml`
 
 **Checkpoint**: User Story 1 is independently testable by opening or updating a Pull Request targeting `main`.
 
@@ -63,17 +63,17 @@
 
 ### Explicit Validation for User Story 2
 
-- [ ] T014 [P] [US2] Validate `.github/workflows/pull-request-quality.yml` contains required steps for `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm run test:run`, and `npm run build`
-- [ ] T015 [P] [US2] Validate branch protection instructions in `docs/pr-quality-pipeline.md` match `specs/016-pr-quality-pipeline/contracts/branch-protection.md`
+- [x] T014 [P] [US2] Validate `.github/workflows/pull-request-quality.yml` contains required steps for `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm run test:run`, and `npm run build`
+- [x] T015 [P] [US2] Validate branch protection instructions in `docs/pr-quality-pipeline.md` match `specs/016-pr-quality-pipeline/contracts/branch-protection.md`
 
 ### Implementation for User Story 2
 
-- [ ] T016 [US2] Add format check step `npm run format:check` to `.github/workflows/pull-request-quality.yml`
-- [ ] T017 [US2] Add lint step `npm run lint` to `.github/workflows/pull-request-quality.yml`
-- [ ] T018 [US2] Add explicit typecheck step `npm run typecheck` to `.github/workflows/pull-request-quality.yml`
-- [ ] T019 [US2] Add automated test step `npm run test:run` to `.github/workflows/pull-request-quality.yml`
-- [ ] T020 [US2] Add build step `npm run build` to `.github/workflows/pull-request-quality.yml`
-- [ ] T021 [US2] Document required status check and merge-blocking branch protection setup for `main` in `docs/pr-quality-pipeline.md`
+- [x] T016 [US2] Add format check step `npm run format:check` to `.github/workflows/pull-request-quality.yml`
+- [x] T017 [US2] Add lint step `npm run lint` to `.github/workflows/pull-request-quality.yml`
+- [x] T018 [US2] Add explicit typecheck step `npm run typecheck` to `.github/workflows/pull-request-quality.yml`
+- [x] T019 [US2] Add automated test step `npm run test:run` to `.github/workflows/pull-request-quality.yml`
+- [x] T020 [US2] Add build step `npm run build` to `.github/workflows/pull-request-quality.yml`
+- [x] T021 [US2] Document required status check and merge-blocking branch protection setup for `main` in `docs/pr-quality-pipeline.md`
 
 **Checkpoint**: User Stories 1 and 2 work independently: PR validation runs and every required category can fail the overall check.
 
@@ -87,14 +87,14 @@
 
 ### Explicit Validation for User Story 3
 
-- [ ] T022 [P] [US3] Validate every required step in `.github/workflows/pull-request-quality.yml` has a distinct readable name
-- [ ] T023 [P] [US3] Validate failure categories in `docs/pr-quality-pipeline.md` explain how to map CI failures to local commands
+- [x] T022 [P] [US3] Validate every required step in `.github/workflows/pull-request-quality.yml` has a distinct readable name
+- [x] T023 [P] [US3] Validate failure categories in `docs/pr-quality-pipeline.md` explain how to map CI failures to local commands
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] Refine step names in `.github/workflows/pull-request-quality.yml` for dependency installation, format check, lint, typecheck, tests, and build
-- [ ] T025 [US3] Add troubleshooting guidance for each validation category in `docs/pr-quality-pipeline.md`
-- [ ] T026 [US3] Document that cancelled, timed out, skipped, or incomplete workflow results are not successful validation in `docs/pr-quality-pipeline.md`
+- [x] T024 [US3] Refine step names in `.github/workflows/pull-request-quality.yml` for dependency installation, format check, lint, typecheck, tests, and build
+- [x] T025 [US3] Add troubleshooting guidance for each validation category in `docs/pr-quality-pipeline.md`
+- [x] T026 [US3] Document that cancelled, timed out, skipped, or incomplete workflow results are not successful validation in `docs/pr-quality-pipeline.md`
 
 **Checkpoint**: User Story 3 is independently testable by reviewing a successful and a failed workflow run or by inspecting the workflow step names.
 
@@ -108,14 +108,14 @@
 
 ### Explicit Validation for User Story 4
 
-- [ ] T027 [P] [US4] Validate local command list in `docs/pr-quality-pipeline.md` matches `specs/016-pr-quality-pipeline/contracts/local-validation.md`
-- [ ] T028 [P] [US4] Validate `docs/pr-quality-pipeline.md` explains that local success does not replace the Pull Request workflow check
+- [x] T027 [P] [US4] Validate local command list in `docs/pr-quality-pipeline.md` matches `specs/016-pr-quality-pipeline/contracts/local-validation.md`
+- [x] T028 [P] [US4] Validate `docs/pr-quality-pipeline.md` explains that local success does not replace the Pull Request workflow check
 
 ### Implementation for User Story 4
 
-- [ ] T029 [US4] Add local validation command sequence to `docs/pr-quality-pipeline.md`
-- [ ] T030 [US4] Explain why CI keeps `npm run typecheck` explicit even though `npm run build` also runs typecheck in `docs/pr-quality-pipeline.md`
-- [ ] T031 [US4] Document that production secrets and deployment credentials are not required for local or CI validation in `docs/pr-quality-pipeline.md`
+- [x] T029 [US4] Add local validation command sequence to `docs/pr-quality-pipeline.md`
+- [x] T030 [US4] Explain why CI keeps `npm run typecheck` explicit even though `npm run build` also runs typecheck in `docs/pr-quality-pipeline.md`
+- [x] T031 [US4] Document that production secrets and deployment credentials are not required for local or CI validation in `docs/pr-quality-pipeline.md`
 
 **Checkpoint**: All user stories are independently covered by workflow behavior and developer documentation.
 
@@ -125,16 +125,16 @@
 
 **Purpose**: Final verification across the workflow, docs, and Spec Kit artifacts.
 
-- [ ] T032 [P] Run workflow/documentation path checks for `.github/workflows/pull-request-quality.yml` and `docs/pr-quality-pipeline.md`
-- [ ] T033 [P] Review `.github/workflows/pull-request-quality.yml` for no secrets, no deploy, no production credentials, and no external monitoring
-- [ ] T034 [P] Review `docs/pr-quality-pipeline.md` against `specs/016-pr-quality-pipeline/quickstart.md`
-- [ ] T035 Run `npm ci` using `package-lock.json`
-- [ ] T036 Run `npm run format:check` using scripts from `package.json`
-- [ ] T037 Run `npm run lint` using scripts from `package.json`
-- [ ] T038 Run `npm run typecheck` using scripts from `package.json`
-- [ ] T039 Run `npm run test:run` using scripts from `package.json`
-- [ ] T040 Run `npm run build` using scripts from `package.json`
-- [ ] T041 Update `specs/016-pr-quality-pipeline/quickstart.md` only if implementation reveals a verified command or check name mismatch
+- [x] T032 [P] Run workflow/documentation path checks for `.github/workflows/pull-request-quality.yml` and `docs/pr-quality-pipeline.md`
+- [x] T033 [P] Review `.github/workflows/pull-request-quality.yml` for no secrets, no deploy, no production credentials, and no external monitoring
+- [x] T034 [P] Review `docs/pr-quality-pipeline.md` against `specs/016-pr-quality-pipeline/quickstart.md`
+- [x] T035 Run `npm ci` using `package-lock.json`
+- [x] T036 Run `npm run format:check` using scripts from `package.json`
+- [x] T037 Run `npm run lint` using scripts from `package.json`
+- [x] T038 Run `npm run typecheck` using scripts from `package.json`
+- [x] T039 Run `npm run test:run` using scripts from `package.json`
+- [x] T040 Run `npm run build` using scripts from `package.json`
+- [x] T041 Update `specs/016-pr-quality-pipeline/quickstart.md` only if implementation reveals a verified command or check name mismatch
 
 ---
 
