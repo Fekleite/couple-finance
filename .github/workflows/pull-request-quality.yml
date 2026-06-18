@@ -1,0 +1,49 @@
+name: Pull Request Quality
+
+"on":
+  pull_request:
+    # GitHub reruns this workflow for new PR commits through the default
+    # synchronize activity, keeping the current head commit authoritative.
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Pull Request Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.13.0
+          cache: npm
+
+      - name: Show Node.js and npm versions
+        run: |
+          node --version
+          npm --version
+
+      - name: Install dependencies with npm ci
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run typecheck
+        run: npm run typecheck
+
+      - name: Run automated tests
+        run: npm run test:run
+
+      - name: Build application
+        run: npm run build
